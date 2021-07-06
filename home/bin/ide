@@ -1,7 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
 # set tmux panes for ide
-
 if [ "$#" -eq 0 ]; then
   tmux split-window -v -p 30
   tmux split-window -h -p 66
