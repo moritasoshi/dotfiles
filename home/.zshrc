@@ -171,8 +171,6 @@ export PATH=$PATH:$GOPATH/bin
 # エイリアス 
 alias la='ls -a'
 alias ll='ls -l'
-alias ide="~/dotfiles/home/bin/ide"
-alias idea="~/dotfiles/home/bin/idea"
 
 ## ヒストリを保存するファイル
 HISTFILE=~/.zsh_history
@@ -194,3 +192,4 @@ setopt share_history
 ## C-sでのヒストリ検索が潰されてしまうため、出力停止・開始用にC-s/C-qを使わない。
 setopt no_flow_control
 
+export PGDATA=/usr/local/var/postgres
