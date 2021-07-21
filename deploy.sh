@@ -4,13 +4,14 @@
 set -u
 
 # ディレクトリ定義と権限付与
-DOTPATH=~/dotfiles/home
+CURRENT_DIR=$(pwd)
+DOTPATH=$CURRENT_DIR/home
 BINPATH=$DOTPATH/bin
 
-chmod 700 $DOTPATH/*
-chmod 755 $BINPATH/*
+chmod 700 "$DOTPATH"/*
+chmod 755 "$BINPATH"/*
 
-cd $DOTPATH || exit
+cd "$DOTPATH" || exit
 
 # ドットファイルを列挙（.??*）して ln を実行
 for f in .??*; do
@@ -18,7 +19,7 @@ for f in .??*; do
     ln -snfv "$DOTPATH/$f" "$HOME"/"$f"
 done
 
-cd $BINPATH || exit
+cd "$BINPATH" || exit
 
 # binファイルを列挙（.??*）して ln を実行
 files=$(ls)
