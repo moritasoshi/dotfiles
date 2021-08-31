@@ -4,8 +4,8 @@
 set -u
 
 # ディレクトリ定義と権限付与
-CURRENT_DIR=$(pwd)
-DOTPATH=$CURRENT_DIR/home
+SCRIPT_DIR=$(cd $(dirname $0); pwd)
+DOTPATH=$SCRIPT_DIR/home
 BINPATH=$DOTPATH/bin
 
 chmod 700 "$DOTPATH"/*
