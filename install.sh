@@ -1,4 +1,5 @@
 #!/bin/sh
+WORK_DIR=$(cd $(dirname $0); pwd)
 
 # install brew
 # brewのインストール
@@ -9,10 +10,10 @@ fi
 
 # brew bundle 叩く
 echo "Brewfileにリストされているアプリケーションをインストールします"
-brew bundle --file './Brewfile'
+brew bundle --file "$WORK_DIR"/etc/homebrew/Brewfile
 
 echo "BrewfileにリストされているアプリケーションをClean Upします"
-brew bundle cleanup --file './Brewfile'
+brew bundle cleanup --file "$WORK_DIR"/etc/homebrew/Brewfile
 
 # brew doctorで状態確認
 echo
@@ -27,4 +28,4 @@ if [ "$?" -ne 0 ]; then
   /usr/bin/chsh -s "$(brew --prefix)/bin/zsh"
 fi
 
-source ./deploy.sh
+. ./deploy.sh
