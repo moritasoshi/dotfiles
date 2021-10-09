@@ -1,12 +1,9 @@
 #!/bin/bash
 
-# 未定義な変数があったら途中で終了する
-set -u
-
 # ディレクトリ定義と権限付与
-SCRIPT_DIR=$(cd $(dirname $0); pwd)
-DOTPATH=$SCRIPT_DIR/home
-BINPATH=$DOTPATH/bin
+WORK_DIR=$(cd $(dirname $0); pwd)
+DOTPATH=$WORK_DIR/home
+BINPATH=$WORK_DIR/home/bin
 
 chmod 700 "$DOTPATH"/*
 chmod 755 "$BINPATH"/*
