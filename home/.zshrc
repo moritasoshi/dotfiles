@@ -54,6 +54,10 @@ setopt share_history
 setopt no_flow_control
 
 export PGDATA=/usr/local/var/postgres
+export PATH="/usr/local/opt/libpq/bin:$PATH"
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+# export JAVA_HOME=`/usr/libexec/java_home -v "11"`
+export JAVA_HOME=`/usr/libexec/java_home -v "1.8"`
 
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
