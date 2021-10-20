@@ -11,14 +11,14 @@ source ${SCRIPT_DIR}/alias.zsh
 
 # peco
 function peco-history-selection() {
-    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
-    CURSOR=$#BUFFER
-    zle reset-prompt
+  BUFFER=$(history -n 1 | tail -r | awk '!a[$0]++' | peco)
+  CURSOR=$#BUFFER
+  zle reset-prompt
 }
 zle -N peco-history-selection
 bindkey '^R' peco-history-selection
 
-function peco-src () {
+function peco-src() {
   local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
   if [ -n "$selected_dir" ]; then
     BUFFER="cd ${selected_dir}"
@@ -52,12 +52,17 @@ setopt inc_append_history
 setopt share_history
 ## C-sでのヒストリ検索が潰されてしまうため、出力停止・開始用にC-s/C-qを使わない。
 setopt no_flow_control
+## cd 無しでディレクトリ移動する
+setopt auto_cd
 
+cdpath=(.. ~ ~/src ~/memo)
 export PGDATA=/usr/local/var/postgres
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
-# export JAVA_HOME=`/usr/libexec/java_home -v "11"`
-export JAVA_HOME=`/usr/libexec/java_home -v "1.8"`
+# export JAVA_HOME=$(/usr/libexec/java_home -v "11")
+export JAVA_HOME=$(/usr/libexec/java_home -v "1.8")
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+if [ -e $HOME/.rvm/bin ]; then export PATH="$PATH:$HOME/.rvm/bin"; fi
 
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
 source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
