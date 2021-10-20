@@ -5,6 +5,10 @@ source ${SCRIPT_DIR}/plugin.zsh
 source ${SCRIPT_DIR}/.p10k.zsh
 source ${SCRIPT_DIR}/alias.zsh
 
+# editorはvimを使う
+export EDITOR=vim
+export VISUAL=$EDITOR
+
 # 重いので使う時だけ
 # source ${SCRIPT_DIR}/jenv.zsh
 # source ${SCRIPT_DIR}/pyenv.zsh
