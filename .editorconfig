@@ -1,0 +1,3 @@
+[{*.vim,.vimrc,.gvimrc,_vimrc,_gvimrc,.shrc,.bashrc,.zshrc,.profile,.bash_profile,.zprofile,*.sh,*.zsh,.kshrc,.mkshrc}]
+indent_style = space
+indent_size = 2
