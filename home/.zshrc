@@ -58,6 +58,8 @@ setopt share_history
 setopt no_flow_control
 ## cd 無しでディレクトリ移動する
 setopt auto_cd
+## git show HEAD^ したい
+setopt NO_NOMATCH
 
 cdpath=(.. ~ ~/src ~/memo)
 export PGDATA=/usr/local/var/postgres
