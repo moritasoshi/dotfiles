@@ -1,8 +1,11 @@
 #!/bin/bash
 
-echo "-----  export Brewfile...  ------"
 cd $(dirname $0)
-brew bundle dump
-mv Brewfile ../etc/homebrew
-echo "Done!"
-echo " "
+echo pwd: $(pwd)
+
+echo "+++++Export Brewfile......"
+brew bundle dump && mv Brewfile ../etc/homebrew && echo "Done!"
+
+echo "+++++Export Spectacle Sortcuts......"
+cp ~/Library/Application\ Support/Spectacle/Shortcuts.json ../etc/spectacle/ && echo "Done!"
+
