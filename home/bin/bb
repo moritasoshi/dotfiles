@@ -1,0 +1,33 @@
+#!/bin/sh
+
+BB_URL=https://bitbucket.org/monexlab/
+
+# リポジトリ名からBitBucketを開く
+function open() {
+  if [ -z "$@" ]; then
+    echo "do nothing..."
+    exit 1
+  fi
+  ch "$BB_URL$@"
+}
+
+# search with repo list
+function search_repo() {
+  local repo_name=$(ghq list | peco)
+  open "$repo_name"
+}
+
+# search on current dir
+function search_cd() {
+  local repo_name=$(pwd | awk -F / '{print $5}')
+  open "$repo_name"
+}
+
+if [ "$#" -eq 0 ]; then # $bb
+  search_repo "$@"
+elif [ "$@" = "." ]; then # $bb .
+  search_cd
+else
+  echo "do nothing..."
+  exit 1
+fi
