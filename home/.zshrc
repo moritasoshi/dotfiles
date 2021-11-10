@@ -13,6 +13,9 @@ export VISUAL=$EDITOR
 # source ${SCRIPT_DIR}/jenv.zsh
 # source ${SCRIPT_DIR}/pyenv.zsh
 
+## emacs keybind
+bindkey -e
+
 # peco
 function peco-history-selection() {
   BUFFER=$(history -n 1 | tail -r | awk '!a[$0]++' | peco)
