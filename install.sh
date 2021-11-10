@@ -1,8 +1,5 @@
 #!/bin/sh
-WORK_DIR=$(
-  cd $(dirname $0)
-  pwd
-)
+WORK_DIR=$(cd $(dirname $0); pwd)
 
 function install_brew() {
   if [ ! -e /usr/local/bin/brew ]; then

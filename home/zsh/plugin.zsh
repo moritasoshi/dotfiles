@@ -10,7 +10,13 @@ autoload -Uz compinit && compinit
 ## 補完で小文字でも大文字にマッチさせる
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 ## 補完候補を一覧表示したとき、Tabや矢印で選択できるようにする
-zstyle ':completion:*:default' menu select=1 
+zstyle ':completion:*:default' menu select=1
 
 # zsh-autosuggestions
 zinit ice wait"0" lucid; zinit light zsh-users/zsh-autosuggestions
+
+# Jump directories
+zinit light agkozak/zsh-z
+
+# https://qiita.com/b4b4r07/items/2cf90da00a4c2c7b7e60
+zinit light b4b4r07/enhancd
