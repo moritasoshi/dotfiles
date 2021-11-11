@@ -22,3 +22,4 @@
 	co = commit
 	br = branch
 	last = show HEAD
+	pushs = push --set-upstream origin HEAD
