@@ -6,7 +6,7 @@ $ git clone git@github.com:morita2021/dotfiles.git ~/src
 $ cd ~/src/dotfiles && ./install.sh
 ```
 
-- Optional App
+- Optional Apps
   - Alfred 4
   - Firefox
   - Google Chrome
