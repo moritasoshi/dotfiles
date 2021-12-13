@@ -1,9 +1,10 @@
 SCRIPT_DIR=$HOME/src/dotfiles/home/zsh
 
-source ${SCRIPT_DIR}/config.zsh
-source ${SCRIPT_DIR}/plugin.zsh
 source ${SCRIPT_DIR}/.p10k.zsh
 source ${SCRIPT_DIR}/alias.zsh
+source ${SCRIPT_DIR}/config.zsh
+source ${SCRIPT_DIR}/functions.zsh
+source ${SCRIPT_DIR}/plugin.zsh
 
 # editorはvimを使う
 export EDITOR=vim
