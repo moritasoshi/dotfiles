@@ -16,7 +16,7 @@ zstyle ':completion:*:default' menu select=1
 zinit ice wait"0" lucid; zinit light zsh-users/zsh-autosuggestions
 
 # Jump directories
-zinit light agkozak/zsh-z
+# zinit load agkozak/zsh-z
 
 # https://qiita.com/b4b4r07/items/2cf90da00a4c2c7b7e60
-zinit light b4b4r07/enhancd
+# zinit load b4b4r07/enhancd
