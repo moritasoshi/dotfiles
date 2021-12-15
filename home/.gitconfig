@@ -23,3 +23,5 @@
 	br = branch
 	last = show HEAD
 	pushs = push --set-upstream origin HEAD
+	df = diff
+	dfn = diff --name-only
