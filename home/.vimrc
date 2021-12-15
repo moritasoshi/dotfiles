@@ -7,7 +7,8 @@ endif
 
 """ Plugins  --------------------------------
 call plug#begin('~/.vim/plugged')
-Plug 'doums/darcula'
+	Plug 'doums/darcula'
+	Plug 'preservim/nerdtree'
 call plug#end()
 
 """ Common settings -------------------------
