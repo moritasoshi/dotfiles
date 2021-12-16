@@ -2,7 +2,7 @@
 [user]
 # Please adapt and uncomment the following lines:
 	name = soshi morita
-	email = moritasoushi@gmail.com
+	email = soshi_morita@monex.co.jp
 [core]
 	excludesfile = /Users/morita/.gitignore_global
 	editor = vim -c \"set fenc=utf-8\"
