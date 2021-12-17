@@ -5,6 +5,7 @@ alias ll='ls -l'
 alias f='find . -type f'
 alias grep='grep --color=auto'
 alias g='git'
+alias date='gdate'
 
 alias sz='source ~/.zshrc'
 alias path='echo $PATH'
