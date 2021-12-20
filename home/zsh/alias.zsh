@@ -6,6 +6,7 @@ alias f='find . -type f'
 alias grep='grep --color=auto'
 alias g='git'
 alias date='gdate'
+alias calc='bc'
 
 alias sz='source ~/.zshrc'
 alias path='echo $PATH'
@@ -17,3 +18,4 @@ alias subl='(){/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $
 # Global aliases
 alias -g G='| grep'
 alias -g X='| xargs'
+alias -g XG='| xargs'
