@@ -17,3 +17,7 @@ set number
 
 syntax enable
 colorscheme darcula
+
+""" Keymap settings -------------------------
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+
