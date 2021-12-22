@@ -6,16 +6,19 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 """ Plugins  --------------------------------
-call plug#begin('~/.vim/plugged')
+" call plug#begin('~/.vim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'doums/darcula'
 	Plug 'preservim/nerdtree'
 	Plug 'tpope/vim-fugitive'
 call plug#end()
 
 """ Common settings -------------------------
+let $LANG='en_US.UTF-8'
+
 syntax on
 
-set clipboard+=unnamed
+set clipboard+=unnamedplus
 set number
 
 " ファイルを上書きする前にバックアップを作ることを無効化
@@ -100,8 +103,6 @@ set nofoldenable
 set title
 " 行番号の表示
 set number
-" ヤンクでクリップボードにコピー
-set clipboard=unnamed,autoselect
 " シンタックスハイライト
 syntax on
 " すべての数を10進数として扱う
