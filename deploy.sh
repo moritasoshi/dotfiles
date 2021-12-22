@@ -15,6 +15,7 @@ for f in .??*; do
     [ "$f" = ".git" ] && continue
     ln -snfv "$DOTPATH/$f" "$HOME"/"$f"
 done
+ln -snfv "$DOTPATH/.vimrc" "$HOME/.config/nvim/init.vim"
 
 cd "$BINPATH" || exit
 
