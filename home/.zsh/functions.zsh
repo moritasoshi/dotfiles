@@ -11,3 +11,12 @@ function pdfmin() {
   done
   wait && return 0
 }
+
+
+# ファイルのstart~endの行抽出
+function mid() {
+       local start=$1
+       local end=$2
+       local in=$3
+       awk -v st=${start} -v en=${end} 'FNR>st&&en>FNR {print}' ${in}
+}

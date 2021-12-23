@@ -6,11 +6,15 @@ alias f='find . -type f'
 alias grep='grep --color=auto'
 alias g='git'
 alias date='gdate'
+alias sed='gsed'
 alias calc='bc'
 
 alias vim='nvim'
 
 alias sz='source ~/.zshrc'
+alias st='tmux source ~/.tmux.conf'
+alias git-push-release='git checkout develop && git push && git checkout master && git push && git push --tags'
+
 alias path='echo $PATH'
 
 alias idea='open -na "IntelliJ IDEA.app" --args "$@"'
