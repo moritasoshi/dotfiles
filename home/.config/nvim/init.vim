@@ -68,7 +68,7 @@ set display=lastline
 " タブ文字を CTRL-I で表示し、行末に $ で表示する
 set list
 " 行末のスペースを可視化
-set listchars=tab:^\ ,trail:~
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 " コマンドラインの履歴を10000件保存する
 set history=10000
 " 入力モードでTabキー押下時に半角スペースを挿入
@@ -107,6 +107,10 @@ set nrformats=
 set whichwrap=b,s,h,l,<,>,[,],~
 " バッファスクロール
 set mouse=a
+
+set nrformats-=octal
+set hidden
+
 
 " auto reload .vimrc
 augroup source-vimrc
