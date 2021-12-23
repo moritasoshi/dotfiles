@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="home,monex"
+    STOW_FOLDERS="home,monex,personal"
 fi
 
 if [[ -z $DOTPATH ]]; then
