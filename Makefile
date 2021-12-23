@@ -4,4 +4,4 @@ deploy:
 
 install: 
 	bash install.sh
-
+	bash deploy.sh

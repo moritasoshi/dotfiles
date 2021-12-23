@@ -34,13 +34,7 @@ function shell_check() {
   fi
 }
 
-function main() {
-  install_brew
-  setup_brew
-  # install_ruby
-  shell_check
-}
-
-main
-
-. ./deploy.sh
+install_brew
+setup_brew
+# install_ruby
+shell_check
