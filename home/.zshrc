@@ -1,4 +1,4 @@
-SCRIPT_DIR=$HOME/src/dotfiles/home/zsh
+SCRIPT_DIR=$HOME/.zsh
 
 source ${SCRIPT_DIR}/.p10k.zsh
 source ${SCRIPT_DIR}/alias.zsh
@@ -82,3 +82,5 @@ if [ -f '/Users/morita/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/morita/g
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/morita/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/morita/google-cloud-sdk/completion.zsh.inc'; fi
+
+. ~/.append.zshrc

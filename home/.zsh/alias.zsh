@@ -8,6 +8,8 @@ alias g='git'
 alias date='gdate'
 alias calc='bc'
 
+alias vim='nvim'
+
 alias sz='source ~/.zshrc'
 alias path='echo $PATH'
 
