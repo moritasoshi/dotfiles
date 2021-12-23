@@ -1,16 +1,16 @@
 """ Install vim-plug  -----------------------
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
+"if empty(glob("${XDG_DATA_HOME:-$HOME/.local/share}"))
+"  silent !sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+"         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+"  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+"endif
 
 """ Plugins  --------------------------------
-" call plug#begin('~/.vim/plugged')
 call plug#begin('~/.local/share/nvim/plugged')
 	Plug 'doums/darcula'
 	Plug 'preservim/nerdtree'
 	Plug 'tpope/vim-fugitive'
+  Plug 'ntbbloodbath/rest.nvim'
 call plug#end()
 
 """ Common settings -------------------------
@@ -53,8 +53,6 @@ set hlsearch
 "----------------------------------------
 " エラーメッセージの表示時にビープを鳴らさない
 set noerrorbells
-" Windowsでパスの区切り文字をスラッシュで扱う
-set shellslash
 " 対応する括弧やブレースを表示
 set showmatch matchtime=1
 " インデント方法の変更
@@ -73,8 +71,6 @@ set list
 set listchars=tab:^\ ,trail:~
 " コマンドラインの履歴を10000件保存する
 set history=10000
-" コメントの色を水色
-hi Comment ctermfg=3
 " 入力モードでTabキー押下時に半角スペースを挿入
 set expandtab
 " インデント幅
@@ -145,8 +141,6 @@ if has("autocmd")
     \ endif
   augroup END
 endif
-
-
 
 colorscheme darcula
 
