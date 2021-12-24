@@ -19,7 +19,7 @@ let $LANG='en_US.UTF-8'
 syntax on
 
 set clipboard+=unnamedplus
-set number
+set relativenumber
 
 " ファイルを上書きする前にバックアップを作ることを無効化
 set nowritebackup
@@ -150,6 +150,7 @@ colorscheme darcula
 
 """ Keymap settings -------------------------
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
 
 " Escの2回押しでハイライト消去
 nnoremap <Esc><Esc> :nohlsearch<CR><ESC>

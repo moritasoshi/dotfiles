@@ -25,3 +25,11 @@
 	pushs = push --set-upstream origin HEAD
 	df = diff
 	dfn = diff --name-only
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[merge]
+	tool = vimdiff
+[mergetool]
+	prompt = false
