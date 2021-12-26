@@ -1,8 +1,12 @@
-alias l='ls -F'
+alias ls='ls -G'
 alias la='ls -a'
-alias ll='ls -l'
+alias ll='ls -alF'
 
-alias f='find . -type f'
+alias ..2='cd ../..'
+alias ..3='cd ../../..'
+
+alias f='rg --files'
+alias t='date +%Y-%m-%d\ %H:%M:%S'
 alias grep='grep --color=auto'
 alias g='git'
 alias date='gdate'
@@ -13,6 +17,9 @@ alias vim='nvim'
 
 alias sz='source ~/.zshrc'
 alias st='tmux source ~/.tmux.conf'
+alias vimrc='vim ~/.config/nvim/init.vim'
+alias zshrc='vim ~/.zshrc'
+
 alias git-push-release='git checkout develop && git push && git checkout master && git push && git push --tags'
 
 alias path='echo $PATH'
@@ -25,3 +32,4 @@ alias subl='(){/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $
 alias -g G='| grep'
 alias -g X='| xargs'
 alias -g XG='| xargs'
+alias -g C='| pbcopy'
