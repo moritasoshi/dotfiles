@@ -7,11 +7,17 @@
 
 """ Plugins  --------------------------------
 call plug#begin('~/.local/share/nvim/plugged')
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'doums/darcula'
 	Plug 'preservim/nerdtree'
+	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-fugitive'
-  Plug 'ntbbloodbath/rest.nvim'
 call plug#end()
+
+
+""" Plugins for coc.nvim --------------------------------
+let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-restclient']
+
 
 """ Common settings -------------------------
 let $LANG='en_US.UTF-8'
