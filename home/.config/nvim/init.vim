@@ -157,6 +157,7 @@ colorscheme darcula
 """ Keymap settings -------------------------
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
+noremap <Leader>0 :CocCommand rest-client.request <CR>
 
 " Escの2回押しでハイライト消去
 nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
