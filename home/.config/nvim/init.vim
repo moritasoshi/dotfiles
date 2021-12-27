@@ -9,14 +9,38 @@
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 	Plug 'doums/darcula'
+  Plug 'nvim-lualine/lualine.nvim'
+  Plug 'cohama/lexima.vim'
 	Plug 'preservim/nerdtree'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'rstacruz/vim-closer'
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-fugitive'
 call plug#end()
 
 
 """ Plugins for coc.nvim --------------------------------
-let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-restclient']
+let g:coc_global_extensions = [
+  \'coc-git',
+  \'coc-json',
+  \'coc-markdownlint',
+  \'coc-markdown-preview-enhanced',
+  \'coc-restclient',
+  \'coc-webview'
+  \]
+
+
+""" lua --------------------------------
+lua << EOS
+require'lualine'.setup()
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  highlight = {
+    enable = true,
+    disable = {},
+  },
+}
+EOS
 
 
 """ Common settings -------------------------
@@ -154,10 +178,19 @@ endif
 
 colorscheme darcula
 
+
 """ Keymap settings -------------------------
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
 noremap <Leader>0 :CocCommand rest-client.request <CR>
+
+" inoremap ( ()<LEFT>
+" inoremap (<Enter> ()<Left><CR><ESC><S-o>
+" inoremap { {}<LEFT>
+" inoremap {<Enter> {}<Left><CR><ESC><S-o>
+" inoremap [ []<LEFT>
+" inoremap " ""<LEFT>
+" inoremap ' ''<LEFT>
 
 " Escの2回押しでハイライト消去
 nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
