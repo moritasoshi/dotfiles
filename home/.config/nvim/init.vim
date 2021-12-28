@@ -8,7 +8,6 @@
 """ Plugins  --------------------------------
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-	Plug 'doums/darcula'
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'cohama/lexima.vim'
 	Plug 'preservim/nerdtree'
@@ -16,6 +15,12 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'rstacruz/vim-closer'
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-fugitive'
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
+
+	Plug 'doums/darcula'
+  Plug 'morhetz/gruvbox'
+
 call plug#end()
 
 
@@ -26,8 +31,16 @@ let g:coc_global_extensions = [
   \'coc-markdownlint',
   \'coc-markdown-preview-enhanced',
   \'coc-restclient',
-  \'coc-webview'
+  \'coc-webview',
+  \'coc-snippets',
+  \'coc-tsserver',
+  \'coc-eslint',
+  \'coc-prettier'
   \]
+
+
+""" commands --------------------------------
+command! -nargs=0 So :so ~/.config/nvim/init.vim
 
 
 """ lua --------------------------------
@@ -41,6 +54,12 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 EOS
+
+""" ctrlP -------------------------
+let g:ctrlp_show_hidden = 1
+
+" Ignore files in .gitignore
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 
 """ Common settings -------------------------
@@ -183,14 +202,6 @@ colorscheme darcula
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
 noremap <Leader>0 :CocCommand rest-client.request <CR>
-
-" inoremap ( ()<LEFT>
-" inoremap (<Enter> ()<Left><CR><ESC><S-o>
-" inoremap { {}<LEFT>
-" inoremap {<Enter> {}<Left><CR><ESC><S-o>
-" inoremap [ []<LEFT>
-" inoremap " ""<LEFT>
-" inoremap ' ''<LEFT>
 
 " Escの2回押しでハイライト消去
 nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
