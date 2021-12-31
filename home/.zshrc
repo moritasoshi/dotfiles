@@ -84,3 +84,4 @@ if [ -f '/Users/morita/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/morita/g
 if [ -f '/Users/morita/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/morita/google-cloud-sdk/completion.zsh.inc'; fi
 
 . ~/.append.zshrc
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

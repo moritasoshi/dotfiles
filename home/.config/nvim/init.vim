@@ -62,6 +62,23 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 
+""" NERDTree -------------------------
+let NERDTreeIgnore=['\.git$', '\.idea$', '\.vscode$', '\.history$', '\.DS_Store$']
+
+
+""" Keymap settings -------------------------
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
+noremap <Leader>0 :CocCommand rest-client.request <CR>
+noremap <Leader>9 :CocCommand markdown-preview-enhanced.openPreview <CR>
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocAction('format')
+
+" Escの2回押しでハイライト消去
+nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
+
+
 """ Common settings -------------------------
 let $LANG='en_US.UTF-8'
 
@@ -197,11 +214,3 @@ endif
 
 colorscheme darcula
 
-
-""" Keymap settings -------------------------
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
-nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
-noremap <Leader>0 :CocCommand rest-client.request <CR>
-
-" Escの2回押しでハイライト消去
-nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
