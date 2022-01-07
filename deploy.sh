@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [[ -z $STOW_FOLDERS ]]; then
-    STOW_FOLDERS="home,nvim,zsh,monex,personal"
+    STOW_FOLDERS="home,nvim,zsh,personal"
 fi
 
 if [[ -z $DOTPATH ]]; then
