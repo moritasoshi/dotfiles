@@ -69,8 +69,8 @@ cdpath=(.. ~ ~/memo)
 export PGDATA=/usr/local/var/postgres
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
-# export JAVA_HOME=$(/usr/libexec/java_home -v "11")
-export JAVA_HOME=$(/usr/libexec/java_home -v "1.8")
+export JAVA_HOME=$(/usr/libexec/java_home -v "11")
+# export JAVA_HOME=$(/usr/libexec/java_home -v "1.8")
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 if [ -e $HOME/.rvm/bin ]; then export PATH="$PATH:$HOME/.rvm/bin"; fi
 
