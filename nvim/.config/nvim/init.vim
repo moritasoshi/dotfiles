@@ -11,7 +11,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'cohama/lexima.vim'
 	Plug 'preservim/nerdtree'
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'rstacruz/vim-closer'
 	Plug 'tpope/vim-commentary'
 	Plug 'tpope/vim-fugitive'
@@ -27,6 +27,7 @@ call plug#end()
 """ Plugins for coc.nvim --------------------------------
 let g:coc_global_extensions = [
   \'coc-git',
+  \'coc-java',
   \'coc-json',
   \'coc-markdownlint',
   \'coc-markdown-preview-enhanced',
@@ -46,13 +47,13 @@ command! -nargs=0 So :so ~/.config/nvim/init.vim
 """ lua --------------------------------
 lua << EOS
 require'lualine'.setup()
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
-  highlight = {
-    enable = true,
-    disable = {},
-  },
-}
+-- require'nvim-treesitter.configs'.setup {
+--   ensure_installed = "maintained",
+--   highlight = {
+--     enable = true,
+--     disable = {},
+--   },
+-- }
 EOS
 
 """ ctrlP -------------------------
@@ -176,6 +177,13 @@ set mouse=a
 
 set nrformats-=octal
 set hidden
+
+
+""""""""""""
+"" color
+"""""""""""" 
+" 背景色を黒にする
+autocmd ColorScheme * highlight Normal ctermbg = black
 
 
 " auto reload .vimrc
