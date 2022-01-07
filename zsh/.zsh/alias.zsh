@@ -5,7 +5,8 @@ alias ll='ls -alF'
 alias ..2='cd ../..'
 alias ..3='cd ../../..'
 
-alias f='rg --files'
+# alias f='rg --files'
+alias f='find . -type f'
 alias t='date +%Y-%m-%d\ %H:%M:%S'
 alias grep='grep --color=auto'
 alias g='git'
@@ -31,5 +32,5 @@ alias subl='(){/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $
 # Global aliases
 alias -g G='| grep'
 alias -g X='| xargs'
-alias -g XG='| xargs'
+alias -g XG='| xargs grep'
 alias -g C='| pbcopy'
