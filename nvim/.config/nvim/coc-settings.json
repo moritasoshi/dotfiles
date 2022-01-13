@@ -5,5 +5,6 @@
       "sha256": "e6e066ba36f8d5f7185a518096099304871ef6414c6a3dade4976e64edf7732d",
       "allowed": true
     }
-  ]
+  ],
+  "sql.database": "postgresql"
 }
