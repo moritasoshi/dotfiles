@@ -10,15 +10,15 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'cohama/lexima.vim'
-	Plug 'preservim/nerdtree'
+  Plug 'preservim/nerdtree'
   " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  Plug 'rstacruz/vim-closer'
-	Plug 'tpope/vim-commentary'
-	Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-commentary'
   Plug 'ryanoasis/vim-devicons'
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-surround'
   Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
 
-	Plug 'doums/darcula'
+  Plug 'doums/darcula'
   Plug 'morhetz/gruvbox'
 
 call plug#end()
@@ -34,6 +34,7 @@ let g:coc_global_extensions = [
   \'coc-restclient',
   \'coc-webview',
   \'coc-snippets',
+  \'coc-sql',
   \'coc-tsserver',
   \'coc-eslint',
   \'coc-prettier'
@@ -72,6 +73,8 @@ nnoremap <silent><C-e> :NERDTreeToggle<CR>
 nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
 noremap <Leader>0 :CocCommand rest-client.request <CR>
 noremap <Leader>9 :CocCommand markdown-preview-enhanced.openPreview <CR>
+" 空行挿入
+nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
