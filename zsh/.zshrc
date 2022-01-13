@@ -1,10 +1,9 @@
 SCRIPT_DIR=$HOME/.zsh
 
-source ${SCRIPT_DIR}/.p10k.zsh
-source ${SCRIPT_DIR}/alias.zsh
-source ${SCRIPT_DIR}/config.zsh
-source ${SCRIPT_DIR}/functions.zsh
-source ${SCRIPT_DIR}/plugin.zsh
+ZSH_FILES="alias,config,functions,p10k,plugin"
+for file in $(echo $ZSH_FILES | sed "s/,/ /g"); do
+  source $HOME/.zsh/$file.zsh
+done
 
 # editorはvimを使う
 export EDITOR=vim
