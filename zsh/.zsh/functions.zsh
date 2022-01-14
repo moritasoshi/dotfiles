@@ -20,3 +20,8 @@ function mid() {
        local in=$3
        awk -v first=${first} -v last=${last} 'FNR>first&&last>FNR {print}' ${in}
 }
+
+# measure shell load time
+function timezsh() {
+  for i in $(seq 1 10); do time $SHELL -i -c exit; done
+}
