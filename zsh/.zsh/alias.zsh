@@ -22,6 +22,7 @@ alias tmuxconf='vim ~/.tmux.conf'
 alias vimrc='vim ~/.config/nvim/init.vim'
 alias zshrc='vim ~/.zshrc'
 alias zshalias='vim ~/.zsh/alias.zsh'
+alias zshfunc='vim ~/.zsh/functions.zsh'
 alias cocsetting='vim ~/.config/nvim/coc-settings.json'
 
 alias git-push-release='git checkout develop && git push && git checkout master && git push && git push --tags'
