@@ -8,14 +8,14 @@ alias ll='ls -alF'
 ## 1 letter aliases
 alias f='find . -type f'
 alias g='git'
-alias t='date +%Y-%m-%d\ %H:%M:%S'
+alias t='date +%Y-%m-%d[%H:%M:%S]'
 
 ## replacements
 alias calc='bc'
 alias date='gdate'
 alias grep='grep --color=auto'
 alias sed='gsed'
-alias tree='tree -I ".git|node_modules|.DS_Store"'
+alias tree='tree -aI ".git|node_modules|.DS_Store"'
 alias vim='nvim'
 
 ## edit dotfiles
