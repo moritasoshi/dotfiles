@@ -82,8 +82,8 @@ command! -nargs=0 Format :call CocAction('format')
 " Escの2回押しでハイライト消去
 nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
 
-" paste the end of the line.
-nmap , $p
+" The end of the line.
+noremap - $
 
 """ Common settings -------------------------
 let $LANG='en_US.UTF-8'

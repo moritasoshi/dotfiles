@@ -11,7 +11,7 @@ alias g='git'
 alias t='date +%Y-%m-%d[%H:%M:%S]'
 
 ## replacements
-alias calc='bc'
+alias calc='bc' # "last": Output the last result
 alias date='gdate'
 alias grep='grep --color=auto'
 alias sed='gsed'
