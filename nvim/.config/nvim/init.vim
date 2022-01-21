@@ -7,6 +7,7 @@
 
 """ Plugins  --------------------------------
 call plug#begin('~/.local/share/nvim/plugged')
+  Plug 'dkarter/bullets.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'cohama/lexima.vim'
@@ -84,6 +85,9 @@ nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
 
 " The end of the line.
 noremap - $
+
+" decrement the number on the cursor
+noremap <C-s> <C-x>
 
 """ Common settings -------------------------
 let $LANG='en_US.UTF-8'
