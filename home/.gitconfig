@@ -2,35 +2,31 @@
 [include]
   path = ~/.gitconfig.local
 [core]
-	excludesfile = /Users/morita/.gitignore_global
-	editor = nvim -c \"set fenc=utf-8\"
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /private/var/folders/qj/tcw6w9n14rng5vykqv49m4l00000gq/T/AppTranslocation/3F6E16D4-BCA0-4CB9-AE60-F4FEE1FA698C/d/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  excludesfile = /Users/morita/.gitignore_global
+  editor = nvim -c \"set fenc=utf-8\"
 [commit]
-	template = /Users/morita/.stCommitMsg
+  template = /Users/morita/.stCommitMsg
 [ghq]
-	root = ~/src
+  root = ~/src
 [alias]
-	s = status
-	c = checkout
-	co = commit
-	br = branch
-	last = show HEAD
-	pushs = push --set-upstream origin HEAD
-	df = diff
-	dfn = diff --name-only
-	fa = fetch --all
+  s = status
+  c = checkout
+  co = commit
+  br = branch
+  last = show HEAD
+  pushs = push --set-upstream origin HEAD
+  df = diff
+  dfn = diff --name-only
+  fa = fetch --all
+  stash-find = !"git fsck --unreachable | awk '/commit/ {print $3}' | xargs git log --merges --no-walk --grep=WIP --all-match"
+  stash-pick = cherry-pick -n -m1fa = fetch --all
 [diff]
-	tool = vimdiff
+  tool = vimdiff
 [difftool]
-	prompt = false
+  prompt = false
 [merge]
-	tool = vimdiff
+  tool = vimdiff
 [mergetool]
-	prompt = false
+  prompt = false
 [init]
-	defaultBranch = main
+  defaultBranch = main
