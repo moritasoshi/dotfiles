@@ -1,1 +1,12 @@
-git commit --amend -v --date=$(date +%Y-%m-%dT%H:%M:%S)
+### git-ca
+#
+# Update the timestamp of the previous commit.
+# Do nothing, if the file changes.
+#
+###
+
+set -e
+
+GIT_SEQUENCE_EDITOR="sed -i -re 's/^pick /e /'" git rebase -i @^ &> /dev/null
+git commit --amend --no-edit --date=$(date +%Y-%m-%dT%H:%M:%S)
+git rebase --continue
