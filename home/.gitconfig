@@ -9,15 +9,21 @@
 [ghq]
   root = ~/src
 [alias]
-  s = status
+  a = add
+  ap = add -p
+  br = branch
   c = checkout
   co = commit
-  br = branch
+  coa = commit --amend
+  d = diff
+  ds = diff --name-only # diff of summary
+  fa = fetch --all
+  l = log
+  ll  = log --graph --pretty=format:'%x09%C(auto)%h  %Cgreen%ad %Creset🐶(%C(cyan)%an%Creset)%x09%C(auto)%s%d' --date=format:'%Y-%m-%d %H:%M'
   last = show HEAD
   pushs = push --set-upstream origin HEAD
-  df = diff
-  dfn = diff --name-only
-  fa = fetch --all
+  s = status
+  # find a dropped stash
   stash-find = !"git fsck --unreachable | awk '/commit/ {print $3}' | xargs git log --merges --no-walk --grep=WIP --all-match"
   stash-pick = cherry-pick -n -m1fa = fetch --all
 [diff]
