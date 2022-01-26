@@ -28,7 +28,6 @@ call plug#end()
 """ Plugins for coc.nvim --------------------------------
 let g:coc_global_extensions = [
   \'coc-git',
-  \'coc-java',
   \'coc-json',
   \'coc-markdownlint',
   \'coc-markdown-preview-enhanced',
@@ -58,16 +57,17 @@ require'lualine'.setup()
 -- }
 EOS
 
+""" bullets.vim -------------------------
+let g:bullets_outline_levels = ['std-']
+let g:bullets_checkbox_markers = 'X'
+
 """ ctrlP -------------------------
 let g:ctrlp_show_hidden = 1
-
 " Ignore files in .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
-
 """ NERDTree -------------------------
 let NERDTreeIgnore=['\.git$', '\.idea$', '\.vscode$', '\.history$', '\.DS_Store$']
-
 
 """ Keymap settings -------------------------
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
@@ -88,6 +88,8 @@ noremap - $
 
 " decrement the number on the cursor
 noremap <C-s> <C-x>
+
+command! -nargs=0 Sneakcamel :%s/\v_(.)/\u\1/g
 
 """ Common settings -------------------------
 let $LANG='en_US.UTF-8'
