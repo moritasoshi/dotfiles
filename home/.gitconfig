@@ -10,20 +10,28 @@
   root = ~/src
 [alias]
   a = add
-  ap = add -p
+  ap = add --patch
+  up = reset --patch
   br = branch
   c = checkout
   co = commit
-  coa = commit --amend
+  coo = !"git commit --amend --no-edit --date=$(date +%Y-%m-%dT%H:%M:%S)"
+  cp = cherry-pick
   d = diff
-  ds = diff --name-only # diff of summary
+  df = diff --name-only # diff summary
+  ds = diff --staged
   fa = fetch --all
   l = log
-  ll  = log --graph --pretty=format:'%x09%C(auto)%h  %Cgreen%ad %Creset🐶(%C(cyan)%an%Creset)%x09%C(auto)%s%d' --date=format:'%Y-%m-%d %H:%M'
+  ll  = log --graph --pretty=format:'%x09%C(auto)%h  %ad %Creset🐶(%C(cyan)%an%Creset)%x09%C(auto)%d%s' --date=format:'%Y-%m-%d %H:%M'
   last = show HEAD
+  v = !"git branch --merged | grep -vE '\\*|develop|main|master'"
+  vac = !"git branch --merged | grep -vE '\\*|develop|main|master' | xargs git branch -d"
   pushs = push --set-upstream origin HEAD
+  rel = flow release start
+  relf = flow release finish
   s = status
-  # find a dropped stash
+  save = stash save -u
+  pop = stash pop stash@{0}
   stash-find = !"git fsck --unreachable | awk '/commit/ {print $3}' | xargs git log --merges --no-walk --grep=WIP --all-match"
   stash-pick = cherry-pick -n -m1fa = fetch --all
 [diff]
