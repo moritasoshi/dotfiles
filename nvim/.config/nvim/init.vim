@@ -12,7 +12,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'cohama/lexima.vim'
   Plug 'preservim/nerdtree'
-  " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'tpope/vim-commentary'
   Plug 'ryanoasis/vim-devicons'
   Plug 'tpope/vim-fugitive'
@@ -59,7 +58,9 @@ EOS
 
 """ bullets.vim -------------------------
 let g:bullets_outline_levels = ['std-']
-let g:bullets_checkbox_markers = 'X'
+let g:bullets_checkbox_markers = ' x'
+let g:bullets_nested_checkboxes = 1
+let g:bullets_checkbox_partials_toggle = 1
 
 """ ctrlP -------------------------
 let g:ctrlp_show_hidden = 1
@@ -69,6 +70,13 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 """ NERDTree -------------------------
 let NERDTreeIgnore=['\.git$', '\.idea$', '\.vscode$', '\.history$', '\.DS_Store$']
 
+""" Commands -------------------------
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocAction('format')
+" 全角数字を半角に変換する
+command! -nargs=0 Hankaku :%s/０/0/ge|%s/１/1/ge|%s/２/2/ge|%s/３/3/ge|%s/４/4/ge|%s/５/5/ge|%s/６/6/ge|%s/７/7/ge|%s/８/8/ge|%s/９/9/ge
+command! -nargs=0 Sneakcamel :%s/\v_(.)/\u\1/g
+
 """ Keymap settings -------------------------
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
@@ -76,20 +84,12 @@ noremap <Leader>0 :CocCommand rest-client.request <CR>
 noremap <Leader>9 :CocCommand markdown-preview-enhanced.openPreview <CR>
 " 空行挿入
 nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
-
-" Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocAction('format')
-
 " Escの2回押しでハイライト消去
 nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
-
 " The end of the line.
 noremap - $
-
 " decrement the number on the cursor
 noremap <C-s> <C-x>
-
-command! -nargs=0 Sneakcamel :%s/\v_(.)/\u\1/g
 
 """ Common settings -------------------------
 let $LANG='en_US.UTF-8'
