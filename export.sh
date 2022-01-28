@@ -2,12 +2,16 @@
 
 set -e
 
-cd $(dirname $0)
-echo pwd: $(pwd)
+BREW_DIR=~/src/dotfiles/etc/homebrew/
+SPECTACLE_DIR=~/src/dotfiles/etc/spectacle/
+SPECTACLE_HOME="~/Library/Application\ Support/Spectacle/"
 
-echo "+++++Export Brewfile......"
-brew bundle dump && mv Brewfile ../etc/homebrew && echo "Done!"
+# export Brewfile
+pushd $BREW_DIR
+brew bundle dump --force
+popd
 
-echo "+++++Export Spectacle Sortcuts......"
-cp ~/Library/Application\ Support/Spectacle/Shortcuts.json ../etc/spectacle/ && echo "Done!"
-
+# export Spectacle Sortcuts.json
+pushd $SPECTACLE_HOME
+cp Shortcuts.json $SPECTACLE_DIR
+popd
