@@ -1,0 +1,5 @@
+#!/bin/bash
+###
+# Gitのalias一覧を表示する
+###
+git config --get-regexp '^alias\.' | sed -e 's/^alias\.//' -e 's/\ /\ =\ /'

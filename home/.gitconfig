@@ -24,6 +24,7 @@
   ds = diff --staged
   fa = fetch --all
   l = log
+  la = log --graph --decorate --name-status --all
   ll  = log --graph --pretty=format:'%x09%C(auto)%h  %ad %Creset🐶(%C(cyan)%an%Creset)%x09%C(auto)%d%s' --date=format:'%Y-%m-%d %H:%M'
   last = show HEAD
   v = !"git branch --merged | grep -vE '\\*|develop|main|master'"
