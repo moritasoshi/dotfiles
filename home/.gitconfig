@@ -18,6 +18,8 @@
   br = branch
   c = checkout
   co = commit
+  coa = commit --amend
+  com = commit -m
   coo = !"git commit --amend --no-edit --date=$(date +%Y-%m-%dT%H:%M:%S)"
   cp = cherry-pick
   d = diff
