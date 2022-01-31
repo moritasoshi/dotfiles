@@ -28,7 +28,7 @@
   fa = fetch --all
   l = log
   la = log --graph --decorate --name-status --all
-  ll  = log --graph --pretty=format:'%x09%C(auto)%h  %ad  %Creset%<(15,trunc)🐶%C(cyan bold)%an%Creset  %C(auto)%s%d' --date=format:'%Y-%m-%d %H:%M'
+  ll  = log @ --graph --pretty=format:'%x09%C(auto)%h  %ad  %Creset%<(15,trunc)🐶%C(cyan bold)%an%Creset  %C(auto)%s%d' --date=format:'%Y-%m-%d %H:%M'
   last = show HEAD
   v = !"git branch --merged | grep -vE '\\*|develop|main|master'"
   vac = !"git branch --merged | grep -vE '\\*|develop|main|master' | xargs git branch -d"
