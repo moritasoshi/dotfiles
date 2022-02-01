@@ -6,5 +6,6 @@
       "allowed": true
     }
   ],
-  "sql.database": "postgresql"
+  "sql.database": "postgresql",
+  "markdown-preview-enhanced.previewTheme": "newsprint.css"
 }

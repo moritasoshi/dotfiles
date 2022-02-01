@@ -6,7 +6,7 @@ for file in $(echo $ZSH_FILES | sed "s/,/ /g"); do
 done
 
 # editorはvimを使う
-export EDITOR=vim
+export EDITOR=nvim
 export VISUAL=$EDITOR
 
 # 重いので使う時だけ
