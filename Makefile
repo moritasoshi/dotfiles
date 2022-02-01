@@ -1,4 +1,3 @@
-
 deploy: 
 	bash deploy.sh
 
@@ -8,4 +7,8 @@ install:
 
 export: 
 	bash export.sh
+
+check:
+	shellcheck ./*.sh
+	shellcheck ./zsh/.zsh/*.zsh
 
