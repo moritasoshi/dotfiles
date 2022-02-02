@@ -35,8 +35,8 @@ alias git-push-release='git checkout develop && git push && git checkout master 
 
 alias path='echo $PATH'
 
-alias code='open -na "Visual Studio Code.app" --args "$@"'
-alias idea='open -na "IntelliJ IDEA.app" --args "$@"'
+alias code='open -na "Visual Studio Code.app" --args'
+alias idea='open -na "IntelliJ IDEA.app" --args'
 alias subl='(){/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $1}'
 
 # Global aliases
