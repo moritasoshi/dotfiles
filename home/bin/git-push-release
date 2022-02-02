@@ -1,0 +1,10 @@
+#!/bin/bash
+
+#####
+# git 
+# push develop, master branches and tags
+#####
+
+git checkout develop && git push
+git checkout master && git push
+git push --tags

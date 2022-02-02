@@ -12,3 +12,6 @@ check:
 	shellcheck ./*.sh
 	shellcheck ./zsh/.zsh/*.zsh
 
+mod:
+	chmod 744 home/bin/*
+

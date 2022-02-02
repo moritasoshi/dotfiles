@@ -1,5 +1,8 @@
 #!/bin/sh
-WORK_DIR=$(cd $(dirname $0); pwd)
+
+set -e
+
+WORK_DIR=$(cd "$(dirname "$0")"; pwd)
 
 install_brew() {
   if [ ! -e /usr/local/bin/brew ]; then
@@ -9,10 +12,10 @@ install_brew() {
 }
 
 install_ruby() {
-  if [ ! -e $HOME/.rvm/bin ]; then
+  if [ ! -e ~/.rvm/bin ]; then
     echo "+++++Install RVM..."
     curl -sSL https://get.rvm.io | bash -s stable
-    . "$HOME"/.rvm/scripts/rvm
+    . ~/.rvm/scripts/rvm
   fi
 }
 
@@ -26,8 +29,8 @@ setup_brew() {
 }
 
 shell_check() {
-  /usr/bin/grep /usr/local/bin/zsh /etc/shells && :
-  if [ "$?" -ne 0 ]; then
+  /usr/bin/grep /usr/local/bin/zsh /etc/shells; result="$?"
+  if [ ! $result ]; then
     echo "+++++homebrewのzshに変更します"
     sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
     /usr/bin/chsh -s "$(brew --prefix)/bin/zsh"
