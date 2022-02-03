@@ -31,7 +31,7 @@ alias sz='source ~/.zshrc'
 alias st='tmux source ~/.tmux.conf'
 
 ## ?
-alias git-push-release='git checkout develop && git push && git checkout master && git push && git push --tags'
+alias memo='cd ~/memo'
 
 alias path='echo $PATH'
 
