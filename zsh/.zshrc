@@ -64,7 +64,6 @@ setopt auto_cd
 ## git show HEAD^ したい
 setopt NO_NOMATCH
 
-cdpath=(.. ~ ~/memo)
 export PGDATA=/usr/local/var/postgres
 export PATH="/usr/local/opt/libpq/bin:$PATH"
 export PATH=$HOME/.nodebrew/current/bin:$PATH

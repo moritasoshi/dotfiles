@@ -5,10 +5,13 @@
 "  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 "endif
 
+
+
+
+
 """ Plugins  --------------------------------
 call plug#begin('~/.local/share/nvim/plugged')
   Plug 'dkarter/bullets.vim'
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'cohama/lexima.vim'
   Plug 'preservim/nerdtree'
@@ -18,43 +21,41 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
 
+  Plug 'nvim-treesitter/nvim-treesitter'
+
+" Git
+  Plug 'airblade/vim-gitgutter'
+
+" LSP
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'mfussenegger/nvim-jdtls'
+
+" Telescope
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+
+" HTTP Client
+  Plug 'NTBBloodbath/rest.nvim'
+
+" Theme
   Plug 'doums/darcula'
   Plug 'morhetz/gruvbox'
 
 call plug#end()
 
 
-""" Plugins for coc.nvim --------------------------------
-let g:coc_global_extensions = [
-  \'coc-git',
-  \'coc-json',
-  \'coc-markdownlint',
-  \'coc-markdown-preview-enhanced',
-  \'coc-restclient',
-  \'coc-webview',
-  \'coc-snippets',
-  \'coc-sql',
-  \'coc-tsserver',
-  \'coc-eslint',
-  \'coc-prettier'
-  \]
 
 
-""" commands --------------------------------
-command! -nargs=0 So :so ~/.config/nvim/init.vim
+""" Source Vim scripts ------------------
+source ~/.config/nvim/config.vim
+
+source ~/.config/nvim/plugins/rest-nvim.vim
+source ~/.config/nvim/plugins/telescope.vim
+source ~/.config/nvim/plugins/nvim-treesitter.vim
+source ~/.config/nvim/plugins/lualine.vim
 
 
-""" lua --------------------------------
-lua << EOS
-require'lualine'.setup()
--- require'nvim-treesitter.configs'.setup {
---   ensure_installed = "maintained",
---   highlight = {
---     enable = true,
---     disable = {},
---   },
--- }
-EOS
+
 
 """ bullets.vim -------------------------
 let g:bullets_outline_levels = ['std-']
@@ -76,125 +77,22 @@ command! -nargs=0 Format :call CocAction('format')
 " 全角数字を半角に変換する
 command! -nargs=0 Hankaku :%s/０/0/ge|%s/１/1/ge|%s/２/2/ge|%s/３/3/ge|%s/４/4/ge|%s/５/5/ge|%s/６/6/ge|%s/７/7/ge|%s/８/8/ge|%s/９/9/ge
 command! -nargs=0 Sneakcamel :%s/\v_(.)/\u\1/g
+command! -nargs=0 So :so ~/.config/nvim/init.vim
 
 """ Keymap settings -------------------------
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 nnoremap <F3> :<C-u>setlocal relativenumber!<CR>
-noremap <Leader>0 :CocCommand rest-client.request <CR>
-noremap <Leader>9 :CocCommand markdown-preview-enhanced.openPreview <CR>
 " 空行挿入
 nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
-" Escの2回押しでハイライト消去
-nnoremap <Esc><Esc> :nohlsearch<CR><ESC>
+" Escのでハイライト消去
+nnoremap <Esc> :nohlsearch<CR><ESC>
 " The end of the line.
 noremap - $
 " decrement the number on the cursor
 noremap <C-s> <C-x>
 
-""" Common settings -------------------------
-let $LANG='en_US.UTF-8'
-
-syntax on
-
-set clipboard+=unnamedplus
-set relativenumber
-
-" ファイルを上書きする前にバックアップを作ることを無効化
-set nowritebackup
-" ファイルを上書きする前にバックアップを作ることを無効化
-set nobackup
-" vim の矩形選択で文字が無くても右へ進める
-set virtualedit=block
-" 挿入モードでバックスペースで削除できるようにする
-set backspace=indent,eol,start
-" 全角文字専用の設定
-set ambiwidth=double
-" wildmenuオプションを有効(vimバーからファイルを選択できる)
-set wildmenu
-
-"----------------------------------------
-" 検索
-"----------------------------------------
-" 検索するときに大文字小文字を区別しない
-set ignorecase
-" 小文字で検索すると大文字と小文字を無視して検索
-set smartcase
-" 検索がファイル末尾まで進んだら、ファイル先頭から再び検索
-set wrapscan
-" インクリメンタル検索 (検索ワードの最初の文字を入力した時点で検索が開始)
-set incsearch
-" 検索結果をハイライト表示
-set hlsearch
-
-"----------------------------------------
-" 表示設定
-"----------------------------------------
-" エラーメッセージの表示時にビープを鳴らさない
-set noerrorbells
-" 対応する括弧やブレースを表示
-set showmatch matchtime=1
-" インデント方法の変更
-set cinoptions+=:0
-" メッセージ表示欄を2行確保
-set cmdheight=2
-" ステータス行を常に表示
-set laststatus=2
-" ウィンドウの右下にまだ実行していない入力中のコマンドを表示
-set showcmd
-" 省略されずに表示
-set display=lastline
-" タブ文字を CTRL-I で表示し、行末に $ で表示する
-set list
-" 行末のスペースを可視化
-set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
-" コマンドラインの履歴を10000件保存する
-set history=10000
-" 入力モードでTabキー押下時に半角スペースを挿入
-set expandtab
-" インデント幅
-set shiftwidth=2
-" タブキー押下時に挿入される文字幅を指定
-set softtabstop=2
-" ファイル内にあるタブ文字の表示幅
-set tabstop=2
-" ツールバーを非表示にする
-set guioptions-=T
-" yでコピーした時にクリップボードに入る
-set guioptions+=a
-" メニューバーを非表示にする
-set guioptions-=m
-" 右スクロールバーを非表示
-set guioptions+=R
-" 対応する括弧を強調表示
-set showmatch
-" 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
-set smartindent
-" スワップファイルを作成しない
-set noswapfile
-" 検索にマッチした行以外を折りたたむ(フォールドする)機能
-set nofoldenable
-" タイトルを表示
-set title
-" 行番号の表示
-set number
-" シンタックスハイライト
-syntax on
-" すべての数を10進数として扱う
-set nrformats=
-" 行をまたいで移動
-set whichwrap=b,s,h,l,<,>,[,],~
-" バッファスクロール
-set mouse=a
-
-set nrformats-=octal
-set hidden
-
-
-""""""""""""
-"" color
-"""""""""""" 
-" 背景色を黒にする
-autocmd ColorScheme * highlight Normal ctermbg = black
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>s :So<CR>
 
 
 " auto reload .vimrc
@@ -231,5 +129,4 @@ if has("autocmd")
   augroup END
 endif
 
-colorscheme darcula
 
