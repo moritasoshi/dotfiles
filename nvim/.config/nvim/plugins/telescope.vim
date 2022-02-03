@@ -18,6 +18,11 @@ require('telescope').setup{
             "node_modules"
         },
         prompt_prefix = "🔎 ",
+        borderchars = {
+          prompt  = { "-", "|", "-", "|", "|", "|", "|", "|" },
+          results = { "-", "|", "-", "|", "|", "|", "|", "|" },
+          preview = { "-", "|", "-", "|", "|", "|", "|", "|" }
+        },
         mappings = {
             i = {
                 ["<C-k>"] = actions.move_selection_previous,
