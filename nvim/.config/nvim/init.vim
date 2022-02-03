@@ -19,7 +19,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'ryanoasis/vim-devicons'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
-  Plug 'ctrlpvim/ctrlp.vim' " fuzzy find files
 
   Plug 'nvim-treesitter/nvim-treesitter'
 

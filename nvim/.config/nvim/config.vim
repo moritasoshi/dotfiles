@@ -3,7 +3,7 @@ let $LANG='en_US.UTF-8'
 let mapleader = "\<Space>"
 
 " 背景色を黒にする
-autocmd ColorScheme * highlight Normal ctermbg = black
+" autocmd ColorScheme * highlight Normal ctermbg = black
 
 colorscheme darcula
 " colorscheme gruvbox
