@@ -40,6 +40,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'doums/darcula'
   Plug 'morhetz/gruvbox'
 
+" vim-expand
+  Plug 'terryma/vim-expand-region'
+
 call plug#end()
 
 
@@ -93,6 +96,11 @@ noremap <C-s> <C-x>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>s :So<CR>
 
+map J <Plug>(expand_region_expand)
+map K <Plug>(expand_region_shrink)
+
+" re-yank text that is pasted in visual mode
+xnoremap p pgvy
 
 " auto reload .vimrc
 augroup source-vimrc
