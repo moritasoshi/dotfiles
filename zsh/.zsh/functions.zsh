@@ -25,3 +25,16 @@ function mid() {
 function timezsh() {
   for i in $(seq 1 10); do time $SHELL -i -c exit; done
 }
+
+
+fancy-ctrl-z () {
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
