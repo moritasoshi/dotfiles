@@ -1566,6 +1566,8 @@
 	<true/>
 	<key>SavePasteHistory</key>
 	<true/>
+	<key>ShowFullScreenTabBar</key>
+	<false/>
 	<key>SmartPlacement</key>
 	<true/>
 	<key>SoundForEsc</key>

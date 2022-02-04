@@ -45,7 +45,7 @@ END
 
 
 nnoremap <leader>ff <cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>
-nnoremap <C-p> :lua require('telescope.builtin').git_files()<CR>
+nnoremap <C-p> :lua require('moritasoshi.telescope').project_files()<CR>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
