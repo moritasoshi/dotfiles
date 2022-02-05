@@ -1,6 +1,6 @@
 """ Common settings -------------------------
 let $LANG='en_US.UTF-8'
-let mapleader = "\<Space>"
+let mapleader = " "
 
 scriptencoding utf-8
 " 背景色を黒にする

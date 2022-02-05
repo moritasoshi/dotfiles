@@ -14,7 +14,6 @@
   ap = add --patch # stage to index
   up = restore -S --patch # unstage from index
   upw = restore -W --patch # delete from worktree
-  upsw = restore -SW --patch# delete from index and worktree
   br = branch
   c = checkout
   co = commit
