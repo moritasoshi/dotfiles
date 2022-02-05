@@ -1,12 +1,15 @@
 # aliases
 
 ## ls
-alias ls='ls -G'
+alias ls='lsd'
+alias l='ls -l'
 alias la='ls -a'
-alias ll='ls -alF'
+alias ll='ls -la'
+alias lt='ls --tree'
 
 ## 1 letter aliases
-alias f='find . -type f'
+alias c='clear'
+alias f='fd --type f --hidden --follow --exclude .git'
 alias g='git'
 alias t='date +%Y-%m-%d[%H:%M:%S]'
 
@@ -15,7 +18,7 @@ alias calc='bc' # "last": Output the last result
 alias date='gdate'
 alias grep='grep --color=auto'
 alias sed='gsed'
-alias tree='tree -aI ".git|node_modules|.DS_Store"'
+alias tree='lt -a'
 alias vim='nvim'
 
 ## edit dotfiles

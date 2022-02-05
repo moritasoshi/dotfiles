@@ -15,8 +15,8 @@ require('telescope').setup{
             '--hidden'
         },
         file_ignore_patterns = {
-            ".git",
-            "node_modules"
+            ".git/",
+            "node_modules/"
         },
         prompt_prefix = "🔎 ",
         borderchars = {
