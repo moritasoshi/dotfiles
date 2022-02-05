@@ -2,6 +2,7 @@
 let $LANG='en_US.UTF-8'
 let mapleader = "\<Space>"
 
+scriptencoding utf-8
 " 背景色を黒にする
 " autocmd ColorScheme * highlight Normal ctermbg = black
 
@@ -12,7 +13,8 @@ syntax on
 
 " Update sign column every quarter second
 set updatetime=250
-
+set fileencodings=utf-8,sjis,euc-jp,latin
+set encoding=utf-8
 set clipboard+=unnamedplus
 set relativenumber
 

@@ -19,8 +19,12 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'ryanoasis/vim-devicons'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
+  Plug 'terryma/vim-expand-region'
 
   Plug 'nvim-treesitter/nvim-treesitter'
+
+" tmux
+  Plug 'christoomey/vim-tmux-navigator'
 
 " Git
   Plug 'airblade/vim-gitgutter'
@@ -40,8 +44,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'doums/darcula'
   Plug 'morhetz/gruvbox'
 
-" vim-expand
-  Plug 'terryma/vim-expand-region'
 
 call plug#end()
 
@@ -51,10 +53,9 @@ call plug#end()
 """ Source Vim scripts ------------------
 source ~/.config/nvim/config.vim
 
-source ~/.config/nvim/plugins/rest-nvim.vim
-source ~/.config/nvim/plugins/telescope.vim
-source ~/.config/nvim/plugins/nvim-treesitter.vim
-source ~/.config/nvim/plugins/lualine.vim
+source ~/.config/nvim/plugin/rest-nvim.vim
+source ~/.config/nvim/plugin/telescope.vim
+source ~/.config/nvim/plugin/nvim-treesitter.vim
 
 
 
@@ -72,6 +73,7 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 
 """ NERDTree -------------------------
 let NERDTreeIgnore=['\.git$', '\.idea$', '\.vscode$', '\.history$', '\.DS_Store$']
+
 
 """ Commands -------------------------
 " Add `:Format` command to format current buffer.
