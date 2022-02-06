@@ -36,6 +36,8 @@ function peco-src() {
 zle -N peco-src
 bindkey '^S' peco-src
 
+bindkey '^o' clear-screen
+
 # ghq
 export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin

@@ -2,7 +2,6 @@
 let $LANG='en_US.UTF-8'
 let mapleader = " "
 
-scriptencoding utf-8
 " 背景色を黒にする
 " autocmd ColorScheme * highlight Normal ctermbg = black
 
@@ -12,7 +11,7 @@ colorscheme darcula
 syntax on
 
 " Update sign column every quarter second
-set updatetime=250
+set updatetime=100
 set fileencodings=utf-8,sjis,euc-jp,latin
 set encoding=utf-8
 set clipboard+=unnamedplus
@@ -26,8 +25,8 @@ set nobackup
 set virtualedit=block
 " 挿入モードでバックスペースで削除できるようにする
 set backspace=indent,eol,start
-" 全角文字専用の設定
-set ambiwidth=double
+" 曖昧文字の設定(doubleに設定するとpowerline,telescopeの罫線がバグるので注意!!!)
+set ambiwidth=single
 " wildmenuオプションを有効(vimバーからファイルを選択できる)
 set wildmenu
 
