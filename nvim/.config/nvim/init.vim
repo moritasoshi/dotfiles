@@ -20,7 +20,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'terryma/vim-expand-region'
 
-  Plug 'nvim-treesitter/nvim-treesitter'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " tmux
   Plug 'christoomey/vim-tmux-navigator'
