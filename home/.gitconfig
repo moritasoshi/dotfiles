@@ -6,8 +6,6 @@
   editor = nvim -c \"set fenc=utf-8\"
 [commit]
   template = /Users/morita/.stCommitMsg
-[ghq]
-  root = ~/src
 [alias]
   al = alias
   a = add
