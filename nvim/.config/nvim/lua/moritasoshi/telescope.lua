@@ -18,12 +18,7 @@ require('telescope').setup{
             ".git/",
             "node_modules/"
         },
-        prompt_prefix = "🔎 ",
-        borderchars = {
-          prompt  = { "-", "|", "-", "|", "|", "|", "|", "|" },
-          results = { "-", "|", "-", "|", "|", "|", "|", "|" },
-          preview = { "-", "|", "-", "|", "|", "|", "|", "|" }
-        },
+        prompt_prefix = " 🔎 ",
         mappings = {
             i = {
                 ["<C-k>"] = actions.move_selection_previous,

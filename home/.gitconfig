@@ -41,7 +41,7 @@
   stash-find = !"git fsck --unreachable | awk '/commit/ {print $3}' | xargs git log --merges --no-walk --grep=WIP --all-match"
   stash-pick = cherry-pick -n -m1fa = fetch --all
 [diff]
-  tool = vimdiff
+  tool = nvimdiff
 [difftool]
   prompt = false
 [merge]

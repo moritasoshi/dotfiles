@@ -7,11 +7,12 @@ lualine.setup {
     theme = 'dracula',
     section_separators = {left = '', right = ''},
     component_separators = {left = '', right = ''},
-    disabled_filetypes = {}
+    disabled_filetypes = {},
+    always_divide_middle = true
   },
   sections = {
     lualine_a = {'mode'},
-    lualine_b = {'branch'},
+    lualine_b = {'branch', 'diff'},
     lualine_c = {{
       'filename',
       file_status = true, -- displays file status (readonly status, modified status)
@@ -19,11 +20,12 @@ lualine.setup {
     }},
     lualine_x = {
       -- { 'diagnostics', sources = {"nvim_diagnostic"}, symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '} },
+      'diagnostics',
       'encoding',
       'filetype'
     },
     lualine_y = {},
-    lualine_z = {}
+    lualine_z = {'location'}
   },
   inactive_sections = {
     lualine_a = {},
@@ -35,7 +37,7 @@ lualine.setup {
     }},
     lualine_x = {},
     lualine_y = {},
-    lualine_z = {}
+    lualine_z = {'location'}
   },
   tabline = {},
   extensions = {'fugitive'}

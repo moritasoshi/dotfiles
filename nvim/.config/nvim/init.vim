@@ -17,7 +17,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'preservim/nerdtree'
   Plug 'tpope/vim-commentary'
   Plug 'ryanoasis/vim-devicons'
-  Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
   Plug 'terryma/vim-expand-region'
 
@@ -28,6 +27,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Git
   Plug 'airblade/vim-gitgutter'
+  Plug 'tpope/vim-fugitive'
 
 " LSP
   Plug 'neovim/nvim-lspconfig'
@@ -51,12 +51,11 @@ call plug#end()
 
 
 """ Source Vim scripts ------------------
-source ~/.config/nvim/config.vim
+source ~/.config/nvim/after/config.vim
 
 source ~/.config/nvim/plugin/rest-nvim.vim
 source ~/.config/nvim/plugin/telescope.vim
 source ~/.config/nvim/plugin/nvim-treesitter.vim
-
 
 
 
@@ -98,8 +97,10 @@ noremap <C-s> <C-x>
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>s :So<CR>
 
-map J <Plug>(expand_region_expand)
-map K <Plug>(expand_region_shrink)
+" for leader " "
+nnoremap <Space> <NOP>
+
+nmap cp :let @* = expand('%:p')<CR>
 
 " re-yank text that is pasted in visual mode
 xnoremap p pgvy
