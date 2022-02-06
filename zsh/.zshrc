@@ -18,7 +18,7 @@ bindkey -e
 
 # peco
 function peco-history-selection() {
-  BUFFER=$(history -n 1 | tail -r | awk '!a[$0]++' | peco)
+  BUFFER=$(history -n 1 | tail -r | awk '!a[$0]++' | peco --query "$BUFFER")
   CURSOR=$#BUFFER
   zle reset-prompt
 }
@@ -26,7 +26,7 @@ zle -N peco-history-selection
 bindkey '^R' peco-history-selection
 
 function peco-src() {
-  local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
+  local selected_dir=$(fd . ~/src/ --maxdepth 1 | peco --query "$LBUFFER")
   if [ -n "$selected_dir" ]; then
     BUFFER="cd ${selected_dir}"
     zle accept-line
@@ -37,10 +37,6 @@ zle -N peco-src
 bindkey '^S' peco-src
 
 bindkey '^o' clear-screen
-
-# ghq
-export GOPATH=$HOME
-export PATH=$PATH:$GOPATH/bin
 
 ## ヒストリを保存するファイル
 HISTFILE=~/.zsh_history
