@@ -1,12 +1,4 @@
-if !exists('g:lspconfig')
-  finish
-endif
+let g:diagnostic_enable_virtual_text = 1
+let g:diagnostic_virtual_text_prefix = ' '
 
-lua << EOF
-local nvim_lsp = require('lspconfig')
-
-nvim_lsp.tsserver.setup {
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-}
-
-EOF
+lua require('moritasoshi.lspconfig')
