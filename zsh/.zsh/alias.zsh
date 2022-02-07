@@ -1,7 +1,7 @@
 # aliases
 
 ## ls
-alias ls='lsd'
+alias ls='ls -G'
 alias l='ls -l'
 alias la='ls -a'
 alias ll='ls -la'
@@ -18,7 +18,7 @@ alias calc='bc' # "last": Output the last result
 alias date='gdate'
 alias grep='grep --color=auto'
 alias sed='gsed'
-alias tree='lt -a'
+alias tree='tree -a -I ".git|node_modules"'
 alias vim='nvim'
 
 ## edit dotfiles

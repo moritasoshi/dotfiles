@@ -1300,26 +1300,26 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.3333333432674408</real>
+				<real>0.39016783841179858</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.3333333432674408</real>
+				<real>0.4508154860225182</real>
 				<key>Red Component</key>
-				<real>1</real>
+				<real>0.90447998046875</real>
 			</dict>
 			<key>Ansi 10 Color</key>
 			<dict>
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.58039218187332153</real>
+				<real>0.60042402401011774</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>1</real>
+				<real>0.9510498046875</real>
 				<key>Red Component</key>
-				<real>0.4117647111415863</real>
+				<real>0.4595183115452528</real>
 			</dict>
 			<key>Ansi 11 Color</key>
 			<dict>
@@ -1391,13 +1391,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.0090078562498092651</real>
+				<real>0.33885642091809132</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.74765205383300781</real>
+				<real>0.82293701171875</real>
 				<key>Red Component</key>
-				<real>0.017379958182573318</real>
+				<real>0.52372533306651181</real>
 			</dict>
 			<key>Ansi 3 Color</key>
 			<dict>
@@ -1430,13 +1430,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.91764706373214722</real>
+				<real>0.9330596923828125</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.57254904508590698</real>
+				<real>0.73831597003280913</real>
 				<key>Red Component</key>
-				<real>0.78039216995239258</real>
+				<real>0.58216547188545686</real>
 			</dict>
 			<key>Ansi 6 Color</key>
 			<dict>
@@ -1482,13 +1482,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.43137255311012268</real>
+				<real>0.51552144298329949</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.43137255311012268</real>
+				<real>0.51552144298329949</real>
 				<key>Red Component</key>
-				<real>1</real>
+				<real>0.971649169921875</real>
 			</dict>
 			<key>Automatically Log</key>
 			<false/>
@@ -2833,8 +2833,8 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewPreferredModeKey</key>
-	<integer>0</integer>
+	<integer>2</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
-	<false/>
+	<true/>
 </dict>
 </plist>
