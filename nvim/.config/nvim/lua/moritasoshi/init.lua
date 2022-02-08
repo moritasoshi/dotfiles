@@ -1,2 +1,5 @@
-require("moritasoshi.telescope")
+require("moritasoshi.compe")
+require("moritasoshi.lspconfig")
+require("moritasoshi.lspsaga")
 require("moritasoshi.lualine")
+require("moritasoshi.telescope")
