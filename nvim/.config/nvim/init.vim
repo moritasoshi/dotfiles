@@ -18,7 +18,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-commentary'
   Plug 'ryanoasis/vim-devicons'
   Plug 'tpope/vim-surround'
-  Plug 'terryma/vim-expand-region'
+  Plug 'kyazdani42/nvim-web-devicons'
 
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
