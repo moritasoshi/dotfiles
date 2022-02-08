@@ -18,7 +18,8 @@ alias calc='bc' # "last": Output the last result
 alias date='gdate'
 alias grep='grep --color=auto'
 alias sed='gsed'
-alias tree='tree -a -I ".git|node_modules"'
+# alias tree='tree -a -I ".git|node_modules"'
+alias tree='lsd -a --tree'
 alias vim='nvim'
 
 ## edit dotfiles
