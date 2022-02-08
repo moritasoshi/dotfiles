@@ -19,10 +19,11 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'ryanoasis/vim-devicons'
   Plug 'tpope/vim-surround'
   Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'tami5/lspsaga.nvim'
 
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-" tmux
+" Tmux
   Plug 'christoomey/vim-tmux-navigator'
 
 " Git
@@ -34,15 +35,15 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'nvim-lua/lsp-status.nvim'
   Plug 'mfussenegger/nvim-jdtls'
 
-" Comp
+" Compe
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/cmp-path'
   Plug 'hrsh7th/cmp-cmdline'
-  Plug 'hrsh7th/nvim-cmp'
-
   Plug 'hrsh7th/cmp-vsnip'
+  Plug 'hrsh7th/nvim-cmp'
   Plug 'hrsh7th/vim-vsnip'
+  Plug 'f3fora/cmp-spell'
 
 " Telescope
   Plug 'nvim-lua/plenary.nvim'
@@ -59,14 +60,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 call plug#end()
 
 
-
-
-""" Source Vim scripts ------------------
-source ~/.config/nvim/after/config.vim
-
-source ~/.config/nvim/plugin/rest-nvim.vim
-source ~/.config/nvim/plugin/telescope.vim
-source ~/.config/nvim/plugin/nvim-treesitter.vim
+source ~/.config/nvim/config.vim
 
 
 

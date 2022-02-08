@@ -58,6 +58,8 @@ cmp.setup({
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
+    { name='path'},
+    { name='spell'},
     { name = 'vsnip' }, -- For vsnip users.
   }, {
     { name = 'buffer' },
@@ -81,47 +83,7 @@ cmp.setup.cmdline(':', {
 })
 
 
-
-
-
-
-
-
-
-
 -- Configuration for nvim-compe
-
-
-cmp.setup {
-    enabled = true;
-    autocomplete = true;
-    debug = false;
-    min_length = 1;
-    preselect = 'enable';
-    throttle_time = 80;
-    source_timeout = 200;
-    incomplete_delay = 400;
-    allow_prefix_unmatch = false;
-    max_abbr_width = 1000;
-    max_kind_width = 1000;
-    max_menu_width = 1000000;
-    documentation = true;
-
-
-    source = {
-        path = true;
-        buffer = true;
-        calc = true;
-        vsnip = true;
-        nvim_lsp = true;
-        nvim_lua = true;
-        spell = true;
-        tags = true;
-        snippets_nvim = true;
-        treesitter = true;
-  };
-}
-
 local t = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
 end
@@ -159,7 +121,3 @@ _G.s_tab_complete = function()
   end
 end
 
--- utils.map("i", "<Tab>", "v:lua.tab_complete()", {expr = true})
--- utils.map("s", "<Tab>", "v:lua.tab_complete()", {expr = true})
--- utils.map("i", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})
--- utils.map("s", "<S-Tab>", "v:lua.s_tab_complete()", {expr = true})

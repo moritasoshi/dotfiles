@@ -19,9 +19,10 @@ lualine.setup {
       path = 0 -- 0 = just filename, 1 = relative path, 2 = absolute path
     }},
     lualine_x = {
-      -- { 'diagnostics', sources = {"nvim_diagnostic"}, symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '} },
-      'diagnostics',
-      "require'lsp-status'.status()",
+      {'diagnostics',
+        sources = {"nvim_diagnostic"},
+        symbols = { error = "", warn = "", hint = "", info = "" }
+      },
       'encoding',
       'filetype'
     },
