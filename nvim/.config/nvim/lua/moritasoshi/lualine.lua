@@ -21,7 +21,9 @@ lualine.setup {
     lualine_x = {
       {'diagnostics',
         sources = {"nvim_diagnostic"},
-        symbols = { error = "", warn = "", hint = "", info = "" }
+        sections = { 'error', 'warn', 'info', 'hint' },   -- Displays diagnostics for the defined severity types
+        symbols = { error = "  ", warn = "  ", info = "  ", hint = "  " },
+        always_visible = false  -- Show diagnostics even if there are none.
       },
       'encoding',
       'filetype'
@@ -39,7 +41,7 @@ lualine.setup {
     }},
     lualine_x = {},
     lualine_y = {},
-    lualine_z = {'location'}
+    lualine_z = {}
   },
   tabline = {},
   extensions = {'fugitive'}
