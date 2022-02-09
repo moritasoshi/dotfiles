@@ -62,6 +62,10 @@ lspconfig.tsserver.setup {
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
   capabilities = capabilities
 }
+lspconfig.jsonls.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
 
 
 -- local runtime_path = vim.split(package.path, ';')
@@ -91,7 +95,6 @@ lspconfig.sumneko_lua.setup {
     },
   },
 }
--- lspconfig.jsonls.setup{ on_attach=on_attach_vim, capabilities = capabilities }
 
 
 -- Disable diagnostic sign
