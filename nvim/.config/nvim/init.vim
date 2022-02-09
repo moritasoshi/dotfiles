@@ -51,6 +51,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 " HTTP Client
   Plug 'NTBBloodbath/rest.nvim'
 
+" Markdown
+  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
 " Theme
   Plug 'doums/darcula'
   Plug 'morhetz/gruvbox'
