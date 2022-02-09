@@ -14,13 +14,17 @@ alias g='git'
 alias t='date +%Y-%m-%d[%H:%M:%S]'
 
 ## replacements
-alias calc='bc' # "last": Output the last result
+alias calc='BC_ENV_ARGS=<(echo "scale=8") \bc'
 alias date='gdate'
 alias grep='grep --color=auto'
 alias sed='gsed'
 # alias tree='tree -a -I ".git|node_modules"'
 alias tree='lsd -a --tree'
 alias vim='nvim'
+
+## tmux
+alias tm='tmux'
+alias tmn='tmux new -s'
 
 ## edit dotfiles
 alias cocsetting='vim ~/.config/nvim/coc-settings.json'
