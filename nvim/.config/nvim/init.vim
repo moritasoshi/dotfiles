@@ -43,7 +43,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'hrsh7th/cmp-vsnip'
   Plug 'hrsh7th/nvim-cmp'
   Plug 'hrsh7th/vim-vsnip'
-  Plug 'f3fora/cmp-spell'
 
 " Telescope
   Plug 'nvim-lua/plenary.nvim'
