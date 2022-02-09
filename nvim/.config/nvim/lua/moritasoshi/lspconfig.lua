@@ -53,21 +53,12 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 capabilities.textDocument.completion.completionItem.snippetSupport = true;
 
 -- LSPs
-local lsps = { "jdtls", "jsonls", "grammarly","sumneko_lua" }
-lspconfig.tsserver.setup {
-  on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
-  capabilities = capabilities
-}
-lspconfig.jsonls.setup {
-  on_attach = on_attach,
-  capabilities = capabilities
-}
+local lsps = { "jdtls", "jsonls", "grammarly","sumneko_lua", "vimls" }
 
+lspconfig.tsserver.setup { on_attach = on_attach, capabilities = capabilities, filetypes = { "typescript", "typescriptreact", "typescript.tsx" } }
+lspconfig.jsonls.setup { on_attach = on_attach, capabilities = capabilities }
+lspconfig.vimls.setup { on_attach = on_attach, capabilities = capabilities }
 
--- local runtime_path = vim.split(package.path, ';')
--- table.insert(runtime_path, "lua/?.lua")
--- table.insert(runtime_path, "lua/?/init.lua")
 lspconfig.sumneko_lua.setup {
   on_attach = on_attach,
   capabilities = capabilities,
