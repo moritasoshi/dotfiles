@@ -38,3 +38,12 @@ fancy-ctrl-z () {
 }
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
+
+f() {
+  cmd="fd --type f --hidden --follow --exclude .git"
+  if [ "$#" -eq 0 ]; then
+    eval $cmd
+  else
+    eval $cmd | grep "$1"
+  fi
+}
