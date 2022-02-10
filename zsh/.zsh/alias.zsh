@@ -2,14 +2,13 @@
 
 ## ls
 alias ls='ls -G'
-alias l='ls -l'
+alias l='ls -lh'
 alias la='ls -a'
-alias ll='ls -la'
+alias ll='ls -lha'
 alias lt='ls --tree'
 
 ## 1 letter aliases
 alias c='clear'
-alias f='fd --type f --hidden --follow --exclude .git'
 alias g='git'
 alias t='date +%Y-%m-%d[%H:%M:%S]'
 
