@@ -20,6 +20,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'tami5/lspsaga.nvim'
+  Plug 'folke/lua-dev.nvim'
+  Plug 'glepnir/dashboard-nvim'
 
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -32,6 +34,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " LSP
   Plug 'neovim/nvim-lspconfig'
+  Plug 'jose-elias-alvarez/null-ls.nvim'
   Plug 'nvim-lua/lsp-status.nvim'
   Plug 'mfussenegger/nvim-jdtls'
 
@@ -43,6 +46,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'hrsh7th/cmp-vsnip'
   Plug 'hrsh7th/nvim-cmp'
   Plug 'hrsh7th/vim-vsnip'
+  Plug 'rafamadriz/friendly-snippets'
 
 " Telescope
   Plug 'nvim-lua/plenary.nvim'
@@ -64,6 +68,16 @@ call plug#end()
 
 source ~/.config/nvim/config.vim
 
+let g:dashboard_default_executive ='telescope'
+
+lua << EOF
+local nullls = require "null-ls"
+nullls.setup {
+  sources = {
+    nullls.builtins.formatting.prettier,
+  },
+}
+EOF
 
 
 """ bullets.vim -------------------------
