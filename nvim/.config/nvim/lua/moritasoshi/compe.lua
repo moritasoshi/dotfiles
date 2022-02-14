@@ -1,4 +1,5 @@
 -- Setup nvim-cmp.
+vim.o.completeopt="menuone,noinsert,noselect"
 local cmp = require'cmp'
 
 kind_icons = {

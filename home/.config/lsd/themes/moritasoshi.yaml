@@ -1,0 +1,24 @@
+user: 230
+group: 187
+permission:
+  read: 187
+  write: 187
+  exec: 187
+  exec-sticky: 187
+  no-access: 187
+date:
+  hour-old: 84
+  day-old: 84
+  older: 84
+size:
+  none: 245
+  small: 229
+  medium: 216
+  large: 172
+inode:
+  valid: 13
+  invalid: 245
+links:
+  valid: 13
+  invalid: 245
+tree-edge: 242

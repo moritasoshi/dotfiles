@@ -6,8 +6,9 @@
 "endif
 
 
-
-
+if has("nvim")
+  set inccommand=nosplit
+endif
 
 """ Plugins  --------------------------------
 call plug#begin('~/.local/share/nvim/plugged')
@@ -21,7 +22,18 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'tami5/lspsaga.nvim'
   Plug 'folke/lua-dev.nvim'
-  Plug 'glepnir/dashboard-nvim'
+  Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-speeddating'
+  Plug 'junegunn/vim-easy-align'
+  Plug 'editorconfig/editorconfig-vim'
+  Plug 'tversteeg/registers.nvim', { 'branch': 'main' }
+  Plug 'ntpeters/vim-better-whitespace'
+  Plug 'yuttie/comfortable-motion.vim'
+  Plug 'sainnhe/gruvbox-material'
+  Plug 'lewis6991/spellsitter.nvim'
+  Plug 'norcalli/nvim-colorizer.lua'
+  Plug 'jghauser/mkdir.nvim'
+  Plug 'goolord/alpha-nvim'
 
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -56,7 +68,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'NTBBloodbath/rest.nvim'
 
 " Markdown
-  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
 " Theme
   Plug 'doums/darcula'
@@ -67,17 +78,16 @@ call plug#end()
 
 
 source ~/.config/nvim/config.vim
+lua require('moritasoshi')
 
-let g:dashboard_default_executive ='telescope'
-
-lua << EOF
-local nullls = require "null-ls"
-nullls.setup {
-  sources = {
-    nullls.builtins.formatting.prettier,
-  },
-}
-EOF
+" lua << EOF
+" local nullls = require "null-ls"
+" nullls.setup {
+"   sources = {
+"     nullls.builtins.formatting.prettier,
+"   },
+" }
+" EOF
 
 
 """ bullets.vim -------------------------
@@ -86,21 +96,51 @@ let g:bullets_checkbox_markers = ' x'
 let g:bullets_nested_checkboxes = 1
 let g:bullets_checkbox_partials_toggle = 1
 
-""" ctrlP -------------------------
-let g:ctrlp_show_hidden = 1
-" Ignore files in .gitignore
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+""" motion -------------------------
+" To prevent the plugin from defining those default key mappings
+let g:comfortable_motion_no_default_key_mappings = 0
+
+" mouse wheel to scroll a window by the following mappings:
+noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(40)<CR>
+noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-40)<CR>
+
+" Scrolling proportional to the window height, you may use settings such as these:
+let g:comfortable_motion_impulse_multiplier = 1  " Feel free to increase/decrease this value.
+
+" let g:comfortable_motion_interval = 2400.0 / 60
+" let g:comfortable_motion_friction = 100.0
+" let g:comfortable_motion_air_drag = 3.0
+" nnoremap <silent> <C-d> :call comfortable_motion#flick(100)<CR>
+" nnoremap <silent> <C-u> :call comfortable_motion#flick(-100)<CR>
+" nnoremap <silent> <C-f> :call comfortable_motion#flick(200)<CR>
+" nnoremap <silent> <C-b> :call comfortable_motion#flick(-200)<CR>
+
+" noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(40)<CR>
+" noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-40)<CR>
 
 """ NERDTree -------------------------
 let NERDTreeIgnore=['\.git$', '\.idea$', '\.vscode$', '\.history$', '\.DS_Store$']
 
+nnoremap <silent> <Space>// :%s/
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+au TextYankPost * silent! lua vim.highlight.on_yank {higroup="IncSearch", timeout=150}
 
 """ Commands -------------------------
-" Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocAction('format')
 " 全角数字を半角に変換する
 command! -nargs=0 Hankaku :%s/０/0/ge|%s/１/1/ge|%s/２/2/ge|%s/３/3/ge|%s/４/4/ge|%s/５/5/ge|%s/６/6/ge|%s/７/7/ge|%s/８/8/ge|%s/９/9/ge
-command! -nargs=0 Sneakcamel :%s/\v_(.)/\u\1/g
+
+command! -nargs=0 ToCamel :s#_\(\l\)#\u\1#g
+" command! -nargs=0 ToUpCamel :s#\(\%(\<\l\+\)\%(_\)\@=\)\|_\(\l\)#\u\1\2#g
+command! -nargs=0 ToUpCamel :1,$s/_\([a-z]\)/\u\1/g
+" command! -nargs=0 ToSnake :s#\C\(\<\u[a-z0-9]\+\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#g
+command! -nargs=0 ToSnake :%s#\C\(\<\u[a-z0-9]\+\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#g
+
 command! -nargs=0 So :so ~/.config/nvim/init.vim
 
 """ Keymap settings -------------------------
@@ -112,14 +152,15 @@ nnoremap O :<C-u>call append(expand('.'), '')<Cr>j
 nnoremap <Esc> :nohlsearch<CR><ESC>
 " The end of the line.
 noremap - $
-" decrement the number on the cursor
-noremap <C-s> <C-x>
 
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>s :So<CR>
 
 " for leader " "
 nnoremap <Space> <NOP>
+" decrement the number on the cursor
+noremap <C-s> <C-x>
+nnoremap <C-x> <NOP>
 
 nmap cp :let @* = expand('%:p')<CR>
 
@@ -160,4 +201,14 @@ if has("autocmd")
   augroup END
 endif
 
+let rules = [
+\ { 'filetype': ['typescript', 'typescriptreact'], 'char': '>', 'at': '\s([a-zA-Z, ]*\%#)',            'input': '<Left><C-o>f)<Right>a=> {}<Esc>',                 },
+\ { 'filetype': ['typescript', 'typescriptreact'], 'char': '>', 'at': '\s([a-zA-Z]\+\%#)',             'input': '<Right> => {}<Left>',              'priority': 10 },
+\ { 'filetype': ['typescript', 'typescriptreact'], 'char': '>', 'at': '[a-z]((.*\%#.*))',              'input': '<Left><C-o>f)a => {}<Esc>',                       },
+\ { 'filetype': ['typescript', 'typescriptreact'], 'char': '>', 'at': '[a-z]([a-zA-Z]\+\%#)',          'input': ' => {}<Left>',                                    },
+\ { 'filetype': ['typescript', 'typescriptreact'], 'char': '>', 'at': '(.*[a-zA-Z]\+<[a-zA-Z]\+>\%#)', 'input': '<Left><C-o>f)<Right>a=> {}<Left>',                },
+\ ]
+for rule in rules
+  call lexima#add_rule(rule)
+endfor
 

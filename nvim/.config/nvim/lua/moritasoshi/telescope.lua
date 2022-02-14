@@ -38,6 +38,12 @@ require('telescope').setup{
     }
 }
 
+vim.api.nvim_set_keymap("n", "<C-p>", [[<CMD>lua require('moritasoshi.telescope').project_files()<CR>]], {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>ff", [[<CMD>Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>]], {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>fg", [[<CMD>Telescope live_grep<CR>]], {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>fb", [[<CMD>Telescope buffers<CR>]], {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "<leader>fh", [[<CMD>Telescope help_tags<CR>]], {noremap = true, silent = true})
+
 local M = {}
 M.project_files = function()
   local opts = {} -- define here if you want to define something

@@ -1,5 +1,8 @@
 local lspconfig = require('lspconfig')
 
+vim.g.diagnostic_enable_virtual_text = 1
+vim.g.diagnostic_virtual_text_prefix = ' '
+
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
