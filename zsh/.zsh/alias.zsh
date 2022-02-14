@@ -1,10 +1,10 @@
 # aliases
 
 ## ls
-alias ls='ls -G'
-alias l='ls -lh'
+alias ls='lsd'
+alias l='ls -l'
 alias la='ls -a'
-alias ll='ls -lha'
+alias ll='ls -la'
 alias lt='ls --tree'
 
 ## 1 letter aliases
@@ -26,7 +26,6 @@ alias tm='tmux'
 alias tmn='tmux new -s'
 
 ## edit dotfiles
-alias cocsetting='vim ~/.config/nvim/coc-settings.json'
 alias tmuxconf='vim ~/.tmux.conf'
 alias vimrc='vim ~/.config/nvim/init.vim'
 alias zshrc='vim ~/.zshrc'

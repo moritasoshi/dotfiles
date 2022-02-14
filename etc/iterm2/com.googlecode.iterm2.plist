@@ -1380,13 +1380,13 @@
 				<key>Alpha Component</key>
 				<real>1</real>
 				<key>Blue Component</key>
-				<real>0.33885642091809132</real>
+				<real>0.40000000000000002</real>
 				<key>Color Space</key>
 				<string>sRGB</string>
 				<key>Green Component</key>
-				<real>0.82293701171875</real>
+				<real>0.76078431372549016</real>
 				<key>Red Component</key>
-				<real>0.52372533306651181</real>
+				<real>0.47450980392156861</real>
 			</dict>
 			<key>Ansi 3 Color</key>
 			<dict>
@@ -2130,7 +2130,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewPreferredModeKey</key>
-	<integer>2</integer>
+	<integer>3</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
 	<true/>
 </dict>
