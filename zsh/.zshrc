@@ -5,9 +5,11 @@ for file in $(echo $ZSH_FILES | sed "s/,/ /g"); do
   source $HOME/.zsh/$file.zsh
 done
 
+export LANG="en_US.UTF-8"
 # editorはvimを使う
 export EDITOR=nvim
 export VISUAL=$EDITOR
+export DOTPATH=~/src/dotfiles
 
 # 重いので使う時だけ
 # source ${SCRIPT_DIR}/jenv.zsh
