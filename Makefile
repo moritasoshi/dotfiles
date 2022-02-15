@@ -1,11 +1,11 @@
-deploy: 
+deploy:
 	bash deploy.sh
 
-install: 
+install:
 	bash install.sh
 	bash deploy.sh
 
-export: 
+export:
 	bash export.sh
 
 check:

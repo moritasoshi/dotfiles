@@ -1,11 +1,32 @@
-local lspconfig = require('lspconfig')
+local M = {}
 
-vim.g.diagnostic_enable_virtual_text = 1
-vim.g.diagnostic_virtual_text_prefix = ' '
+-----------------------------
+-- Setup
+-----------------------------
+M.setup = function ()
+  -- Disable diagnostic sign
+  local signs = {
+    { name = "DiagnosticSignError" },
+    { name = "DiagnosticSignWarn" },
+    { name = "DiagnosticSignHint" },
+    { name = "DiagnosticSignInfo" },
+  }
+  for _, sign in ipairs(signs) do
+    vim.fn.sign_define(sign.name, { texthl = sign.name, text = "", numhl = "" })
+  end
+
+  --vim.lsp.set_log_level("trace")
+  vim.g.diagnostic_enable_virtual_text = 1
+  vim.g.diagnostic_virtual_text_prefix = ' '
+end
+
+-----------------------------
+-- Exports
+-----------------------------
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
+M.on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -52,51 +73,10 @@ local on_attach = function(client, bufnr)
 
 end
 
+
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 capabilities.textDocument.completion.completionItem.snippetSupport = true;
 
--- LSPs
-local lsps = { "jdtls", "jsonls", "grammarly","sumneko_lua", "vimls" }
+M.capabilities = capabilities
 
-lspconfig.tsserver.setup { on_attach = on_attach, capabilities = capabilities, filetypes = { "typescript", "typescriptreact", "typescript.tsx" } }
-lspconfig.jsonls.setup { on_attach = on_attach, capabilities = capabilities }
-lspconfig.vimls.setup { on_attach = on_attach, capabilities = capabilities }
-
-lspconfig.sumneko_lua.setup(
-  require("lua-dev").setup({
-    library = {
-      plugins = true
-    },
-    lspconfig = {
-      on_attach = on_attach,
-      capabilities = capabilities,
-      settings = {
-        Lua = {
-          diagnostics = {
-            -- Get the language server to recognize the `vim` global
-            globals = {'vim'},
-          },
-          workspace = {
-            library = vim.api.nvim_get_runtime_file("", true),
-          },
-          telemetry = {
-            enable = false,
-          },
-        },
-      },
-    }
-  })
-)
-
--- Disable diagnostic sign
-local signs = {
-	{ name = "DiagnosticSignError" },
-	{ name = "DiagnosticSignWarn" },
-	{ name = "DiagnosticSignHint" },
-	{ name = "DiagnosticSignInfo" },
-}
-for _, sign in ipairs(signs) do
-	vim.fn.sign_define(sign.name, { texthl = sign.name, text = "", numhl = "" })
-end
-
---vim.lsp.set_log_level("trace")
+return M

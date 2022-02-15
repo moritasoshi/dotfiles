@@ -16,7 +16,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'nvim-lualine/lualine.nvim'
   Plug 'cohama/lexima.vim'
   Plug 'preservim/nerdtree'
-  Plug 'tpope/vim-commentary'
   Plug 'ryanoasis/vim-devicons'
   Plug 'tpope/vim-surround'
   Plug 'kyazdani42/nvim-web-devicons'
@@ -34,6 +33,11 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'norcalli/nvim-colorizer.lua'
   Plug 'jghauser/mkdir.nvim'
   Plug 'goolord/alpha-nvim'
+  Plug 'lewis6991/impatient.nvim'
+  Plug 'lukas-reineke/indent-blankline.nvim'
+  Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+  Plug 'numToStr/Comment.nvim'
+  Plug 'dstein64/vim-startuptime'
 
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -46,6 +50,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " LSP
   Plug 'neovim/nvim-lspconfig'
+  Plug 'williamboman/nvim-lsp-installer'
   Plug 'jose-elias-alvarez/null-ls.nvim'
   Plug 'nvim-lua/lsp-status.nvim'
   Plug 'mfussenegger/nvim-jdtls'
@@ -79,16 +84,9 @@ call plug#end()
 
 source ~/.config/nvim/config.vim
 lua require('moritasoshi')
+lua require('mkdir')
 
-" lua << EOF
-" local nullls = require "null-ls"
-" nullls.setup {
-"   sources = {
-"     nullls.builtins.formatting.prettier,
-"   },
-" }
-" EOF
-
+noremap <leader>a :Alpha<CR>
 
 """ bullets.vim -------------------------
 let g:bullets_outline_levels = ['std-']
