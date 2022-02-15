@@ -1,5 +1,5 @@
 deploy:
-	bash deploy.sh
+	bash ~/src/dotfiles/deploy.sh
 
 install:
 	bash install.sh
