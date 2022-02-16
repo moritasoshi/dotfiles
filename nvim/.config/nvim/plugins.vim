@@ -40,7 +40,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Git
   Plug 'lewis6991/gitsigns.nvim'
-  Plug 'tpope/vim-fugitive'
+  Plug 'TimUntersberger/neogit'
 
 " LSP
   Plug 'neovim/nvim-lspconfig'
