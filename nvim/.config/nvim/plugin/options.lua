@@ -2,6 +2,10 @@
 local command = vim.cmd
 local opt = vim.opt
 
+-- vim.opt.termguicolors = true
+-- vim.g.gruvbox_material_palette = 'mix'
+-- vim.g.gruvbox_material_background = 'hard'
+-- command [[colorscheme gruvbox-material]]
 command [[colorscheme darcula]]
 command [[syntax on]]
 
