@@ -1,9 +1,9 @@
 
-local cmd = vim.cmd
+local command = vim.cmd
 local opt = vim.opt
 
-cmd("colorscheme darcula")
-cmd("syntax on")
+command [[colorscheme darcula]]
+command [[syntax on]]
 
 -- autocmd ColorScheme * highlight Normal ctermbg = black
 -- colorscheme gruvbox
@@ -14,7 +14,7 @@ opt.fileencodings = "utf-8,sjis,euc-jp,latin"
 
 opt.virtualedit = "block"
 opt.backspace = "indent,eol,start"
-opt.ambiwidth = "single" -- 曖昧文字の設定(doubleに設定するとpowerline,telescopeの罫線がバグるので注意!!!)
+opt.ambiwidth = "single" -- Do not set "double"
 opt.wildmenu = true
 opt.title = true
 opt.whichwrap = "b,s,h,l,<,>,[,],~"
@@ -59,7 +59,7 @@ opt.belloff = "all" -- Just turn the dang bell off
 
 opt.clipboard = "unnamedplus"
 
-opt.inccommand = "split"
+opt.inccommand = "split" -- Interractive for substitute
 opt.swapfile = false -- Living on the edge
 opt.shada = { "!", "'1000", "<50", "s10", "h" }
 

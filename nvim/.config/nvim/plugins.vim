@@ -1,5 +1,15 @@
+""" Install vim-plug  -----------------------
+"if empty(glob("${XDG_DATA_HOME:-$HOME/.local/share}"))
+"  silent !sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+"         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+"  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+"endif
+
+
 """ Plugins  -------------------------------
 call plug#begin('~/.local/share/nvim/plugged')
+  Plug 'nvim-lua/plenary.nvim'
+
   Plug 'dkarter/bullets.vim'
   Plug 'cohama/lexima.vim'
   Plug 'tpope/vim-surround'
@@ -8,6 +18,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'junegunn/vim-easy-align'
   Plug 'jghauser/mkdir.nvim'
   Plug 'tpope/vim-abolish'
+  Plug 'farmergreg/vim-lastplace' " Memory line
 
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'numToStr/Comment.nvim'
@@ -40,12 +51,12 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " Git
   Plug 'lewis6991/gitsigns.nvim'
+  Plug 'sindrets/diffview.nvim'
   Plug 'TimUntersberger/neogit'
 
 " LSP
   Plug 'neovim/nvim-lspconfig'
   Plug 'williamboman/nvim-lsp-installer'
-  Plug 'tami5/lspsaga.nvim'
   Plug 'jose-elias-alvarez/null-ls.nvim'
   Plug 'nvim-lua/lsp-status.nvim'
   Plug 'folke/lua-dev.nvim'
@@ -61,7 +72,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'rafamadriz/friendly-snippets'
 
 " Telescope
-  Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
 
 " HTTP Client
