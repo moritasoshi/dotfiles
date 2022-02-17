@@ -1,16 +1,17 @@
 
 lua vim.g.mapleader = " "
 
-" For better development
-lua pcall(require, "impatient")
-
 " Disale unusing features
 lua require("moritasoshi.disable_builtin")
 lua require("moritasoshi.globals")
 
+
 " Load plugins
 " wanna change to the Lua based package manager
 source ~/.config/nvim/plugins.vim
+
+" For better development
+lua pcall(require, "impatient")
 
 lua vim.opt.termguicolors = true
 lua require("colorizer").setup()
