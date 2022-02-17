@@ -37,6 +37,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'kyazdani42/nvim-tree.lua', { 'commit': '3f4ed9b6c2598ab8304186486a05ae7a328b8d49' }
   Plug 'ryanoasis/vim-devicons'
   Plug 'kyazdani42/nvim-web-devicons'
+  Plug 'akinsho/bufferline.nvim'
 
 " Zen
   Plug 'folke/zen-mode.nvim'
