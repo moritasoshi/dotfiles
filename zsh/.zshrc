@@ -10,6 +10,9 @@ export LANG="en_US.UTF-8"
 export EDITOR=nvim
 export VISUAL=$EDITOR
 export DOTPATH=~/src/dotfiles
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
 
 # 重いので使う時だけ
 # source ${SCRIPT_DIR}/jenv.zsh

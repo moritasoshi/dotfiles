@@ -7,6 +7,8 @@ configs.setup {
   ensure_installed = {
     "http",
     "json",
+    "json5",
+    "jsonc",
     "vim",
     "lua",
     "markdown"

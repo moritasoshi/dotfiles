@@ -1,11 +1,10 @@
 # aliases
 
 ## ls
-alias ls='lsd'
-alias l='ls -l'
-alias la='ls -a'
-alias ll='ls -la'
-alias lt='ls --tree'
+alias l='lsd -l'
+alias la='lsd -a'
+alias ll='lsd -la'
+alias lt='lsd --tree'
 
 ## 1 letter aliases
 alias c='clear'
@@ -17,7 +16,6 @@ alias calc='BC_ENV_ARGS=<(echo "scale=8") \bc'
 alias date='gdate'
 alias grep='grep --color=auto'
 alias sed='gsed'
-# alias tree='tree -a -I ".git|node_modules"'
 alias tree='lsd -a --tree'
 alias vim='nvim'
 
