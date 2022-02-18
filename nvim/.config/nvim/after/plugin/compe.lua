@@ -2,7 +2,7 @@
 vim.o.completeopt="menuone,noinsert,noselect"
 local cmp = require'cmp'
 
-kind_icons = {
+local kind_icons = {
   Text = "",
   Method = "",
   Function = "",
@@ -61,7 +61,6 @@ cmp.setup({
     { name = 'nvim_lsp' },
     { name='path'},
     { name = 'vsnip' }, -- For vsnip users.
-  }, {
     { name = 'buffer' },
   })
 })
@@ -76,8 +75,7 @@ cmp.setup.cmdline('/', {
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
   sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
+    { name = 'path' },
     { name = 'cmdline' }
   })
 })
