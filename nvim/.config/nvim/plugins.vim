@@ -19,6 +19,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'jghauser/mkdir.nvim'
   Plug 'tpope/vim-abolish'
   Plug 'farmergreg/vim-lastplace' " Memory line
+  Plug 'Pocco81/AutoSave.nvim'
 
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'numToStr/Comment.nvim'
