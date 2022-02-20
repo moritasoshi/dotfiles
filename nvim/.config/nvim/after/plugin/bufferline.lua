@@ -5,7 +5,7 @@ end
 
 bufferline.setup {}
 
-local nmap = require("moritasoshi.keymap").nmap
+local nmap = require("moritasoshi.util.keymap").nmap
 
-nmap { "L", ":BufferLineCycleNext<CR>", {silent = true} }
-nmap { "H", ":BufferLineCyclePrev<CR>", {silent = true} }
+nmap { "L", ":BufferLineCycleNext<CR>" }
+nmap { "H", ":BufferLineCyclePrev<CR>" }
