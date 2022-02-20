@@ -7,6 +7,10 @@ require("zen-mode").setup {
       number = false,
       relativenumber = false,
     },
+    plugins = {
+      gitsigns = false,
+      twilight = true
+    }
   },
 }
 

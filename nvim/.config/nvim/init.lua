@@ -1,24 +1,19 @@
 
 vim.g.mapleader = " "
+vim.opt.termguicolors = true
 
 -- Disale unusing features
 require("moritasoshi.disable_builtin")
 require("moritasoshi.globals")
 
-
 -- Load plugins
--- wanna change to the Lua based package manager
-vim.cmd [[source ~/.config/nvim/plugins.vim]]
+require('moritasoshi.plugins')
 
 -- For better development
 pcall(require, "impatient")
 
-vim.opt.termguicolors = true
-require("colorizer").setup()
-require("mkdir")
-
+-- Set up LSP
 require("moritasoshi.lsp")
-require("moritasoshi.telescope")
 
 -- Commands
 vim.cmd [[
