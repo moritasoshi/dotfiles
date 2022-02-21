@@ -7,6 +7,8 @@ local globals = {
   bullets_checkbox_markers         = ' x',
   bullets_nested_checkboxes        = 1,
   bullets_checkbox_partials_toggle = 1,
+
+  gitblame_enabled = 0
 }
 
 for k, v in pairs(globals) do
