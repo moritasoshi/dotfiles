@@ -1,19 +1,19 @@
 
 local keymap = require("moritasoshi.util.keymap")
-local nmap, xmap = keymap.nmap, keymap.xmap
+local map, nmap, xmap = keymap.map, keymap.nmap, keymap.xmap
 
 nmap({ "<Space>//", ":%s/" })
 nmap({ "<C-e>", ":NvimTreeToggle<CR>"})
-nmap({ "<Leader>a", ":Alpha" })
-nmap({ "<Leader>w", ":w" })
-nmap({ "<Leader>s", ":So" })
-nmap({ "O", ":<C-u>call append(expand('.'), '')<Cr>j" })
+nmap({ "<Leader>a", ":Alpha<CR>" })
+nmap({ "<Leader>w", ":w<CR>" })
+nmap({ "<Leader>s", ":So<CR>" })
+nmap({ "O", ":<C-u>call append(expand('.'), '')<CR>j" })
 nmap({ "<ESC>", ":nohlsearch<CR><ESC>" })
-nmap({ "-", "$" })
+map({ "-", "$" })
 nmap({ "cp", ":let @* = expand('%:p')<CR>" })
 
 -- For <Leader>
-nmap({ "<Space>", "<NOP>" })
+map({ "<Space>", "<NOP>" })
 
 -- Decrement the number on the cursor
 nmap({ "<C-s>", "<C-x>" })

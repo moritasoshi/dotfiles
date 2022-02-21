@@ -28,7 +28,27 @@ local use = packer.use
 packer.reset()
 
 use { "wbthomason/packer.nvim" }
-use { "nvim-lua/plenary.nvim" }
+use { "nvim-lua/plenary.nvim", lock = true } -- I hardcoding for bug fix, So freeze
+-- Details of the bug fix (https://github.com/nvim-lua/plenary.nvim/issues/269)
+-- /Users/morita/.local/share/nvim/site/pack/packer/start/plenary.nvim/lua/plenary/curl.lua
+--   return vim.tbl_flatten {
+--     "-sSL",
+--     opts.dump,
+--     opts.compressed and "--compressed" or '',
+--     parse.method(opts.method) or '',
+--     parse.headers(opts.headers) or '',
+--     parse.accept_header(opts.accept) or '',
+--     parse.raw_body(opts.raw_body) or '',
+--     parse.data_body(opts.data) or '',
+--     parse.form(opts.form) or '',
+--     parse.file(opts.in_file) or '',
+--     parse.auth(opts.auth) or '',
+--     opts.raw or '',
+--     opts.output and { "-o", opts.output } or '',
+--     parse.url(opts.url, opts.query) or '',
+--   }, opts
+
+
 use { "dkarter/bullets.vim" }
 use { "tpope/vim-abolish" }
 use { "tpope/vim-repeat" }
@@ -71,6 +91,7 @@ use { "karb94/neoscroll.nvim",
 
 -- Format
 use { "mhartington/formatter.nvim",
+  cmd = { "Format", "FormatWrite" },
   event = "BufWritePre",
   config = get_config("formatter")
 }
@@ -99,6 +120,7 @@ use { "christoomey/vim-tmux-navigator" }
 use { "lewis6991/gitsigns.nvim" }
 use { "sindrets/diffview.nvim" }
 use { "TimUntersberger/neogit" }
+use { "f-person/git-blame.nvim" }
 
 -- LSP
 use { "neovim/nvim-lspconfig" }

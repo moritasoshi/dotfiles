@@ -1,12 +1,12 @@
 
 -- autocmd BufWritePre * undojoin | FormatWrite
 -- autocmd for terraform is in ../../ftplugin/tf.lua
-vim.api.nvim_exec([[
-augroup FormatAutogroup
-  autocmd!
-  autocmd BufWritePost *.md,*.lua,*.yaml,*.yml,*.go,*.py,*.json FormatWrite
-augroup END
-]], true)
+-- vim.api.nvim_exec([[
+-- augroup FormatAutogroup
+--   autocmd!
+--   autocmd BufWritePost *.md,*.yaml,*.yml,*.json FormatWrite
+-- augroup END
+-- ]], true)
 
 require("formatter").setup({
     filetype = {
