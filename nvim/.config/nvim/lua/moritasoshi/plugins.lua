@@ -54,7 +54,6 @@ use { "tpope/vim-abolish" }
 use { "tpope/vim-repeat" }
 use { "tpope/vim-speeddating" }
 use { "tpope/vim-surround" }
-use { "junegunn/vim-easy-align" }
 use { "farmergreg/vim-lastplace" } -- Memory line
 use { "Pocco81/AutoSave.nvim" }
 use { "lukas-reineke/indent-blankline.nvim" }
@@ -66,6 +65,11 @@ use { "editorconfig/editorconfig-vim" }
 use { "lewis6991/impatient.nvim" }
 use { "dstein64/vim-startuptime" }
 use { "ggandor/lightspeed.nvim", event = "BufReadPre"}
+
+-- TEXT MANIPULATION
+use { "godlygeek/tabular" } -- Quickly align text by pattern
+
+
 use { "jghauser/mkdir.nvim",
   config = function () require("mkdir") end
 }
@@ -121,6 +125,7 @@ use { "lewis6991/gitsigns.nvim" }
 use { "sindrets/diffview.nvim" }
 use { "TimUntersberger/neogit" }
 use { "f-person/git-blame.nvim" }
+use { "rhysd/committia.vim" }
 
 -- LSP
 use { "neovim/nvim-lspconfig" }
@@ -157,5 +162,6 @@ use { "folke/twilight.nvim" }
 use { "doums/darcula" }
 use { "morhetz/gruvbox" }
 use { "sainnhe/gruvbox-material" }
+use { 'EdenEast/nightfox.nvim' }
 
 

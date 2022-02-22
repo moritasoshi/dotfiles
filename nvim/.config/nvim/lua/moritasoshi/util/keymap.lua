@@ -1,28 +1,24 @@
 local M = {}
 
-local default_options = { noremap = true, silent = true }
 local keymap = function (mode, lhs, rhs, opts)
-  vim.keymap.set(mode, lhs, rhs, opts)
+  local options = opts or { noremap = true, silent = true }
+  vim.keymap.set(mode, lhs, rhs, options)
 end
 
 M.map = function(tbl)
-  local opts = tbl[3] or default_options
-  keymap("", tbl[1], tbl[2], opts)
+  keymap("", tbl[1], tbl[2], tbl[3])
 end
 
 M.nmap = function(tbl)
-  local opts = tbl[3] or default_options
-  keymap("n", tbl[1], tbl[2], opts)
+  keymap("n", tbl[1], tbl[2], tbl[3])
 end
 
 M.imap = function(tbl)
-  local opts = tbl[3] or default_options
-  keymap("i", tbl[1], tbl[2], opts)
+  keymap("i", tbl[1], tbl[2], tbl[3])
 end
 
 M.xmap = function(tbl)
-  local opts = tbl[3] or default_options
-  keymap("x", tbl[1], tbl[2], opts)
+  keymap("x", tbl[1], tbl[2], tbl[3])
 end
 
 

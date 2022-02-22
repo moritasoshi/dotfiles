@@ -195,7 +195,7 @@ local buttons = {
     dashboard.button("n", "  Narrow Find file", ":Telescope find_files<CR>"),
     { type = "padding", val = 1 },
     dashboard.button("c", "  Create file", ":ene <BAR> startinsert <CR>"),
-    dashboard.button("u", "  Update plugins" , ":PlugUpdate<CR>"),
+    dashboard.button("u", "  Update plugins" , ":PackerSync<CR>"),
     dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
     -- dashboard.button("p", "  Find project", ":Telescope projects <CR>"),
     -- dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.vim<CR>"),
