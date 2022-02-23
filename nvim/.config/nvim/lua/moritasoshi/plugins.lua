@@ -66,22 +66,15 @@ use { "lewis6991/impatient.nvim" }
 use { "dstein64/vim-startuptime" }
 use { "ggandor/lightspeed.nvim", event = "BufReadPre"}
 
--- TEXT MANIPULATION
+-- === TEXT MANIPULATION ===
 use { "godlygeek/tabular" } -- Quickly align text by pattern
 
 
-use { "jghauser/mkdir.nvim",
-  config = function () require("mkdir") end
-}
-use { "ThePrimeagen/harpoon",
-  config = get_config("harpoon")
-}
-use {"windwp/nvim-autopairs",
-  config = get_config("autopairs")
-}
-use { "norcalli/nvim-colorizer.lua",
-  config = function () require("colorizer").setup() end
-}
+use { "jghauser/mkdir.nvim", config = function () require("mkdir") end }
+use { "ThePrimeagen/harpoon", config = get_config("harpoon") }
+use {"windwp/nvim-autopairs", config = get_config("autopairs") }
+use { "norcalli/nvim-colorizer.lua", config = function () require("colorizer").setup() end }
+
 use { "akinsho/nvim-toggleterm.lua",
   keys = {"<C-y>", "<leader>fl", "<leader>gt"},
   config = get_config("toggleterm")
@@ -92,18 +85,18 @@ use { "karb94/neoscroll.nvim",
   config = get_config("neoscroll")
 }
 
-
--- Format
+-- === Format ===
 use { "mhartington/formatter.nvim",
   cmd = { "Format", "FormatWrite" },
   event = "BufWritePre",
   config = get_config("formatter")
 }
 
--- Fancy
+-- === UI & Interface ===
 use { "goolord/alpha-nvim" }
 use { "nvim-lualine/lualine.nvim" }
 use { "kyazdani42/nvim-tree.lua",
+  cmd = { "NvimTreeToggle" },
   commit = "3f4ed9b6c2598ab8304186486a05ae7a328b8d49",
   config = function () require('nvim-tree').setup() end
 }
@@ -111,31 +104,39 @@ use { "ryanoasis/vim-devicons" }
 use { "kyazdani42/nvim-web-devicons" }
 use { "akinsho/bufferline.nvim" }
 
--- Treesitter
+-- === Treesitter ===
 use { "nvim-treesitter/nvim-treesitter" }
 use { "lewis6991/spellsitter.nvim",
   config = function () require('spellsitter').setup() end
 }
 
--- Tmux
+-- === Tmux ===
 use { "christoomey/vim-tmux-navigator" }
 
--- Git
+-- === Git ===
 use { "lewis6991/gitsigns.nvim" }
 use { "sindrets/diffview.nvim" }
-use { "TimUntersberger/neogit" }
+use { "TimUntersberger/neogit",
+  cmd = { "Neogit" },
+  config = get_config("neogit")
+}
 use { "f-person/git-blame.nvim" }
 use { "rhysd/committia.vim" }
 
--- LSP
+-- === LSP ===
 use { "neovim/nvim-lspconfig" }
 use { "williamboman/nvim-lsp-installer" }
 use { "jose-elias-alvarez/null-ls.nvim" }
 use { "nvim-lua/lsp-status.nvim" }
 use { "folke/lua-dev.nvim" }
 use { "ray-x/lsp_signature.nvim" }
+use { "folke/trouble.nvim",
+  cmd = { "Trouble" },
+  -- keys = { "<leader>xx" },
+  config = get_config("trouble")
+}
 
--- Compe
+-- === Compe ===
 use { "hrsh7th/nvim-cmp" }
 use { "hrsh7th/cmp-nvim-lsp" }
 use { "hrsh7th/cmp-buffer" }
@@ -146,22 +147,37 @@ use { 'saadparwaiz1/cmp_luasnip' }
 use { "rafamadriz/friendly-snippets" }
 use { "onsails/lspkind-nvim" }
 
--- Telescope
+-- === Telescope ===
 use { "nvim-telescope/telescope.nvim", config = get_config("telescope") }
 
--- HTTP Client
+-- === HTTP Client ===
 use { "NTBBloodbath/rest.nvim" }
 
--- Markdown
+-- === Markdown ===
 
--- Zen
-use { "folke/zen-mode.nvim" }
-use { "folke/twilight.nvim" }
+-- === Zen
+use { "folke/zen-mode.nvim",
+  as = "zen",
+  cmd = "ZenMode",
+  config = get_config("zen")
+}
+use { "folke/twilight.nvim",
+  after = "zen",
+  config = get_config("twilight")
+}
 
--- Theme
-use { "doums/darcula" }
-use { "morhetz/gruvbox" }
+-- === Neorg ===
+use {
+    "nvim-neorg/neorg",
+    ft = "norg",
+    after = "nvim-treesitter", -- You may want to specify Telescope here as well
+    config = function()
+        require('neorg').setup {
+        }
+    end
+}
+-- === Theme ===
+-- use { "doums/darcula" }
 use { "sainnhe/gruvbox-material" }
-use { 'EdenEast/nightfox.nvim' }
 
 
