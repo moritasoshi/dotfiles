@@ -41,6 +41,16 @@ function peco-src() {
 zle -N peco-src
 bindkey '^S' peco-src
 
+# easiest way to connect remote servers
+peco-ssh() {
+  local selected_host=$(cat ~/.ssh/config | grep -oE "^Host \w.*" | cut -d" " -f2 | peco --query "$LBUFFER")
+  if [ -n "$selected_host" ]; then
+    BUFFER="ssh ${selected_host}"
+  fi
+}
+zle -N peco-ssh
+bindkey '^E' peco-ssh
+
 bindkey '^o' clear-screen
 
 ## ヒストリを保存するファイル
