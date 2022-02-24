@@ -121,14 +121,37 @@ local function mru(start, cwd, items_number, opts)
     }
 end
 
+-- local cool = {
+--   [[                               __                ]],
+--   [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
+--   [[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
+--   [[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
+--   [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
+--   [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
+-- }
+
 local cool = {
-  [[                               __                ]],
-  [[  ___     ___    ___   __  __ /\_\    ___ ___    ]],
-  [[ / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\  ]],
-  [[/\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \ ]],
-  [[\ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
-  [[ \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
+[[                         ..',;:::::::;;,..                              ]],
+[[                    .':lxO0KKK00OOkkxxxddl;.                            ]],
+[[                 .;dOXNNNXXKK0OOkkxxxxdddoo;                            ]],
+[[                .dNWWNNXXKK0kxdolc::::::c:;.                            ]],
+[[                :XWNNXKOxlc;,,,'''........                              ]],
+[[                'coooc:;,;ldxkkkkkxxxxdolc;,'....                       ]],
+[[               .'.    .cOXNNXXXKK000000OOkkxddolc;,'.                   ]],
+[[               .'.    :XWNNXKKXNXKKKKK00OOkkkxddooolc;.                 ]],
+[[               .,.   'OMWN0c;dXNXXKKKK0kdddxxkxddooollc.                ]],
+[[               .,.  .oWWNX0doOXNXXK00Okd:',lxxxxdooolll;.               ]],
+[[  .....        .'.  ,0MWXXKKKKNNXK00Okxdoccoddddddoolll;.               ]],
+[[ ..............    .oWMWNXKKXXXXXK0OOkkkO0Okdooooooooll;.               ]],
+[[ '''',:loxkkkkdl:...xMWNXXK00OOOOOOkkkOKKK0Okddooooooll;.               ]],
+[[ ,,cx0KXKK0OOOO00kc'dNNXXKK0Od;..',;:lk0KKK0kxddoooooll,                ]],
+[[ ckNNXXXKKKKKXK000klo0XKKKKKKK0xlcclox00KK0Okxddddoool:.                ]],
+[[ KWWNNXXNWWNXNNX000OkxkOO00000KK00OOOOO000Okxxddddoooc' ..,;:::;,'.     ]],
+[[ WMMWWNNWWWNXKKK0OOOkxdddxxxxkOOOOOOkkkkOOkkxddddoolc;.':odxxxxxxdl;'.  ]],
+[[ WMWWNNXKK0OkxxkO0OkxxxxxxxxxkkkkkkkkkkkxxxddddooooolllloxOO00OOkxddoc' ]],
+[[ NWNNNNX0OkkkxxxxxkOOOOOOOO000000000O0OOOOkkkxxxxxxxddoodOKK0000Okxddol ]]
 }
+
 
 local headers = {cool}
 

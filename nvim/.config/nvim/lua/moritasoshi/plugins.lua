@@ -115,7 +115,12 @@ use { "christoomey/vim-tmux-navigator" }
 
 -- === Git ===
 use { "lewis6991/gitsigns.nvim" }
-use { "sindrets/diffview.nvim" }
+use {
+  "sindrets/diffview.nvim",
+  after = { "neogit" },
+  cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles" },
+  config = get_config("diffview")
+}
 use { "TimUntersberger/neogit",
   cmd = { "Neogit" },
   config = get_config("neogit")
