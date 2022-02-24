@@ -1,31 +1,21 @@
 
 vim.g.mapleader = " "
+vim.opt.termguicolors = true
+
+-- For better development
+require("impatient")
 
 -- Disale unusing features
 require("moritasoshi.disable_builtin")
 require("moritasoshi.globals")
 
-
 -- Load plugins
--- wanna change to the Lua based package manager
-vim.cmd [[source ~/.config/nvim/plugins.vim]]
+require('moritasoshi.plugins')
 
--- For better development
-pcall(require, "impatient")
-
-vim.opt.termguicolors = true
-require("colorizer").setup()
-require("mkdir")
-
+-- Set up LSP
 require("moritasoshi.lsp")
-require("moritasoshi.telescope")
 
--- Commands
-vim.cmd [[
-command! -nargs=0 Hankaku   :%s/０/0/ge|%s/１/1/ge|%s/２/2/ge|%s/３/3/ge|%s/４/4/ge|%s/５/5/ge|%s/６/6/ge|%s/７/7/ge|%s/８/8/ge|%s/９/9/ge
-command! -nargs=0 ToCamel   :s#_\(\l\)#\u\1#g
-command! -nargs=0 ToUpCamel :1,$s/_\([a-z]\)/\u\1/g
-command! -nargs=0 ToSnake   :%s#\C\(\<\u[a-z0-9]\+\|[a-z0-9]\+\)\(\u\)#\l\1_\l\2#g
-command! -nargs=0 So        :so ~/.config/nvim/init.lua
-]]
-
+-- Commands nd Keymaps
+require("moritasoshi.commands")
+require("moritasoshi.keymaps")
+require("moritasoshi.options")

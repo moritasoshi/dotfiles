@@ -2,16 +2,15 @@
 local command = vim.cmd
 local opt = vim.opt
 
--- vim.opt.termguicolors = true
--- vim.g.gruvbox_material_palette = 'mix'
--- vim.g.gruvbox_material_background = 'hard'
--- command [[colorscheme gruvbox-material]]
-command [[colorscheme darcula]]
-command [[syntax on]]
 
--- autocmd ColorScheme * highlight Normal ctermbg = black
--- colorscheme gruvbox
+vim.opt.termguicolors = true
+vim.g.gruvbox_material_palette = 'mix' -- material, mix, original
+vim.g.gruvbox_material_background = 'hard'  -- soft. medium, hard
+vim.g.gruvbox_material_enable_italic = 1
+command [[colorscheme gruvbox-material]]
+-- command [[colorscheme darcula]]
 
+opt.syntax = "on"
 
 opt.encoding = "utf-8"
 opt.fileencodings = "utf-8,sjis,euc-jp,latin"

@@ -7,10 +7,10 @@ require("zen-mode").setup {
       number = false,
       relativenumber = false,
     },
+    plugins = {
+      gitsigns = false,
+      twilight = true
+    }
   },
 }
 
-require("twilight").setup {
-  context = -1,
-  treesitter = false,
-}

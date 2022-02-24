@@ -16,8 +16,8 @@ require("rest-nvim").setup({
 -- keymaps
 local map = vim.api.nvim_buf_set_keymap
 local opts = {silent = true, noremap = true}
-map(0, "n", "rr", [[<cmd>lua require('moritasoshi.rest-nvim').do_rest()<cr>]], opts)
-map(0, "n", "rp", [[<cmd>lua require('moritasoshi.rest-nvim').view_rest()<cr>]], opts)
+map(0, "n", "rr", [[<cmd>lua require('moritasoshi.config.rest-nvim').do_rest()<cr>]], opts)
+map(0, "n", "rp", [[<cmd>lua require('moritasoshi.config.rest-nvim').view_rest()<cr>]], opts)
 
 
 -- functions
