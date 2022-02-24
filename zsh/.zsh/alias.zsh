@@ -35,6 +35,9 @@ alias zshfunc='vim ~/.zsh/functions.zsh'
 alias sz='source ~/.zshrc'
 alias st='tmux source ~/.tmux.conf'
 
+alias dot='cd ~/src/dotfiles/'
+alias dotfiles='dot'
+
 ## ?
 alias memo='cd ~/memo'
 
