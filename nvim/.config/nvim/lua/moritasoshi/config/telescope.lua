@@ -2,47 +2,47 @@
 local actions = require('telescope.actions')
 local builtin = require('telescope.builtin')
 require('telescope').setup{
-    defaults = {
-        vimgrep_arguments = {
-            'rg',
-            '--color=never',
-            '--no-heading',
-            '--with-filename',
-            '--line-number',
-            '--column',
-            '--smart-case',
-            '--ignore',
-            '--hidden'
-        },
-        file_ignore_patterns = {
-            ".git/",
-            "node_modules/"
-        },
-        prompt_prefix = " 🔭 ",
-        mappings = {
-            i = {
-                ["<C-k>"] = actions.move_selection_previous,
-                ["<C-j>"] = actions.move_selection_next,
-                ["<esc>"] = actions.close
-            }
-        },
-        color_devicons = true
+  defaults = {
+    vimgrep_arguments = {
+      'rg', '--color=never', '--no-heading', '--with-filename', '--line-number', '--column', '--smart-case', '--ignore', '--hidden'
     },
-    pickers = {
-        lsp_code_actions = {
-            theme = "cursor"
-        },
-        lsp_workspace_diagnostics = {
-            theme = "dropdown"
-        }
-    }
+    file_ignore_patterns = {
+      ".git/",
+      "node_modules/"
+    },
+    prompt_prefix = " 🔭 ",
+    mappings = {
+      i = {
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-j>"] = actions.move_selection_next,
+        ["<esc>"] = actions.close
+      }
+    },
+    color_devicons = true
+  },
+  pickers = {
+    lsp_code_actions = {
+      theme = "cursor"
+    },
+    lsp_workspace_diagnostics = {
+      theme = "dropdown"
+    },
+    find_files = {
+      find_command = { "fd", "--type", "f", "--strip-cwd-prefix" }
+    },
+  }
 }
 
-vim.api.nvim_set_keymap("n", "<C-p>", [[<CMD>lua require('moritasoshi.config.telescope').project_files()<CR>]], {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<leader>ff", [[<CMD>Telescope find_files find_command=rg,--ignore,--hidden,--files<CR>]], {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<leader>fg", [[<CMD>Telescope live_grep<CR>]], {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<leader>fb", [[<CMD>Telescope buffers<CR>]], {noremap = true, silent = true})
-vim.api.nvim_set_keymap("n", "<leader>fh", [[<CMD>Telescope help_tags<CR>]], {noremap = true, silent = true})
+require('telescope').load_extension('fzf')
+
+local nmap = require("moritasoshi.util.keymap").nmap
+local builtin_prefix = [[<cmd>lua require("telescope.builtin").]]
+
+nmap { "<C-p>"     , "<cmd>lua require('moritasoshi.config.telescope').project_files()<cr>" }
+nmap { "<leader>ff", builtin_prefix .. "find_files()<ur>"                                   }
+nmap { "<leader>fg", builtin_prefix .. "live_grep()<cr>"                                    }
+nmap { "<leader>fb", builtin_prefix .. "buffers()<cr>"                                      }
+nmap { "<leader>fh", builtin_prefix .. "help_tags()<cr>"                                    }
 
 local M = {}
 M.project_files = function()
@@ -52,8 +52,3 @@ M.project_files = function()
 end
 return M
 
--- call via:
--- :lua require"moritasoshi.telescope".project_files()
-
--- example keymap:
--- vim.api.nvim_set_keymap("n", "<Leader><Space>", "<CMD>lua require'telescope-config'.project_files()<CR>", {noremap = true, silent = true})

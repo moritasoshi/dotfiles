@@ -66,7 +66,7 @@ use { "lewis6991/impatient.nvim" }
 use { "dstein64/vim-startuptime" }
 use { "ggandor/lightspeed.nvim", event = "BufReadPre"}
 
--- === TEXT MANIPULATION ===
+-- TEXT MANIPULATION
 use { "godlygeek/tabular" } -- Quickly align text by pattern
 
 
@@ -85,14 +85,15 @@ use { "karb94/neoscroll.nvim",
   config = get_config("neoscroll")
 }
 
--- === Format ===
+-- Format
 use { "mhartington/formatter.nvim",
   cmd = { "Format", "FormatWrite" },
+  enable = false,
   event = "BufWritePre",
   config = get_config("formatter")
 }
 
--- === UI & Interface ===
+-- UI & Interface
 use { "goolord/alpha-nvim" }
 use { "nvim-lualine/lualine.nvim" }
 use { "kyazdani42/nvim-tree.lua",
@@ -104,16 +105,16 @@ use { "ryanoasis/vim-devicons" }
 use { "kyazdani42/nvim-web-devicons" }
 use { "akinsho/bufferline.nvim" }
 
--- === Treesitter ===
+-- Treesitter
 use { "nvim-treesitter/nvim-treesitter" }
 use { "lewis6991/spellsitter.nvim",
   config = function () require('spellsitter').setup() end
 }
 
--- === Tmux ===
+-- Tmux
 use { "christoomey/vim-tmux-navigator" }
 
--- === Git ===
+-- Git
 use { "lewis6991/gitsigns.nvim" }
 use {
   "sindrets/diffview.nvim",
@@ -128,7 +129,7 @@ use { "TimUntersberger/neogit",
 use { "f-person/git-blame.nvim" }
 use { "rhysd/committia.vim" }
 
--- === LSP ===
+-- LSP
 use { "neovim/nvim-lspconfig" }
 use { "williamboman/nvim-lsp-installer" }
 use { "jose-elias-alvarez/null-ls.nvim" }
@@ -141,7 +142,7 @@ use { "folke/trouble.nvim",
   config = get_config("trouble")
 }
 
--- === Compe ===
+-- Compe
 use { "hrsh7th/nvim-cmp" }
 use { "hrsh7th/cmp-nvim-lsp" }
 use { "hrsh7th/cmp-buffer" }
@@ -152,15 +153,16 @@ use { 'saadparwaiz1/cmp_luasnip' }
 use { "rafamadriz/friendly-snippets" }
 use { "onsails/lspkind-nvim" }
 
--- === Telescope ===
+-- Telescope
 use { "nvim-telescope/telescope.nvim", config = get_config("telescope") }
+use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
 
--- === HTTP Client ===
+-- HTTP Client
 use { "NTBBloodbath/rest.nvim" }
 
--- === Markdown ===
+-- Markdown
 
--- === Zen
+-- Zen
 use { "folke/zen-mode.nvim",
   as = "zen",
   cmd = "ZenMode",
@@ -171,7 +173,7 @@ use { "folke/twilight.nvim",
   config = get_config("twilight")
 }
 
--- === Neorg ===
+-- Neorg
 use {
     "nvim-neorg/neorg",
     ft = "norg",
@@ -181,7 +183,11 @@ use {
         }
     end
 }
--- === Theme ===
+
+-- SchemaStore
+use { "b0o/schemastore.nvim" }
+
+-- Theme
 -- use { "doums/darcula" }
 use { "sainnhe/gruvbox-material" }
 
