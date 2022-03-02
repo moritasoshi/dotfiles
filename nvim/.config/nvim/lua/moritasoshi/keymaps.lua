@@ -15,7 +15,7 @@ nmap { "<Leader>s", ":so %<CR>" }
 nmap { "O", ":<C-u>call append(expand('.'), '')<CR>j" }
 nmap { "<ESC>", ":nohlsearch<CR><ESC>" }
 map  { "-", "$" }
-nmap { "cp", ":let @* = expand('%:p')<CR>" }
+nmap { "gy", ":let @* = expand('%:p') | lua print('Copied ' .. vim.fn.expand('%:p') .. ' to system clipboard!')<CR>" }
 
 -- For <Leader>
 map { "<Space>", "<NOP>" }

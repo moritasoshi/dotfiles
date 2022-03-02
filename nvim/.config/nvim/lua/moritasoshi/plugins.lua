@@ -47,7 +47,7 @@ use { "nvim-lua/plenary.nvim", lock = true } -- I hardcoding for bug fix, So fre
 --     opts.output and { "-o", opts.output } or '',
 --     parse.url(opts.url, opts.query) or '',
 --   }, opts
-
+use { "rcarriga/nvim-notify", config = function () vim.notify = require("notify") end }
 
 use { "dkarter/bullets.vim" }
 use { "tpope/vim-abolish" }
