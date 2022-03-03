@@ -4,10 +4,10 @@ local map, nmap, xmap = keymap.map, keymap.nmap, keymap.xmap
 
 nmap { "<Space>//", ":%s/" }
 
-nmap { "<C-e>", ":NvimTreeToggle<CR>" }
+nmap { "<C-e>",     ":NvimTreeToggle<CR>" }
 nmap { "<Leader>a", ":Alpha<CR>" }
 nmap { "<Leader>g", ":Neogit<CR>" }
-nmap { "<leader>xx", "<cmd>Trouble<cr>" }
+nmap { "<leader>xx","<cmd>Trouble<cr>" }
 
 
 nmap { "<Leader>w", ":w<CR>" }
@@ -29,3 +29,6 @@ xmap { "ga", "<Plug>(EasyAlign)" }
 
 xmap { "p", "pgvy" }
 
+-- Tabular
+nmap{ "<leader>t", ":Tab /" }
+xmap{ "<leader>t", ":Tab /" }
