@@ -2,7 +2,12 @@
   "Use256Color": true,
   "InitialFilter": "Fuzzy",
   "Style": {
-    "Selected": [ "underline", "on_60", "bold", "white" ]
+    "Selected": [
+      "underline",
+      "on_60",
+      "bold",
+      "white"
+    ]
   },
   "Keymap": {
     "C-u": "peco.SelectUp",

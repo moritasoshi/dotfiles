@@ -6,6 +6,7 @@ end
 configs.setup {
   ensure_installed = {
     "http",
+    "java",
     "json",
     "json5",
     "jsonc",
