@@ -1,4 +1,3 @@
-
 vim.g.mapleader = " "
 vim.opt.termguicolors = true
 
@@ -10,7 +9,7 @@ require("moritasoshi.disable_builtin")
 require("moritasoshi.globals")
 
 -- Load plugins
-require('moritasoshi.plugins')
+require("moritasoshi.plugins")
 
 -- Set up LSP
 require("moritasoshi.lsp")

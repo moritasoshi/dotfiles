@@ -1,13 +1,11 @@
-
 local command = vim.cmd
 local opt = vim.opt
 
-
 vim.opt.termguicolors = true
-vim.g.gruvbox_material_palette = 'mix' -- material, mix, original
-vim.g.gruvbox_material_background = 'hard'  -- soft. medium, hard
+vim.g.gruvbox_material_palette = "mix" -- material, mix, original
+vim.g.gruvbox_material_background = "hard" -- soft. medium, hard
 vim.g.gruvbox_material_enable_italic = 1
-command [[colorscheme gruvbox-material]]
+command([[colorscheme gruvbox-material]])
 -- command [[colorscheme darcula]]
 
 opt.syntax = "on"
@@ -69,11 +67,10 @@ opt.shada = { "!", "'1000", "<50", "s10", "h" }
 opt.mouse = "n"
 opt.list = true
 opt.listchars = {
-  tab   = "»-",
+  tab = "»-",
   trail = "-",
-  eol   = "↲"
+  eol = "↲",
 }
-
 
 -- Helpful related items:
 --   1. :center, :left, :right
@@ -93,4 +90,3 @@ opt.formatoptions = opt.formatoptions
 
 -- set joinspaces
 opt.joinspaces = false -- Two spaces and grade school, we're done
-

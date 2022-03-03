@@ -11,7 +11,7 @@ configs.setup {
     "jsonc",
     "vim",
     "lua",
-    "markdown"
+    "markdown",
   },
   sync_install = false,
   ignore_install = { "" },
@@ -21,5 +21,5 @@ configs.setup {
     additional_vim_regex_highlighting = true,
   },
   indent = { enable = true, disable = { "" } },
-  incremental_selection = { enable = true }
+  incremental_selection = { enable = true },
 }

@@ -1,4 +1,4 @@
-require("toggleterm").setup{
+require("toggleterm").setup {
   -- size can be a number or function which is passed the current terminal
   size = function(term)
     if term.direction == "horizontal" then
@@ -11,7 +11,7 @@ require("toggleterm").setup{
   hide_numbers = true, -- hide the number column in toggleterm buffers
   shade_filetypes = {},
   shade_terminals = true,
-  shading_factor = '1', -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
+  shading_factor = "1", -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
   start_in_insert = true,
   insert_mappings = true, -- whether or not the open mapping applies in insert mode
   persist_size = true,
@@ -31,13 +31,13 @@ require("toggleterm").setup{
     highlights = {
       border = "Normal",
       background = "Normal",
-    }
-  }
+    },
+  },
 }
-local Terminal  = require('toggleterm.terminal').Terminal
-local lazygit = Terminal:new({ cmd = "gitui", direction = "float", hidden = true })
+local Terminal = require("toggleterm.terminal").Terminal
+local lazygit = Terminal:new { cmd = "gitui", direction = "float", hidden = true }
 function _lazygit_toggle()
   lazygit:toggle()
 end
-vim.api.nvim_set_keymap("n", "<leader>gt", "<cmd>lua _lazygit_toggle()<CR>i", {noremap = true, silent = true}) -- start lazygit
-vim.api.nvim_set_keymap("t", "<ESC>", '<C-\\><C-n>', {noremap = true, silent = true}) -- back to normal mode in Terminal
+vim.api.nvim_set_keymap("n", "<leader>gt", "<cmd>lua _lazygit_toggle()<CR>i", { noremap = true, silent = true }) -- start lazygit
+vim.api.nvim_set_keymap("t", "<ESC>", "<C-\\><C-n>", { noremap = true, silent = true }) -- back to normal mode in Terminal

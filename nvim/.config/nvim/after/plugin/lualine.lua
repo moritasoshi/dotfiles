@@ -9,8 +9,8 @@ end
 
 local diagnostics = {
   "diagnostics",
-  sources = {"nvim_diagnostic"},
-  sections = { "error", "warn" },   -- Displays diagnostics for the defined severity types
+  sources = { "nvim_diagnostic" },
+  sections = { "error", "warn" }, -- Displays diagnostics for the defined severity types
   symbols = { error = " ", warn = " " },
   colored = false,
   update_in_insert = false,
@@ -20,7 +20,7 @@ local diff = {
   "diff",
   colored = false,
   symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-  cond = hide_in_width
+  cond = hide_in_width,
 }
 local filetype = {
   "filetype",
@@ -51,7 +51,7 @@ local progress = function()
   return chars[index]
 end
 
-lualine.setup({
+lualine.setup {
   options = {
     icons_enabled = true,
     theme = "dracula",
@@ -77,5 +77,5 @@ lualine.setup({
     lualine_z = {},
   },
   tabline = {},
-  extensions = {}
-})
+  extensions = {},
+}

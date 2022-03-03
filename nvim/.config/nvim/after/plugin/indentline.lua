@@ -22,9 +22,9 @@ vim.g.indent_blankline_use_treesitter = true
 vim.g.indent_blankline_show_current_context = true
 
 -- for darcula
-vim.cmd [[highlight IndentBlanklineChar guifg=#383838 gui=nocombine]]
+vim.cmd([[highlight IndentBlanklineChar guifg=#383838 gui=nocombine]])
 
-indent_blankline.setup({
+indent_blankline.setup {
   space_char_blankline = " ",
   show_current_context = true,
-})
+}

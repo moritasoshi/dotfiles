@@ -5,6 +5,10 @@ local keymap = function (mode, lhs, rhs, opts)
   vim.keymap.set(mode, lhs, rhs, options)
 end
 
+M.keymap = function(tbl)
+  keymap(tbl[1], tbl[2], tbl[3], tbl[4])
+end
+
 M.map = function(tbl)
   keymap("", tbl[1], tbl[2], tbl[3])
 end

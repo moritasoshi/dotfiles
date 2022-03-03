@@ -3,7 +3,7 @@ local M = {}
 -----------------------------
 -- Setup
 -----------------------------
-M.setup = function ()
+M.setup = function()
   -- Disable diagnostic sign
   local signs = {
     { name = "DiagnosticSignError" },
@@ -17,7 +17,7 @@ M.setup = function ()
 
   --vim.lsp.set_log_level("trace")
   vim.g.diagnostic_enable_virtual_text = 1
-  vim.g.diagnostic_virtual_text_prefix = ' '
+  vim.g.diagnostic_virtual_text_prefix = " "
 end
 
 -----------------------------
@@ -27,26 +27,29 @@ end
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 M.on_attach = function(client, bufnr)
-
-  require "lsp_signature".on_attach({
+  require("lsp_signature").on_attach({
     bind = true, -- This is mandatory, otherwise border config won't get registered.
     handler_opts = {
-      border = "rounded"
-    }
+      border = "rounded",
+    },
   }, bufnr)
 
-  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+  local function buf_set_keymap(...)
+    vim.api.nvim_buf_set_keymap(bufnr, ...)
+  end
+  local function buf_set_option(...)
+    vim.api.nvim_buf_set_option(bufnr, ...)
+  end
 
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+  buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 
   -- Mappings.
   local opts = { noremap = true, silent = true }
 
   -- See `:help vim.lsp.*` for documentation on any of the below functions
   buf_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-  buf_set_keymap('n', 'gd', ':lua vim.lsp.buf.definition()<CR>', opts)
-  buf_set_keymap('n', '<C-g>', ':lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)
+  buf_set_keymap("n", "<C-g>", ":lua vim.lsp.buf.definition()<CR>", opts)
   buf_set_keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
   buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
   buf_set_keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
@@ -67,7 +70,8 @@ M.on_attach = function(client, bufnr)
 
   -- Set autocommands conditional on server_capabilities
   if client.resolved_capabilities.document_highlight then
-      vim.api.nvim_exec([[
+    vim.api.nvim_exec(
+      [[
       hi LspReferenceRead cterm=bold ctermbg=red guibg=LightYellow
       hi LspReferenceText cterm=bold ctermbg=red guibg=LightYellow
       hi LspReferenceWrite cterm=bold ctermbg=red guibg=LightYellow
@@ -76,14 +80,14 @@ M.on_attach = function(client, bufnr)
       autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
       autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
       augroup END
-      ]], false)
+      ]],
+      false
+    )
   end
-
 end
 
-
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-capabilities.textDocument.completion.completionItem.snippetSupport = true;
+local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 
 M.capabilities = capabilities
 

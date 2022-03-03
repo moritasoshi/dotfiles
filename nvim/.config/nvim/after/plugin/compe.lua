@@ -1,16 +1,20 @@
+local status_ok, cmp = pcall(require, "cmp")
+if not status_ok then
+  return
+end
+
 -- Setup nvim-cmp.
-vim.o.completeopt="menuone,noinsert,noselect"
-local cmp = require('cmp')
+vim.o.completeopt = "menuone,noinsert,noselect"
 local types = require("cmp.types")
 local str = require("cmp.utils.str")
-local lspkind = require('lspkind')
+local lspkind = require("lspkind")
 
-cmp.setup({
+cmp.setup {
   snippet = {
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
       -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-      require('luasnip').lsp_expand(args.body)
+      require("luasnip").lsp_expand(args.body)
     end,
   },
 
@@ -20,7 +24,7 @@ cmp.setup({
       cmp.ItemField.Abbr,
       cmp.ItemField.Menu,
     },
-    format = lspkind.cmp_format({
+    format = lspkind.cmp_format {
       with_text = false,
       -- The function below will be called before any actual modifications from lspkind
       -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
@@ -48,39 +52,38 @@ cmp.setup({
         vim_item.abbr = word
         return vim_item
       end,
-    }),
+    },
   },
 
   mapping = {
-    ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-    ['<ESC>'] = cmp.mapping({
+    ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+    ["<ESC>"] = cmp.mapping {
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
-    }),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    ['<Tab>'] = cmp.mapping.select_next_item(),
-    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+    },
+    ["<CR>"] = cmp.mapping.confirm { select = true }, -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ["<Tab>"] = cmp.mapping.select_next_item(),
+    ["<S-Tab>"] = cmp.mapping.select_prev_item(),
   },
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp' },
-    { name = 'path' },
-    { name = 'luasnip' },
+  sources = cmp.config.sources {
+    { name = "nvim_lsp" },
+    { name = "path" },
+    { name = "luasnip" },
     { name = "buffer", keyword_length = 5, max_item_count = 5 },
-  })
-})
+  },
+}
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline('/', {
+cmp.setup.cmdline("/", {
   sources = {
-    { name = 'buffer' }
-  }
+    { name = "buffer" },
+  },
 })
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
-  sources = cmp.config.sources({
-    { name = 'path' },
-    { name = 'cmdline' }
-  })
+cmp.setup.cmdline(":", {
+  sources = cmp.config.sources {
+    { name = "path" },
+    { name = "cmdline" },
+  },
 })
-

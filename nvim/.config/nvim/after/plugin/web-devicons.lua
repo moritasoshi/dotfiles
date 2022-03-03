@@ -4,6 +4,6 @@ if not status_ok then
 end
 
 devicons.setup {
- override = { };
- default = true;
+  override = {},
+  default = true,
 }

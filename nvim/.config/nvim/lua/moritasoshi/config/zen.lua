@@ -9,8 +9,7 @@ require("zen-mode").setup {
     },
     plugins = {
       gitsigns = false,
-      twilight = true
-    }
+      twilight = true,
+    },
   },
 }
-
