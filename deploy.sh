@@ -12,6 +12,6 @@ fi
 
 pushd "$DOTPATH"
 for folder in "$(echo "$STOW_FOLDERS" | sed "s/,/ /g")"; do
-  stow -R "$folder" -t "$HOME"
+  stow -R $folder -t $HOME
 done
 popd
