@@ -70,6 +70,7 @@ use { "ntpeters/vim-better-whitespace" }
 use { "RRethy/vim-illuminate" }
 use { "editorconfig/editorconfig-vim" }
 use { "lewis6991/impatient.nvim" }
+use { "nathom/filetype.nvim" } -- Replacement for the included filetype.vim
 use { "dstein64/vim-startuptime" }
 use { "ggandor/lightspeed.nvim", event = "BufReadPre", disable = true }
 
