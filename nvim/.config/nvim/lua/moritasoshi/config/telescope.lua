@@ -49,7 +49,7 @@ local nmap = require("moritasoshi.util.keymap").nmap
 local builtin_prefix = [[<cmd>lua require("telescope.builtin").]]
 
 nmap { "<C-p>", "<cmd>lua require('moritasoshi.config.telescope').project_files()<cr>" }
-nmap { "<leader>ff", builtin_prefix .. "find_files()<ur>" }
+nmap { "<leader>ff", builtin_prefix .. "find_files()<cr>" }
 nmap { "<leader>fg", builtin_prefix .. "live_grep()<cr>" }
 nmap { "<leader>fb", builtin_prefix .. "buffers()<cr>" }
 nmap { "<leader>fh", builtin_prefix .. "help_tags()<cr>" }

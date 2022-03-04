@@ -6,14 +6,15 @@ nmap { "<Space>//", ":%s/" }
 nmap { "<C-e>", ":NvimTreeToggle<CR>" }
 nmap { "<Leader>a", ":Alpha<CR>" }
 nmap { "<Leader>g", ":Neogit<CR>" }
-nmap { "<leader>xx", "<cmd>Trouble<cr>" }
+nmap { "<leader>xx", "<cmd>TroubleToggle<cr>" }
 
 nmap { "<Leader>w", ":w<CR>" }
-nmap { "<Leader>s", ":so %<CR>" }
+nmap { "<Leader>s", ":so % | lua print('Loaded \"' .. vim.fn.expand('%') .. '\"')<CR>" }
 nmap { "O", ":<C-u>call append(expand('.'), '')<CR>j" }
 nmap { "<ESC>", ":nohlsearch<CR><ESC>" }
 map { "-", "$" }
-nmap { "gy", ":let @* = expand('%:p') | lua print('Copied ' .. vim.fn.expand('%:p') .. ' to system clipboard!')<CR>" }
+nmap { "gy", ":let @* = expand('%') | lua print('Copied ' .. vim.fn.expand('%') .. ' to system clipboard!')<CR>" }
+nmap { "gyy", ":let @* = expand('%:p') | lua print('Copied ' .. vim.fn.expand('%:p') .. ' to system clipboard!')<CR>" }
 
 -- For <Leader>
 map { "<Space>", "<NOP>" }
@@ -22,8 +23,8 @@ map { "<Space>", "<NOP>" }
 nmap { "<C-s>", "<C-x>" }
 nmap { "<C-x>", "<NOP>" }
 
-nmap { "ga", "<Plug>(EasyAlign)" }
-xmap { "ga", "<Plug>(EasyAlign)" }
+-- nmap { "ga", "<Plug>(EasyAlign)" }
+-- xmap { "ga", "<Plug>(EasyAlign)" }
 
 xmap { "p", "pgvy" }
 

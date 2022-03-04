@@ -71,7 +71,7 @@ use { "RRethy/vim-illuminate" }
 use { "editorconfig/editorconfig-vim" }
 use { "lewis6991/impatient.nvim" }
 use { "dstein64/vim-startuptime" }
-use { "ggandor/lightspeed.nvim", event = "BufReadPre" }
+use { "ggandor/lightspeed.nvim", event = "BufReadPre", disable = true }
 
 -- TEXT MANIPULATION
 use { "godlygeek/tabular" } -- Quickly align text by pattern
