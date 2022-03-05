@@ -11,6 +11,9 @@ require("moritasoshi.globals")
 -- Load plugins
 require("moritasoshi.plugins")
 
+-- Cache the humungous packer_compiled.lua file with impatient.nvim
+require("moritasoshi.packer_compiled")
+
 -- Set up LSP
 require("moritasoshi.lsp")
 

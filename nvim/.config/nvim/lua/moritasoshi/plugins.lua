@@ -23,8 +23,8 @@ end
 -- initialize and configure packer
 local packer = require("packer")
 packer.init {
-  enable = true, -- enable profiling via :PackerCompile profile=true
-  threshold = 0, -- the amount in ms that a plugins load time must be over for it to be included in the profile
+  -- Move packer_compiled lua dir so impatient.nvim can cache it
+  compile_path = fn.stdpath("config") .. "/lua/moritasoshi/packer_compiled.lua",
 }
 local use = packer.use
 packer.reset()
@@ -62,16 +62,16 @@ use { "tpope/vim-repeat" }
 use { "tpope/vim-speeddating" }
 use { "tpope/vim-surround" }
 use { "farmergreg/vim-lastplace" } -- Memory line
-use { "Pocco81/AutoSave.nvim" }
-use { "lukas-reineke/indent-blankline.nvim" }
-use { "numToStr/Comment.nvim" }
+use { "Pocco81/AutoSave.nvim", event = { "InsertLeave", "TextChanged" }, config = get_config("autosave") }
+use { "lukas-reineke/indent-blankline.nvim", config = get_config("indentline") }
+use { "numToStr/Comment.nvim", config = get_config("comment") }
 use { "JoosepAlviste/nvim-ts-context-commentstring" }
 use { "ntpeters/vim-better-whitespace" }
 use { "RRethy/vim-illuminate" }
 use { "editorconfig/editorconfig-vim" }
 use { "lewis6991/impatient.nvim" }
 use { "nathom/filetype.nvim" } -- Replacement for the included filetype.vim
-use { "dstein64/vim-startuptime" }
+use { "dstein64/vim-startuptime", cmd = "StartupTime" }
 use { "ggandor/lightspeed.nvim", event = "BufReadPre", disable = true }
 
 -- TEXT MANIPULATION
@@ -100,32 +100,27 @@ use {
 
 use { "karb94/neoscroll.nvim", keys = { "<C-u>", "<C-d>" }, config = get_config("neoscroll") }
 
--- Format
-use {
-  "mhartington/formatter.nvim",
-  cmd = { "Format", "FormatWrite" },
-  enable = false,
-  event = "BufWritePre",
-  config = get_config("formatter"),
-}
-
 -- UI & Interface
-use { "goolord/alpha-nvim" }
-use { "nvim-lualine/lualine.nvim" }
+use {
+  "goolord/alpha-nvim",
+  config = get_config("alpha"),
+  commit = "735d69022c0e9fe224e3e2e3cea30ca0e3e0f8ba", -- https://github.com/goolord/alpha-nvim/issues/92
+}
+use { "nvim-lualine/lualine.nvim", config = get_config("lualine") }
 use {
   "kyazdani42/nvim-tree.lua",
   cmd = { "NvimTreeToggle" },
-  commit = "3f4ed9b6c2598ab8304186486a05ae7a328b8d49",
+  -- commit = "3f4ed9b6c2598ab8304186486a05ae7a328b8d49",
   config = function()
     require("nvim-tree").setup()
   end,
 }
 use { "ryanoasis/vim-devicons" }
-use { "kyazdani42/nvim-web-devicons" }
-use { "akinsho/bufferline.nvim" }
+use { "kyazdani42/nvim-web-devicons", config = get_config("web-devicons") }
+use { "akinsho/bufferline.nvim", config = get_config("bufferline") }
 
 -- Treesitter
-use { "nvim-treesitter/nvim-treesitter" }
+use { "nvim-treesitter/nvim-treesitter", config = get_config("treesitter") }
 use {
   "lewis6991/spellsitter.nvim",
   config = function()
@@ -137,7 +132,7 @@ use {
 use { "christoomey/vim-tmux-navigator" }
 
 -- Git
-use { "lewis6991/gitsigns.nvim" }
+use { "lewis6991/gitsigns.nvim", config = get_config("gitsigns") }
 use {
   "sindrets/diffview.nvim",
   after = { "neogit" },
@@ -157,8 +152,7 @@ use { "folke/lua-dev.nvim" }
 use { "ray-x/lsp_signature.nvim" }
 use {
   "folke/trouble.nvim",
-  cmd = { "Trouble" },
-  -- keys = { "<leader>xx" },
+  cmd = { "TroubleToggle" },
   config = get_config("trouble"),
 }
 

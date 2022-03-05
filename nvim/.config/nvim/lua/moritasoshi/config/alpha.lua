@@ -224,15 +224,6 @@ local buttons = {
   },
   position = "center",
 }
--- local neogit = {
---   type = "group",
---   val = {
---     { type = "text", val = "Neogit", opts = { hl = "Keyword", position = "center" } },
---     { type = "padding", val = 1 },
---     dashboard.button("G", "  Neogit!", ":Neogit<CR>"),
---   },
---   position = "center"
--- }
 
 local opts = {
   layout = {
@@ -242,8 +233,6 @@ local opts = {
     section_mru,
     { type = "padding", val = 2 },
     buttons,
-    -- { type = "padding", val = 2 },
-    -- neogit
   },
   opts = {
     margin = 5,
