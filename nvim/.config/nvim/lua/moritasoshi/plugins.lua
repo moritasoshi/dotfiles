@@ -29,7 +29,33 @@ packer.init {
 local use = packer.use
 packer.reset()
 
+-- ============================================================
+-- =====================  Packer Plugins  =====================
+-- ============================================================
+
 use { "wbthomason/packer.nvim" }
+
+-- Theme
+use { "doums/darcula", disable = true }
+use { "sainnhe/gruvbox-material" }
+
+-- Text manipulation
+use { "godlygeek/tabular" } -- Quickly align text by pattern
+use { "dkarter/bullets.vim" }
+use { "tpope/vim-abolish" }
+use { "tpope/vim-repeat" }
+use { "tpope/vim-speeddating" }
+use { "tpope/vim-surround" }
+use { "numToStr/Comment.nvim", config = get_config("comment") }
+use { "JoosepAlviste/nvim-ts-context-commentstring" }
+use { "lukas-reineke/indent-blankline.nvim", config = get_config("indentline") }
+use { "ntpeters/vim-better-whitespace" }
+use { "RRethy/vim-illuminate" }
+use { "ggandor/lightspeed.nvim", event = "BufReadPre", disable = true }
+use { "ThePrimeagen/harpoon", config = get_config("harpoon"), disable = true }
+use { "windwp/nvim-autopairs", config = get_config("autopairs") }
+
+-- Util
 use { "nvim-lua/plenary.nvim", lock = true } -- I hardcoding for bug fix, So freeze
 -- Details of the bug fix (https://github.com/nvim-lua/plenary.nvim/issues/269)
 -- /Users/morita/.local/share/nvim/site/pack/packer/start/plenary.nvim/lua/plenary/curl.lua
@@ -49,68 +75,42 @@ use { "nvim-lua/plenary.nvim", lock = true } -- I hardcoding for bug fix, So fre
 --     opts.output and { "-o", opts.output } or '',
 --     parse.url(opts.url, opts.query) or '',
 --   }, opts
-use {
-  "rcarriga/nvim-notify",
-  config = function()
-    vim.notify = require("notify")
-  end,
-}
-
-use { "dkarter/bullets.vim" }
-use { "tpope/vim-abolish" }
-use { "tpope/vim-repeat" }
-use { "tpope/vim-speeddating" }
-use { "tpope/vim-surround" }
-use { "farmergreg/vim-lastplace" } -- Memory line
 use { "Pocco81/AutoSave.nvim", event = { "InsertLeave", "TextChanged" }, config = get_config("autosave") }
-use { "lukas-reineke/indent-blankline.nvim", config = get_config("indentline") }
-use { "numToStr/Comment.nvim", config = get_config("comment") }
-use { "JoosepAlviste/nvim-ts-context-commentstring" }
-use { "ntpeters/vim-better-whitespace" }
-use { "RRethy/vim-illuminate" }
-use { "editorconfig/editorconfig-vim" }
-use { "lewis6991/impatient.nvim" }
-use { "nathom/filetype.nvim" } -- Replacement for the included filetype.vim
-use { "dstein64/vim-startuptime", cmd = "StartupTime" }
-use { "ggandor/lightspeed.nvim", event = "BufReadPre", disable = true }
-
--- TEXT MANIPULATION
-use { "godlygeek/tabular" } -- Quickly align text by pattern
-
-use {
-  "jghauser/mkdir.nvim",
-  config = function()
-    require("mkdir")
-  end,
-}
-use { "ThePrimeagen/harpoon", config = get_config("harpoon") }
-use { "windwp/nvim-autopairs", config = get_config("autopairs") }
+use { "farmergreg/vim-lastplace" } -- Memory line
 use {
   "norcalli/nvim-colorizer.lua",
   config = function()
     require("colorizer").setup()
   end,
 }
-
+use { "editorconfig/editorconfig-vim" }
 use {
   "akinsho/nvim-toggleterm.lua",
   keys = { "<C-y>", "<leader>fl", "<leader>gt" },
   config = get_config("toggleterm"),
 }
 
-use { "karb94/neoscroll.nvim", keys = { "<C-u>", "<C-d>" }, config = get_config("neoscroll") }
+-- Speedup
+use { "lewis6991/impatient.nvim" }
+use { "nathom/filetype.nvim" } -- Replacement for the included filetype.vim
+use {
+  "antoinemadec/FixCursorHold.nvim",
+  run = function()
+    vim.g.curshold_updatime = 100
+  end,
+}
+use { "dstein64/vim-startuptime", cmd = "StartupTime" }
 
 -- UI & Interface
 use {
   "goolord/alpha-nvim",
-  config = get_config("alpha"),
   commit = "735d69022c0e9fe224e3e2e3cea30ca0e3e0f8ba", -- https://github.com/goolord/alpha-nvim/issues/92
+  config = get_config("alpha"),
 }
 use { "nvim-lualine/lualine.nvim", config = get_config("lualine") }
 use {
   "kyazdani42/nvim-tree.lua",
   cmd = { "NvimTreeToggle" },
-  -- commit = "3f4ed9b6c2598ab8304186486a05ae7a328b8d49",
   config = function()
     require("nvim-tree").setup()
   end,
@@ -118,6 +118,15 @@ use {
 use { "ryanoasis/vim-devicons" }
 use { "kyazdani42/nvim-web-devicons", config = get_config("web-devicons") }
 use { "akinsho/bufferline.nvim", config = get_config("bufferline") }
+use { "karb94/neoscroll.nvim", config = get_config("neoscroll"), keys = { "<C-u>", "<C-d>" } }
+
+-- Notification
+use {
+  "rcarriga/nvim-notify",
+  config = function()
+    vim.notify = require("notify")
+  end,
+}
 
 -- Treesitter
 use { "nvim-treesitter/nvim-treesitter", config = get_config("treesitter") }
@@ -127,9 +136,6 @@ use {
     require("spellsitter").setup()
   end,
 }
-
--- Tmux
-use { "christoomey/vim-tmux-navigator" }
 
 -- Git
 use { "lewis6991/gitsigns.nvim", config = get_config("gitsigns") }
@@ -155,6 +161,8 @@ use {
   cmd = { "TroubleToggle" },
   config = get_config("trouble"),
 }
+use { "arkav/lualine-lsp-progress" }
+use { "b0o/schemastore.nvim" } -- schemastore.org
 
 -- Compe
 use { "hrsh7th/nvim-cmp" }
@@ -170,6 +178,8 @@ use { "onsails/lspkind-nvim" }
 -- Telescope
 use { "nvim-telescope/telescope.nvim", config = get_config("telescope") }
 use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
+use { "nvim-telescope/telescope-file-browser.nvim" }
+use { "nvim-telescope/telescope-frecency.nvim", requires = { "tami5/sqlite.lua" } }
 
 -- HTTP Client
 use { "NTBBloodbath/rest.nvim" }
@@ -186,13 +196,9 @@ use {
   ft = "norg",
   after = "nvim-treesitter", -- You may want to specify Telescope here as well
   config = function()
-    require("neorg").setup {}
+    require("neorg").setup()
   end,
 }
 
--- SchemaStore
-use { "b0o/schemastore.nvim" }
-
--- Theme
--- use { "doums/darcula" }
-use { "sainnhe/gruvbox-material" }
+-- Tmux
+use { "christoomey/vim-tmux-navigator" }

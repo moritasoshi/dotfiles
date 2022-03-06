@@ -29,9 +29,9 @@ end
 M.on_attach = function(client, bufnr)
   require("lsp_signature").on_attach({
     bind = true, -- This is mandatory, otherwise border config won't get registered.
-    handler_opts = {
-      border = "rounded",
-    },
+    handler_opts = { border = "rounded" },
+    transparency = 70, -- disabled by default, allow floating win transparent value 1~100
+    toggle_key = "<M-x>",
   }, bufnr)
 
   local function buf_set_keymap(...)

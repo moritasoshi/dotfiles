@@ -44,15 +44,19 @@ require("telescope").setup {
 }
 
 require("telescope").load_extension("fzf")
+require("telescope").load_extension("file_browser")
+require("telescope").load_extension("frecency")
 
 local nmap = require("moritasoshi.util.keymap").nmap
 local builtin_prefix = [[<cmd>lua require("telescope.builtin").]]
+local extensions_prefix = [[<cmd>lua require("telescope").extensions.]]
 
 nmap { "<C-p>", "<cmd>lua require('moritasoshi.config.telescope').project_files()<cr>" }
-nmap { "<leader>ff", builtin_prefix .. "find_files()<cr>" }
+-- nmap { "<leader>ff", builtin_prefix .. "find_files()<cr>" }
 nmap { "<leader>fg", builtin_prefix .. "live_grep()<cr>" }
-nmap { "<leader>fb", builtin_prefix .. "buffers()<cr>" }
 nmap { "<leader>fh", builtin_prefix .. "help_tags()<cr>" }
+nmap { "<leader>fb", extensions_prefix .. "file_browser.file_browser()<cr>" }
+nmap { "<leader>ff", extensions_prefix .. "frecency.frecency()<cr>" }
 
 local M = {}
 M.project_files = function()

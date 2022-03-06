@@ -20,12 +20,21 @@ cmp.setup {
 
   formatting = {
     fields = {
-      cmp.ItemField.Kind,
       cmp.ItemField.Abbr,
+      cmp.ItemField.Kind,
       cmp.ItemField.Menu,
     },
     format = lspkind.cmp_format {
       with_text = false,
+      menu = {
+        buffer = "BUF",
+        nvim_lsp = "LSP",
+        path = "PATH",
+        luasnip = "SNIP",
+        calc = "CALC",
+        spell = "SPELL",
+        emoji = "EMOJI",
+      },
       -- The function below will be called before any actual modifications from lspkind
       -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
       before = function(entry, vim_item)
@@ -66,10 +75,10 @@ cmp.setup {
     ["<S-Tab>"] = cmp.mapping.select_prev_item(),
   },
   sources = cmp.config.sources {
-    { name = "nvim_lsp" },
-    { name = "path" },
     { name = "luasnip" },
+    { name = "nvim_lsp" },
     { name = "buffer", keyword_length = 5, max_item_count = 5 },
+    { name = "path" },
   },
 }
 
@@ -83,7 +92,8 @@ cmp.setup.cmdline("/", {
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(":", {
   sources = cmp.config.sources {
-    { name = "path" },
     { name = "cmdline" },
+    { name = "path" },
   },
 })
+
