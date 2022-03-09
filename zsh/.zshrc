@@ -1,5 +1,8 @@
 SCRIPT_DIR=$HOME/.zsh
 
+## emacs keybind
+bindkey -e
+
 ZSH_FILES="alias,config,functions,p10k,plugin"
 for file in $(echo $ZSH_FILES | sed "s/,/ /g"); do
   source $HOME/.zsh/$file.zsh
@@ -18,8 +21,6 @@ export XDG_DATA_HOME=$HOME/.local/share
 # source ${SCRIPT_DIR}/jenv.zsh
 # source ${SCRIPT_DIR}/pyenv.zsh
 
-## emacs keybind
-bindkey -e
 
 # peco
 function peco-history-selection() {

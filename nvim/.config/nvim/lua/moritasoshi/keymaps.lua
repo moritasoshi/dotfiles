@@ -31,3 +31,6 @@ xmap { "p", "pgvy" }
 -- Tabular
 nmap { "<leader>t", ":Tab /" }
 xmap { "<leader>t", ":Tab /" }
+
+nmap { "<leader>rr", [[<cmd>lua require('moritasoshi.config.rest-nvim').do_rest()<cr>]] }
+nmap { "<leader>rp", [[<cmd>lua require('moritasoshi.config.rest-nvim').view_rest()<cr>]] }

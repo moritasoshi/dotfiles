@@ -16,6 +16,8 @@ set ReplaceWithRegister
 let g:argtextobj_pairs="[:],(:),<:>"
 
 """ Common settings -------------------------
+set clipboard=unnamed
+set clipboard+=ideaput
 set showmode
 set so=5
 set incsearch

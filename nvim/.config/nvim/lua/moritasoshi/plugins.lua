@@ -36,7 +36,7 @@ packer.reset()
 use { "wbthomason/packer.nvim" }
 
 -- Theme
-use { "doums/darcula", disable = true }
+-- use { "doums/darcula" }
 use { "sainnhe/gruvbox-material" }
 
 -- Text manipulation
@@ -51,8 +51,8 @@ use { "JoosepAlviste/nvim-ts-context-commentstring" }
 use { "lukas-reineke/indent-blankline.nvim", config = get_config("indentline") }
 use { "ntpeters/vim-better-whitespace" }
 use { "RRethy/vim-illuminate" }
-use { "ggandor/lightspeed.nvim", event = "BufReadPre", disable = true }
-use { "ThePrimeagen/harpoon", config = get_config("harpoon"), disable = true }
+-- use { "ggandor/lightspeed.nvim", event = "BufReadPre" }
+-- use { "ThePrimeagen/harpoon", config = get_config("harpoon") }
 use { "windwp/nvim-autopairs", config = get_config("autopairs") }
 
 -- Util
@@ -93,12 +93,6 @@ use {
 -- Speedup
 use { "lewis6991/impatient.nvim" }
 use { "nathom/filetype.nvim" } -- Replacement for the included filetype.vim
-use {
-  "antoinemadec/FixCursorHold.nvim",
-  run = function()
-    vim.g.curshold_updatime = 100
-  end,
-}
 use { "dstein64/vim-startuptime", cmd = "StartupTime" }
 
 -- UI & Interface
@@ -178,7 +172,6 @@ use { "onsails/lspkind-nvim" }
 -- Telescope
 use { "nvim-telescope/telescope.nvim", config = get_config("telescope") }
 use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
-use { "nvim-telescope/telescope-file-browser.nvim" }
 use { "nvim-telescope/telescope-frecency.nvim", requires = { "tami5/sqlite.lua" } }
 
 -- HTTP Client
@@ -189,16 +182,6 @@ use { "NTBBloodbath/rest.nvim" }
 -- Zen
 use { "folke/zen-mode.nvim", as = "zen", cmd = "ZenMode", config = get_config("zen") }
 use { "folke/twilight.nvim", after = "zen", config = get_config("twilight") }
-
--- Neorg
-use {
-  "nvim-neorg/neorg",
-  ft = "norg",
-  after = "nvim-treesitter", -- You may want to specify Telescope here as well
-  config = function()
-    require("neorg").setup()
-  end,
-}
 
 -- Tmux
 use { "christoomey/vim-tmux-navigator" }
