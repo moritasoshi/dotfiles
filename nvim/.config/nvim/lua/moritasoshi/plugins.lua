@@ -56,7 +56,8 @@ use { "RRethy/vim-illuminate" }
 use { "windwp/nvim-autopairs", config = get_config("autopairs") }
 
 -- Util
-use { "nvim-lua/plenary.nvim", lock = true } -- I hardcoding for bug fix, So freeze
+-- use { "nvim-lua/plenary.nvim", lock = true } -- I hardcoding for bug fix, So freeze
+use { "moritasoshi/plenary.nvim" }
 -- Details of the bug fix (https://github.com/nvim-lua/plenary.nvim/issues/269)
 -- /Users/morita/.local/share/nvim/site/pack/packer/start/plenary.nvim/lua/plenary/curl.lua
 --   return vim.tbl_flatten {
