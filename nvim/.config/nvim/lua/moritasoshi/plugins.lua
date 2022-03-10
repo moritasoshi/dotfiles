@@ -112,7 +112,11 @@ use {
 use { "ryanoasis/vim-devicons" }
 use { "kyazdani42/nvim-web-devicons", config = get_config("web-devicons") }
 use { "akinsho/bufferline.nvim", config = get_config("bufferline") }
-use { "karb94/neoscroll.nvim", config = get_config("neoscroll"), keys = { "<C-u>", "<C-d>" } }
+use {
+  "karb94/neoscroll.nvim",
+  config = get_config("neoscroll"),
+  keys = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "zt", "zz", "zb" },
+}
 
 -- Notification
 use {
@@ -124,22 +128,22 @@ use {
 
 -- Treesitter
 use { "nvim-treesitter/nvim-treesitter", config = get_config("treesitter") }
-use {
-  "lewis6991/spellsitter.nvim",
-  config = function()
-    require("spellsitter").setup()
-  end,
-}
+-- use {
+--   "lewis6991/spellsitter.nvim",
+--   config = function()
+--     require("spellsitter").setup()
+--   end,
+-- }
 
 -- Git
 use { "lewis6991/gitsigns.nvim", config = get_config("gitsigns") }
+use { "TimUntersberger/neogit", cmd = { "Neogit" }, config = get_config("neogit") }
 use {
   "sindrets/diffview.nvim",
   after = { "neogit" },
   cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles" },
   config = get_config("diffview"),
 }
-use { "TimUntersberger/neogit", cmd = { "Neogit" }, config = get_config("neogit") }
 use { "f-person/git-blame.nvim" }
 use { "rhysd/committia.vim" }
 
@@ -158,7 +162,7 @@ use {
 use { "arkav/lualine-lsp-progress" }
 use { "b0o/schemastore.nvim" } -- schemastore.org
 
--- Compe
+-- Completion
 use { "hrsh7th/nvim-cmp" }
 use { "hrsh7th/cmp-nvim-lsp" }
 use { "hrsh7th/cmp-buffer" }
@@ -178,6 +182,7 @@ use { "nvim-telescope/telescope-frecency.nvim", requires = { "tami5/sqlite.lua" 
 use { "NTBBloodbath/rest.nvim" }
 
 -- Markdown
+use { "ellisonleao/glow.nvim", cmd = "Glow" }
 
 -- Zen
 use { "folke/zen-mode.nvim", as = "zen", cmd = "ZenMode", config = get_config("zen") }

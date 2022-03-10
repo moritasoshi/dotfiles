@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 vim.opt.termguicolors = true
 
 -- For better development
-require("impatient")
+require("impatient") -- .enable_profile()
 
 -- Disale unusing features
 require("moritasoshi.disable_builtin")
