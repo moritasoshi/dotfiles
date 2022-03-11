@@ -31,7 +31,6 @@ local filename = {
   "filename",
   file_status = false,
 }
-
 local branch = {
   "branch",
   icons_enabled = true,

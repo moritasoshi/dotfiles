@@ -36,8 +36,8 @@ packer.reset()
 use { "wbthomason/packer.nvim" }
 
 -- Theme
--- use { "doums/darcula" }
 use { "sainnhe/gruvbox-material" }
+-- use { "doums/darcula" }
 
 -- Text manipulation
 use { "godlygeek/tabular" } -- Quickly align text by pattern
@@ -57,7 +57,7 @@ use { "windwp/nvim-autopairs", config = get_config("autopairs") }
 
 -- Util
 -- use { "nvim-lua/plenary.nvim", lock = true } -- I hardcoding for bug fix, So freeze
-use { "moritasoshi/plenary.nvim" }
+use { "moritasoshi/plenary.nvim", lock = true }
 -- Details of the bug fix (https://github.com/nvim-lua/plenary.nvim/issues/269)
 -- /Users/morita/.local/share/nvim/site/pack/packer/start/plenary.nvim/lua/plenary/curl.lua
 --   return vim.tbl_flatten {
@@ -78,13 +78,14 @@ use { "moritasoshi/plenary.nvim" }
 --   }, opts
 use { "Pocco81/AutoSave.nvim", event = { "InsertLeave", "TextChanged" }, config = get_config("autosave") }
 use { "farmergreg/vim-lastplace" } -- Memory line
+use { "editorconfig/editorconfig-vim" }
+use { "sudormrfbin/cheatsheet.nvim" }
 use {
   "norcalli/nvim-colorizer.lua",
   config = function()
     require("colorizer").setup()
   end,
 }
-use { "editorconfig/editorconfig-vim" }
 use {
   "akinsho/nvim-toggleterm.lua",
   keys = { "<C-y>", "<leader>fl", "<leader>gt" },
