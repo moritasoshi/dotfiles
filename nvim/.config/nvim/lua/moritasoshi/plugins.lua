@@ -56,8 +56,8 @@ use { "RRethy/vim-illuminate" }
 use { "windwp/nvim-autopairs", config = get_config("autopairs") }
 
 -- Util
+use { "moritasoshi/plenary.nvim" }
 -- use { "nvim-lua/plenary.nvim", lock = true } -- I hardcoding for bug fix, So freeze
-use { "moritasoshi/plenary.nvim", lock = true }
 -- Details of the bug fix (https://github.com/nvim-lua/plenary.nvim/issues/269)
 -- /Users/morita/.local/share/nvim/site/pack/packer/start/plenary.nvim/lua/plenary/curl.lua
 --   return vim.tbl_flatten {
@@ -174,6 +174,7 @@ use { "L3MON4D3/LuaSnip" }
 use { "saadparwaiz1/cmp_luasnip" }
 use { "rafamadriz/friendly-snippets" }
 use { "onsails/lspkind-nvim" }
+use { "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" }
 
 -- Telescope
 use { "nvim-telescope/telescope.nvim", config = get_config("telescope") }

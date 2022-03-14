@@ -28,6 +28,7 @@ cmp.setup {
       with_text = false,
       menu = {
         buffer = "BUF",
+        cmp_tabnine = "TN",
         nvim_lsp = "LSP",
         path = "PATH",
         luasnip = "SNIP",
@@ -76,6 +77,7 @@ cmp.setup {
   },
   sources = cmp.config.sources {
     { name = "luasnip" },
+    { name = "cmp_tabnine" },
     { name = "nvim_lsp" },
     { name = "buffer", keyword_length = 5, max_item_count = 5 },
     { name = "path" },
