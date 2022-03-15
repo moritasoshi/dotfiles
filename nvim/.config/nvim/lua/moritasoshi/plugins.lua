@@ -193,3 +193,31 @@ use { "folke/twilight.nvim", after = "zen", config = get_config("twilight") }
 
 -- Tmux
 use { "christoomey/vim-tmux-navigator" }
+
+-- Optional (Trial)
+use { "arthurxavierx/vim-caser" }
+use {
+  "simeji/winresizer",
+  config = function()
+    vim.g.winresizer_start_key = "<C-T>"
+  end,
+}
+use {
+  "tyru/open-browser.vim",
+  config = function()
+    local keymap = require("moritasoshi.util.keymap").keymap
+    keymap { { "n", "v" }, "<Leader>rj", "<Plug>(openbrowser-smart-search)" }
+  end,
+}
+use {
+  "folke/which-key.nvim",
+  config = function()
+    require("which-key").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end,
+}
+use { "haya14busa/vim-asterisk" }
+use { "tamago324/nlsp-settings.nvim", config = get_config("nlspsettings") }

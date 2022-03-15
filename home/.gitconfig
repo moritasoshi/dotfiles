@@ -34,6 +34,7 @@
   rel = flow release start
   relf = flow release finish
   s = status
+  st = stash
   save = stash save -u
   pop = stash pop stash@{0}
   stash-find = !"git fsck --unreachable | awk '/commit/ {print $3}' | xargs git log --merges --no-walk --grep=WIP --all-match"
