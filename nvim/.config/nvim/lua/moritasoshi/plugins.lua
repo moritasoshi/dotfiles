@@ -192,6 +192,6 @@ use {
     keymap { { "n", "v" }, "<Leader>rj", "<Plug>(openbrowser-smart-search)" }
   end,
 }
-use {'kevinhwang91/nvim-hlslens'}
+use { "kevinhwang91/nvim-hlslens" }
 use { "haya14busa/vim-asterisk" }
-use { "tamago324/nlsp-settings.nvim", config = get_config("nlspsettings") }
+use { "tamago324/nlsp-settings.nvim" }
