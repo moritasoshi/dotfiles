@@ -63,7 +63,6 @@ use { "moritasoshi/plenary.nvim" }
 use { "Pocco81/AutoSave.nvim", event = { "InsertLeave", "TextChanged" }, config = get_config("autosave") }
 use { "farmergreg/vim-lastplace" } -- Memory line
 use { "editorconfig/editorconfig-vim" }
-use { "sudormrfbin/cheatsheet.nvim" }
 use {
   "norcalli/nvim-colorizer.lua",
   config = function()
@@ -193,15 +192,6 @@ use {
     keymap { { "n", "v" }, "<Leader>rj", "<Plug>(openbrowser-smart-search)" }
   end,
 }
-use {
-  "folke/which-key.nvim",
-  config = function()
-    require("which-key").setup {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
-  end,
-}
+use {'kevinhwang91/nvim-hlslens'}
 use { "haya14busa/vim-asterisk" }
 use { "tamago324/nlsp-settings.nvim", config = get_config("nlspsettings") }
