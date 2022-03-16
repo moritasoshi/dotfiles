@@ -1,30 +1,14 @@
-local execute = vim.api.nvim_command
-local fn = vim.fn
-
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-
 -- returns the require for use in `config` parameter of packer's use
 -- expects the name of the config file
 local get_config = function(name)
   return string.format('require("moritasoshi.config.%s")', name)
 end
 
--- bootstrap packer if not installed
-if fn.empty(fn.glob(install_path)) > 0 then
-  fn.system {
-    "git",
-    "clone",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  }
-  execute("packadd packer.nvim")
-end
-
 -- initialize and configure packer
 local packer = require("packer")
 packer.init {
   -- Move packer_compiled lua dir so impatient.nvim can cache it
-  compile_path = fn.stdpath("config") .. "/lua/moritasoshi/packer_compiled.lua",
+  compile_path = vim.fn.stdpath("config") .. "/lua/moritasoshi/packer_compiled.lua",
 }
 local use = packer.use
 packer.reset()
