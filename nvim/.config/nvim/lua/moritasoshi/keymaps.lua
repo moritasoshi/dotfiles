@@ -39,3 +39,10 @@ nmap { "<leader>rp", [[<cmd>lua require('moritasoshi.config.rest-nvim').view_res
 nmap { "あ", "a" }
 nmap { "い", "i" }
 nmap { "お", "o" }
+
+-- xで削除した時はヤンクしない
+keymap.keymap { { "n", "v" }, "x", [["_x]] }
+
+-- インデント調整後に選択範囲を開放しない
+keymap.keymap { "v", ">", ">gv" }
+keymap.keymap { "v", "<", "<gv" }
