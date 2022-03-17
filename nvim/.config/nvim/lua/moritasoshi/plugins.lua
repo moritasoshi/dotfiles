@@ -89,10 +89,8 @@ use {
 use { "nvim-lualine/lualine.nvim", config = get_config("lualine") }
 use {
   "kyazdani42/nvim-tree.lua",
-  cmd = { "NvimTreeToggle" },
-  config = function()
-    require("nvim-tree").setup()
-  end,
+  cmd = { "NvimTreeToggle", "NvimTreeFindFileToggle" },
+  config = get_config("nvim-tree"),
 }
 use { "ryanoasis/vim-devicons" }
 use { "kyazdani42/nvim-web-devicons", config = get_config("web-devicons") }
@@ -192,6 +190,6 @@ use {
     keymap { { "n", "v" }, "<Leader>rj", "<Plug>(openbrowser-smart-search)" }
   end,
 }
-use { "kevinhwang91/nvim-hlslens" }
+use { "kevinhwang91/nvim-hlslens", config = get_config("hlslens") }
 use { "haya14busa/vim-asterisk" }
 use { "tamago324/nlsp-settings.nvim" }
