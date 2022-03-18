@@ -193,3 +193,4 @@ use {
 use { "kevinhwang91/nvim-hlslens", config = get_config("hlslens") }
 use { "haya14busa/vim-asterisk" }
 use { "tamago324/nlsp-settings.nvim" }
+-- use { "abecodes/tabout.nvim" }

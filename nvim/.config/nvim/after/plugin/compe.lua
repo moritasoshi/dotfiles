@@ -9,6 +9,16 @@ local types = require("cmp.types")
 local str = require("cmp.utils.str")
 local lspkind = require("lspkind")
 
+local mapping = {
+  ["<ESC>"] = cmp.mapping { -- TODO: wanna switch to normal mode
+    i = cmp.mapping.abort(),
+    c = cmp.mapping.close(),
+  },
+  ["<CR>"] = cmp.mapping.confirm { select = true }, -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+  ["<Tab>"] = cmp.mapping.select_next_item(),
+  ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+}
+
 cmp.setup {
   snippet = {
     -- REQUIRED - you must specify a snippet engine
@@ -64,17 +74,7 @@ cmp.setup {
       end,
     },
   },
-
-  mapping = {
-    ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-    ["<ESC>"] = cmp.mapping {
-      i = cmp.mapping.abort(),
-      c = cmp.mapping.close(),
-    },
-    ["<CR>"] = cmp.mapping.confirm { select = true }, -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    ["<Tab>"] = cmp.mapping.select_next_item(),
-    ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-  },
+  mapping = mapping,
   sources = cmp.config.sources {
     { name = "luasnip" },
     { name = "cmp_tabnine" },
@@ -98,4 +98,3 @@ cmp.setup.cmdline(":", {
     { name = "path" },
   },
 })
-
