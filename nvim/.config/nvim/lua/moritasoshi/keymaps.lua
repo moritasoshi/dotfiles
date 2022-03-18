@@ -1,48 +1,55 @@
-local keymap = require("moritasoshi.util.keymap")
-local map, nmap, xmap = keymap.map, keymap.nmap, keymap.xmap
+local k = require("moritasoshi.util.keymap")
 
-nmap { "<Space>//", ":%s/" }
+k.nmap { "<Space>//", ":%s/" }
 
-nmap { "<C-e>", ":NvimTreeToggle<CR>" }
-nmap { "<Leader>a", ":Alpha<CR>" }
-nmap { "<Leader>g", ":Neogit<CR>" }
-nmap { "<leader>xx", "<cmd>TroubleToggle<cr>" }
+k.nmap { "<C-t>", ":NvimTreeToggle<CR>" }
+k.nmap { "<Leader>a", ":Alpha<CR>" }
+k.nmap { "<Leader>g", ":Neogit<CR>" }
+k.nmap { "<leader>xx", "<cmd>TroubleToggle<cr>" }
 
-nmap { "<Leader>w", ":w<CR>" }
-nmap { "<Leader>s", ":so % | lua print('Loaded \"' .. vim.fn.expand('%') .. '\"')<CR>" }
-nmap { "O", ":<C-u>call append(expand('.'), '')<CR>j" }
-nmap { "<ESC>", ":nohlsearch<CR><ESC>" }
-map { "-", "$" }
-nmap { "gy", ":let @* = expand('%') | lua print('Copied ' .. vim.fn.expand('%') .. ' to system clipboard!')<CR>" }
-nmap { "gyy", ":let @* = expand('%:p') | lua print('Copied ' .. vim.fn.expand('%:p') .. ' to system clipboard!')<CR>" }
+k.nmap { "<Leader>w", ":w<CR>" }
+k.nmap { "<Leader>s", ":so % | lua print('Loaded \"' .. vim.fn.expand('%') .. '\"')<CR>" }
+k.nmap { "O", ":<C-u>call append(expand('.'), '')<CR>j" }
+k.nmap { "<ESC>", ":nohlsearch<CR><ESC>" }
+k.map { "", "-", "$" }
+k.nmap { "gy", ":let @* = expand('%') | lua print('Copied ' .. vim.fn.expand('%') .. ' to system clipboard!')<CR>" }
+k.nmap {
+  "gyy",
+  ":let @* = expand('%:p') | lua print('Copied ' .. vim.fn.expand('%:p') .. ' to system clipboard!')<CR>",
+}
 
 -- For <Leader>
-map { "<Space>", "<NOP>" }
+k.map { "", "<Space>", "<NOP>" }
 
 -- Decrement the number on the cursor
-nmap { "<C-s>", "<C-x>" }
-nmap { "<C-x>", "<NOP>" }
+k.nmap { "<C-s>", "<C-x>" }
+k.nmap { "<C-x>", "<NOP>" }
 
 -- nmap { "ga", "<Plug>(EasyAlign)" }
 -- xmap { "ga", "<Plug>(EasyAlign)" }
 
-xmap { "p", "pgvy" }
+k.xmap { "p", "pgvy" }
 
 -- Tabular
-nmap { "<leader>t", ":Tab /" }
-xmap { "<leader>t", ":Tab /" }
+k.map { { "n", "x" }, "<leader>t", ":Tab /" }
 
-nmap { "<leader>rr", [[<cmd>lua require('moritasoshi.config.rest-nvim').do_rest()<cr>]] }
-nmap { "<leader>rp", [[<cmd>lua require('moritasoshi.config.rest-nvim').view_rest()<cr>]] }
+k.nmap { "<leader>rr", [[<cmd>lua require('moritasoshi.config.rest-nvim').do_rest()<cr>]] }
+k.nmap { "<leader>rp", [[<cmd>lua require('moritasoshi.config.rest-nvim').view_rest()<cr>]] }
 
--- 「かな」のままでいたい
-nmap { "あ", "a" }
-nmap { "い", "i" }
-nmap { "お", "o" }
+-- -- 「かな」のままでいたい
+-- k.nmap { "あ", "a" }
+-- k.nmap { "い", "i" }
+-- k.nmap { "お", "o" }
 
 -- xで削除した時はヤンクしない
-keymap.keymap { { "n", "v" }, "x", [["_x]] }
+k.map { { "n", "v" }, "x", [["_x]] }
 
 -- インデント調整後に選択範囲を開放しない
-keymap.keymap { "v", ">", ">gv" }
-keymap.keymap { "v", "<", "<gv" }
+k.map { "v", ">", ">gv" }
+k.map { "v", "<", "<gv" }
+
+-- simeji/winresizer
+k.map { "", "<LEFT>" , ":WinResizerStartResize<CR>h<CR>" }
+k.map { "", "<DOWN>" , ":WinResizerStartResize<CR>j<CR>" }
+k.map { "", "<UP>"   , ":WinResizerStartResize<CR>k<CR>" }
+k.map { "", "<RIGHT>", ":WinResizerStartResize<CR>l<CR>" }

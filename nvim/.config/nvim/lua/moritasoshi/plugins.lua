@@ -111,6 +111,7 @@ use {
 
 -- Treesitter
 use { "nvim-treesitter/nvim-treesitter", config = get_config("treesitter") }
+use { "p00f/nvim-ts-rainbow" }
 -- use {
 --   "lewis6991/spellsitter.nvim",
 --   config = function()
@@ -144,6 +145,7 @@ use {
 }
 use { "arkav/lualine-lsp-progress" }
 use { "b0o/schemastore.nvim" } -- schemastore.org
+use { "mfussenegger/nvim-jdtls" }
 
 -- Completion
 use { "hrsh7th/nvim-cmp" }
@@ -177,17 +179,15 @@ use { "christoomey/vim-tmux-navigator" }
 
 -- Optional (Trial)
 use { "arthurxavierx/vim-caser" }
-use {
-  "simeji/winresizer",
-  config = function()
-    vim.g.winresizer_start_key = "<C-T>"
-  end,
-}
+use { "simeji/winresizer" }
 use {
   "tyru/open-browser.vim",
   config = function()
-    local keymap = require("moritasoshi.util.keymap").keymap
-    keymap { { "n", "v" }, "<Leader>rj", "<Plug>(openbrowser-smart-search)" }
+    require("moritasoshi.util.keymap").map {
+      { "n", "v" },
+      "<Leader>rj",
+      "<Plug>(openbrowser-smart-search)",
+    }
   end,
 }
 use { "kevinhwang91/nvim-hlslens", config = get_config("hlslens") }

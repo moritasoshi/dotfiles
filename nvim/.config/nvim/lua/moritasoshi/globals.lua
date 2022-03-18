@@ -8,7 +8,12 @@ local globals = {
   bullets_nested_checkboxes = 1,
   bullets_checkbox_partials_toggle = 1,
 
-  gitblame_enabled = 0
+  gitblame_enabled = 0,
+
+  -- simeji/winresizer
+  winresizer_vert_resize = 3,
+  winresizer_horiz_resize = 1,
+  winresizer_start_key = "<M-g>", -- 使わないkeyを適当に入れてる
 }
 
 for k, v in pairs(globals) do
