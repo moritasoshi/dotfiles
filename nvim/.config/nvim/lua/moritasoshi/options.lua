@@ -7,6 +7,7 @@ vim.g.gruvbox_material_background = "hard" -- soft. medium, hard
 vim.g.gruvbox_material_enable_italic = 1
 command([[colorscheme gruvbox-material]])
 -- command [[colorscheme darcula]]
+command[[set guifont=JetBrainsMono\ Nerd\ Font:h12]]
 
 opt.syntax = "on"
 

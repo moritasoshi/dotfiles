@@ -169,6 +169,7 @@ use { "NTBBloodbath/rest.nvim" }
 
 -- Markdown
 use { "ellisonleao/glow.nvim", cmd = "Glow" }
+use { "iamcco/markdown-preview.nvim", run = "cd app && yarn install", cmd = "MarkdownPreview" }
 
 -- Zen
 use { "folke/zen-mode.nvim", as = "zen", cmd = "ZenMode", config = get_config("zen") }
@@ -194,3 +195,14 @@ use { "kevinhwang91/nvim-hlslens", config = get_config("hlslens") }
 use { "haya14busa/vim-asterisk" }
 use { "tamago324/nlsp-settings.nvim" }
 -- use { "abecodes/tabout.nvim" }
+-- sandwich
+use {
+  "ahmedkhalf/project.nvim",
+  config = function()
+    require("project_nvim").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end
+}

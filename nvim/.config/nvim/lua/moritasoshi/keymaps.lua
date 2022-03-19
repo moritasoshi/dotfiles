@@ -44,10 +44,6 @@ k.nmap { "<leader>rp", [[<cmd>lua require('moritasoshi.config.rest-nvim').view_r
 -- xで削除した時はヤンクしない
 k.map { { "n", "v" }, "x", [["_x]] }
 
--- インデント調整後に選択範囲を開放しない
-k.map { "v", ">", ">gv" }
-k.map { "v", "<", "<gv" }
-
 -- simeji/winresizer
 k.map { "", "<LEFT>" , ":WinResizerStartResize<CR>h<CR>" }
 k.map { "", "<DOWN>" , ":WinResizerStartResize<CR>j<CR>" }

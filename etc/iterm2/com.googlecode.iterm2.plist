@@ -1139,6 +1139,12 @@
 	</dict>
 	<key>Default Bookmark Guid</key>
 	<string>B70941BF-2237-4348-9F08-F83D7FB65BCB</string>
+	<key>DimBackgroundWindows</key>
+	<false/>
+	<key>DimInactiveSplitPanes</key>
+	<true/>
+	<key>DimOnlyText</key>
+	<false/>
 	<key>EnableDivisionView</key>
 	<false/>
 	<key>GlobalKeyMap</key>
@@ -1246,6 +1252,8 @@
 	<false/>
 	<key>HideActivityIndicator</key>
 	<true/>
+	<key>HideScrollbar</key>
+	<true/>
 	<key>HideTabNumber</key>
 	<true/>
 	<key>HotkeyMigratedFromSingleToMulti</key>
@@ -1266,7 +1274,7 @@
 			<key>ASCII Anti Aliased</key>
 			<true/>
 			<key>ASCII Ligatures</key>
-			<false/>
+			<true/>
 			<key>Allow Title Setting</key>
 			<false/>
 			<key>Ambiguous Double Width</key>
@@ -1497,7 +1505,7 @@
 				<real>0.12941177189350128</real>
 			</dict>
 			<key>Background Image Mode</key>
-			<integer>1</integer>
+			<integer>0</integer>
 			<key>Badge Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1512,15 +1520,15 @@
 				<real>0.23137255012989044</real>
 			</dict>
 			<key>Blend</key>
-			<real>0.14788083381053665</real>
+			<real>0.09880587025471696</real>
 			<key>Blink Allowed</key>
 			<false/>
 			<key>Blinking Cursor</key>
 			<true/>
 			<key>Blur</key>
-			<false/>
+			<true/>
 			<key>Blur Radius</key>
-			<real>0.10000000000000009</real>
+			<real>9.7474822348736687</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -1618,6 +1626,8 @@
 			<string>B70941BF-2237-4348-9F08-F83D7FB65BCB</string>
 			<key>Has Hotkey</key>
 			<true/>
+			<key>Hide After Opening</key>
+			<false/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
 			<key>HotKey Activated By Modifier</key>
@@ -1964,11 +1974,15 @@
 			<key>Non-ASCII Ligatures</key>
 			<false/>
 			<key>Normal Font</key>
-			<string>MesloLGS-NF-Regular 12</string>
+			<string>JetBrainsMonoNerdFontComplete-Regular 12</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
+			<key>Open Toolbelt</key>
+			<false/>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
+			<key>Prevent Opening in a Tab</key>
+			<true/>
 			<key>Prompt Before Closing 2</key>
 			<false/>
 			<key>Right Option Key Sends</key>
@@ -1978,7 +1992,7 @@
 			<key>Screen</key>
 			<integer>-2</integer>
 			<key>Scrollback Lines</key>
-			<integer>1000</integer>
+			<integer>0</integer>
 			<key>Scrollback in Alternate Screen</key>
 			<false/>
 			<key>Selected Text Color</key>
@@ -2016,7 +2030,7 @@
 			<key>Silence Bell</key>
 			<true/>
 			<key>Space</key>
-			<integer>-1</integer>
+			<integer>0</integer>
 			<key>Sync Title</key>
 			<false/>
 			<key>Tab Color</key>
@@ -2039,21 +2053,23 @@
 			<key>Thin Strokes</key>
 			<integer>4</integer>
 			<key>Transparency</key>
-			<real>0.0</real>
+			<real>0.050864647398603725</real>
 			<key>Unicode Normalization</key>
 			<integer>0</integer>
 			<key>Unlimited Scrollback</key>
-			<false/>
+			<true/>
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
 			<false/>
+			<key>Use Custom Window Title</key>
+			<false/>
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
-			<true/>
+			<false/>
 			<key>Vertical Spacing</key>
-			<real>1.05</real>
+			<real>1</real>
 			<key>Visual Bell</key>
 			<false/>
 			<key>Window Type</key>
@@ -2117,14 +2133,24 @@
 	<true/>
 	<key>SoundForEsc</key>
 	<false/>
+	<key>SplitPaneDimmingAmount</key>
+	<real>0.49510052430976936</real>
+	<key>StatusBarPosition</key>
+	<integer>0</integer>
 	<key>StretchTabsToFillBar</key>
 	<false/>
 	<key>TabStyleWithAutomaticOption</key>
 	<integer>5</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
+	<key>TerminalMargin</key>
+	<integer>5</integer>
+	<key>TerminalVMargin</key>
+	<integer>5</integer>
+	<key>TmuxVariableWindowSizesSupported</key>
+	<true/>
 	<key>UseBorder</key>
-	<false/>
+	<true/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>WindowNumber</key>
