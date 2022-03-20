@@ -3,7 +3,7 @@
 set -e
 
 if [[ -z $STOW_FOLDERS ]]; then
-  STOW_FOLDERS="home,nvim,zsh,personal"
+  STOW_FOLDERS="home,personal"
 fi
 
 if [[ -z $DOTPATH ]]; then
