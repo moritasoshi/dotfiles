@@ -3,9 +3,9 @@ M.setup = function(opts) -- opts = {on_attach: on_attach, capabilities: capabili
   local on_attach = opts.on_attach
   local capabilities = opts.capabilities
 
-  return require("lua-dev").setup({
+  return require("lua-dev").setup {
     library = {
-      plugins = true
+      plugins = true,
     },
     lspconfig = {
       on_attach = on_attach,
@@ -14,7 +14,7 @@ M.setup = function(opts) -- opts = {on_attach: on_attach, capabilities: capabili
         Lua = {
           diagnostics = {
             -- Get the language server to recognize the `vim` global
-            globals = {'vim'},
+            globals = { "vim", "hs" },
           },
           workspace = {
             library = vim.api.nvim_get_runtime_file("", true),
@@ -24,8 +24,8 @@ M.setup = function(opts) -- opts = {on_attach: on_attach, capabilities: capabili
           },
         },
       },
-    }
-  })
+    },
+  }
 end
 
 return M
