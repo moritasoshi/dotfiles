@@ -1,5 +1,17 @@
 --- open Alacritty
 --[[
+Hotkey like iTerm2
+
+@setup
+brew install --cask hammerspoon
+curl https://gist.githubusercontent.com/asmagill/c38f75fff9d9ef43d1226329fc1436e4/raw/db28bfdd54bbd19a6c639b6f2664799d6407cf52/ctrlDoublePress.lua > ~/.hammerspoon/ctrlDoublePress.lua
+pushd ~/Downloads;
+git clone git@github.com:asmagill/hs._asm.spaces.git;
+cd hs._asm.spaces;
+PREFIX=~/src/dotfiles/home/.hammerspoon make install-universal;
+popd;
+
+@memo
 hs.window < hs.space < hs.screen
 window: アプリケーション毎のウィンドウ
 space : ディスプレイ毎にあるワークスペース
