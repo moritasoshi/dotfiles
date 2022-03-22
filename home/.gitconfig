@@ -2,10 +2,10 @@
 [include]
   path = ~/.gitconfig.local
 [core]
-  excludesfile = /Users/morita/.gitignore_global
+  excludesfile = ~/.gitignore_global
   editor = nvim -c \"set fenc=utf-8\"
 [commit]
-  template = /Users/morita/.stCommitMsg
+  template = ~/.stCommitMsg
 [alias]
   al = alias
   a = add
