@@ -15,6 +15,7 @@ alias t='date +%Y-%m-%d[%H:%M:%S]'
 alias calc='BC_ENV_ARGS=<(echo "scale=8") \bc'
 alias date='gdate'
 alias grep='grep --color=auto'
+alias zgrep='zgrep --color=auto'
 alias del="trash -i -r" # Do not confirm, remove directory, too
 alias sed='gsed'
 alias tree='lsd -a --tree'
@@ -22,6 +23,7 @@ alias vim='nvim'
 
 ## tmux
 alias tm='tmux'
+alias tma='tmux a'
 alias tmn='tmux new -s'
 
 ## edit dotfiles
