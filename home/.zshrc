@@ -1,5 +1,7 @@
 SCRIPT_DIR=$HOME/.zsh
 
+## reset key bind
+bindkey -d
 ## emacs keybind
 bindkey -e
 
@@ -21,38 +23,7 @@ export XDG_DATA_HOME=$HOME/.local/share
 # source ${SCRIPT_DIR}/jenv.zsh
 # source ${SCRIPT_DIR}/pyenv.zsh
 
-
-# peco
-function peco-history-selection() {
-  BUFFER=$(history -n 1 | tail -r | awk '!a[$0]++' | peco --query "$BUFFER")
-  CURSOR=$#BUFFER
-  zle reset-prompt
-}
-zle -N peco-history-selection
-bindkey '^R' peco-history-selection
-
-function peco-src() {
-  local selected_dir=$(fd . ~/src/ --maxdepth 1 | peco --query "$LBUFFER")
-  if [ -n "$selected_dir" ]; then
-    BUFFER="cd ${selected_dir}"
-    zle accept-line
-  fi
-  zle clear-screen
-}
-zle -N peco-src
-bindkey '^S' peco-src
-
-# easiest way to connect remote servers
-peco-ssh() {
-  local selected_host=$(cat ~/.ssh/config | grep -oE "^Host \w.*" | cut -d" " -f2 | peco --query "$LBUFFER")
-  if [ -n "$selected_host" ]; then
-    BUFFER="ssh ${selected_host}"
-  fi
-}
-zle -N peco-ssh
-bindkey '^E' peco-ssh
-
-bindkey '^o' clear-screen
+bindkey '^O' clear-screen
 
 ## ヒストリを保存するファイル
 HISTFILE=~/.zsh_history

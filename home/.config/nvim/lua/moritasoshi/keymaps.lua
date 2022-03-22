@@ -42,7 +42,7 @@ k.nmap { "<leader>rp", [[<cmd>lua require('moritasoshi.config.rest-nvim').view_r
 -- k.nmap { "お", "o" }
 
 -- xで削除した時はヤンクしない
-k.map { { "n", "v" }, "x", [["_x]] }
+-- k.map { { "n", "v" }, "x", [["_x]] }
 
 -- simeji/winresizer
 k.map { "", "<LEFT>" , ":WinResizerStartResize<CR>h<CR>" }

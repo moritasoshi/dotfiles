@@ -1,3 +1,4 @@
+### functions ###
 # minify pdf
 function pdfmin() {
   local cnt=0
@@ -26,6 +27,46 @@ function timezsh() {
   for i in $(seq 1 10); do time $SHELL -i -c exit; done
 }
 
+f() {
+  cmd="fd --type f --hidden --follow --exclude .git"
+  if [ "$#" -eq 0 ]; then
+    eval $cmd
+  else
+    eval $cmd | grep "$1"
+  fi
+}
+
+
+### keybind ###
+# peco
+ms-history-selection() {
+  BUFFER=$(history -n 1 | tail -r | awk '!a[$0]++' | peco --query "$BUFFER")
+  CURSOR=$#BUFFER
+  zle reset-prompt
+}
+zle -N ms-history-selection
+bindkey '^R' ms-history-selection
+
+ms-repository-selection() {
+  local selected_dir=$(fd . ~/src/ --maxdepth 1 | peco --query "$LBUFFER")
+  if [ -n "$selected_dir" ]; then
+    BUFFER="cd ${selected_dir}"
+    zle accept-line
+  fi
+  zle clear-screen
+}
+zle -N ms-repository-selection
+bindkey '^S' ms-repository-selection
+
+# easiest way to connect remote servers
+ms-ssh-host-selection() {
+  local selected_host=$(cat ~/.ssh/config | grep -oE "^Host \w.*" | cut -d" " -f2 | peco --query "$LBUFFER")
+  if [ -n "$selected_host" ]; then
+    BUFFER="ssh ${selected_host}"
+  fi
+}
+zle -N ms-ssh-host-selection
+bindkey '^V' ms-ssh-host-selection
 
 fancy-ctrl-z () {
   if [[ $#BUFFER -eq 0 ]]; then
@@ -39,11 +80,4 @@ fancy-ctrl-z () {
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
 
-f() {
-  cmd="fd --type f --hidden --follow --exclude .git"
-  if [ "$#" -eq 0 ]; then
-    eval $cmd
-  else
-    eval $cmd | grep "$1"
-  fi
-}
+
