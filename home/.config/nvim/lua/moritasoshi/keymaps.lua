@@ -6,6 +6,7 @@ k.nmap { "<C-t>", ":NvimTreeToggle<CR>" }
 k.nmap { "<Leader>a", ":Alpha<CR>" }
 k.nmap { "<Leader>g", ":Neogit<CR>" }
 k.nmap { "<leader>xx", "<cmd>TroubleToggle<cr>" }
+k.nmap { "<Leader>mm", ":PrevimOpen<CR>" }
 
 k.nmap { "<Leader>w", ":w<CR>" }
 k.nmap { "<Leader>s", ":so % | lua print('Loaded \"' .. vim.fn.expand('%') .. '\"')<CR>" }
@@ -45,7 +46,7 @@ k.nmap { "<leader>rp", [[<cmd>lua require('moritasoshi.config.rest-nvim').view_r
 -- k.map { { "n", "v" }, "x", [["_x]] }
 
 -- simeji/winresizer
-k.map { "", "<LEFT>" , ":WinResizerStartResize<CR>h<CR>" }
-k.map { "", "<DOWN>" , ":WinResizerStartResize<CR>j<CR>" }
-k.map { "", "<UP>"   , ":WinResizerStartResize<CR>k<CR>" }
+k.map { "", "<LEFT>", ":WinResizerStartResize<CR>h<CR>" }
+k.map { "", "<DOWN>", ":WinResizerStartResize<CR>j<CR>" }
+k.map { "", "<UP>", ":WinResizerStartResize<CR>k<CR>" }
 k.map { "", "<RIGHT>", ":WinResizerStartResize<CR>l<CR>" }

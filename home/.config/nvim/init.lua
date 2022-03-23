@@ -2,7 +2,8 @@ vim.g.mapleader = " "
 vim.opt.termguicolors = true
 
 -- For better development
-pcall(require, "impatient") -- .enable_profile()
+-- require("impatient").enable_profile()
+pcall(require, "impatient")
 
 if require("moritasoshi.first_load") then
   return

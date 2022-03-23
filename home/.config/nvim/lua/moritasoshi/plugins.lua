@@ -169,7 +169,7 @@ use { "NTBBloodbath/rest.nvim" }
 
 -- Markdown
 use { "ellisonleao/glow.nvim", cmd = "Glow" }
-use { "iamcco/markdown-preview.nvim", run = "cd app && yarn install", cmd = "MarkdownPreview" }
+use { "previm/previm", requires = "tyru/open-browser.vim" }
 
 -- Zen
 use { "folke/zen-mode.nvim", as = "zen", cmd = "ZenMode", config = get_config("zen") }
@@ -204,5 +204,5 @@ use {
       -- or leave it empty to use the default settings
       -- refer to the configuration section below
     }
-  end
+  end,
 }

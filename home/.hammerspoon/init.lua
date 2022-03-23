@@ -39,5 +39,5 @@ local open_alacritty = function()
   end
 end
 
-double_press.timeFrame = 0.5
+double_press.timeFrame = 1
 double_press.action = open_alacritty
