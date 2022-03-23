@@ -10,8 +10,11 @@ local str = require("cmp.utils.str")
 local lspkind = require("lspkind")
 
 local mapping = {
-  ["<ESC>"] = cmp.mapping { -- TODO: wanna switch to normal mode
-    i = cmp.mapping.abort(),
+  ["<ESC>"] = cmp.mapping {
+    i = function(fallback) -- Close the completion menu and go back to normal mode.
+      cmp.mapping.abort()
+      fallback()
+    end,
     c = cmp.mapping.close(),
   },
   ["<CR>"] = cmp.mapping.confirm { select = true }, -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
@@ -77,9 +80,9 @@ cmp.setup {
   mapping = mapping,
   sources = cmp.config.sources {
     { name = "luasnip" },
-    { name = "cmp_tabnine" },
     { name = "nvim_lsp" },
     { name = "buffer", keyword_length = 5, max_item_count = 5 },
+    { name = "cmp_tabnine" },
     { name = "path" },
   },
 }
