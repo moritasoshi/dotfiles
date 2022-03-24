@@ -8,10 +8,12 @@ end
 local packer = require("packer")
 packer.init {
   -- Move packer_compiled lua dir so impatient.nvim can cache it
-  compile_path = vim.fn.stdpath("config") .. "/lua/moritasoshi/packer_compiled.lua",
+  compile_path = "~/src/dotfiles/home/.config/nvim" .. "/lua/moritasoshi/packer_compiled.lua",
 }
 local use = packer.use
 packer.reset()
+
+vim.cmd [[autocmd BufWritePost plugins.lua PackerCompile]]
 
 -- ============================================================
 -- =====================  Packer Plugins  =====================
@@ -194,7 +196,28 @@ use {
 use { "kevinhwang91/nvim-hlslens", config = get_config("hlslens") }
 use { "haya14busa/vim-asterisk" }
 use { "tamago324/nlsp-settings.nvim" }
--- use { "abecodes/tabout.nvim" }
+use {
+  "abecodes/tabout.nvim",
+  config = function()
+    require("tabout").setup {
+      enable_backwards = true,
+      completion = true,
+      tabouts = {
+        { open = "'", close = "'" },
+        { open = '"', close = '"' },
+        { open = "`", close = "`" },
+        { open = "(", close = ")" },
+        { open = "[", close = "]" },
+        { open = "{", close = "}" },
+        { open = "<", close = ">" },
+        { open = "#", close = "]" },
+      },
+    }
+
+    vim.api.nvim_set_keymap("i", "<A-x>", "<Plug>(TaboutMulti)", { silent = true })
+    vim.api.nvim_set_keymap("i", "<A-z>", "<Plug>(TaboutBackMulti)", { silent = true })
+  end,
+}
 -- sandwich
 use {
   "ahmedkhalf/project.nvim",

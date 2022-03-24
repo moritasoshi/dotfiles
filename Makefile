@@ -1,12 +1,14 @@
+dot_dir := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
+
 deploy:
-	bash ~/src/dotfiles/deploy.sh
+	@bash $(dot_dir)/deploy.sh
 
 install:
-	bash install.sh
-	bash deploy.sh
+	@bash $(dot_dir)/install.sh
+	@bash $(dot_dir)/deploy.sh
 
 export:
-	bash export.sh
+	@bash $(dot_dir)/export.sh
 
 check:
 	shellcheck ./*.sh
@@ -14,4 +16,7 @@ check:
 
 mod:
 	chmod 744 home/bin/*
+
+test:
+	@echo $(dot_dir)
 

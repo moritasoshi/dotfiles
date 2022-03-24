@@ -14,7 +14,7 @@ local sources = {
     extra_args = { "-i", "2", "-ci" },
   },
   null_ls.builtins.formatting.shellharden,
-  null_ls.builtins.diagnostics.eslint,
+  -- null_ls.builtins.diagnostics.eslint,
   -- null_ls.builtins.completion.spell,
   -- null_ls.builtins.formatting.black.with({ extra_args = { "--fast" } }),
 }
