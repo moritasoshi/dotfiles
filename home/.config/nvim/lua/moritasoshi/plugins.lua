@@ -9,11 +9,12 @@ local packer = require("packer")
 packer.init {
   -- Move packer_compiled lua dir so impatient.nvim can cache it
   compile_path = "~/src/dotfiles/home/.config/nvim" .. "/lua/moritasoshi/packer_compiled.lua",
+  max_jobs = 3, -- https://github.com/wbthomason/packer.nvim/issues/746
 }
 local use = packer.use
 packer.reset()
 
-vim.cmd [[autocmd BufWritePost plugins.lua PackerCompile]]
+vim.cmd([[autocmd BufWritePost plugins.lua PackerCompile]])
 
 -- ============================================================
 -- =====================  Packer Plugins  =====================
