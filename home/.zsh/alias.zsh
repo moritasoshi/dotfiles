@@ -12,6 +12,7 @@ alias g='git'
 alias t='date +%Y-%m-%d[%H:%M:%S]'
 
 ## replacements
+alias awk='gawk'
 alias calc='BC_ENV_ARGS=<(echo "scale=8") \bc'
 alias date='gdate'
 alias dircolors='gdircolors'
