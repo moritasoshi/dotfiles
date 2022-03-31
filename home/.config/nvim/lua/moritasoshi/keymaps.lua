@@ -7,6 +7,8 @@ k.nmap { "<Leader>a", ":Alpha<CR>" }
 k.nmap { "<Leader>g", ":Neogit<CR>" }
 k.nmap { "<leader>xx", "<cmd>TroubleToggle<cr>" }
 k.nmap { "<Leader>mm", ":PrevimOpen<CR>" }
+k.nmap { "<Leader>vv", ":SymbolsOutline<CR>" }
+
 
 k.nmap { "<Leader>w", ":w<CR>" }
 k.nmap { "<Leader>s", ":so % | lua print('Loaded \"' .. vim.fn.expand('%') .. '\"')<CR>" }
