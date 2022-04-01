@@ -20,3 +20,8 @@ mod:
 test:
 	@echo $(dot_dir)
 
+italic:
+	@bash $(dot_dir)/tmux-italic.sh deploy
+
+italic-check:
+	@bash $(dot_dir)/tmux-italic.sh check
