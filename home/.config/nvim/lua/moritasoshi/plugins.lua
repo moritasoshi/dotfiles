@@ -28,7 +28,7 @@ use { "sainnhe/gruvbox-material" }
 
 -- Text manipulation
 use { "godlygeek/tabular" } -- Quickly align text by pattern
-use { "dkarter/bullets.vim" }
+-- use { "dkarter/bullets.vim" }
 use { "tpope/vim-abolish" }
 use { "tpope/vim-repeat" }
 use { "tpope/vim-speeddating" }
@@ -43,26 +43,7 @@ use { "RRethy/vim-illuminate" }
 use { "windwp/nvim-autopairs", config = get_config("autopairs") }
 
 -- Util
-use { "moritasoshi/plenary.nvim" }
--- use { "nvim-lua/plenary.nvim", lock = true } -- I hardcoding for bug fix, So freeze
--- Details of the bug fix (https://github.com/nvim-lua/plenary.nvim/issues/269)
--- /Users/morita/.local/share/nvim/site/pack/packer/start/plenary.nvim/lua/plenary/curl.lua
---   return vim.tbl_flatten {
---     "-sSL",
---     opts.dump,
---     opts.compressed and "--compressed" or '',
---     parse.method(opts.method) or '',
---     parse.headers(opts.headers) or '',
---     parse.accept_header(opts.accept) or '',
---     parse.raw_body(opts.raw_body) or '',
---     parse.data_body(opts.data) or '',
---     parse.form(opts.form) or '',
---     parse.file(opts.in_file) or '',
---     parse.auth(opts.auth) or '',
---     opts.raw or '',
---     opts.output and { "-o", opts.output } or '',
---     parse.url(opts.url, opts.query) or '',
---   }, opts
+use { "nvim-lua/plenary.nvim" }
 use { "Pocco81/AutoSave.nvim", event = { "InsertLeave", "TextChanged" }, config = get_config("autosave") }
 use { "farmergreg/vim-lastplace" } -- Memory line
 use { "editorconfig/editorconfig-vim" }
@@ -72,11 +53,11 @@ use {
     require("colorizer").setup()
   end,
 }
-use {
-  "akinsho/nvim-toggleterm.lua",
-  keys = { "<C-y>", "<leader>fl", "<leader>gt" },
-  config = get_config("toggleterm"),
-}
+-- use {
+--   "akinsho/nvim-toggleterm.lua",
+--   keys = { "<C-y>", "<leader>fl", "<leader>gt" },
+--   config = get_config("toggleterm"),
+-- }
 
 -- Speedup
 use { "lewis6991/impatient.nvim" }
@@ -171,7 +152,7 @@ use { "nvim-telescope/telescope-frecency.nvim", requires = { "tami5/sqlite.lua" 
 use { "NTBBloodbath/rest.nvim" }
 
 -- Markdown
-use { "ellisonleao/glow.nvim", cmd = "Glow" }
+-- use { "ellisonleao/glow.nvim", cmd = "Glow" }
 use { "previm/previm", requires = "tyru/open-browser.vim" }
 
 -- Zen

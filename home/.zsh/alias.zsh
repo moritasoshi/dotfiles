@@ -19,7 +19,7 @@ alias dircolors='gdircolors'
 alias grep='grep --color=auto'
 alias zgrep='zgrep --color=auto'
 alias del="trash -i -r" # Do not confirm, remove directory, too
-alias rg="rg --colors path:fg:yellow"
+alias rg="rg --no-ignore --colors path:fg:yellow"
 alias sed='gsed'
 alias tree='lsd -a --tree'
 alias vim='nvim'

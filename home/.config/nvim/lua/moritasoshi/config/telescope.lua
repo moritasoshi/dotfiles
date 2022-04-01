@@ -54,6 +54,7 @@ nmap { "<C-p>", "<cmd>lua require('moritasoshi.config.telescope').project_files(
 -- nmap { "<leader>ff", builtin_prefix .. "find_files()<cr>" }
 nmap { "<leader>fg", builtin_prefix .. "live_grep()<cr>" }
 nmap { "<leader>fh", builtin_prefix .. "help_tags()<cr>" }
+nmap { "<leader>fb", builtin_prefix .. "current_buffer_fuzzy_find()<cr>" }
 nmap { "<leader>ff", extensions_prefix .. "frecency.frecency()<cr>" }
 
 local M = {}
