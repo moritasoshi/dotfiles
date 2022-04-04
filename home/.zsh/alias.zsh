@@ -21,8 +21,10 @@ alias zgrep='zgrep --color=auto'
 alias del="trash -i -r" # Do not confirm, remove directory, too
 alias rg="rg --no-ignore --colors path:fg:yellow"
 alias sed='gsed'
+alias ssh='TERM=screen-256color ssh'
 alias tree='lsd -a --tree'
 alias vim='nvim'
+alias vimdiff='nvim -d'
 
 ## tmux
 alias tm='tmux'
