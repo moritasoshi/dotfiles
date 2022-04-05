@@ -34,7 +34,7 @@ k.nmap { "<C-x>", "<NOP>" }
 k.xmap { "p", "pgvy" }
 
 -- Tabular
-k.map { { "n", "x" }, "<leader>t", ":Tab /" }
+k.map { { "n", "x" }, "<leader>t", ":Tabularize /" }
 
 k.nmap { "<leader>rr", [[<cmd>lua require('moritasoshi.config.rest-nvim').do_rest()<cr>]] }
 k.nmap { "<leader>rp", [[<cmd>lua require('moritasoshi.config.rest-nvim').view_rest()<cr>]] }
