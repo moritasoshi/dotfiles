@@ -27,8 +27,9 @@ function timezsh() {
   for i in $(seq 1 10); do time $SHELL -i -c exit; done
 }
 
+# Find Files
 f() {
-  cmd="fd --type f --hidden --follow --exclude .git"
+  cmd="fd --type f --follow -uu"
   if [ "$#" -eq 0 ]; then
     eval $cmd
   else

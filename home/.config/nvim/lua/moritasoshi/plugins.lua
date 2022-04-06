@@ -53,11 +53,6 @@ use {
     require("colorizer").setup()
   end,
 }
--- use {
---   "akinsho/nvim-toggleterm.lua",
---   keys = { "<C-y>", "<leader>fl", "<leader>gt" },
---   config = get_config("toggleterm"),
--- }
 
 -- Speedup
 use { "lewis6991/impatient.nvim" }
@@ -201,14 +196,14 @@ use {
   end,
 }
 -- sandwich
-use {
-  "ahmedkhalf/project.nvim",
-  config = function()
-    require("project_nvim").setup {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
-  end,
-}
+-- use {
+--   "ahmedkhalf/project.nvim",
+--   config = function()
+--     require("project_nvim").setup {
+--       -- your configuration comes here
+--       -- or leave it empty to use the default settings
+--       -- refer to the configuration section below
+--     }
+--   end,
+-- }
 use { "simrat39/symbols-outline.nvim" }

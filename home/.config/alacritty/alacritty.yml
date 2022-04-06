@@ -281,9 +281,9 @@ colors:
   #
   # Allowed values are CellForeground/CellBackground, which reference the
   # affected cell, or hexadecimal colors like #ff00ff.
-  #selection:
-  #  text: CellBackground
-  #  background: CellForeground
+  selection:
+   text: CellBackground
+   background: '#70c0b1'
 
   # Normal colors
   normal:
@@ -439,10 +439,10 @@ selection:
 #   - (macOS) /bin/bash --login
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
-#shell:
-#  program: /bin/bash
-#  args:
-#    - --login
+shell:
+ program: /usr/local/bin/zsh
+ args:
+   - --login
 
 # Startup directory
 #

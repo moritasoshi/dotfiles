@@ -3,6 +3,7 @@ local k = require("moritasoshi.util.keymap")
 k.nmap { "<Space>//", ":%s/" }
 
 k.nmap { "<C-t>", ":NvimTreeToggle<CR>" }
+k.nmap { "gt", ":NvimTreeFindFileToggle<CR>" }
 k.nmap { "<Leader>a", ":Alpha<CR>" }
 k.nmap { "<Leader>g", ":Neogit<CR>" }
 k.nmap { "<leader>xx", "<cmd>TroubleToggle<cr>" }
