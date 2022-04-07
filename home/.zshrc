@@ -11,6 +11,7 @@ for file in $(echo $ZSH_FILES | sed "s/,/ /g"); do
 done
 
 export LANG="en_US.UTF-8"
+export LC_CTYPE=$LANG # LC_CTYPE set to some strange (invalid?) value in alacritty
 # editorはvimを使う
 export EDITOR=nvim
 export VISUAL=$EDITOR

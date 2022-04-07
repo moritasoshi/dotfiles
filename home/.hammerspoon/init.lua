@@ -20,15 +20,15 @@ screen: ディスプレイ(macbook本体, Dellのモニターなど)
 
 local application = require("hs.application")
 local spaces = require("hs.spaces")
-
 local double_press = require("ctrlDoublePress")
 
-local open_alacritty = function()
-  local appName = "Alacritty"
-  local app = application.get(appName)
+local APP_NAME = "Alacritty"
+
+local toggle_app_window = function(app_name)
+  local app = application.get(app_name)
 
   if app == nil then
-    application.launchOrFocus(appName)
+    application.launchOrFocus(app_name)
   elseif app:isFrontmost() then
     app:hide()
   else
@@ -40,4 +40,6 @@ local open_alacritty = function()
 end
 
 double_press.timeFrame = 1
-double_press.action = open_alacritty
+double_press.action = function()
+  toggle_app_window(APP_NAME)
+end
