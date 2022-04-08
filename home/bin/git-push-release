@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #####
-# git 
+# git
 # push develop, master branches and tags
 #####
 
