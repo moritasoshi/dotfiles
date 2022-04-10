@@ -6,17 +6,17 @@ vim.g.gruvbox_material_palette = "mix" -- material, mix, original
 vim.g.gruvbox_material_background = "hard" -- soft. medium, hard
 vim.g.gruvbox_material_enable_italic = 1
 command([[colorscheme gruvbox-material]])
-command[[set guifont=JetBrainsMono\ Nerd\ Font:h12]]
+command([[set guifont=JetBrainsMono\ Nerd\ Font:h12]])
 
 -- overwrite Highlight
 -- command[[highlight Normal guibg=#313131]]
-command[[highlight CursorLine guibg=#393939]]
-command[[
+command([[highlight CursorLine guibg=#393939]])
+command([[
 augroup illuminate_augroup
   autocmd!
   autocmd VimEnter * hi illuminatedCurWord guibg=#3D4A3B
 augroup END
-]]
+]])
 
 opt.syntax = "on"
 -- command([[
