@@ -8,6 +8,7 @@ vim.o.completeopt = "menuone,noinsert,noselect"
 local types = require("cmp.types")
 local str = require("cmp.utils.str")
 local lspkind = require("lspkind")
+local luasnip = require("luasnip")
 
 local mapping = {
   ["<ESC>"] = cmp.mapping {
@@ -18,8 +19,24 @@ local mapping = {
     c = cmp.mapping.close(),
   },
   ["<CR>"] = cmp.mapping.confirm { select = true }, -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-  ["<Tab>"] = cmp.mapping.select_next_item(),
-  ["<S-Tab>"] = cmp.mapping.select_prev_item(),
+  ["<Tab>"] = function(fallback)
+    if cmp.visible() then
+      cmp.select_next_item()
+    elseif luasnip.expand_or_jumpable() then
+      vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
+    else
+      fallback()
+    end
+  end,
+  ["<S-Tab>"] = function(fallback)
+    if cmp.visible() then
+      cmp.select_prev_item()
+    elseif luasnip.jumpable(-1) then
+      vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
+    else
+      fallback()
+    end
+  end,
 }
 
 cmp.setup {
@@ -27,7 +44,7 @@ cmp.setup {
     -- REQUIRED - you must specify a snippet engine
     expand = function(args)
       -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-      require("luasnip").lsp_expand(args.body)
+      luasnip.lsp_expand(args.body)
     end,
   },
 
