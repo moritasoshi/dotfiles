@@ -1,0 +1,49 @@
+{
+  "title": "MS's Keybind",
+  "rules": [
+    {
+      "description": "Fn + , => _",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "modifiers": {
+              "mandatory": [
+                "fn"
+              ]
+            },
+            "key_code": "comma"
+          },
+          "to": [
+            {
+              "repeat": true,
+              "key_code": "international1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "description": "Fn + m => -",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "modifiers": {
+              "mandatory": [
+                "fn"
+              ]
+            },
+            "key_code": "m"
+          },
+          "to": [
+            {
+              "repeat": true,
+              "key_code": "hyphen"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
