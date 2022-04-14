@@ -25,6 +25,8 @@ alias ssh='TERM=xterm-256color ssh'
 alias tree='lsd -a --tree'
 alias vim='nvim'
 alias vimdiff='nvim -d'
+alias vdiff='vimdiff'
+alias vd='vimdiff'
 
 ## tmux
 alias tm='tmux'

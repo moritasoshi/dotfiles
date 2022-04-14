@@ -9,8 +9,17 @@ command([[colorscheme gruvbox-material]])
 command([[set guifont=JetBrainsMono\ Nerd\ Font:h12]])
 
 -- overwrite Highlight
--- command[[highlight Normal guibg=#313131]]
-command([[highlight CursorLine guibg=#393939]])
+command([[
+" cursorline highlight
+highlight CursorLine guibg=#393939
+
+" vimdiff highlight
+if &diff
+  hi CursorLine gui=NONE cterm=NONE
+  hi CursorLineNr gui=NONE cterm=NONE
+  hi DiffDelete   gui=NONE guifg=#440606
+endif
+]])
 command([[
 augroup illuminate_augroup
   autocmd!
@@ -19,11 +28,6 @@ augroup END
 ]])
 
 opt.syntax = "on"
--- command([[
--- set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
--- \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
--- \,sm:block-blinkwait175-blinkoff150-blinkon175
--- ]]) -- Blinking cursor
 
 opt.encoding = "utf-8"
 opt.fileencodings = "utf-8,sjis,euc-jp,latin"
