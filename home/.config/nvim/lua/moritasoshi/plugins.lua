@@ -207,3 +207,17 @@ use {
 --   end,
 -- }
 -- use { "simrat39/symbols-outline.nvim" }
+use {
+  "sunjon/shade.nvim",
+  config = function()
+    require("shade").setup {
+      overlay_opacity = 65,
+      opacity_step = 1,
+      keys = {
+        brightness_up = "<C-Up>",
+        brightness_down = "<C-Down>",
+        toggle = "<Leader>ss",
+      },
+    }
+  end,
+}

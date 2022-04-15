@@ -18,7 +18,7 @@ local mapping = {
     end,
     c = cmp.mapping.close(),
   },
-  ["<CR>"] = cmp.mapping.confirm { select = true }, -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+  ["<CR>"] = cmp.mapping.confirm { select = true }, -- Accept currently selected item.
   ["<Tab>"] = function(fallback)
     if cmp.visible() then
       cmp.select_next_item()
@@ -37,6 +37,10 @@ local mapping = {
       fallback()
     end
   end,
+  ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+  ["<C-f>"] = cmp.mapping.scroll_docs(4),
+  ["<C-Space>"] = cmp.mapping.complete(),
+  ["<C-e>"] = cmp.mapping.abort(),
 }
 
 cmp.setup {
@@ -106,6 +110,7 @@ cmp.setup {
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline("/", {
+  mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = "buffer" },
   },
@@ -113,6 +118,7 @@ cmp.setup.cmdline("/", {
 
 -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(":", {
+  mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources {
     { name = "cmdline" },
     { name = "path" },
