@@ -1,6 +1,6 @@
 local M = {}
 
-local keymap = function (mode, lhs, rhs, opts)
+local keymap = function(mode, lhs, rhs, opts)
   local options = opts or { noremap = true, silent = true }
   vim.keymap.set(mode, lhs, rhs, options)
 end
@@ -22,7 +22,6 @@ M.xmap = function(tbl)
   keymap("x", tbl[1], tbl[2], tbl[3])
 end
 
-
 -- local set_options = function (opts)
 --     opts = opts or {}
 --
@@ -32,6 +31,5 @@ end
 --         end
 --     end
 -- end
-
 
 return M

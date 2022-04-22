@@ -104,7 +104,7 @@ use { "TimUntersberger/neogit", cmd = { "Neogit" }, config = get_config("neogit"
 use {
   "sindrets/diffview.nvim",
   after = { "neogit" },
-  cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles" },
+  cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewFileHistory" },
   config = get_config("diffview"),
 }
 use { "f-person/git-blame.nvim" }
@@ -207,17 +207,48 @@ use {
 --   end,
 -- }
 -- use { "simrat39/symbols-outline.nvim" }
-use {
-  "sunjon/shade.nvim",
-  config = function()
-    require("shade").setup {
-      overlay_opacity = 65,
-      opacity_step = 1,
-      keys = {
-        brightness_up = "<C-Up>",
-        brightness_down = "<C-Down>",
-        toggle = "<Leader>ss",
-      },
-    }
-  end,
-}
+-- use {
+--   "sunjon/shade.nvim",
+--   config = function()
+--     require("shade").setup {
+--       overlay_opacity = 65,
+--       opacity_step = 1,
+--       keys = {
+--         brightness_up = "<C-Up>",
+--         brightness_down = "<C-Down>",
+--         toggle = "<Leader>ss",
+--       },
+--     }
+--   end,
+-- }
+
+-- use { "jbyuki/one-small-step-for-vimkind" }
+-- use {
+--   "mfussenegger/nvim-dap",
+--   config = function()
+--     local dap = require("dap")
+--     dap.configurations.lua = {
+--       {
+--         type = "nlua",
+--         request = "attach",
+--         name = "Attach to running Neovim instance",
+--         host = function()
+--           local value = vim.fn.input("Host [127.0.0.1]: ")
+--           if value ~= "" then
+--             return value
+--           end
+--           return "127.0.0.1"
+--         end,
+--         port = function()
+--           local val = tonumber(vim.fn.input("Port: "))
+--           assert(val, "Please provide a port number")
+--           return val
+--         end,
+--       },
+--     }
+--
+--     dap.adapters.nlua = function(callback, config)
+--       callback { type = "server", host = config.host, port = config.port }
+--     end
+--   end,
+-- }

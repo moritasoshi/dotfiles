@@ -10,17 +10,14 @@ k.nmap { "<leader>xx", "<cmd>TroubleToggle<cr>" }
 k.nmap { "<Leader>mm", ":PrevimOpen<CR>" }
 k.nmap { "<Leader>vv", ":SymbolsOutline<CR>" }
 
-
 k.nmap { "<Leader>w", ":w<CR>" }
 k.nmap { "<Leader>s", ":so % | lua print('Loaded \"' .. vim.fn.expand('%') .. '\"')<CR>" }
 k.nmap { "O", ":<C-u>call append(expand('.'), '')<CR>j" }
 k.nmap { "<ESC>", ":nohlsearch<CR><ESC>" }
 k.map { "", "-", "$" }
-k.nmap { "gy", ":let @* = expand('%') | lua print('Copied ' .. vim.fn.expand('%') .. ' to system clipboard!')<CR>" }
-k.nmap {
-  "gyy",
-  ":let @* = expand('%:p') | lua print('Copied ' .. vim.fn.expand('%:p') .. ' to system clipboard!')<CR>",
-}
+
+k.nmap { "gy", ":let @* = expand('%:t') | lua print('Copied ' .. vim.fn.expand('%:t') .. ' to system clipboard!')<CR>" }
+k.nmap { "gyy", ":let @* = expand('%') | lua print('Copied ' .. vim.fn.expand('%') .. ' to system clipboard!')<CR>" }
 
 -- For <Leader>
 k.map { "", "<Space>", "<NOP>" }
@@ -53,3 +50,7 @@ k.map { "", "<LEFT>", ":WinResizerStartResize<CR>h<CR>" }
 k.map { "", "<DOWN>", ":WinResizerStartResize<CR>j<CR>" }
 k.map { "", "<UP>", ":WinResizerStartResize<CR>k<CR>" }
 k.map { "", "<RIGHT>", ":WinResizerStartResize<CR>l<CR>" }
+
+-- Diffview
+k.map { "", "<Leader>dc", ":DiffviewClose<CR>" }
+k.map { "", "<Leader>dh", ":DiffviewFileHistory<CR>" }
