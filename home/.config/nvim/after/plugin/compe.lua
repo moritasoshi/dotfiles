@@ -18,7 +18,17 @@ local mapping = {
     end,
     c = cmp.mapping.close(),
   },
-  ["<CR>"] = cmp.mapping.confirm { select = true }, -- Accept currently selected item.
+  ["<CR>"] = function(fallback)
+    if cmp.visible() then
+      if cmp.get_selected_entry() then
+        cmp.confirm()
+      else
+        cmp.abort()
+      end
+    else
+      fallback() -- If you are using vim-endwise, this fallback function will be behaive as the vim-endwise.
+    end
+  end,
   ["<Tab>"] = function(fallback)
     if cmp.visible() then
       cmp.select_next_item()

@@ -60,11 +60,7 @@ use { "nathom/filetype.nvim" } -- Replacement for the included filetype.vim
 use { "dstein64/vim-startuptime", cmd = "StartupTime" }
 
 -- UI & Interface
-use {
-  "goolord/alpha-nvim",
-  commit = "735d69022c0e9fe224e3e2e3cea30ca0e3e0f8ba", -- https://github.com/goolord/alpha-nvim/issues/92
-  config = get_config("alpha"),
-}
+use { "goolord/alpha-nvim", config = get_config("alpha") }
 use { "nvim-lualine/lualine.nvim", config = get_config("lualine") }
 use {
   "kyazdani42/nvim-tree.lua",
@@ -89,7 +85,7 @@ use {
 }
 
 -- Treesitter
-use { "nvim-treesitter/nvim-treesitter", config = get_config("treesitter") }
+use { "nvim-treesitter/nvim-treesitter", config = get_config("treesitter"), run = ":TSUpdate" }
 use { "p00f/nvim-ts-rainbow" }
 -- use {
 --   "lewis6991/spellsitter.nvim",

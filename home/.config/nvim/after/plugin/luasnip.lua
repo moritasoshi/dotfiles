@@ -1,15 +1,15 @@
 local ls = require("luasnip")
 
-local s = ls.parser.parse_snippet
+local s = ls.snippet
+local t = ls.text_node
+local i = ls.insert_node
 
-local date = function()
-  return string.format(string.gsub(vim.bo.commentstring, "%%s", " %%s"), os.date())
-end
-
-ls.snippets = {
-  all = {
-    s("expand", date()),
-  },
-}
+ls.add_snippets("typescriptreact", {
+  s("cl", {
+    t("console.log("),
+    i(1, "msg"),
+    t(")"),
+  }),
+})
 
 require("luasnip.loaders.from_vscode").lazy_load() -- Activate friendly snippets
