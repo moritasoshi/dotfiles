@@ -1,0 +1,6 @@
+#!/bin/bash
+
+git vac
+
+# 他人が追加したリモートブランチはfetchで取ってこれるが、削除したブランチはそのまま残る
+git fetch --prune
