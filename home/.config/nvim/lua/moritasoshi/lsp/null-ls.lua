@@ -7,9 +7,7 @@ local sources = {
   null_ls.builtins.formatting.prettier.with {
     extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
   },
-  null_ls.builtins.formatting.stylua.with {
-    extra_args = { "--config-path", vim.fn.expand("~/.config/nvim/stylua.toml") },
-  },
+  null_ls.builtins.formatting.stylua.with {},
   null_ls.builtins.formatting.shfmt.with {
     extra_args = { "-i", "2", "-ci" },
   },

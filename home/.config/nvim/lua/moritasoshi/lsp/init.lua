@@ -2,6 +2,13 @@ local lspinstaller = require("nvim-lsp-installer")
 local lspconfig = require("lspconfig")
 
 lspinstaller.setup {
+  ensure_installed = {
+    "bashls",
+    "jdtls",
+    "jsonls",
+    "sumneko_lua",
+    "tsserver",
+  },
   log_level = vim.log.levels.DEBUG,
 }
 require("moritasoshi.lsp.handlers").setup()

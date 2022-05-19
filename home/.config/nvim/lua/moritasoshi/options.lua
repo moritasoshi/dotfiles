@@ -2,17 +2,10 @@ local command = vim.cmd
 local opt = vim.opt
 
 vim.opt.termguicolors = true
-vim.g.gruvbox_material_palette = "mix" -- material, mix, original
-vim.g.gruvbox_material_background = "hard" -- soft. medium, hard
-vim.g.gruvbox_material_enable_italic = 1
-command([[colorscheme gruvbox-material]])
 command([[set guifont=JetBrainsMono\ Nerd\ Font:h12]])
 
 -- overwrite Highlight
 command([[
-" cursorline highlight
-highlight CursorLine guibg=#393939
-
 " vimdiff highlight
 if &diff
   hi CursorLine gui=NONE cterm=NONE

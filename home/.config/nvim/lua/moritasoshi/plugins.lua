@@ -1,3 +1,5 @@
+-- respect https://github.com/williamboman/nvim-config/blob/main/lua/wb/plugins.lua
+
 -- returns the require for use in `config` parameter of packer's use
 -- expects the name of the config file
 local get_config = function(name)
@@ -6,15 +8,13 @@ end
 
 -- initialize and configure packer
 local packer = require("packer")
+local use = packer.use
 packer.init {
   -- Move packer_compiled lua dir so impatient.nvim can cache it
   compile_path = "~/src/dotfiles/home/.config/nvim" .. "/lua/moritasoshi/packer_compiled.lua",
   max_jobs = 3, -- https://github.com/wbthomason/packer.nvim/issues/746
 }
-local use = packer.use
 packer.reset()
-
-vim.cmd([[autocmd BufWritePost plugins.lua PackerCompile]])
 
 -- ============================================================
 -- =====================  Packer Plugins  =====================
@@ -23,13 +23,21 @@ vim.cmd([[autocmd BufWritePost plugins.lua PackerCompile]])
 use { "wbthomason/packer.nvim" }
 
 -- Theme
-use { "sainnhe/gruvbox-material" }
+use {
+  "sainnhe/gruvbox-material",
+  config = function()
+    vim.g.gruvbox_material_palette = "mix" -- material, mix, original
+    vim.g.gruvbox_material_background = "hard" -- soft. medium, hard
+    vim.g.gruvbox_material_enable_italic = 1
+    vim.cmd([[colorscheme gruvbox-material]])
+    vim.cmd([[highlight CursorLine guibg=#393939]])
+  end,
+}
 
 -- Text manipulation
 -- use { "ThePrimeagen/harpoon", config = get_config("harpoon") }
 -- use { "dkarter/bullets.vim" }
 -- use { "ggandor/lightspeed.nvim", event = "BufReadPre" }
-use { "JoosepAlviste/nvim-ts-context-commentstring" }
 use { "RRethy/vim-illuminate" }
 use { "abecodes/tabout.nvim", config = get_config("tabout") }
 use { "godlygeek/tabular" } -- Quickly align text by pattern
@@ -64,11 +72,7 @@ use { "nathom/filetype.nvim" } -- Replacement for the included filetype.vim
 -- UI & Interface
 use { "akinsho/bufferline.nvim", config = get_config("bufferline") }
 use { "goolord/alpha-nvim", config = get_config("alpha") }
-use {
-  "karb94/neoscroll.nvim",
-  config = get_config("neoscroll"),
-  keys = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "zt", "zz", "zb" },
-}
+use { "karb94/neoscroll.nvim", config = get_config("neoscroll") }
 use {
   "kyazdani42/nvim-tree.lua",
   cmd = { "NvimTreeToggle", "NvimTreeFindFileToggle" },
@@ -78,6 +82,18 @@ use { "kyazdani42/nvim-web-devicons", config = get_config("web-devicons") }
 use { "nvim-lualine/lualine.nvim", config = get_config("lualine") }
 use { "ryanoasis/vim-devicons" }
 use { "simeji/winresizer" }
+use {
+  "stevearc/dressing.nvim",
+  config = function()
+    require("dressing").setup {
+      input = {
+        winblend = 10,
+        winhighlight = "Normal:DressingInputNormalFloat,NormalFloat:DressingInputNormalFloat,FloatBorder:DressingInputFloatBorder",
+        border = "single",
+      },
+    }
+  end,
+}
 
 -- Notification
 use {
@@ -88,22 +104,37 @@ use {
 }
 
 -- Treesitter
+use { "JoosepAlviste/nvim-ts-context-commentstring" }
 use { "nvim-treesitter/nvim-treesitter", config = get_config("treesitter"), run = ":TSUpdate" }
 use { "p00f/nvim-ts-rainbow" }
+use {
+  "windwp/nvim-ts-autotag",
+  ft = { "html", "javascript", "javascriptreact", "typescriptreact", "svelte", "vue" },
+}
 
 -- Git
 use { "TimUntersberger/neogit", cmd = { "Neogit" }, config = get_config("neogit") }
 use { "f-person/git-blame.nvim" }
 use { "lewis6991/gitsigns.nvim", config = get_config("gitsigns") }
 use { "rhysd/committia.vim" }
-use { "sindrets/diffview.nvim", after = { "neogit" }, cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewFileHistory" }, config = get_config("diffview"), }
+use {
+  "sindrets/diffview.nvim",
+  after = { "neogit" },
+  cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewFileHistory" },
+  config = get_config("diffview"),
+}
 
 -- LSP
 use { "b0o/schemastore.nvim" } -- schemastore.org
 use { "folke/lua-dev.nvim" }
-use { "folke/trouble.nvim", cmd = { "TroubleToggle" }, config = get_config("trouble"), }
+use { "folke/trouble.nvim", cmd = { "TroubleToggle" }, config = get_config("trouble") }
 --- lsp progress
-use { "j-hui/fidget.nvim", config = function() require("fidget").setup() end, }
+use {
+  "j-hui/fidget.nvim",
+  config = function()
+    require("fidget").setup()
+  end,
+}
 use { "jose-elias-alvarez/null-ls.nvim", commit = "c832a0ecb18fac8b35967111327434edf6f782aa" } -- Run `brew install stylua`
 use { "mfussenegger/nvim-jdtls" }
 use { "neovim/nvim-lspconfig" }
@@ -134,9 +165,10 @@ use { "NTBBloodbath/rest.nvim" }
 use { "previm/previm", requires = "tyru/open-browser.vim" }
 
 -- Zen
-use { "folke/twilight.nvim", after = "zen", config = get_config("twilight") }
-use { "folke/zen-mode.nvim", as = "zen", cmd = "ZenMode", config = get_config("zen") }
-
+use {
+  { "folke/twilight.nvim", after = "zen", config = get_config("twilight") },
+  { "folke/zen-mode.nvim", as = "zen", cmd = "ZenMode", config = get_config("zen") },
+}
 -- Tmux
 use { "christoomey/vim-tmux-navigator" }
 
