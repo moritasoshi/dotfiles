@@ -1,8 +1,28 @@
-local status_ok, _ = pcall(require, "lspconfig")
-if not status_ok then
-  return
+local lspinstaller = require("nvim-lsp-installer")
+local lspconfig = require("lspconfig")
+
+lspinstaller.setup {
+  log_level = vim.log.levels.DEBUG,
+}
+require("moritasoshi.lsp.handlers").setup()
+
+local opts = {
+  on_attach = require("moritasoshi.lsp.handlers").on_attach,
+  capabilities = require("moritasoshi.lsp.handlers").capabilities,
+}
+
+for _, server in ipairs(lspinstaller.get_installed_servers()) do
+  if server.name == "jsonls" then
+    local jsonls_opts = require("moritasoshi.lsp.settings.jsonls")
+    opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
+  end
+
+  if server.name == "sumneko_lua" then
+    local sumneko_opts = require("moritasoshi.lsp.settings.sumneko_lua").setup(opts)
+    opts = sumneko_opts
+  end
+
+  lspconfig[server.name].setup(opts)
 end
 
-require("moritasoshi.lsp.lsp-installer")
-require("moritasoshi.lsp.handlers").setup()
 require("moritasoshi.lsp.null-ls")
