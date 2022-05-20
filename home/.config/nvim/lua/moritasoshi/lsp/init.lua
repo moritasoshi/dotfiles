@@ -19,6 +19,10 @@ local opts = {
 }
 
 for _, server in ipairs(lspinstaller.get_installed_servers()) do
+  if server.name == "jdtls" then
+    goto continue
+  end
+
   if server.name == "jsonls" then
     local jsonls_opts = require("moritasoshi.lsp.settings.jsonls")
     opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
@@ -30,6 +34,7 @@ for _, server in ipairs(lspinstaller.get_installed_servers()) do
   end
 
   lspconfig[server.name].setup(opts)
+  ::continue::
 end
 
 require("moritasoshi.lsp.null-ls")

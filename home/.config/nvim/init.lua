@@ -20,6 +20,7 @@ require("moritasoshi.plugins")
 require("moritasoshi.packer_compiled")
 
 -- Set up LSP
+vim.lsp.set_log_level("debug")
 require("moritasoshi.lsp")
 
 -- Commands nd Keymaps

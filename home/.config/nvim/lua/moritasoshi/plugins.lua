@@ -135,7 +135,7 @@ use {
     require("fidget").setup()
   end,
 }
-use { "jose-elias-alvarez/null-ls.nvim", commit = "c832a0ecb18fac8b35967111327434edf6f782aa" } -- Run `brew install stylua`
+use { "jose-elias-alvarez/null-ls.nvim" } -- Run `brew install stylua`
 use { "mfussenegger/nvim-jdtls" }
 use { "neovim/nvim-lspconfig" }
 use { "nvim-lua/lsp-status.nvim" }

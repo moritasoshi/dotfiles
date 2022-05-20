@@ -7,6 +7,7 @@ end
 schemas = vim.tbl_deep_extend("force", schemas, require("schemastore").json.schemas())
 
 local opts = {
+  cmd = { "nodebrew", "exec", "latest", "vscode-json-language-server", "--stdio"},
   settings = {
     json = {
       schemas = schemas,
