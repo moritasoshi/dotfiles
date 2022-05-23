@@ -48,4 +48,9 @@ tree.setup {
       list = list,
     },
   },
+  actions = {
+    open_file = {
+      resize_window = false,
+    },
+  },
 }

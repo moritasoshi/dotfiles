@@ -1,10 +1,7 @@
---[[--
-  Summary. Vimへのフォーカス取得と挿入モード離脱時にひらがな から 英字 にIME変換する
-
-  Requirements. im-select must be installed.
-
-  Reference. https://github.com/brglng/vim-im-select
-
+--[[
+  Summary      Vimへのフォーカス取得と挿入モード離脱時にひらがな から 英字 にIME変換する
+  Requirements im-select must be installed.
+  Reference    https://github.com/brglng/vim-im-select
 
   @todo
   InsertEnter, FocusLost時に元のIMEにswitch-backする?
