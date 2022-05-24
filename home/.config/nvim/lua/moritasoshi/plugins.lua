@@ -43,7 +43,7 @@ use { "abecodes/tabout.nvim", config = get_config("tabout") }
 use { "godlygeek/tabular" } -- Quickly align text by pattern
 use { "haya14busa/vim-asterisk" }
 use { "kevinhwang91/nvim-hlslens", config = get_config("hlslens") }
-use { "lukas-reineke/indent-blankline.nvim", config = get_config("indentline") }
+use { "lukas-reineke/indent-blankline.nvim", commit = "8567ac8ccd19ee41a6ec55bf044884799fa3f56b", config = get_config("indentline") }
 use { "ntpeters/vim-better-whitespace" }
 use { "numToStr/Comment.nvim", config = get_config("comment") }
 use { "tpope/vim-abolish" }

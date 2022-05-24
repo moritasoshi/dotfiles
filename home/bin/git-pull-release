@@ -8,6 +8,6 @@ set -e
 
 git fetch --all
 
-git checkout develop && git pull
 git checkout master && git pull
+git checkout develop && git pull
 git pull --tags

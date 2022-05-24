@@ -3,7 +3,9 @@ vim.opt.termguicolors = true
 
 -- For better development
 -- require("impatient").enable_profile()
-pcall(require, "impatient")
+if not pcall(require, "impatient") then
+  print("Failed to load impatient.")
+end
 
 if require("moritasoshi.first_load") then
   return
