@@ -13,12 +13,12 @@ lspinstaller.setup {
 }
 require("moritasoshi.lsp.handlers").setup()
 
-local opts = {
-  on_attach = require("moritasoshi.lsp.handlers").on_attach,
-  capabilities = require("moritasoshi.lsp.handlers").capabilities,
-}
-
 for _, server in ipairs(lspinstaller.get_installed_servers()) do
+  local opts = {
+    on_attach = require("moritasoshi.lsp.handlers").on_attach,
+    capabilities = require("moritasoshi.lsp.handlers").capabilities,
+  }
+
   if server.name == "jdtls" then
     goto continue
   end
