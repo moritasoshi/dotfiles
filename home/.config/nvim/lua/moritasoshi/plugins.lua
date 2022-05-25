@@ -1,19 +1,17 @@
 -- respect https://github.com/williamboman/nvim-config/blob/main/lua/wb/plugins.lua
-
 -- returns the require for use in `config` parameter of packer's use
 -- expects the name of the config file
 local get_config = function(name)
   return string.format('require("moritasoshi.config.%s")', name)
 end
+-- returns the require for use in `config` parameter of packer's use
+-- expects the name of the config file
 
 -- initialize and configure packer
 local packer = require("packer")
+local options = require("core.packer").options
 local use = packer.use
-packer.init {
-  -- Move packer_compiled lua dir so impatient.nvim can cache it
-  compile_path = "~/src/dotfiles/home/.config/nvim" .. "/lua/moritasoshi/packer_compiled.lua",
-  max_jobs = 3, -- https://github.com/wbthomason/packer.nvim/issues/746
-}
+packer.init(options)
 packer.reset()
 
 -- ============================================================
@@ -43,7 +41,11 @@ use { "abecodes/tabout.nvim", config = get_config("tabout") }
 use { "godlygeek/tabular" } -- Quickly align text by pattern
 use { "haya14busa/vim-asterisk" }
 use { "kevinhwang91/nvim-hlslens", config = get_config("hlslens") }
-use { "lukas-reineke/indent-blankline.nvim", commit = "8567ac8ccd19ee41a6ec55bf044884799fa3f56b", config = get_config("indentline") }
+use {
+  "lukas-reineke/indent-blankline.nvim",
+  commit = "8567ac8ccd19ee41a6ec55bf044884799fa3f56b",
+  config = get_config("indentline"),
+}
 use { "ntpeters/vim-better-whitespace" }
 use { "numToStr/Comment.nvim", config = get_config("comment") }
 use { "tpope/vim-abolish" }
@@ -59,7 +61,11 @@ use { "farmergreg/vim-lastplace" } -- Memory line
 use {
   "norcalli/nvim-colorizer.lua",
   config = function()
-    require("colorizer").setup()
+    local present, colorizer = pcall(require, "colorizer")
+    if not present then
+      return
+    end
+    colorizer.setup()
   end,
 }
 use { "nvim-lua/plenary.nvim" }
@@ -85,7 +91,11 @@ use { "simeji/winresizer" }
 use {
   "stevearc/dressing.nvim",
   config = function()
-    require("dressing").setup {
+    local present, dressing = pcall(require, "dressing")
+    if not present then
+      return
+    end
+    dressing.setup {
       input = {
         winblend = 10,
         winhighlight = "Normal:DressingInputNormalFloat,NormalFloat:DressingInputNormalFloat,FloatBorder:DressingInputFloatBorder",
@@ -99,7 +109,11 @@ use {
 use {
   "rcarriga/nvim-notify",
   config = function()
-    vim.notify = require("notify")
+    local present, notify = pcall(require, "notify")
+    if not present then
+      return
+    end
+    vim.notify = notify
   end,
 }
 
@@ -132,7 +146,11 @@ use { "folke/trouble.nvim", cmd = { "TroubleToggle" }, config = get_config("trou
 use {
   "j-hui/fidget.nvim",
   config = function()
-    require("fidget").setup()
+    local present, fidget = pcall(require, "fidget")
+    if not present then
+      return
+    end
+    fidget.setup()
   end,
 }
 use { "jose-elias-alvarez/null-ls.nvim" } -- Run `brew install stylua`
@@ -183,3 +201,4 @@ use {
   end,
 }
 -- sandwich
+

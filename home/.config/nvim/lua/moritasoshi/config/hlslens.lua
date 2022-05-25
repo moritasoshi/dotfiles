@@ -1,4 +1,9 @@
-require("hlslens").setup {
+local present, hlslens = pcall(require, "hlslens")
+if not present then
+  return
+end
+
+hlslens.setup {
   override_lens = function(render, posList, nearest, idx, relIdx)
     local sfw = vim.v.searchforward == 1
     local indicator, text, chunks

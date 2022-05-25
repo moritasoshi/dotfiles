@@ -1,4 +1,8 @@
-local ls = require("luasnip")
+local present, ls = pcall(require, "luasnip")
+if not present then
+  return
+end
+
 
 local s = ls.snippet
 local t = ls.text_node

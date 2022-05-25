@@ -1,4 +1,7 @@
-local autosave = require("autosave")
+local present, autosave = pcall(require, "autosave")
+if not present then
+  return
+end
 
 autosave.setup {
   enabled = true,

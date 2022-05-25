@@ -1,4 +1,8 @@
-local cb = require("diffview.config").diffview_callback
+local present, config = pcall(require, "diffview.config")
+if not present then
+  return
+end
+local cb = config.diffview_callback
 
 require("diffview").setup {
   diff_binaries = false, -- Show diffs for binaries

@@ -1,4 +1,7 @@
-local tree = require("nvim-tree")
+local present, tree = pcall(require, "nvim-tree")
+if not present then
+  return
+end
 
 local list = {
   { key = { "<CR>", "o", "<2-LeftMouse>" }, action = "edit" },

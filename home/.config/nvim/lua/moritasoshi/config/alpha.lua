@@ -1,10 +1,10 @@
-local status_ok, alpha = pcall(require, "alpha")
-if not status_ok then
+local present, alpha = pcall(require, "alpha")
+if not present then
   return
 end
 
-local path_ok, path = pcall(require, "plenary.path")
-if not path_ok then
+local path_present, path = pcall(require, "plenary.path")
+if not path_present then
   return
 end
 

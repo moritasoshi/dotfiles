@@ -1,3 +1,8 @@
+local present, jdtls = pcall(require, "jdtls")
+if not present then
+  return
+end
+
 local home = os.getenv('HOME')
 local java_home = "/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home"
 
@@ -52,4 +57,4 @@ local config = {
 }
 -- This starts a new client & server,
 -- or attaches to an existing client & server depending on the `root_dir`.
-require("jdtls").start_or_attach(config)
+jdtls.start_or_attach(config)

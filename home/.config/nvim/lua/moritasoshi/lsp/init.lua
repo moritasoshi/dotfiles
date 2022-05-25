@@ -1,5 +1,12 @@
-local lspinstaller = require("nvim-lsp-installer")
-local lspconfig = require("lspconfig")
+local present, lspinstaller = pcall(require, "nvim-lsp-installer")
+if not present then
+  return
+end
+
+local present_config, lspconfig = pcall(require, "lspconfig")
+if not present_config then
+  return
+end
 
 lspinstaller.setup {
   ensure_installed = {

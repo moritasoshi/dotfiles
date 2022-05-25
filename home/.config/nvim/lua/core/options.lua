@@ -1,24 +1,7 @@
-local command = vim.cmd
 local opt = vim.opt
+local g = vim.g
 
-vim.opt.termguicolors = true
-command([[set guifont=JetBrainsMono\ Nerd\ Font:h12]])
-
--- overwrite Highlight
-command([[
-" vimdiff highlight
-if &diff
-  hi CursorLine gui=NONE cterm=NONE
-  hi CursorLineNr gui=NONE cterm=NONE
-  hi DiffDelete   gui=NONE guifg=#440606
-endif
-]])
-command([[
-augroup illuminate_augroup
-  autocmd!
-  autocmd VimEnter * hi illuminatedCurWord guibg=#3D4A3B
-augroup END
-]])
+opt.termguicolors = true
 
 opt.syntax = "on"
 
@@ -102,3 +85,60 @@ opt.formatoptions = opt.formatoptions
 
 -- set joinspaces
 opt.joinspaces = false -- Two spaces and grade school, we're done
+
+g.mapleader = " "
+
+-- use filetype.lua instead of filetype.vim
+g.did_load_filetypes = 0
+g.do_filetype_lua = 1
+
+local globals = {
+  strip_whitespace_on_save = 1, --strip whitespace on save
+  strip_whitespace_confirm = 0,
+
+  bullets_outline_levels = { "std-" },
+  bullets_checkbox_markers = " x",
+  bullets_nested_checkboxes = 1,
+  bullets_checkbox_partials_toggle = 1,
+
+  gitblame_enabled = 0,
+
+  -- simeji/winresizer
+  winresizer_vert_resize = 3,
+  winresizer_horiz_resize = 1,
+  winresizer_start_key = "<M-g>", -- 使わないkeyを適当に入れてる
+}
+
+for k, v in pairs(globals) do
+  g[k] = v
+end
+
+-- disable some builtin vim plugins
+local default_plugins = {
+  "loaded_gzip",
+  "loaded_zip",
+  "loaded_zipPlugin",
+  "loaded_tar",
+  "loaded_tarPlugin",
+  "loaded_getscript",
+  "loaded_getscriptPlugin",
+  "loaded_vimball",
+  "loaded_vimballPlugin",
+  "loaded_2html_plugin",
+  "loaded_matchit",
+  "loaded_matchparen",
+  "loaded_logiPat",
+  "loaded_rrhelper",
+  "loaded_netrw",
+  "loaded_netrwPlugin",
+  "loaded_netrwSettings",
+  "loaded_man",
+  "loaded_remote_plugins",
+  "loaded_shada_plugin",
+  "loaded_spellfile_plugin",
+  "loaded_tutor_mode_plugin",
+}
+
+for _, plugin in pairs(default_plugins) do
+  g["loaded_" .. plugin] = 1
+end

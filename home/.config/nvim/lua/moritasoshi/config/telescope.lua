@@ -1,7 +1,12 @@
 -- moritasoshi.telescope.lua
+local present, telescope = pcall(require, "telescope")
+if not present then
+  return
+end
+
 local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
-require("telescope").setup {
+telescope.setup {
   defaults = {
     vimgrep_arguments = {
       "rg",
