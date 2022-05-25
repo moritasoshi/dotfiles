@@ -3,6 +3,9 @@ dot_dir := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 deploy:
 	@bash $(dot_dir)/deploy.sh
 
+isucon:
+	@bash $(dot_dir)/isucon.sh
+
 install:
 	@bash $(dot_dir)/install.sh
 	@bash $(dot_dir)/deploy.sh
