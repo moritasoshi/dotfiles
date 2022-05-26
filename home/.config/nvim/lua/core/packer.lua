@@ -4,7 +4,7 @@ M.bootstrap = function()
   local fn = vim.fn
   local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
-   vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1e222a" })
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#1e222a" })
 
   if fn.empty(fn.glob(install_path)) > 0 then
     print("Cloning packer ..")
@@ -35,6 +35,10 @@ M.options = {
       return require("packer.util").float { border = "single" }
     end,
   },
+  profile = {
+    enable = true,
+    threshold = 1,
+  },
 }
 
 M.options = moriso.load_override(M.options, "wbthomason/packer.nvim")
@@ -47,8 +51,8 @@ M.run = function(plugins)
   end
 
   -- Override with chadrc values
-  -- plugins = moriso.remove_default_plugins(plugins)
-  -- plugins = moriso.merge_plugins(plugins)
+  plugins = moriso.remove_default_plugins(plugins)
+  plugins = moriso.merge_plugins(plugins)
 
   packer.init(M.options)
 

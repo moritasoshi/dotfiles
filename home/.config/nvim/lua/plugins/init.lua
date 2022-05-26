@@ -33,8 +33,9 @@ local plugins = {
   ["lukas-reineke/indent-blankline.nvim"] = {
     commit = "8567ac8ccd19ee41a6ec55bf044884799fa3f56b",
     config = get_config("indentline"),
+    event = "BufRead",
   },
-  ["numToStr/Comment.nvim"] = { config = get_config("comment") },
+  ["numToStr/Comment.nvim"] = { config = get_config("comment"), keys = { "gb", "gc", "gcc" } },
   ["windwp/nvim-autopairs"] = { config = get_config("autopairs") },
 
   -- Util
@@ -49,13 +50,13 @@ local plugins = {
       end
       colorizer.setup()
     end,
+    event = "BufRead",
   },
   ["nvim-lua/plenary.nvim"] = {},
 
   -- Speedup
   ["dstein64/vim-startuptime"] = { cmd = "StartupTime" },
   ["lewis6991/impatient.nvim"] = {},
-  ["nathom/filetype.nvim"] = {},
 
   -- UI & Interface
   ["akinsho/bufferline.nvim"] = { config = get_config("bufferline") },
@@ -63,7 +64,12 @@ local plugins = {
   ["karb94/neoscroll.nvim"] = { config = get_config("neoscroll") },
 
   ["kyazdani42/nvim-web-devicons"] = { config = get_config("web-devicons") },
-  ["nvim-lualine/lualine.nvim"] = { config = get_config("lualine") },
+  ["nvim-lualine/lualine.nvim"] = {
+    config = get_config("lualine"),
+    setup = function()
+      moriso.packer_lazy_load("lualine.nvim")
+    end,
+  },
   ["ryanoasis/vim-devicons"] = {},
   ["simeji/winresizer"] = {},
   ["kyazdani42/nvim-tree.lua"] = {
@@ -109,8 +115,9 @@ local plugins = {
   ["TimUntersberger/neogit"] = { cmd = { "Neogit" }, config = get_config("neogit") },
   ["f-person/git-blame.nvim"] = {},
   ["lewis6991/gitsigns.nvim"] = {
-    config = function()
-      moriso.packer_lazy_load("moritasoshi.config.gitsigns")
+    config = get_config("gitsigns"),
+    setup = function()
+      moriso.packer_lazy_load("gitsigns.nvim")
     end,
   },
   ["rhysd/committia.vim"] = {},
@@ -125,17 +132,27 @@ local plugins = {
   ["folke/trouble.nvim"] = { cmd = { "TroubleToggle" }, config = get_config("trouble") },
   --- lsp progress
   ["j-hui/fidget.nvim"] = {
-    config = function()
-      moriso.packer_lazy_load("moritasoshi.config.fidget")
+    config = get_config("fidget"),
+    setup = function()
+      moriso.packer_lazy_load("fidget.nvim")
     end,
   },
   ["jose-elias-alvarez/null-ls.nvim"] = { run = "brew install stylua" },
   ["mfussenegger/nvim-jdtls"] = {},
-  ["neovim/nvim-lspconfig"] = {},
+  ["neovim/nvim-lspconfig"] = {
+    after = "nvim-lsp-installer",
+    config = function()
+      require("moritasoshi.lsp")
+    end,
+  },
   ["nvim-lua/lsp-status.nvim"] = {},
   ["williamboman/nvim-lsp-installer"] = {
-    config = function()
-      moriso.packer_lazy_load("moritasoshi.lsp")
+    setup = function()
+      moriso.packer_lazy_load("nvim-lsp-installer")
+      -- reload the current file so lsp actually starts for it
+      vim.defer_fn(function()
+        vim.cmd('if &ft == "packer" | echo "" | else | silent! e %')
+      end, 0)
     end,
   },
   -- Completion
@@ -152,14 +169,19 @@ local plugins = {
   -- Telescope
   ["nvim-telescope/telescope-frecency.nvim"] = { requires = { "tami5/sqlite.lua" } },
   ["nvim-telescope/telescope-fzf-native.nvim"] = { run = "make" },
-  ["nvim-telescope/telescope.nvim"] = { config = get_config("telescope") },
+  ["nvim-telescope/telescope.nvim"] = {
+    config = get_config("telescope"),
+    setup = function()
+      moriso.packer_lazy_load("telescope.nvim")
+    end,
+  },
   -- HTTP Client
   ["NTBBloodbath/rest.nvim"] = {},
   -- Markdown
   ["previm/previm"] = { requires = "tyru/open-browser.vim" },
   -- Zen
-  ["folke/twilight.nvim"] = { after = "zen", config = get_config("twilight") },
-  ["folke/zen-mode.nvim"] = { as = "zen", cmd = "ZenMode", config = get_config("zen") },
+  -- ["folke/twilight.nvim"] = { after = "zen", config = get_config("twilight") },
+  -- ["folke/zen-mode.nvim"] = { as = "zen", cmd = "ZenMode", config = get_config("zen") },
   -- Tmux
   ["christoomey/vim-tmux-navigator"] = {},
   -- Optional (Trial)

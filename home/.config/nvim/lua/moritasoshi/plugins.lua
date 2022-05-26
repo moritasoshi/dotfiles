@@ -73,7 +73,6 @@ use { "nvim-lua/plenary.nvim" }
 -- Speedup
 use { "dstein64/vim-startuptime", cmd = "StartupTime" }
 use { "lewis6991/impatient.nvim" }
-use { "nathom/filetype.nvim" } -- Replacement for the included filetype.vim
 
 -- UI & Interface
 use { "akinsho/bufferline.nvim", config = get_config("bufferline") }
