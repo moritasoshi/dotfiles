@@ -161,17 +161,25 @@ local plugins = {
       end, 0)
     end,
   },
+
   -- Completion
-  ["L3MON4D3/LuaSnip"] = {},
-  ["hrsh7th/cmp-buffer"] = {},
-  ["hrsh7th/cmp-cmdline"] = {},
-  ["hrsh7th/cmp-nvim-lsp"] = {},
-  ["hrsh7th/cmp-path"] = {},
-  ["hrsh7th/nvim-cmp"] = {},
-  ["onsails/lspkind-nvim"] = {},
-  ["rafamadriz/friendly-snippets"] = {},
-  ["saadparwaiz1/cmp_luasnip"] = {},
-  ["tzachar/cmp-tabnine"] = { run = "./install.sh", requires = "hrsh7th/nvim-cmp" },
+  ["rafamadriz/friendly-snippets"] = { event = "InsertEnter" },
+  ["L3MON4D3/LuaSnip"] = { after = "friendly-snippets", config = get_config("luasnip") },
+  ["onsails/lspkind-nvim"] = { after = "LuaSnip", event = "CmdlineEnter" },
+  ["hrsh7th/nvim-cmp"] = { after = "lspkind-nvim" },
+  ["saadparwaiz1/cmp_luasnip"] = { after = "nvim-cmp" },
+  ["hrsh7th/cmp-nvim-lua"] = { after = "cmp_luasnip" },
+  ["hrsh7th/cmp-nvim-lsp"] = { after = "cmp-nvim-lua" },
+  ["hrsh7th/cmp-buffer"] = { after = "cmp-nvim-lsp" },
+  ["hrsh7th/cmp-path"] = { after = "cmp-buffer" },
+  ["hrsh7th/cmp-cmdline"] = { after = "cmp-path" },
+  ["tzachar/cmp-tabnine"] = {
+    after = "cmp-cmdline",
+    config = get_config("compe"),
+    run = "./install.sh",
+    requires = "hrsh7th/nvim-cmp",
+  },
+
   -- Telescope
   ["nvim-telescope/telescope-frecency.nvim"] = { requires = { "tami5/sqlite.lua" } },
   ["nvim-telescope/telescope-fzf-native.nvim"] = { run = "make" },
@@ -181,6 +189,7 @@ local plugins = {
       moriso.packer_lazy_load("telescope.nvim")
     end,
   },
+
   -- HTTP Client
   ["NTBBloodbath/rest.nvim"] = {},
   -- Markdown
