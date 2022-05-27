@@ -105,12 +105,11 @@ local plugins = {
   },
 
   -- Treesitter
-  ["JoosepAlviste/nvim-ts-context-commentstring"] = { after = "nvim-treesitter" },
   ["nvim-treesitter/nvim-treesitter"] = {
     config = get_config("treesitter"),
-    event = "BufEnter",
     run = ":TSUpdate",
   },
+  ["JoosepAlviste/nvim-ts-context-commentstring"] = { after = "nvim-treesitter" },
   ["p00f/nvim-ts-rainbow"] = { after = "nvim-treesitter" },
   ["windwp/nvim-ts-autotag"] = {
     after = "nvim-treesitter",
