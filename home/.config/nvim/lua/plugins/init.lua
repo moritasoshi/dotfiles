@@ -75,6 +75,7 @@ local plugins = {
   ["kyazdani42/nvim-tree.lua"] = {
     cmd = { "NvimTreeToggle", "NvimTreeFindFileToggle" },
     config = get_config("nvim-tree"),
+    ft = "alpha",
   },
   ["stevearc/dressing.nvim"] = {
     config = function()
@@ -104,10 +105,15 @@ local plugins = {
   },
 
   -- Treesitter
-  ["JoosepAlviste/nvim-ts-context-commentstring"] = {},
-  ["nvim-treesitter/nvim-treesitter"] = { config = get_config("treesitter"), run = ":TSUpdate" },
-  ["p00f/nvim-ts-rainbow"] = {},
+  ["JoosepAlviste/nvim-ts-context-commentstring"] = { after = "nvim-treesitter" },
+  ["nvim-treesitter/nvim-treesitter"] = {
+    config = get_config("treesitter"),
+    event = "BufEnter",
+    run = ":TSUpdate",
+  },
+  ["p00f/nvim-ts-rainbow"] = { after = "nvim-treesitter" },
   ["windwp/nvim-ts-autotag"] = {
+    after = "nvim-treesitter",
     ft = { "html", "javascript", "javascriptreact", "typescriptreact", "svelte", "vue" },
   },
 
