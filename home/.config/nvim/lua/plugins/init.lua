@@ -142,7 +142,7 @@ local plugins = {
       moriso.packer_lazy_load("fidget.nvim")
     end,
   },
-  ["jose-elias-alvarez/null-ls.nvim"] = { run = "brew install stylua" },
+  ["jose-elias-alvarez/null-ls.nvim"] = {}, -- run "brew install stylua"
   ["mfussenegger/nvim-jdtls"] = {},
   ["neovim/nvim-lspconfig"] = {
     after = "nvim-lsp-installer",

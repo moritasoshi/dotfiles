@@ -16,7 +16,7 @@ lspinstaller.setup {
     "sumneko_lua",
     "tsserver",
   },
-  log_level = vim.log.levels.DEBUG,
+  -- log_level = vim.log.levels.DEBUG,
 }
 require("moritasoshi.lsp.handlers").setup()
 
