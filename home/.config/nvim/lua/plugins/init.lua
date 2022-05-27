@@ -191,14 +191,18 @@ local plugins = {
   },
 
   -- HTTP Client
-  ["NTBBloodbath/rest.nvim"] = {},
+  ["NTBBloodbath/rest.nvim"] = { ft = "http", config = get_config("rest-nvim") },
+
   -- Markdown
   ["previm/previm"] = { requires = "tyru/open-browser.vim" },
+
   -- Zen
   -- ["folke/twilight.nvim"] = { after = "zen", config = get_config("twilight") },
   -- ["folke/zen-mode.nvim"] = { as = "zen", cmd = "ZenMode", config = get_config("zen") },
+
   -- Tmux
   ["christoomey/vim-tmux-navigator"] = {},
+
   -- Optional (Trial)
   ["tyru/open-browser.vim"] = {
     config = function()
