@@ -24,7 +24,7 @@ M.options = {
   auto_clean = true,
   compile_on_sync = true,
   git = { clone_timeout = 6000 },
-  max_jobs = 10,
+  max_jobs = 3,
   display = {
     working_sym = "ﲊ",
     error_sym = "✗",

@@ -11,6 +11,8 @@ configs.setup {
     "css",
     "dot",
     "go",
+    "gomod",
+    "gowork",
     "html",
     "http",
     "java",

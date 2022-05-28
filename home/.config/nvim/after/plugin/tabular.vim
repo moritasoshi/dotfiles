@@ -1,3 +1,4 @@
+finish
 if !exists('g:tabular_loaded')
   finish
 endif

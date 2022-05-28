@@ -50,41 +50,6 @@ local progress = function()
   return chars[index]
 end
 
--- local colors = {
---   yellow = "#ECBE7B",
---   cyan = "#008080",
---   darkblue = "#081633",
---   green = "#98be65",
---   orange = "#FF8800",
---   violet = "#a9a1e1",
---   magenta = "#c678dd",
---   blue = "#51afef",
---   red = "#ec5f67",
--- }
--- local lsp_progress = {
---   "lsp_progress",
---   colors = {
---     percentage = colors.yellow,
---     title = colors.yellow,
---     message = colors.yellow,
---     spinner = colors.yellow,
---     lsp_client_name = colors.magenta,
---     use = true,
---   },
---   separators = {
---     component = " ",
---     progress = " | ",
---     percentage = { pre = "", post = "%% " },
---     title = { pre = "", post = ": " },
---     lsp_client_name = { pre = "[", post = "]" },
---     spinner = { pre = "", post = "" },
---     message = { commenced = "In Progress", completed = "Completed" },
---   },
---   display_components = { "lsp_client_name", "spinner", { "title", "percentage", "message" } },
---   timer = { progress_enddelay = 500, spinner = 1000, lsp_client_name_enddelay = 1000 },
---   spinner_symbols = { "🌑 ", "🌒 ", "🌓 ", "🌔 ", "🌕 ", "🌖 ", "🌗 ", "🌘 " },
--- }
---
 lualine.setup {
   options = {
     icons_enabled = true,

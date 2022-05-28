@@ -20,11 +20,23 @@ local plugins = {
   -- use { "ThePrimeagen/harpoon", config = get_config("harpoon") }
   -- use { "dkarter/bullets.vim" }
   -- use { "ggandor/lightspeed.nvim", event = "BufReadPre" }
+  -- ["tpope/vim-abolish"] = {},
+  -- ["haya14busa/vim-asterisk"] = {},
   ["RRethy/vim-illuminate"] = {},
-  ["godlygeek/tabular"] = {},
-  ["haya14busa/vim-asterisk"] = {},
-  ["ntpeters/vim-better-whitespace"] = {},
-  ["tpope/vim-abolish"] = {},
+  ["godlygeek/tabular"] = {
+    cmd = "Tabularize",
+    config = function()
+      vim.cmd([[
+        AddTabularPattern! nvar /nvarchar(\w*)/l1r0
+        AddTabularPattern! f_comma /^[^,]*\zs,/l0l1
+        AddTabularPattern! f_colon /^[^:]*\zs:/
+        AddTabularPattern! f_equal /^[^=]*\zs=/
+        AddTabularPattern! f_quote /^[^"]*\zs"/l1r0
+        AddTabularPattern! f_space /^[^ ]*\zs /l0
+      ]])
+    end,
+  },
+  ["ntpeters/vim-better-whitespace"] = { event = { "InsertLeave", "TextChanged" } },
   ["tpope/vim-repeat"] = {},
   ["tpope/vim-speeddating"] = {},
   ["tpope/vim-surround"] = {},
@@ -33,10 +45,10 @@ local plugins = {
   ["lukas-reineke/indent-blankline.nvim"] = {
     commit = "8567ac8ccd19ee41a6ec55bf044884799fa3f56b",
     config = get_config("indentline"),
-    event = "BufRead",
+    event = "VimEnter",
   },
   ["numToStr/Comment.nvim"] = { config = get_config("comment"), keys = { "gb", "gc", "gcc" } },
-  ["windwp/nvim-autopairs"] = { config = get_config("autopairs") },
+  ["windwp/nvim-autopairs"] = { config = get_config("autopairs"), event = "InsertEnter" },
 
   -- Util
   ["Pocco81/AutoSave.nvim"] = { event = { "InsertLeave", "TextChanged" }, config = get_config("autosave") },
@@ -50,7 +62,7 @@ local plugins = {
       end
       colorizer.setup()
     end,
-    event = "BufRead",
+    event = "VimEnter",
   },
   ["nvim-lua/plenary.nvim"] = {},
 
@@ -66,9 +78,7 @@ local plugins = {
   ["kyazdani42/nvim-web-devicons"] = { config = get_config("web-devicons") },
   ["nvim-lualine/lualine.nvim"] = {
     config = get_config("lualine"),
-    setup = function()
-      moriso.packer_lazy_load("lualine.nvim")
-    end,
+    event = "VimEnter",
   },
   ["ryanoasis/vim-devicons"] = {},
   ["simeji/winresizer"] = {},
@@ -131,40 +141,21 @@ local plugins = {
     cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewFileHistory" },
     config = get_config("diffview"),
   },
+
   -- LSP
-  ["b0o/schemastore.nvim"] = {},
-  ["folke/lua-dev.nvim"] = {},
+  ["williamboman/nvim-lsp-installer"] = { event = "VimEnter" },
+  ["neovim/nvim-lspconfig"] = { after = "nvim-lsp-installer" },
+  ["b0o/schemastore.nvim"] = { after = "nvim-lspconfig" },
+  ["folke/lua-dev.nvim"] = { after = "schemastore.nvim" },
+  ["mfussenegger/nvim-jdtls"] = { after = "lua-dev.nvim", config = get_config("lsp") },
+  ["j-hui/fidget.nvim"] = { after = "nvim-jdtls", config = get_config("fidget") },
+  ["jose-elias-alvarez/null-ls.nvim"] = { after = "nvim-jdtls", config = get_config("lsp.null-ls") }, -- run "brew install stylua"
   ["folke/trouble.nvim"] = { cmd = { "TroubleToggle" }, config = get_config("trouble") },
-  --- lsp progress
-  ["j-hui/fidget.nvim"] = {
-    config = get_config("fidget"),
-    setup = function()
-      moriso.packer_lazy_load("fidget.nvim")
-    end,
-  },
-  ["jose-elias-alvarez/null-ls.nvim"] = {}, -- run "brew install stylua"
-  ["mfussenegger/nvim-jdtls"] = {},
-  ["neovim/nvim-lspconfig"] = {
-    after = "nvim-lsp-installer",
-    config = function()
-      require("moritasoshi.lsp")
-    end,
-  },
-  ["nvim-lua/lsp-status.nvim"] = {},
-  ["williamboman/nvim-lsp-installer"] = {
-    setup = function()
-      moriso.packer_lazy_load("nvim-lsp-installer")
-      -- reload the current file so lsp actually starts for it
-      vim.defer_fn(function()
-        vim.cmd('if &ft == "packer" | echo "" | else | silent! e %')
-      end, 0)
-    end,
-  },
 
   -- Completion
-  ["rafamadriz/friendly-snippets"] = { event = "InsertEnter" },
+  ["rafamadriz/friendly-snippets"] = { event = { "InsertEnter", "CmdlineEnter" } },
   ["L3MON4D3/LuaSnip"] = { after = "friendly-snippets", config = get_config("luasnip") },
-  ["onsails/lspkind-nvim"] = { after = "LuaSnip", event = "CmdlineEnter" },
+  ["onsails/lspkind-nvim"] = { after = "LuaSnip" },
   ["hrsh7th/nvim-cmp"] = { after = "lspkind-nvim" },
   ["saadparwaiz1/cmp_luasnip"] = { after = "nvim-cmp" },
   ["hrsh7th/cmp-nvim-lua"] = { after = "cmp_luasnip" },
@@ -176,7 +167,6 @@ local plugins = {
     after = "cmp-cmdline",
     config = get_config("compe"),
     run = "./install.sh",
-    requires = "hrsh7th/nvim-cmp",
   },
 
   -- Telescope
@@ -193,7 +183,7 @@ local plugins = {
   ["NTBBloodbath/rest.nvim"] = { ft = "http", config = get_config("rest-nvim") },
 
   -- Markdown
-  ["previm/previm"] = { requires = "tyru/open-browser.vim" },
+  ["previm/previm"] = { ft = "markdown", requires = "tyru/open-browser.vim" },
 
   -- Zen
   -- ["folke/twilight.nvim"] = { after = "zen", config = get_config("twilight") },
@@ -204,6 +194,7 @@ local plugins = {
 
   -- Optional (Trial)
   ["tyru/open-browser.vim"] = {
+    event = "VimEnter",
     config = function()
       require("moritasoshi.util.keymap").nmap { "<Leader>rj", "<Plug>(openbrowser-smart-search)" }
     end,

@@ -48,4 +48,4 @@ for _, server in ipairs(lspinstaller.get_installed_servers()) do
   ::continue::
 end
 
-require("moritasoshi.lsp.null-ls")
+-- require("moritasoshi.lsp.null-ls")

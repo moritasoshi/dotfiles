@@ -1,3 +1,4 @@
+finish
 try
   silent! call plug#load('vim-abolish')
 catch

@@ -11,5 +11,4 @@ require("moritasoshi.commands")
 require("moritasoshi.keymaps")
 
 require("core.packer").bootstrap()
-require("plugins")
-
+require("moritasoshi.plugins")
