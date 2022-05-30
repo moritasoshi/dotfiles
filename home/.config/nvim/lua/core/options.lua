@@ -1,5 +1,6 @@
 local opt = vim.opt
 local g = vim.g
+_G.moriso.opt = {}
 
 opt.termguicolors = true
 
@@ -142,3 +143,5 @@ local default_plugins = {
 for _, plugin in pairs(default_plugins) do
   g["loaded_" .. plugin] = 1
 end
+
+moriso.opt.listchars = vim.opt.listchars

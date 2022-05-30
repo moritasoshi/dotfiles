@@ -14,3 +14,15 @@ autocmd("BufUnload", {
     vim.opt.laststatus = 3
   end,
 })
+
+-- Make whitespaces invisible in dashboard
+autocmd("BufRead", {
+  callback = function()
+    local ft = vim.bo.filetype
+    if ft == "alpha" then
+      vim.opt.listchars = ""
+    else
+      vim.opt.listchars = moriso.opt.listchars
+    end
+  end,
+})
