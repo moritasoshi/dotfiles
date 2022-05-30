@@ -128,7 +128,7 @@ local plugins = {
 
   -- Git
   ["TimUntersberger/neogit"] = { cmd = { "Neogit" }, config = get_config("neogit") },
-  ["f-person/git-blame.nvim"] = {},
+  -- ["f-person/git-blame.nvim"] = {},
   ["lewis6991/gitsigns.nvim"] = {
     config = get_config("gitsigns"),
     setup = function()

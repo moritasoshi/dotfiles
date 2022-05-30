@@ -11,6 +11,12 @@ gitsigns.setup {
     topdelete = { text = "‾" },
     changedelete = { text = "~" },
   },
+  current_line_blame_opts = {
+    virt_text = true,
+    virt_text_pos = "eol", -- 'eol' | 'overlay' | 'right_align'
+    delay = 0,
+    ignore_whitespace = false,
+  },
 
   on_attach = function(bufnr)
     local function map(mode, l, r, opts)
@@ -38,5 +44,8 @@ gitsigns.setup {
 
     -- Text object
     map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
+
+    -- Command
+    vim.api.nvim_create_user_command("GitBlameToggle", ":Gitsigns toggle_current_line_blame", {})
   end,
 }
