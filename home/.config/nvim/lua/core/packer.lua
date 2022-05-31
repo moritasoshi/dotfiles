@@ -41,18 +41,13 @@ M.options = {
   },
 }
 
-M.options = moriso.load_override(M.options, "wbthomason/packer.nvim")
-
 M.run = function(plugins)
   local present, packer = pcall(require, "packer")
-
   if not present then
     return
   end
 
-  -- Override with chadrc values
-  plugins = moriso.remove_default_plugins(plugins)
-  plugins = moriso.merge_plugins(plugins)
+  plugins = moriso.convert_plugin_structure(plugins)
 
   packer.init(M.options)
 
