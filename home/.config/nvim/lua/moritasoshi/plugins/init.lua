@@ -196,7 +196,7 @@ local plugins = {
   ["tyru/open-browser.vim"] = {
     event = "VimEnter",
     config = function()
-      require("moritasoshi.util.keymap").nmap { "<Leader>rj", "<Plug>(openbrowser-smart-search)" }
+      moriso.map("n", "<Leader>rj", "<Plug>(openbrowser-smart-search)")
     end,
   },
 }

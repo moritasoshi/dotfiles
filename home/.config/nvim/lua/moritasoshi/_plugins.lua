@@ -193,11 +193,7 @@ use { "christoomey/vim-tmux-navigator" }
 use {
   "tyru/open-browser.vim",
   config = function()
-    require("moritasoshi.util.keymap").nmap {
-      "<Leader>rj",
-      "<Plug>(openbrowser-smart-search)",
-    }
+    moriso.map("n", "<Leader>rj", "<Plug>(openbrowser-smart-search)")
   end,
 }
 -- sandwich
-

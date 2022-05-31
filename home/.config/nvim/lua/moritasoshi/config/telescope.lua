@@ -51,16 +51,16 @@ telescope.setup {
 require("telescope").load_extension("fzf")
 require("telescope").load_extension("frecency")
 
-local nmap = require("moritasoshi.util.keymap").nmap
+local map = moriso.map
 local builtin_prefix = [[<cmd>lua require("telescope.builtin").]]
 local extensions_prefix = [[<cmd>lua require("telescope").extensions.]]
 
-nmap { "<C-p>", "<cmd>lua require('moritasoshi.config.telescope').project_files()<cr>" }
--- nmap { "<leader>ff", builtin_prefix .. "find_files()<cr>" }
-nmap { "<leader>fg", builtin_prefix .. "live_grep()<cr>" }
-nmap { "<leader>fh", builtin_prefix .. "help_tags()<cr>" }
-nmap { "<leader>fb", builtin_prefix .. "current_buffer_fuzzy_find()<cr>" }
-nmap { "<leader>ff", extensions_prefix .. "frecency.frecency()<cr>" }
+map("n", "<C-p>", "<cmd>lua require('moritasoshi.config.telescope').project_files()<cr>")
+-- map("n", "<leader>ff", builtin_prefix .. "find_files()<cr>" )
+map("n", "<leader>fg", builtin_prefix .. "live_grep()<cr>")
+map("n", "<leader>fh", builtin_prefix .. "help_tags()<cr>")
+map("n", "<leader>fb", builtin_prefix .. "current_buffer_fuzzy_find()<cr>")
+map("n", "<leader>ff", extensions_prefix .. "frecency.frecency()<cr>")
 
 local M = {}
 M.project_files = function()

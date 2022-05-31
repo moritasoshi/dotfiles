@@ -9,7 +9,7 @@ bufferline.setup {
   },
 }
 
-local nmap = require("moritasoshi.util.keymap").nmap
+local map = moriso.map
 
-nmap { "L", ":BufferLineCycleNext<CR>" }
-nmap { "H", ":BufferLineCyclePrev<CR>" }
+map("n", "L", ":BufferLineCycleNext<CR>")
+map("n", "H", ":BufferLineCyclePrev<CR>")

@@ -1,59 +1,59 @@
-local k = require("moritasoshi.util.keymap")
+local map = moriso.map
 
-k.nmap { "<Space>//", ":%s/" }
+map("n", "<Space>//", ":%s/")
 
-k.nmap { "<C-t>", ":NvimTreeToggle<CR>" }
-k.nmap { "gt", ":NvimTreeFindFileToggle<CR>" }
-k.nmap { "<Leader>a", ":Alpha<CR>" }
-k.nmap { "<Leader>g", ":Neogit<CR>" }
-k.nmap { "<leader>xx", "<cmd>TroubleToggle<cr>" }
-k.nmap { "<Leader>mm", ":PrevimOpen<CR>" }
-k.nmap { "<Leader>vv", ":SymbolsOutline<CR>" }
+map("n", "<C-t>", ":NvimTreeToggle<CR>")
+map("n", "gt", ":NvimTreeFindFileToggle<CR>")
+map("n", "<Leader>a", ":Alpha<CR>")
+map("n", "<Leader>g", ":Neogit<CR>")
+map("n", "<leader>xx", "<cmd>TroubleToggle<cr>")
+map("n", "<Leader>mm", ":PrevimOpen<CR>")
+map("n", "<Leader>vv", ":SymbolsOutline<CR>")
 
-k.nmap { "<Leader>w", ":w<CR>" }
-k.nmap { "<Leader>s", ":so % | lua print('Loaded \"' .. vim.fn.expand('%') .. '\"')<CR>" }
-k.nmap { "O", ":<C-u>call append(expand('.'), '')<CR>j" }
-k.nmap { "<ESC>", ":nohlsearch<CR><ESC>" }
-k.map { "", "-", "$" }
+map("n", "<Leader>w", ":w<CR>")
+map("n", "<Leader>s", ":so % | lua print('Loaded \"' .. vim.fn.expand('%') .. '\"')<CR>")
+map("n", "O", ":<C-u>call append(expand('.'), '')<CR>j")
+map("n", "<ESC>", ":nohlsearch<CR><ESC>")
+map("", "-", "$")
 
-k.nmap { "gy", ":let @* = expand('%:t') | lua print('Copied ' .. vim.fn.expand('%:t') .. ' to system clipboard!')<CR>" }
-k.nmap { "gyy", ":let @* = expand('%') | lua print('Copied ' .. vim.fn.expand('%') .. ' to system clipboard!')<CR>" }
+map("n", "gy", ":let @* = expand('%:t') | lua print('Copied ' .. vim.fn.expand('%:t') .. ' to system clipboard!')<CR>")
+map("n", "gyy", ":let @* = expand('%') | lua print('Copied ' .. vim.fn.expand('%') .. ' to system clipboard!')<CR>")
 
 -- For <Leader>
-k.map { "", "<Space>", "<NOP>" }
+map("", "<Space>", "<NOP>")
 
 -- Decrement the number on the cursor
-k.nmap { "<C-s>", "<C-x>" }
-k.nmap { "<C-x>", "<NOP>" }
+map("n", "<C-s>", "<C-x>")
+map("n", "<C-x>", "<NOP>")
 
--- nmap { "ga", "<Plug>(EasyAlign)" }
+-- map ("n", "ga", "<Plug>(EasyAlign)" )
 -- xmap { "ga", "<Plug>(EasyAlign)" }
 
-k.xmap { "p", "pgvy" }
+map("x", "p", "pgvy")
 
 -- Tabular
-k.map { { "n", "x" }, "<leader>t", ":Tabularize /" }
+map({ "n", "x" }, "<leader>t", ":Tabularize /")
 
-k.nmap { "<leader>rr", [[<cmd>lua require('moritasoshi.config.rest-nvim').do_rest()<cr>]] }
-k.nmap { "<leader>rp", [[<cmd>lua require('moritasoshi.config.rest-nvim').view_rest()<cr>]] }
+map("n", "<leader>rr", [[<cmd>lua require('moritasoshi.config.rest-nvim').do_rest()<cr>]])
+map("n", "<leader>rp", [[<cmd>lua require('moritasoshi.config.rest-nvim').view_rest()<cr>]])
 
 -- -- 「かな」のままでいたい
--- k.nmap { "あ", "a" }
--- k.nmap { "い", "i" }
--- k.nmap { "お", "o" }
+-- map ("n", "あ", "a" )
+-- map ("n", "い", "i" )
+-- map ("n", "お", "o" )
 
 -- xで削除した時はヤンクしない
--- k.map { { "n", "v" }, "x", [["_x]] }
+-- map({ "n", "v" }, "x", [["_x]])
 
 -- simeji/winresizer
-k.map { "", "<LEFT>", ":WinResizerStartResize<CR>h<CR>" }
-k.map { "", "<DOWN>", ":WinResizerStartResize<CR>j<CR>" }
-k.map { "", "<UP>", ":WinResizerStartResize<CR>k<CR>" }
-k.map { "", "<RIGHT>", ":WinResizerStartResize<CR>l<CR>" }
+map("", "<LEFT>", ":WinResizerStartResize<CR>h<CR>")
+map("", "<DOWN>", ":WinResizerStartResize<CR>j<CR>")
+map("", "<UP>", ":WinResizerStartResize<CR>k<CR>")
+map("", "<RIGHT>", ":WinResizerStartResize<CR>l<CR>")
 
 -- Diffview
-k.map { "", "<Leader>dc", ":DiffviewClose<CR>" }
-k.map { "", "<Leader>dh", ":DiffviewFileHistory<CR>" }
+map("", "<Leader>dc", ":DiffviewClose<CR>")
+map("", "<Leader>dh", ":DiffviewFileHistory<CR>")
 
 -- vim.api.nvim_set_keymap('n', '*', [[<Plug>(asterisk-z*)<Cmd>lua require('hlslens').start()<CR>]], {})
 -- vim.api.nvim_set_keymap('n', '#', [[<Plug>(asterisk-z#)<Cmd>lua require('hlslens').start()<CR>]], {})

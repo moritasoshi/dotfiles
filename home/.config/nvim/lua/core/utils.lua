@@ -120,7 +120,7 @@ moriso.prune_key_map = function(key_map, prune_map, ignore_modes)
 end
 
 moriso.map = function(mode, keys, command, opt)
-   local options = { silent = true }
+   local options = { noremap = true, silent = true }
 
    if opt then
       options = vim.tbl_extend("force", options, opt)
