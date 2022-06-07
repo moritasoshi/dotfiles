@@ -53,6 +53,7 @@
 
 require("dap-go").setup()
 local dap = require("dap")
+dap.set_log_level("TRACE")
 dap.adapters.go = function(callback, config)
   local stdout = vim.loop.new_pipe(false)
   local handle
