@@ -11,6 +11,8 @@ autoload -Uz compinit && compinit
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 ## 補完候補を一覧表示したとき、Tabや矢印で選択できるようにする
 zstyle ':completion:*:default' menu select=1
+## ディレクトリと実行ファイルを色づけ
+zstyle ':completion:*:default' list-colors di=36 ex=32
 
 # zsh-autosuggestions
 zinit ice wait"0" lucid; zinit light zsh-users/zsh-autosuggestions
@@ -19,6 +21,3 @@ zinit light mroth/evalcache
 
 # Jump directories
 zinit load agkozak/zsh-z
-
-# https://qiita.com/b4b4r07/items/2cf90da00a4c2c7b7e60
-# zinit load b4b4r07/enhancd
