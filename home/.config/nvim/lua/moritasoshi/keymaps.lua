@@ -22,10 +22,6 @@ map("n", "gyy", ":let @* = expand('%') | lua print('Copied ' .. vim.fn.expand('%
 -- For <Leader>
 map("", "<Space>", "<NOP>")
 
--- Decrement the number on the cursor
-map("n", "<C-s>", "<C-x>")
-map("n", "<C-x>", "<NOP>")
-
 -- map ("n", "ga", "<Plug>(EasyAlign)" )
 -- xmap { "ga", "<Plug>(EasyAlign)" }
 
