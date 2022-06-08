@@ -12,4 +12,3 @@ require("moritasoshi.keymaps")
 
 require("core.packer").bootstrap()
 require("moritasoshi.plugins")
-require("moritasoshi.config.dap")
