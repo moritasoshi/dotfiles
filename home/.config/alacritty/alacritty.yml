@@ -867,6 +867,7 @@ key_bindings:
   - { key: Yen, mods: Alt, chars : "\x5C"  }
   # alt + u が効くようにする(fot tmux)
   - { key: U  , mods: Alt, chars : "\x1bu" }
+  - { key: Return,   mods: Shift,   chars: "\x1b[13;2u" }
 
 #debug:
   # Display the time it takes to redraw each frame.

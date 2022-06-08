@@ -12,7 +12,7 @@ map("n", "<Leader>vv", ":SymbolsOutline<CR>")
 
 map("n", "<Leader>w", ":w<CR>")
 map("n", "<Leader>s", ":so % | lua print('Loaded \"' .. vim.fn.expand('%') .. '\"')<CR>")
-map("n", "O", ":<C-u>call append(expand('.'), '')<CR>j")
+map("n", "<S-CR>", ":<C-u>call append(expand('.'), '')<CR>j")
 map("n", "<ESC>", ":nohlsearch<CR><ESC>")
 map("", "-", "$")
 
