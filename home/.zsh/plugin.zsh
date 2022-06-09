@@ -17,7 +17,7 @@ zstyle ':completion:*:default' list-colors di=36 ex=32
 # zsh-autosuggestions
 zinit ice wait"0" lucid; zinit light zsh-users/zsh-autosuggestions
 
-zinit light mroth/evalcache
+# zinit light mroth/evalcache
 
 # Jump directories
 zinit load agkozak/zsh-z

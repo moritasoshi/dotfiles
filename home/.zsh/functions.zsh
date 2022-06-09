@@ -1,17 +1,17 @@
 ### functions ###
 # minify pdf
-function pdfmin() {
-  local cnt=0
-  for i in $@; do
-    gs -sDEVICE=pdfwrite \
-      -dCompatibilityLevel=1.4 \
-      -dPDFSETTINGS=/screen \
-      -dNOPAUSE -dQUIET -dBATCH \
-      -sOutputFile=${i%.*}.min.pdf ${i} &
-    (((cnt += 1) % 4 == 0)) && wait
-  done
-  wait && return 0
-}
+# function pdfmin() {
+#   local cnt=0
+#   for i in $@; do
+#     gs -sDEVICE=pdfwrite \
+#       -dCompatibilityLevel=1.4 \
+#       -dPDFSETTINGS=/screen \
+#       -dNOPAUSE -dQUIET -dBATCH \
+#       -sOutputFile=${i%.*}.min.pdf ${i} &
+#     (((cnt += 1) % 4 == 0)) && wait
+#   done
+#   wait && return 0
+# }
 
 
 # ファイルのfirst~lastの行抽出

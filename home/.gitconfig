@@ -1,9 +1,12 @@
 # This is Git's per-user configuration file.
 [include]
   path = ~/.gitconfig.local
+[user]
+	name = soshi morita
+	email = moritasoushi@gmail.com
 [core]
   excludesfile = ~/.gitignore_global
-  editor = nvim -c \"set fenc=utf-8\"
+  editor = vim
 [commit]
   template = ~/.stCommitMsg
 [alias]

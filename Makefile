@@ -3,15 +3,12 @@ dot_dir := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 deploy:
 	@bash $(dot_dir)/deploy.sh
 
-isucon:
-	@bash $(dot_dir)/isucon.sh
+cleanup:
+	@bash $(dot_dir)/cleanup.sh
 
 install:
 	@bash $(dot_dir)/install.sh
 	@bash $(dot_dir)/deploy.sh
-
-export:
-	@bash $(dot_dir)/export.sh
 
 check:
 	shellcheck ./*.sh
@@ -23,8 +20,3 @@ mod:
 test:
 	@echo $(dot_dir)
 
-italic:
-	@bash $(dot_dir)/tmux-italic.sh deploy
-
-italic-check:
-	@bash $(dot_dir)/tmux-italic.sh check

@@ -13,9 +13,9 @@ done
 export LANG="en_US.UTF-8"
 export LC_CTYPE=$LANG # LC_CTYPE set to some strange (invalid?) value in alacritty
 # editorはvimを使う
-export EDITOR=nvim
+export EDITOR=vim
 export VISUAL=$EDITOR
-export DOTPATH=~/src/dotfiles
+# export DOTPATH=~/src/dotfiles
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_DATA_HOME=$HOME/.local/share
@@ -50,29 +50,29 @@ setopt auto_cd
 ## git show HEAD^ したい
 setopt NO_NOMATCH
 
-export PGDATA=/usr/local/var/postgres
-export PATH="/usr/local/opt/libpq/bin:$PATH"
-export PATH=$HOME/.nodebrew/current/bin:$PATH
-export JAVA_HOME=$(/usr/libexec/java_home -v "11")
+# export PGDATA=/usr/local/var/postgres
+# export PATH="/usr/local/opt/libpq/bin:$PATH"
+# export PATH=$HOME/.nodebrew/current/bin:$PATH
+# export JAVA_HOME=$(/usr/libexec/java_home -v "11")
 # export JAVA_HOME=$(/usr/libexec/java_home -v "1.8")
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-if [ -e $HOME/.rvm/bin ]; then export PATH="$PATH:$HOME/.rvm/bin"; fi
+# if [ -e $HOME/.rvm/bin ]; then export PATH="$PATH:$HOME/.rvm/bin"; fi
 
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
+# source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
+# source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/morita/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/morita/google-cloud-sdk/path.zsh.inc'; fi
+# if [ -f '/Users/morita/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/morita/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/morita/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/morita/google-cloud-sdk/completion.zsh.inc'; fi
+# if [ -f '/Users/morita/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/morita/google-cloud-sdk/completion.zsh.inc'; fi
 
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
+# export PATH="/usr/local/sbin:$PATH"
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/local/go/bin

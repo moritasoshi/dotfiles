@@ -1,5 +1,2 @@
 .idea
 .DS_Store
-personal/*
-Brewfile.lock.json
-packer_compiled.lua

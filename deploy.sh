@@ -2,16 +2,12 @@
 
 set -e
 
-if [[ -z $STOW_FOLDERS ]]; then
-  STOW_FOLDERS="home,personal"
-fi
+WORK_DIR=$(cd "$(dirname "$0")"; pwd)
 
 if [[ -z $DOTPATH ]]; then
-  DOTPATH=$HOME/src/dotfiles
+  DOTPATH=$WORK_DIR
 fi
 
-pushd "$DOTPATH"
-for folder in "$(echo "$STOW_FOLDERS" | sed "s/,/ /g")"; do
-  stow -R $folder -t $HOME
-done
+pushd "$WORK_DIR"
+stow -R home -t "$HOME"
 popd
