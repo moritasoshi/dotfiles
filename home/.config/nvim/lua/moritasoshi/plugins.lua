@@ -118,6 +118,7 @@ local plugins = {
     config = get_config("treesitter"),
     run = ":TSUpdate",
   },
+  ["nvim-treesitter/nvim-treesitter-textobjects"] = {},
   ["JoosepAlviste/nvim-ts-context-commentstring"] = { after = "nvim-treesitter" },
   ["p00f/nvim-ts-rainbow"] = { after = "nvim-treesitter" },
   ["windwp/nvim-ts-autotag"] = {
