@@ -10,7 +10,7 @@ autosave.setup {
   conditions = {
     exists = true,
     filename_is_not = {},
-    filetype_is_not = {},
+    filetype_is_not = { "java" },
     modifiable = true,
   },
   write_all_buffers = false,

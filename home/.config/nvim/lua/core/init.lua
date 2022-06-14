@@ -8,6 +8,14 @@ autocmd("FileType", {
   end,
 })
 
+-- Disable auto-trim in Java
+autocmd("FileType", {
+  pattern = "java",
+  callback = function()
+    vim.cmd("DisableStripWhitespaceOnSave")
+  end,
+})
+
 autocmd("BufUnload", {
   buffer = 0,
   callback = function()
