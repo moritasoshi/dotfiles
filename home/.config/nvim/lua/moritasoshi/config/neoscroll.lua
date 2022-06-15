@@ -16,10 +16,3 @@ neoscroll.setup {
   post_hook = nil, -- Function to run after the scrolling animation ends
 }
 
-local t = {}
--- Syntax: t[keys] = {function, {function arguments}}
--- Use the "sine" easing function
-t["<C-u>"] = { "scroll", { "-vim.wo.scroll", "true", "350", [['sine']] } }
-t["<C-d>"] = { "scroll", { "vim.wo.scroll", "true", "350", [['sine']] } }
-
-require("neoscroll.config").set_mappings(t)
