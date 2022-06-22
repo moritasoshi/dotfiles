@@ -153,6 +153,19 @@ local plugins = {
   ["folke/trouble.nvim"] = { cmd = { "TroubleToggle" }, config = get_config("trouble") },
 
   -- Debug Adapter
+  ["mfussenegger/nvim-dap"] = {},
+  ["rcarriga/nvim-dap-ui"] = {},
+  ["theHamsta/nvim-dap-virtual-text"] = {},
+
+  -- Go Development
+  ["ray-x/go.nvim"] = { config = get_config("go") },
+  ["ray-x/guihua.lua"] = {},
+  ["ray-x/navigator.lua"] = {
+    requires = {
+      { "ray-x/guihua.lua", run = "cd lua/fzy && make" },
+      { "neovim/nvim-lspconfig" },
+    },
+  },
 
   -- Completion
   ["rafamadriz/friendly-snippets"] = { event = { "InsertEnter", "CmdlineEnter" } },

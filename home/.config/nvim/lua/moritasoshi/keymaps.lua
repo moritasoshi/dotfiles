@@ -61,10 +61,14 @@ map("", "<Leader>dh", ":DiffviewFileHistory<CR>")
 -- vim.api.nvim_set_keymap('x', 'g*', [[<Plug>(asterisk-gz*)<Cmd>lua require('hlslens').start()<CR>]], {})
 -- vim.api.nvim_set_keymap('x', 'g#', [[<Plug>(asterisk-gz#)<Cmd>lua require('hlslens').start()<CR>]], {})
 
-
+-- terminal mode
 vim.cmd([[
 tnoremap <Esc> <C-\><C-n>
 tnoremap <A-h> <C-\><C-N><C-w>h
 tnoremap <A-j> <C-\><C-N><C-w>j
 tnoremap <A-k> <C-\><C-N><C-w>k tnoremap <A-l> <C-\><C-N><C-w>l
 ]])
+
+-- spell check
+map("n", "<F3>", ":set spell!<CR>")
+map("i", "<F3>", "<C-O>:set spell!<CR>")
