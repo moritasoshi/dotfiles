@@ -35,6 +35,14 @@ autocmd("BufRead", {
   end,
 })
 
+-- Make whitespaces invisible in dashboard
+-- autocmd("BufWritePre", {
+--   pattern = { "*.go" },
+--   callback = function()
+--     require("go.format").goimport()
+--   end,
+-- })
+
 -- Highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
