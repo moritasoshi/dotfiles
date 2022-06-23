@@ -9,6 +9,9 @@ command! -nargs=0 So        :so %
 
 " LSP
 command! -nargs=0 LspLog    :lua vim.cmd('e'..vim.lsp.get_log_path())
+
+" quit all
+command! -nargs=0 Q         :wqa
 ]])
 
 
