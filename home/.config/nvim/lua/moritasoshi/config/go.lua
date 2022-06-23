@@ -8,7 +8,19 @@ if not ok then
   return
 end
 
-local install_root_dir = path.concat { vim.fn.stdpath("data"), "lsp_servers" }
+local gopls_path = path.concat { vim.fn.stdpath("data"), "lsp_servers", "gopls" }
+
+local bootstrapped = function(path)
+  local fn = vim.fn
+  if fn.empty(fn.glob(path)) > 0 then
+    return false
+  end
+  return true
+end
+
+if not bootstrapped(gopls_path) then
+  return
+end
 
 go.setup {
   comment_placeholder = "   ",
@@ -17,7 +29,7 @@ go.setup {
   fillstruct = "gopls",
   gofmt = "gopls", -- if set to gopls will use golsp format
   goimport = "gopls", -- if set to 'gopls' will use golsp format
-  gopls_cmd = { install_root_dir .. "/gopls/gopls" },
+  gopls_cmd = { gopls_path .. "/gopls" },
   lsp_cfg = true, -- false: use your own lspconfig
   lsp_gofumpt = true, -- true: set default gofmt in gopls format to gofumpt
   lsp_on_attach = true, -- use on_attach from go.nvim
