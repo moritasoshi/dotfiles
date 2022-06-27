@@ -66,13 +66,13 @@ local plugins = {
   ["nvim-lua/plenary.nvim"] = {},
 
   -- Speedup
-  ["dstein64/vim-startuptime"] = { cmd = "StartupTime" },
+  -- ["dstein64/vim-startuptime"] = { cmd = "StartupTime" },
   ["lewis6991/impatient.nvim"] = {},
 
   -- UI & Interface
   ["akinsho/bufferline.nvim"] = { config = get_config("bufferline") },
   ["goolord/alpha-nvim"] = { config = get_config("alpha") },
-  ["karb94/neoscroll.nvim"] = { config = get_config("neoscroll") },
+  -- ["karb94/neoscroll.nvim"] = { config = get_config("neoscroll") },
 
   ["kyazdani42/nvim-web-devicons"] = { config = get_config("web-devicons") },
   ["nvim-lualine/lualine.nvim"] = {
@@ -86,21 +86,21 @@ local plugins = {
     config = get_config("nvim-tree"),
     ft = "alpha",
   },
-  ["stevearc/dressing.nvim"] = {
-    config = function()
-      local present, dressing = pcall(require, "dressing")
-      if not present then
-        return
-      end
-      dressing.setup {
-        input = {
-          winblend = 10,
-          winhighlight = "Normal:DressingInputNormalFloat,NormalFloat:DressingInputNormalFloat,FloatBorder:DressingInputFloatBorder",
-          border = "single",
-        },
-      }
-    end,
-  },
+  -- ["stevearc/dressing.nvim"] = {
+  --   config = function()
+  --     local present, dressing = pcall(require, "dressing")
+  --     if not present then
+  --       return
+  --     end
+  --     dressing.setup {
+  --       input = {
+  --         winblend = 10,
+  --         winhighlight = "Normal:DressingInputNormalFloat,NormalFloat:DressingInputNormalFloat,FloatBorder:DressingInputFloatBorder",
+  --         border = "single",
+  --       },
+  --     }
+  --   end,
+  -- },
 
   -- Notification
   ["rcarriga/nvim-notify"] = {
@@ -150,7 +150,7 @@ local plugins = {
   ["mfussenegger/nvim-jdtls"] = { after = "lua-dev.nvim", config = get_config("lsp") },
   ["j-hui/fidget.nvim"] = { after = "nvim-jdtls", config = get_config("fidget") },
   ["jose-elias-alvarez/null-ls.nvim"] = { after = "nvim-jdtls", config = get_config("lsp.null-ls") }, -- run "brew install stylua"
-  ["folke/trouble.nvim"] = { cmd = { "TroubleToggle" }, config = get_config("trouble") },
+  -- ["folke/trouble.nvim"] = { cmd = { "TroubleToggle" }, config = get_config("trouble") },
 
   -- Debug Adapter
   ["mfussenegger/nvim-dap"] = {},
@@ -185,7 +185,7 @@ local plugins = {
   },
 
   -- Telescope
-  ["nvim-telescope/telescope-frecency.nvim"] = { requires = { "tami5/sqlite.lua" } },
+  -- ["nvim-telescope/telescope-frecency.nvim"] = { requires = { "tami5/sqlite.lua" } },
   ["nvim-telescope/telescope-fzf-native.nvim"] = { run = "make" },
   ["nvim-telescope/telescope.nvim"] = {
     config = get_config("telescope"),
