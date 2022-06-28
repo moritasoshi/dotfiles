@@ -29,6 +29,10 @@ for _, server in ipairs(lspinstaller.get_installed_servers()) do
   if server.name == "bashls" then
     opts.cmd = { "nodebrew", "exec", "latest", "bash-language-server", "start" }
   end
+  if server.name == "tsserver" then
+    opts.cmd = { "nodebrew", "exec", "latest", "typescript-language-server", "--stdio" }
+  end
+
 
   if server.name == "jdtls" then
     goto continue
