@@ -12,7 +12,7 @@
 ```bash
 cd ~/src
 git clone git@github.com:moritasoshi/dotfiles.git 
-./bootstrap.sh -i -s
+./bootstrap.sh -a
 
 # for mac only
 ./script/brew.sh -i
