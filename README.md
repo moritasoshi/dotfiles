@@ -11,13 +11,12 @@
 
 ```bash
 cd ~/src
-git clone git@github.com:moritasoshi/dotfiles.git 
+git clone git@github.com:moritasoshi/dotfiles.git
 ./bootstrap.sh -a
 
 # for mac only
 ./script/brew.sh -i
 ```
-
 
 ## Application Configurations
 
@@ -27,6 +26,12 @@ To enable italics you will need to compile and install `xterm-256color-italic.te
 
 ```
 tic xterm-256color-italic.terminfo
+```
+
+Install tpm plugins.
+
+```
+<Ctrl+Space> + I
 ```
 
 ## Other Configurations
