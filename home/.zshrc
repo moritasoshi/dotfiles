@@ -58,9 +58,6 @@ export JAVA_HOME=$(/usr/libexec/java_home -v "11")
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 if [ -e $HOME/.rvm/bin ]; then export PATH="$PATH:$HOME/.rvm/bin"; fi
 
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc'
-source '/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc'
-
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/morita/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/morita/google-cloud-sdk/path.zsh.inc'; fi
 

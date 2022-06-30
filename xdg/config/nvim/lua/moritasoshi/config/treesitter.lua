@@ -10,6 +10,7 @@ configs.setup {
     "comment",
     "css",
     "dot",
+    "fish",
     "go",
     "gomod",
     "gowork",

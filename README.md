@@ -2,20 +2,36 @@
 
 ## Contents
 
-- NeoVim config
-  - LSP(Java,TS...), 補完機能, fuzzy finder
-- zsh config
-  - zshエイリアス, キーバインド定義
-- tmux config
-- git config
-  - aliases
-- Alacritty / iTerm2 config
+- alacritty
+- neovim
+- tmux
+- zsh
 
-## その他
+## Setup
 
-- Hammerspoon config
-- Italicフォント適用
+```bash
+cd ~/src
+git clone git@github.com:moritasoshi/dotfiles.git 
+./bootstrap.sh -i -s
 
-## Fonts
+# for mac only
+./script/brew.sh -i
+```
+
+
+## Application Configurations
+
+### tmux
+
+To enable italics you will need to compile and install `xterm-256color-italic.terminfo`.
+
+```
+tic xterm-256color-italic.terminfo
+```
+
+## Other Configurations
+
+## Font Resources
+
 - [JetBrains Mono](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/JetBrainsMono)
 - [Hack Nerd Font](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/Hack)

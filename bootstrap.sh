@@ -16,12 +16,19 @@ doInstall() {
 
 doSync() {
   info "Syncing"
+  info "HOME"
   rsync \
     --no-perms \
     -avh \
     "$DOTFILES"/home/ \
-    "$DOTFILES"/personal/ \
     "$HOME"
+
+  info "XDG_CONFIG_HOME"
+  rsync \
+    --no-perms \
+    -avh \
+    "$DOTFILES"/xdg/config/ \
+    "$XDG_CONFIG_HOME"
 }
 
 doFonts() {
@@ -37,6 +44,12 @@ doFonts() {
   find "$DOTFILES/fonts/" -name "*.[o,t]tf" -type f | while read -r file; do
     cp -v "$file" "$fonts"
   done
+}
+
+doAll() {
+  doInstall
+  doFonts
+  doSync
 }
 
 doHelp() {
