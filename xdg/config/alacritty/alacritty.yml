@@ -440,7 +440,7 @@ selection:
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
- program: /usr/local/bin/zsh
+ program: /usr/local/bin/fish
  args:
    - --login
 
