@@ -56,7 +56,6 @@ doHelp() {
   echo "Usage: $(basename "$0") [options]" >&2
   echo
   echo "   -s, --sync             Synchronizes dotfiles to home directory"
-  echo "   -l, --link             Create symbolic links"
   echo "   -i, --install          Install (extra) software"
   echo "   -f, --fonts            Copies font files"
   echo "   -c, --config           Configures your system"
@@ -72,13 +71,6 @@ else
     case $i in
       -s | --sync)
         doSync
-        doGitConfig
-        doDirectories
-        doPermissions
-        shift
-        ;;
-      -l | --link)
-        doSymLink
         shift
         ;;
       -i | --install)

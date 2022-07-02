@@ -35,6 +35,11 @@ Install tpm plugins.
 ```
 
 ## Other Configurations
+```
+# nodebrew
+# You need to manually run setup_dirs to create directories required by nodebrew
+/usr/local/opt/nodebrew/bin/nodebrew setup_dirs
+```
 
 ## Font Resources
 
