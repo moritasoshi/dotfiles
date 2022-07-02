@@ -20,6 +20,15 @@ git clone git@github.com:moritasoshi/dotfiles.git
 
 ## Application Configurations
 
+### fish
+
+To change your login shell to fish
+
+```
+echo /usr/local/bin/fish | sudo tee -a /etc/shells
+chsh -s /usr/local/bin/fish
+```
+
 ### tmux
 
 To enable italics you will need to compile and install `xterm-256color-italic.terminfo`.
