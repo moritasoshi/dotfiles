@@ -3,9 +3,9 @@
 ## Contents
 
 - alacritty
+- fish
 - neovim
 - tmux
-- zsh
 
 ## Setup
 
