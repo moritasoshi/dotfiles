@@ -70,4 +70,5 @@ function history-merge --on-event fish_preexec
   history --merge
 end
 
-zoxide init fish --cmd j | source
+zoxide init fish --cmd z | source
+status --is-interactive; and rbenv init - fish | source

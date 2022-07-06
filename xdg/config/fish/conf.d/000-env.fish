@@ -7,12 +7,16 @@ set -x AWS_CONFIG_FILE $XDG_CONFIG_HOME/aws/config
 set -x AWS_SHARED_CREDENTIALS_FILE $XDG_CONFIG_HOME/aws/credentials
 set -x CARGO_HOME $XDG_DATA_HOME/cargo
 set -x CSEARCHINDEX $XDG_CACHE_HOME/csearchindex
+set -x GEMRC $XDG_CONFIG_HOME/gem/gemrc
+set -x GEM_HOME $XDG_DATA_HOME/gem
+set -x GEM_SPEC_CACHE $XDG_CACHE_HOME//gem
 set -x GOBIN $HOME/.local/bin
 set -x GOPATH $HOME/go
-# set -x JAVA_HOME=$(/usr/libexec/java_home -v "1.8")
-set -x JAVA_HOME $(/usr/libexec/java_home -v "11")
+set -x JAVA_HOME $(/usr/libexec/java_home -v "1.8")
+# set -x JAVA_HOME $(/usr/libexec/java_home -v "11")
 set -x KREW_ROOT $XDG_DATA_HOME/krew
 set -x NODE_REPL_HISTORY $XDG_DATA_HOME/node_repl_history
+set -x RBENV_ROOT $XDG_DATA_HOME/rbenv
 set -x TEALDEER_CACHE_DIR $XDG_CACHE_HOME/tldr
 set -x VSCODE_PORTABLE "$XDG_DATA_HOME"/vscode
 set -x _ZO_DATA_DIR $XDG_DATA_HOME/zoxide
@@ -43,3 +47,4 @@ set -x PATH /opt/homebrew/opt/grep/libexec/gnubin $PATH
 set -x PATH /opt/homebrew/opt/bison/bin $PATH
 set -x PATH $HOME/Library/Python/3.9/bin $PATH
 set -x PATH $HOME/Documents/github.com/hsbt/hsbt/toolbox/exe $PATH
+set -x PATH $JAVA_HOME/bin $PATH

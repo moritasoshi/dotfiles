@@ -1,6 +1,6 @@
 # This is Git's per-user configuration file.
 [include]
-  path = ~/.gitconfig.local
+  path = ~/.gitconfig
 [core]
   excludesfile = ~/.gitignore_global
   editor = nvim -c \"set fenc=utf-8\"
