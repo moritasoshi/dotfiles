@@ -150,7 +150,7 @@ local plugins = {
   ["mfussenegger/nvim-jdtls"] = { after = "lua-dev.nvim", config = get_config("lsp") },
   ["j-hui/fidget.nvim"] = { after = "nvim-jdtls", config = get_config("fidget") },
   ["jose-elias-alvarez/null-ls.nvim"] = { after = "nvim-jdtls", config = get_config("lsp.null-ls") }, -- run "brew install stylua"
-  -- ["folke/trouble.nvim"] = { cmd = { "TroubleToggle" }, config = get_config("trouble") },
+  ["folke/trouble.nvim"] = { cmd = { "TroubleToggle" }, config = get_config("trouble") },
 
   -- Debug Adapter
   ["mfussenegger/nvim-dap"] = {},
