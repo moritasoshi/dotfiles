@@ -7,6 +7,7 @@ alias tree 'lsd -a --tree'
 ## 1 letter aliases
 alias e "code-insiders -a ."
 alias g 'git'
+alias v 'nvim'
 
 ## replacements
 alias awk 'gawk'
