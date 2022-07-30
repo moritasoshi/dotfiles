@@ -103,15 +103,7 @@ local plugins = {
   -- },
 
   -- Notification
-  ["rcarriga/nvim-notify"] = {
-    config = function()
-      local present, notify = pcall(require, "notify")
-      if not present then
-        return
-      end
-      vim.notify = notify
-    end,
-  },
+  ["rcarriga/nvim-notify"] = { config = get_config("notify") },
 
   -- Treesitter
   ["nvim-treesitter/nvim-treesitter"] = {
