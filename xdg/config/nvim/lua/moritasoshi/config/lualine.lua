@@ -30,6 +30,7 @@ local filetype = {
 local filename = {
   "filename",
   file_status = false,
+  path = 1, -- 1: Relative path
 }
 local branch = {
   "branch",
