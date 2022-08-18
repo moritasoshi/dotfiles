@@ -110,8 +110,9 @@ local plugins = {
   },
 
   -- Git
-  ["TimUntersberger/neogit"] = { cmd = { "Neogit" }, config = get_config("neogit") },
   -- ["f-person/git-blame.nvim"] = {},
+  ["TimUntersberger/neogit"] = { cmd = { "Neogit" }, config = get_config("neogit") },
+  ["akinsho/git-conflict.nvim"] = { tag = "*", config = get_config("git-conflict") },
   ["lewis6991/gitsigns.nvim"] = {
     config = get_config("gitsigns"),
     setup = function()
