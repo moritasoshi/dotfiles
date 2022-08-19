@@ -45,6 +45,21 @@ local list = {
 }
 
 tree.setup {
+  --[[ on_attach = function(bufnr) ]]
+  --[[   local inject_node = require("nvim-tree.utils").inject_node ]]
+  --[[   vim.keymap.set( ]]
+  --[[     "n", ]]
+  --[[     "<leader>n", ]]
+  --[[     inject_node(function(node) ]]
+  --[[       if node then ]]
+  --[[         print(node.absolute_path) ]]
+  --[[       end ]]
+  --[[     end), ]]
+  --[[     { buffer = bufnr, noremap = true } ]]
+  --[[   ) ]]
+  --[[   vim.bo[bufnr].path = "/tmp" ]]
+  --[[ end, ]]
+  remove_keymaps = { "<C-t>" },
   view = {
     mappings = {
       custom_only = true,
