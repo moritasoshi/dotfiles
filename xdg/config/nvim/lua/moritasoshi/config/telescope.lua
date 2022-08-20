@@ -49,19 +49,14 @@ telescope.setup {
 }
 
 require("telescope").load_extension("fzf")
--- require("telescope").load_extension("frecency")
 
 local map = moriso.map
-local builtin_prefix = [[<cmd>lua require("telescope.builtin").]]
--- local extensions_prefix = [[<cmd>lua require("telescope").extensions.]]
 
 map("n", "<C-p>", "<cmd>lua require('moritasoshi.config.telescope').project_files()<cr>")
--- TODO: Don't respect .gitignore
-map("n", "<leader>ff", ":Telescope find_files find_command=rg,--files prompt_prefix=🔍<cr>")
-map("n", "<leader>fg", builtin_prefix .. "live_grep()<cr>")
-map("n", "<leader>fh", builtin_prefix .. "help_tags()<cr>")
-map("n", "<leader>fb", builtin_prefix .. "current_buffer_fuzzy_find()<cr>")
--- map("n", "<leader>ff", extensions_prefix .. "frecency.frecency()<cr>")
+map("n", "<leader>fb", "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>")
+map("n", "<leader>ff", "<cmd>lua require('moritasoshi.config.telescope').project_files()<cr>")
+map("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>")
+map("n", "<leader>fh", "<cmd>lua require('telescope.builtin').builtin()<cr>")
 
 local M = {}
 M.project_files = function()

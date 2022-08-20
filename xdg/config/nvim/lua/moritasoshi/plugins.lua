@@ -6,13 +6,10 @@ local plugins = {
 
   -- Theme
   ["sainnhe/gruvbox-material"] = { config = get_config("gruvbox-material") },
+
   -- Text manipulation
-  -- use { "ThePrimeagen/harpoon", config = get_config("harpoon") }
-  -- use { "dkarter/bullets.vim" }
-  -- use { "ggandor/lightspeed.nvim", event = "BufReadPre" }
   -- ["tpope/vim-abolish"] = {},
   -- ["haya14busa/vim-asterisk"] = {},
-  ["RRethy/vim-illuminate"] = {},
   ["godlygeek/tabular"] = {
     cmd = "Tabularize",
     config = get_config("tabular"),
@@ -24,11 +21,10 @@ local plugins = {
   ["abecodes/tabout.nvim"] = { config = get_config("tabout") },
   ["kevinhwang91/nvim-hlslens"] = { config = get_config("hlslens") },
   ["lukas-reineke/indent-blankline.nvim"] = {
-    commit = "8567ac8ccd19ee41a6ec55bf044884799fa3f56b",
     config = get_config("indentline"),
     event = "VimEnter",
   },
-  ["numToStr/Comment.nvim"] = { config = get_config("comment"), keys = { "gb", "gc", "gcc" } },
+  ["numToStr/Comment.nvim"] = { config = get_config("comment") },
   ["windwp/nvim-autopairs"] = { config = get_config("autopairs"), event = "InsertEnter" },
 
   -- Util
@@ -48,13 +44,11 @@ local plugins = {
   ["nvim-lua/plenary.nvim"] = {},
 
   -- Speedup
-  -- ["dstein64/vim-startuptime"] = { cmd = "StartupTime" },
   ["lewis6991/impatient.nvim"] = {},
 
   -- UI & Interface
   ["akinsho/bufferline.nvim"] = { config = get_config("bufferline") },
   ["goolord/alpha-nvim"] = { config = get_config("alpha") },
-  -- ["karb94/neoscroll.nvim"] = { config = get_config("neoscroll") },
 
   ["kyazdani42/nvim-web-devicons"] = { config = get_config("web-devicons") },
   ["nvim-lualine/lualine.nvim"] = {
@@ -68,21 +62,6 @@ local plugins = {
     config = get_config("nvim-tree"),
     ft = "alpha",
   },
-  -- ["stevearc/dressing.nvim"] = {
-  --   config = function()
-  --     local present, dressing = pcall(require, "dressing")
-  --     if not present then
-  --       return
-  --     end
-  --     dressing.setup {
-  --       input = {
-  --         winblend = 10,
-  --         winhighlight = "Normal:DressingInputNormalFloat,NormalFloat:DressingInputNormalFloat,FloatBorder:DressingInputFloatBorder",
-  --         border = "single",
-  --       },
-  --     }
-  --   end,
-  -- },
 
   -- Notification
   ["rcarriga/nvim-notify"] = { config = get_config("notify") },
@@ -111,11 +90,6 @@ local plugins = {
     end,
   },
   ["rhysd/committia.vim"] = {},
-  ["sindrets/diffview.nvim"] = {
-    after = { "neogit" },
-    cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFocusFiles", "DiffviewFileHistory" },
-    config = get_config("diffview"),
-  },
 
   -- LSP
   ["williamboman/nvim-lsp-installer"] = { event = "VimEnter" },
@@ -160,7 +134,6 @@ local plugins = {
   },
 
   -- Telescope
-  -- ["nvim-telescope/telescope-frecency.nvim"] = { requires = { "tami5/sqlite.lua" } },
   ["nvim-telescope/telescope-fzf-native.nvim"] = { run = "make" },
   ["nvim-telescope/telescope.nvim"] = {
     config = get_config("telescope"),
@@ -174,10 +147,6 @@ local plugins = {
 
   -- Markdown
   ["previm/previm"] = { ft = "markdown", requires = "tyru/open-browser.vim" },
-
-  -- Zen
-  -- ["folke/twilight.nvim"] = { after = "zen", config = get_config("twilight") },
-  -- ["folke/zen-mode.nvim"] = { as = "zen", cmd = "ZenMode", config = get_config("zen") },
 
   -- Tmux
   ["christoomey/vim-tmux-navigator"] = {},
