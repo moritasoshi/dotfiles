@@ -46,7 +46,7 @@ function fish_prompt
   echo -n '$ '
 end
 
-function moriso_repository -d 'Show repository'
+function s -d 'Show repository'
   ls $HOME/src | fzf --reverse --height=100% | read select
   [ -n "$select" ]; and cd "$HOME/src/$select"
   echo " $select"
@@ -88,7 +88,7 @@ function __fzfcmd
 end
 
 function fish_user_key_bindings
-  bind \cS moriso_repository
+  # bind \cS s
   bind \cR moriso_history
   bind --preset \cO echo\ -n\ \(clear\ \|\ string\ replace\ \\e\\\[3J\ \"\"\)\;\ commandline\ -f\ repaint
 end
