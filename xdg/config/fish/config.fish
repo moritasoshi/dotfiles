@@ -90,7 +90,7 @@ end
 function fish_user_key_bindings
   # bind \cS s
   bind \cR moriso_history
-  bind --preset \cO echo\ -n\ \(clear\ \|\ string\ replace\ \\e\\\[3J\ \"\"\)\;\ commandline\ -f\ repaint
+  # bind --preset \cO echo\ -n\ \(clear\ \|\ string\ replace\ \\e\\\[3J\ \"\"\)\;\ commandline\ -f\ repaint
 end
 
 function history-merge --on-event fish_preexec
