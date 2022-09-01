@@ -51,6 +51,8 @@ map("", "<RIGHT>", ":WinResizerStartResize<CR>l<CR>")
 map("", "<Leader>dc", ":DiffviewClose<CR>")
 map("", "<Leader>dh", ":DiffviewFileHistory<CR>")
 
+map("", "go", "<C-O>")
+
 -- vim.api.nvim_set_keymap('n', '*', [[<Plug>(asterisk-z*)<Cmd>lua require('hlslens').start()<CR>]], {})
 -- vim.api.nvim_set_keymap('n', '#', [[<Plug>(asterisk-z#)<Cmd>lua require('hlslens').start()<CR>]], {})
 -- vim.api.nvim_set_keymap('n', 'g*', [[<Plug>(asterisk-gz*)<Cmd>lua require('hlslens').start()<CR>]], {})
