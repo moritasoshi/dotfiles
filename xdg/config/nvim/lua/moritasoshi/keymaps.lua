@@ -53,16 +53,6 @@ map("", "<Leader>dh", ":DiffviewFileHistory<CR>")
 
 map("", "go", "<C-O>")
 
--- vim.api.nvim_set_keymap('n', '*', [[<Plug>(asterisk-z*)<Cmd>lua require('hlslens').start()<CR>]], {})
--- vim.api.nvim_set_keymap('n', '#', [[<Plug>(asterisk-z#)<Cmd>lua require('hlslens').start()<CR>]], {})
--- vim.api.nvim_set_keymap('n', 'g*', [[<Plug>(asterisk-gz*)<Cmd>lua require('hlslens').start()<CR>]], {})
--- vim.api.nvim_set_keymap('n', 'g#', [[<Plug>(asterisk-gz#)<Cmd>lua require('hlslens').start()<CR>]], {})
---
--- vim.api.nvim_set_keymap('x', '*', [[<Plug>(asterisk-z*)<Cmd>lua require('hlslens').start()<CR>]], {})
--- vim.api.nvim_set_keymap('x', '#', [[<Plug>(asterisk-z#)<Cmd>lua require('hlslens').start()<CR>]], {})
--- vim.api.nvim_set_keymap('x', 'g*', [[<Plug>(asterisk-gz*)<Cmd>lua require('hlslens').start()<CR>]], {})
--- vim.api.nvim_set_keymap('x', 'g#', [[<Plug>(asterisk-gz#)<Cmd>lua require('hlslens').start()<CR>]], {})
-
 -- terminal mode
 vim.cmd([[
 tnoremap <Esc> <C-\><C-n>
@@ -74,3 +64,12 @@ tnoremap <A-k> <C-\><C-N><C-w>k tnoremap <A-l> <C-\><C-N><C-w>l
 -- spell check
 map("n", "<F3>", ":set spell!<CR>")
 map("i", "<F3>", "<C-O>:set spell!<CR>")
+
+-- Dap
+map("n", "<F5>", ":lua require'dap'.continue()<CR>", { silent = true})
+map("n", "<F6>", ":lua require'dap'.step_over()<CR>", { silent = true})
+map("n", "<F7>", ":lua require'dap'.step_into()<CR>", { silent = true})
+map("n", "<F8>", ":lua require'dap'.step_out()<CR>", { silent = true})
+map("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>", { silent = true})
+map("n", "<leader>d", ":lua require'dapui'.toggle()<CR>", { silent = true})
+map("n", "<leader>dt", ":lua require('dap-go').debug_test()<CR>", { silent = true})

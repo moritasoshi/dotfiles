@@ -102,9 +102,10 @@ local plugins = {
   ["folke/trouble.nvim"] = { cmd = { "TroubleToggle" }, config = get_config("trouble") },
 
   -- Debug Adapter
-  ["mfussenegger/nvim-dap"] = {},
-  ["rcarriga/nvim-dap-ui"] = {},
-  ["theHamsta/nvim-dap-virtual-text"] = {},
+  ["mfussenegger/nvim-dap"] = { config = get_config("dap/nvim-dap") },
+  ["rcarriga/nvim-dap-ui"] = { config = get_config("dap/dapui") },
+  ["theHamsta/nvim-dap-virtual-text"] = { config = get_config("dap/nvim-dap-virtual-text") },
+  ["leoluz/nvim-dap-go"] = { config = get_config("dap/dap-go") },
 
   -- Go Development
   ["ray-x/go.nvim"] = { config = get_config("go") },
