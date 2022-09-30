@@ -27,7 +27,7 @@ alias tm 'tmux'
 alias tma 'tmux a'
 alias tmn 'tmux new -s'
 
-alias sf 'source $XDG_CONFIG_HOME/fish/config.fish'
+alias sf 'exec fish'
 alias dot 'cd ~/src/dotfiles/'
 alias memo 'cd ~/memo'
 alias path 'echo $PATH'
