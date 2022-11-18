@@ -95,8 +95,8 @@ local plugins = {
   ["williamboman/nvim-lsp-installer"] = { event = "VimEnter" },
   ["neovim/nvim-lspconfig"] = { after = "nvim-lsp-installer" },
   ["b0o/schemastore.nvim"] = { after = "nvim-lspconfig" },
-  ["folke/lua-dev.nvim"] = { after = "schemastore.nvim" },
-  ["mfussenegger/nvim-jdtls"] = { after = "lua-dev.nvim", config = get_config("lsp") },
+  ["folke/neodev.nvim"] = { after = "schemastore.nvim" },
+  ["mfussenegger/nvim-jdtls"] = { after = "neodev.nvim", config = get_config("lsp") },
   ["j-hui/fidget.nvim"] = { after = "nvim-jdtls", config = get_config("fidget") },
   ["jose-elias-alvarez/null-ls.nvim"] = { after = "nvim-jdtls", config = get_config("lsp.null-ls") }, -- run "brew install stylua"
   ["folke/trouble.nvim"] = { cmd = { "TroubleToggle" }, config = get_config("trouble") },

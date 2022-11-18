@@ -33,7 +33,6 @@ for _, server in ipairs(lspinstaller.get_installed_servers()) do
     opts.cmd = { "nodebrew", "exec", "latest", "typescript-language-server", "--stdio" }
   end
 
-
   if server.name == "jdtls" then
     goto continue
   end
@@ -44,8 +43,8 @@ for _, server in ipairs(lspinstaller.get_installed_servers()) do
   end
 
   if server.name == "sumneko_lua" then
-    local sumneko_opts = require("moritasoshi.lsp.settings.sumneko_lua").setup(opts)
-    opts = sumneko_opts
+    require("neodev").setup()
+    opts = {}
   end
 
   lspconfig[server.name].setup(opts)

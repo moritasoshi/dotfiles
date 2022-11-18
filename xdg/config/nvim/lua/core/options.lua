@@ -89,10 +89,6 @@ opt.joinspaces = false -- Two spaces and grade school, we're done
 
 g.mapleader = " "
 
--- use filetype.lua instead of filetype.vim
-g.did_load_filetypes = 0
-g.do_filetype_lua = 1
-
 local globals = {
   strip_whitespace_on_save = 1, --strip whitespace on save
   strip_whitespace_confirm = 0,
