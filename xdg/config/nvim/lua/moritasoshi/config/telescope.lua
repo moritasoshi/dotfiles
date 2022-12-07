@@ -17,7 +17,6 @@ telescope.setup {
       "--column",
       "--smart-case",
       "--ignore",
-      "--ignore-case",
       "--hidden",
     },
     file_ignore_patterns = {
