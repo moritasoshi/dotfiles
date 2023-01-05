@@ -12,9 +12,9 @@ set -x GEMRC $XDG_CONFIG_HOME/gem/gemrc
 # set -x GEM_SPEC_CACHE $XDG_CACHE_HOME//gem
 set -x GOBIN $HOME/.local/bin
 set -x GOPATH $HOME/go
-set -x JAVA_HOME $(/usr/libexec/java_home -v "1.8")
+# set -x JAVA_HOME $(/usr/libexec/java_home -v "1.8")
 # set -x JAVA_HOME $(/usr/libexec/java_home -v "11")
-# set -x JAVA_HOME $(/usr/libexec/java_home -v "17")
+set -x JAVA_HOME $(/usr/libexec/java_home -v "17")
 set -x KREW_ROOT $XDG_DATA_HOME/krew
 set -x NODE_REPL_HISTORY $XDG_DATA_HOME/node_repl_history
 # set -x RBENV_ROOT $XDG_DATA_HOME/rbenv
