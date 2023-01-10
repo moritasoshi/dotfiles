@@ -24,9 +24,18 @@ git clone git@github.com:moritasoshi/dotfiles.git
 
 To change your login shell to fish
 
+#### for x86 arch
+
 ```
 echo /usr/local/bin/fish | sudo tee -a /etc/shells
 chsh -s /usr/local/bin/fish
+```
+
+#### for ARM arch
+
+```
+echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
+chsh -s /opt/homebrew/bin/fish
 ```
 
 ### tmux
