@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 DOTFILES=$(dirname "$0")
+XDG_CONFIG_HOME=$HOME/.config
 
 info() {
   printf "\033[00;34m%s\033[0m\n" "$@"
@@ -12,6 +13,9 @@ doInstall() {
   # tmux
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   # fzf
+
+  info "Creating XDG_CONFIG_HOME"
+  mkdir -p $XDG_CONFIG_HOME
 }
 
 doSync() {
