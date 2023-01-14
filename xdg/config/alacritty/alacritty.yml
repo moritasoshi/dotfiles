@@ -440,7 +440,7 @@ selection:
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
- program: /usr/local/bin/fish
+ program: /usr/local/bin/fish # FIXME: Fix to work on the ARM architecture.
  args:
    - --login
 

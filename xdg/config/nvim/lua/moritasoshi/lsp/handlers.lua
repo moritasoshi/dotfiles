@@ -78,8 +78,13 @@ M.on_attach = function(client, bufnr)
   end
 end
 
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
+local capabilities = null
+
+local ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if ok then
+  capabilities = cmp_nvim_lsp.default_capabilities()
+  capabilities.textDocument.completion.completionItem.snippetSupport = true
+end
 
 M.capabilities = capabilities
 

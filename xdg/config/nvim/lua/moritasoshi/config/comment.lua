@@ -4,5 +4,12 @@ if not status_ok then
 end
 
 comment.setup {
-  pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+  pre_hook = function ()
+    local ok, module = pcall(require, "ts_context_commentstring.integrations.comment_nvim")
+    if not ok then
+      return
+    end
+
+    module.create_pre_hook()
+  end
 }

@@ -37,6 +37,7 @@ set -x PATH $HOME/bin $PATH
 set -x PATH /usr/local/sbin $PATH
 set -x PATH $GOPATH/bin $PATH
 set -x PATH $HOME/.rbenv/bin $PATH
+set -x PATH /opt/homebrew/bin $PATH
 
 set -x PATH $GOBIN $CARGO_HOME/bin $KREW_ROOT/bin $PATH
 # set -x PATH /opt/homebrew/bin /opt/homebrew/sbin $PATH
