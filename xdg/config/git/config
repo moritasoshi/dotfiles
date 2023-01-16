@@ -41,6 +41,7 @@
   st = stash
   save = stash save -u
   pop = stash pop stash@{0}
+  pr = !"gh pr view -w $(git symbolic-ref HEAD | cut -d"/" -f 3,4)"
   stash-find = !"git fsck --unreachable | awk '/commit/ {print $3}' | xargs git log --merges --no-walk --grep=WIP --all-match"
   stash-pick = cherry-pick -n -m1fa = fetch --all
 [diff]
