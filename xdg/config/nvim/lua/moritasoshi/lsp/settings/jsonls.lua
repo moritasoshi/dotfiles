@@ -1,5 +1,4 @@
 local opts = {
-  cmd = { "nodebrew", "exec", "latest", "vscode-json-language-server", "--stdio" },
   settings = {
     json = {
       schemas = require("schemastore").json.schemas(),

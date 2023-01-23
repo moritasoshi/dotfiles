@@ -8,10 +8,7 @@ require("mason").setup {
 }
 require("mason-lspconfig").setup {
   ensure_installed = {
-    "bashls",
-    "jsonls",
     "sumneko_lua",
-    "tsserver",
   },
 }
 
@@ -29,18 +26,14 @@ require("mason-lspconfig").setup_handlers {
       require("neodev").setup()
       opts = {}
     end
-    if server_name == "jsonls" then
+    if server_name == "jsonls" then -- json-lsp
       local jsonls_opts = require("moritasoshi.lsp.settings.jsonls")
       opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
     end
-    if server_name == "bashls" then
-      opts.cmd = { "nodebrew", "exec", "latest", "bash-language-server", "start" }
-    end
-    if server_name == "tsserver" then
-      opts.cmd = { "nodebrew", "exec", "latest", "typescript-language-server", "--stdio" }
-    end
+
     require("lspconfig")[server_name].setup(opts)
   end,
+
   -- Next, you can provide a dedicated handler for specific servers.
   -- For example, a handler override for the `rust_analyzer`:
   ["rust_analyzer"] = function()
