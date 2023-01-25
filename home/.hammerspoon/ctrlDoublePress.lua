@@ -46,10 +46,13 @@ local noFlags = function(ev)
 end
 
 -- verify that *only* the ctrl key flag is being pressed
+-- reference to https://www.hammerspoon.org/docs/hs.eventtap.event.html#newKeyEventSequence
 local onlyCtrl = function(ev)
-  local result = ev:getFlags().ctrl
+  -- local result = ev:getFlags().ctrl
+  local result = ev:getFlags().cmd
   for k, v in pairs(ev:getFlags()) do
-    if k ~= "ctrl" and v then
+    -- if k ~= "ctrl" and v then
+    if k ~= "cmd" and v then
       result = false
       break
     end
