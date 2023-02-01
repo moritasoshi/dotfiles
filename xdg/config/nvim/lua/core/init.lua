@@ -8,6 +8,15 @@ autocmd("FileType", {
   end,
 })
 
+-- for KDL language
+-- https://github.com/neovim/neovim/pull/22058
+autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = "*.kdl",
+  callback = function()
+    vim.opt.filetype = "kdl"
+  end,
+})
+
 autocmd("BufUnload", {
   buffer = 0,
   callback = function()
