@@ -11,11 +11,9 @@
 [commit]
   template = ~/.stCommitMsg
 [alias]
-  al = alias
   a = add
+  al = alias
   ap = add --patch # stage to index
-  up = restore -S --patch # unstage from index
-  upw = restore -W --patch # delete from worktree
   br = branch
   c = checkout
   co = commit
@@ -29,21 +27,24 @@
   fa = fetch --all
   l = log
   la = log --graph --decorate --name-status --all
+  last = show HEAD
   ll  = log @ --graph --pretty=format:'%x09%C(auto)%h  %ad  %Creset%<(15,trunc)🐶%C(cyan bold)%an%Creset  %C(auto)%s%d' --date=format:'%Y-%m-%d %H:%M'
   lll = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
-  last = show HEAD
-  v = !"git branch --merged | grep -vE '\\*|develop|main|master'"
-  vac = !"git branch --merged | grep -vE '\\*|develop|main|master' | xargs git branch -d"
+  pop = stash pop stash@{0}
+  pr = !"gh pr view -w $(git symbolic-ref HEAD | cut -d"/" -f 3,4)"
   pushs = push --set-upstream origin HEAD
   rel = flow release start
   relf = flow release finish
   s = status
-  st = stash
   save = stash save -u
-  pop = stash pop stash@{0}
-  pr = !"gh pr view -w $(git symbolic-ref HEAD | cut -d"/" -f 3,4)"
+  st = stash
   stash-find = !"git fsck --unreachable | awk '/commit/ {print $3}' | xargs git log --merges --no-walk --grep=WIP --all-match"
   stash-pick = cherry-pick -n -m1fa = fetch --all
+  up = restore -S --patch # unstage from index
+  upw = restore -W --patch # delete from worktree
+  v = !"git branch --merged | grep -vE '\\*|develop|main|master'"
+  vac = !"git v | xargs git branch -d"
+  vacuum = !"git vac; git fetch --prune"
 [diff]
   tool = nvimdiff
 [difftool]
