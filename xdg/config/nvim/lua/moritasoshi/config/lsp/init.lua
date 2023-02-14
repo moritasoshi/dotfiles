@@ -8,7 +8,7 @@ require("mason").setup {
 }
 require("mason-lspconfig").setup {
   ensure_installed = {
-    "sumneko_lua",
+    "lua_ls",
   },
 }
 
@@ -22,7 +22,7 @@ require("mason-lspconfig").setup_handlers {
       capabilities = require("moritasoshi.lsp.handlers").capabilities,
     }
 
-    if server_name == "sumneko_lua" then
+    if server_name == "lua_ls" then
       require("neodev").setup()
       opts = {}
     end
