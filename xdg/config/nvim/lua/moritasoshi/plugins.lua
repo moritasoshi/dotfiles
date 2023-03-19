@@ -1,6 +1,9 @@
 local get_config = function(name)
   return string.format('require("moritasoshi.config.%s")', name)
 end
+local m = {
+  dap_disabled = true,
+}
 local plugins = {
   ["wbthomason/packer.nvim"] = {},
 
@@ -103,10 +106,10 @@ local plugins = {
   ["folke/trouble.nvim"] = { cmd = { "TroubleToggle" }, config = get_config("trouble") },
 
   -- Debug Adapter
-  ["mfussenegger/nvim-dap"] = { config = get_config("dap/nvim-dap") },
-  ["rcarriga/nvim-dap-ui"] = { config = get_config("dap/dapui") },
-  ["theHamsta/nvim-dap-virtual-text"] = { config = get_config("dap/nvim-dap-virtual-text") },
-  ["leoluz/nvim-dap-go"] = { config = get_config("dap/dap-go") },
+  ["mfussenegger/nvim-dap"] = { disable = m.dap_disabled, config = get_config("dap/nvim-dap") },
+  ["rcarriga/nvim-dap-ui"] = { disable = m.dap_disabled, config = get_config("dap/dapui") },
+  ["theHamsta/nvim-dap-virtual-text"] = { disable = m.dap_disabled, config = get_config("dap/nvim-dap-virtual-text") },
+  ["leoluz/nvim-dap-go"] = { disable = m.dap_disabled, config = get_config("dap/dap-go") },
 
   -- Go Development
   ["ray-x/go.nvim"] = { config = get_config("go") },
