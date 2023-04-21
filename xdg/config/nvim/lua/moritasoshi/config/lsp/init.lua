@@ -1,5 +1,11 @@
 require("moritasoshi.lsp.handlers").setup()
-require("mason").setup {
+
+local present, mason = pcall(require, "mason")
+if not present then
+  return
+end
+
+mason.setup {
   ui = {
     icons = {
       package_installed = "✓",
