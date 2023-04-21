@@ -229,6 +229,7 @@ return {
       require("moritasoshi.config.dap/dap-go")
     end,
     enabled = m.dap_enabled,
+    ft = "go"
   },
 
   -- Go Development
@@ -237,6 +238,7 @@ return {
     config = function()
       require("moritasoshi.config.go")
     end,
+    ft = "go"
   },
   {
     "ray-x/navigator.lua",
@@ -244,6 +246,7 @@ return {
       { "ray-x/guihua.lua", build = "cd lua/fzy && make" },
       { "neovim/nvim-lspconfig" },
     },
+    ft = "go",
   },
 
   -- Completion
@@ -272,12 +275,14 @@ return {
   {
     "nvim-telescope/telescope-fzf-native.nvim",
     build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+    event = "VeryLazy"
   },
   {
     "nvim-telescope/telescope.nvim",
     config = function()
       require("moritasoshi.config.telescope")
     end,
+    event = "VeryLazy"
   },
 
   -- HTTP Client
@@ -301,5 +306,6 @@ return {
     config = function()
       moriso.map("n", "<Leader>rj", "<Plug>(openbrowser-smart-search)")
     end,
+    event = "VeryLazy"
   },
 }
