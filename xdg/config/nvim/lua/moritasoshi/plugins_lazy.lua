@@ -1,6 +1,7 @@
 local m = {
   dap_enabled = false,
 }
+
 return {
   -- Theme
   {
@@ -246,29 +247,25 @@ return {
   },
 
   -- Completion
-  { "rafamadriz/friendly-snippets", event = { "InsertEnter", "CmdlineEnter" } },
   {
-    "L3MON4D3/LuaSnip",
-    dependencies = "friendly-snippets",
+    "rafamadriz/friendly-snippets",
+    event = { "InsertEnter", "CmdlineEnter" },
+    dependencies = {
+      "hrsh7th/nvim-cmp",
+      "L3MON4D3/LuaSnip",
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-cmdline",
+      "hrsh7th/cmp-nvim-lsp",
+      "hrsh7th/cmp-nvim-lua",
+      "hrsh7th/cmp-path",
+      "onsails/lspkind-nvim",
+      "saadparwaiz1/cmp_luasnip",
+      { "tzachar/cmp-tabnine", build = "./install.sh" },
+    },
     config = function()
       require("moritasoshi.config.luasnip")
-    end,
-  },
-  { "onsails/lspkind-nvim", dependencies = "LuaSnip" },
-  { "hrsh7th/nvim-cmp", dependencies = "lspkind-nvim" },
-  { "saadparwaiz1/cmp_luasnip", dependencies = "nvim-cmp" },
-  { "hrsh7th/cmp-nvim-lua", dependencies = "cmp_luasnip" },
-  { "hrsh7th/cmp-nvim-lsp", dependencies = "cmp-nvim-lua" },
-  { "hrsh7th/cmp-buffer", dependencies = "cmp-nvim-lsp" },
-  { "hrsh7th/cmp-path", dependencies = "cmp-buffer" },
-  { "hrsh7th/cmp-cmdline", dependencies = "cmp-path" },
-  {
-    "tzachar/cmp-tabnine",
-    dependencies = "cmp-cmdline",
-    config = function()
       require("moritasoshi.config.compe")
     end,
-    build = "./install.sh",
   },
 
   -- Telescope
