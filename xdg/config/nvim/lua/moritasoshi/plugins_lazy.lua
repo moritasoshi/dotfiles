@@ -67,15 +67,12 @@ return {
   },
   "editorconfig/editorconfig-vim",
   "farmergreg/vim-lastplace",
+
+  -- colorizer
   {
-    "norcalli/nvim-colorizer.lua",
-    config = function()
-      local present, colorizer = pcall(require, "colorizer")
-      if not present then
-        return
-      end
-      colorizer.setup()
-    end,
+    "NvChad/nvim-colorizer.lua",
+    event = "BufReadPre",
+    config = true
   },
   "nvim-lua/plenary.nvim",
 
