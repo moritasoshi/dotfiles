@@ -6,20 +6,20 @@ return {
   -- Theme
   {
     "sainnhe/gruvbox-material",
-    lazy = false,
-    priority = 1000,
     config = function()
       require("moritasoshi.config.gruvbox-material")
     end,
+    lazy = false,
+    priority = 1000,
   },
 
   -- Text manipulation
   {
     "godlygeek/tabular",
-    cmd = "Tabularize",
     config = function()
       require("moritasoshi.config.tabular")
     end,
+    cmd = "Tabularize",
   },
   { "ntpeters/vim-better-whitespace", event = { "InsertLeave", "TextChanged" } },
   "tpope/vim-repeat",
@@ -60,10 +60,10 @@ return {
   -- Util
   {
     "Pocco81/AutoSave.nvim",
-    event = { "InsertLeave", "TextChanged" },
     config = function()
       require("moritasoshi.config.autosave")
     end,
+    event = { "InsertLeave", "TextChanged" },
   },
   "editorconfig/editorconfig-vim",
   "farmergreg/vim-lastplace",
@@ -112,10 +112,10 @@ return {
   "simeji/winresizer",
   {
     "kyazdani42/nvim-tree.lua",
-    cmd = { "NvimTreeToggle", "NvimTreeFindFileToggle" },
     config = function()
       require("moritasoshi.config.nvim-tree")
     end,
+    cmd = { "NvimTreeToggle", "NvimTreeFindFileToggle" },
     ft = "alpha",
   },
 
@@ -130,10 +130,10 @@ return {
   -- Treesitter
   {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
     config = function()
       require("moritasoshi.config.treesitter")
     end,
+    build = ":TSUpdate",
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
       "JoosepAlviste/nvim-ts-context-commentstring",
@@ -149,10 +149,10 @@ return {
   -- ["f-person/git-blame.nvim"] ,
   {
     "TimUntersberger/neogit",
-    cmd = { "Neogit" },
     config = function()
       require("moritasoshi.config.neogit")
     end,
+    cmd = { "Neogit" },
   },
   {
     "akinsho/git-conflict.nvim",
@@ -195,40 +195,40 @@ return {
   },
   {
     "folke/trouble.nvim",
-    cmd = { "TroubleToggle" },
     config = function()
       require("moritasoshi.config.trouble")
     end,
+    cmd = { "TroubleToggle" },
   },
 
   -- Debug Adapter
   {
     "mfussenegger/nvim-dap",
-    enabled = m.dap_enabled,
     config = function()
       require("moritasoshi.config.dap/nvim-dap")
     end,
+    enabled = m.dap_enabled,
   },
   {
     "rcarriga/nvim-dap-ui",
-    enabled = m.dap_enabled,
     config = function()
       require("moritasoshi.config.dap/dapui")
     end,
+    enabled = m.dap_enabled,
   },
   {
     "theHamsta/nvim-dap-virtual-text",
-    enabled = m.dap_enabled,
     config = function()
       require("moritasoshi.config.dap/nvim-dap-virtual-text")
     end,
+    enabled = m.dap_enabled,
   },
   {
     "leoluz/nvim-dap-go",
-    enabled = m.dap_enabled,
     config = function()
       require("moritasoshi.config.dap/dap-go")
     end,
+    enabled = m.dap_enabled,
   },
 
   -- Go Development
@@ -283,10 +283,10 @@ return {
   -- HTTP Client
   {
     "NTBBloodbath/rest.nvim",
-    ft = "http",
     config = function()
       require("moritasoshi.config.rest-nvim")
     end,
+    ft = "http",
   },
 
   -- Markdown
