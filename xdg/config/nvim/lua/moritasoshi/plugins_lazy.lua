@@ -72,7 +72,7 @@ return {
   {
     "NvChad/nvim-colorizer.lua",
     event = "BufReadPre",
-    config = true
+    config = true,
   },
   "nvim-lua/plenary.nvim",
 
@@ -226,7 +226,7 @@ return {
       require("moritasoshi.config.dap/dap-go")
     end,
     enabled = m.dap_enabled,
-    ft = "go"
+    ft = "go",
   },
 
   -- Go Development
@@ -235,7 +235,7 @@ return {
     config = function()
       require("moritasoshi.config.go")
     end,
-    ft = "go"
+    ft = "go",
   },
   {
     "ray-x/navigator.lua",
@@ -272,14 +272,14 @@ return {
   {
     "nvim-telescope/telescope-fzf-native.nvim",
     build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-    event = "VeryLazy"
+    event = "VeryLazy",
   },
   {
     "nvim-telescope/telescope.nvim",
     config = function()
       require("moritasoshi.config.telescope")
     end,
-    event = "VeryLazy"
+    event = "VeryLazy",
   },
 
   -- HTTP Client
@@ -303,6 +303,6 @@ return {
     config = function()
       moriso.map("n", "<Leader>rj", "<Plug>(openbrowser-smart-search)")
     end,
-    event = "VeryLazy"
+    event = "VeryLazy",
   },
 }
