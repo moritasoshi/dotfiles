@@ -33,10 +33,12 @@ return {
   },
   {
     "kevinhwang91/nvim-hlslens",
+    event = "BufReadPre",
     config = function()
       require("moritasoshi.config.hlslens")
     end,
   },
+  -- indent guidelines
   {
     "lukas-reineke/indent-blankline.nvim",
     config = function()
@@ -51,10 +53,8 @@ return {
   },
   {
     "windwp/nvim-autopairs",
-    config = function()
-      require("moritasoshi.config.autopairs")
-    end,
     event = "InsertEnter",
+    config = true,
   },
 
   -- Util
@@ -65,8 +65,8 @@ return {
     end,
     event = { "InsertLeave", "TextChanged" },
   },
-  "editorconfig/editorconfig-vim",
-  "farmergreg/vim-lastplace",
+  -- "editorconfig/editorconfig-vim",
+  { "ethanholz/nvim-lastplace", config = true },
 
   -- colorizer
   {
@@ -86,6 +86,7 @@ return {
       require("moritasoshi.config.bufferline")
     end,
   },
+  -- dashboard
   {
     "goolord/alpha-nvim",
     config = function()
@@ -93,10 +94,7 @@ return {
     end,
   },
 
-  {
-    "kyazdani42/nvim-web-devicons",
-    config = true,
-  },
+  { "kyazdani42/nvim-web-devicons", config = true },
   {
     "nvim-lualine/lualine.nvim",
     config = function()
@@ -111,7 +109,7 @@ return {
       require("moritasoshi.config.nvim-tree")
     end,
     cmd = { "NvimTreeToggle", "NvimTreeFindFileToggle" },
-    ft = "alpha",
+    -- event = "VeryLazy"
   },
 
   -- Notification
@@ -124,20 +122,21 @@ return {
 
   -- Treesitter
   {
+    "nvim-treesitter/nvim-treesitter-context",
+    event = "BufReadPre",
+    config = true,
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     config = function()
       require("moritasoshi.config.treesitter")
     end,
-    build = ":TSUpdate",
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
-      "JoosepAlviste/nvim-ts-context-commentstring",
-      "p00f/nvim-ts-rainbow",
+      "windwp/nvim-ts-autotag",
+      -- "JoosepAlviste/nvim-ts-context-commentstring",
+      -- "p00f/nvim-ts-rainbow", -- no longer maintained
     },
-  },
-  {
-    "windwp/nvim-ts-autotag",
-    ft = { "html", "javascript", "javascriptreact", "typescriptreact", "svelte", "vue" },
   },
 
   -- Git
