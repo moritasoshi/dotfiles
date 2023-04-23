@@ -34,18 +34,10 @@ configs.setup {
     "vim",
     "yaml",
   },
-  sync_install = false,
-  ignore_install = { "" },
-  highlight = {
-    enable = true,
-    disable = { "" },
-    additional_vim_regex_highlighting = true,
-  },
-  rainbow = {
-    enable = true,
-    extended_mode = true,
-    max_file_lines = nil,
-  },
+  -- sync_install = false,
+  -- ignore_install = { "" },
+  autotag = { enable = true },
+  highlight = { enable = true },
   indent = { enable = true, disable = { "" } },
   incremental_selection = { enable = true },
   textobjects = {
