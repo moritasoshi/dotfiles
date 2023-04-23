@@ -95,9 +95,7 @@ return {
 
   {
     "kyazdani42/nvim-web-devicons",
-    config = function()
-      require("moritasoshi.config.web-devicons")
-    end,
+    config = true,
   },
   {
     "nvim-lualine/lualine.nvim",
