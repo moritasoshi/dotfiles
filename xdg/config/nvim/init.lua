@@ -11,5 +11,4 @@ require("moritasoshi.commands")
 require("moritasoshi.keymaps")
 
 require("core.lazy").bootstrap()
-local plugins = require("moritasoshi.plugins_lazy")
-require("core.lazy").run(plugins)
+require("core.lazy").run(require("moritasoshi.plugins_lazy"))
