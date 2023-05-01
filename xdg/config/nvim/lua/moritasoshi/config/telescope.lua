@@ -47,8 +47,6 @@ telescope.setup {
   },
 }
 
-require("telescope").load_extension("fzf")
-
 local map = moriso.map
 
 map("n", "<C-p>", "<cmd>lua require('moritasoshi.config.telescope').project_files()<cr>")

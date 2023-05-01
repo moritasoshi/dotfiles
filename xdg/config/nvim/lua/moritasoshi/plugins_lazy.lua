@@ -267,16 +267,18 @@ return {
 
   -- Telescope
   {
-    "nvim-telescope/telescope-fzf-native.nvim",
-    build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-    event = "VeryLazy",
-  },
-  {
     "nvim-telescope/telescope.nvim",
     config = function()
       require("moritasoshi.config.telescope")
     end,
     event = "VeryLazy",
+    dependencies = {
+      "nvim-telescope/telescope-fzf-native.nvim",
+      build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
+      config = function ()
+        require("telescope").load_extension("fzf")
+      end
+    },
   },
 
   -- HTTP Client
