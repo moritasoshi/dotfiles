@@ -29,6 +29,7 @@ configs.setup {
     "python",
     "ruby",
     "scss",
+    "terraform",
     "tsx",
     "typescript",
     "vim",
