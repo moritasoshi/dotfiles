@@ -248,8 +248,6 @@ return {
     "rafamadriz/friendly-snippets",
     event = { "InsertEnter", "CmdlineEnter" },
     dependencies = {
-      "L3MON4D3/LuaSnip",
-      "saadparwaiz1/cmp_luasnip",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-cmdline",
       "hrsh7th/cmp-nvim-lsp",
@@ -257,7 +255,9 @@ return {
       "hrsh7th/cmp-path",
       "hrsh7th/nvim-cmp",
       "onsails/lspkind-nvim",
-      { "tzachar/cmp-tabnine", build = "./install.sh" },
+      "saadparwaiz1/cmp_luasnip",
+      { "L3MON4D3/LuaSnip", version = "1.*", run = "make install_jsregexp" },
+      { "tzachar/cmp-tabnine", build = "./install.sh", dependencies = "hrsh7th/nvim-cmp" },
     },
     config = function()
       require("moritasoshi.config.luasnip")
@@ -275,9 +275,9 @@ return {
     dependencies = {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-      config = function ()
+      config = function()
         require("telescope").load_extension("fzf")
-      end
+      end,
     },
   },
 
