@@ -21,6 +21,7 @@ alias sed 'gsed'
 alias ssh 'TERM=xterm-256color /usr/bin/ssh'
 alias vim 'nvim'
 alias vimdiff 'nvim -d'
+alias tf 'terraform'
 
 ## tmux
 alias tm 'tmux'
