@@ -69,16 +69,18 @@ cmp.setup {
       cmp.ItemField.Menu,
     },
     format = lspkind.cmp_format {
-      with_text = false,
+      mode = "symbol_text",
+      maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+      ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
       menu = {
         buffer = "BUF",
+        calc = "CALC",
         cmp_tabnine = "TN",
+        emoji = "EMOJI",
+        luasnip = "SNIP",
         nvim_lsp = "LSP",
         path = "PATH",
-        luasnip = "SNIP",
-        calc = "CALC",
         spell = "SPELL",
-        emoji = "EMOJI",
       },
       -- The function below will be called before any actual modifications from lspkind
       -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
@@ -89,12 +91,6 @@ cmp.setup {
           word = vim.lsp.util.parse_snippet(word)
         end
         word = str.oneline(word)
-
-        local max = 50
-        if string.len(word) >= max then
-          local before = string.sub(word, 1, math.floor((max - 3) / 2))
-          word = before .. "..."
-        end
 
         if
           entry.completion_item.insertTextFormat == types.lsp.InsertTextFormat.Snippet
@@ -110,16 +106,17 @@ cmp.setup {
   },
   mapping = mapping,
   sources = cmp.config.sources {
+    { name = "emoji" }, -- type :hash: -> #️⃣
     { name = "luasnip" },
     { name = "nvim_lsp" },
-    { name = "buffer", keyword_length = 5, max_item_count = 5 },
+    { name = "buffer" },
     { name = "cmp_tabnine" },
     { name = "path" },
   },
 }
 
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline("/", {
+cmp.setup.cmdline({ "/", "?" }, {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
     { name = "buffer" },
