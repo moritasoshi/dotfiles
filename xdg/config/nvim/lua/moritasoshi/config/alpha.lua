@@ -188,7 +188,7 @@ local section_mru = {
   val = {
     {
       type = "text",
-      val = "  Recently used files",
+      val = "  Recently used files",
       opts = {
         hl = "Type",
         shrink_margin = false,
