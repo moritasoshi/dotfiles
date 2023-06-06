@@ -1,4 +1,4 @@
--- moritasoshi.telescope.lua
+-- plugins.telescope.lua
 local present, telescope = pcall(require, "telescope")
 if not present then
   return
@@ -49,9 +49,9 @@ telescope.setup {
 
 local map = moriso.map
 
-map("n", "<C-p>", "<cmd>lua require('moritasoshi.config.telescope').project_files()<cr>")
+map("n", "<C-p>", "<cmd>lua require('plugins.config.telescope').project_files()<cr>")
 map("n", "<leader>fb", "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>")
-map("n", "<leader>ff", "<cmd>lua require('moritasoshi.config.telescope').project_files()<cr>")
+map("n", "<leader>ff", "<cmd>lua require('plugins.config.telescope').project_files()<cr>")
 map("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>")
 map("n", "<leader>fh", "<cmd>lua require('telescope.builtin').builtin()<cr>")
 

@@ -21,5 +21,5 @@ null_ls.setup {
   debug = false,
   diagnostics_format = "[#{c}] #{m} (#{s})",
   sources = sources,
-  on_attach = require("moritasoshi.lsp.handlers").on_attach,
+  on_attach = require("plugins.lsp.handlers").on_attach,
 }

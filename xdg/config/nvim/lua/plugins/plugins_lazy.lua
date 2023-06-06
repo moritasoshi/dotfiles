@@ -7,7 +7,7 @@ return {
   {
     "sainnhe/gruvbox-material",
     config = function()
-      require("moritasoshi.config.gruvbox-material")
+      require("plugins.config.gruvbox-material")
     end,
     lazy = false,
     priority = 1000,
@@ -17,7 +17,7 @@ return {
   {
     "godlygeek/tabular",
     config = function()
-      require("moritasoshi.config.tabular")
+      require("plugins.config.tabular")
     end,
     cmd = "Tabularize",
   },
@@ -28,27 +28,27 @@ return {
   {
     "abecodes/tabout.nvim",
     config = function()
-      require("moritasoshi.config.tabout")
+      require("plugins.config.tabout")
     end,
   },
   {
     "kevinhwang91/nvim-hlslens",
     event = "BufReadPre",
     config = function()
-      require("moritasoshi.config.hlslens")
+      require("plugins.config.hlslens")
     end,
   },
   -- indent guidelines
   {
     "lukas-reineke/indent-blankline.nvim",
     config = function()
-      require("moritasoshi.config.indentline")
+      require("plugins.config.indentline")
     end,
   },
   {
     "numToStr/Comment.nvim",
     config = function()
-      require("moritasoshi.config.comment")
+      require("plugins.config.comment")
     end,
   },
   {
@@ -61,7 +61,7 @@ return {
   {
     "Pocco81/AutoSave.nvim",
     config = function()
-      require("moritasoshi.config.autosave")
+      require("plugins.config.autosave")
     end,
     event = { "InsertLeave", "TextChanged" },
   },
@@ -83,14 +83,14 @@ return {
   {
     "akinsho/bufferline.nvim",
     config = function()
-      require("moritasoshi.config.bufferline")
+      require("plugins.config.bufferline")
     end,
   },
   -- dashboard
   {
     "goolord/alpha-nvim",
     config = function()
-      require("moritasoshi.config.alpha")
+      require("plugins.config.alpha")
     end,
   },
 
@@ -98,7 +98,7 @@ return {
   {
     "nvim-lualine/lualine.nvim",
     config = function()
-      require("moritasoshi.config.lualine")
+      require("plugins.config.lualine")
     end,
   },
   "ryanoasis/vim-devicons",
@@ -106,7 +106,7 @@ return {
   {
     "kyazdani42/nvim-tree.lua",
     config = function()
-      require("moritasoshi.config.nvim-tree")
+      require("plugins.config.nvim-tree")
     end,
     cmd = { "NvimTreeToggle", "NvimTreeFindFileToggle" },
     -- event = "VeryLazy"
@@ -116,7 +116,7 @@ return {
   {
     "rcarriga/nvim-notify",
     config = function()
-      require("moritasoshi.config.notify")
+      require("plugins.config.notify")
     end,
   },
 
@@ -130,7 +130,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     config = function()
-      require("moritasoshi.config.treesitter")
+      require("plugins.config.treesitter")
     end,
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
@@ -145,7 +145,7 @@ return {
   {
     "TimUntersberger/neogit",
     config = function()
-      require("moritasoshi.config.neogit")
+      require("plugins.config.neogit")
     end,
     cmd = { "Neogit" },
   },
@@ -153,13 +153,13 @@ return {
     "akinsho/git-conflict.nvim",
     version = "*",
     config = function()
-      require("moritasoshi.config.git-conflict")
+      require("plugins.config.git-conflict")
     end,
   },
   {
     "lewis6991/gitsigns.nvim",
     config = function()
-      require("moritasoshi.config.gitsigns")
+      require("plugins.config.gitsigns")
     end,
   },
   "rhysd/committia.vim",
@@ -168,7 +168,7 @@ return {
   {
     "williamboman/mason.nvim",
     config = function()
-      require("moritasoshi.config.lsp")
+      require("plugins.config.lsp")
     end,
   },
   "williamboman/mason-lspconfig.nvim",
@@ -179,19 +179,19 @@ return {
   {
     "j-hui/fidget.nvim",
     config = function()
-      require("moritasoshi.config.fidget")
+      require("plugins.config.fidget")
     end,
   },
   {
     "jose-elias-alvarez/null-ls.nvim",
     config = function()
-      require("moritasoshi.config.lsp.null-ls")
+      require("plugins.config.lsp.null-ls")
     end,
   },
   {
     "folke/trouble.nvim",
     config = function()
-      require("moritasoshi.config.trouble")
+      require("plugins.config.trouble")
     end,
     cmd = { "TroubleToggle" },
   },
@@ -200,28 +200,28 @@ return {
   {
     "mfussenegger/nvim-dap",
     config = function()
-      require("moritasoshi.config.dap/nvim-dap")
+      require("plugins.config.dap/nvim-dap")
     end,
     enabled = m.dap_enabled,
   },
   {
     "rcarriga/nvim-dap-ui",
     config = function()
-      require("moritasoshi.config.dap/dapui")
+      require("plugins.config.dap/dapui")
     end,
     enabled = m.dap_enabled,
   },
   {
     "theHamsta/nvim-dap-virtual-text",
     config = function()
-      require("moritasoshi.config.dap/nvim-dap-virtual-text")
+      require("plugins.config.dap/nvim-dap-virtual-text")
     end,
     enabled = m.dap_enabled,
   },
   {
     "leoluz/nvim-dap-go",
     config = function()
-      require("moritasoshi.config.dap/dap-go")
+      require("plugins.config.dap/dap-go")
     end,
     enabled = m.dap_enabled,
     ft = "go",
@@ -231,7 +231,7 @@ return {
   {
     "ray-x/go.nvim",
     config = function()
-      require("moritasoshi.config.go")
+      require("plugins.config.go")
     end,
     ft = "go",
   },
@@ -256,15 +256,15 @@ return {
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-emoji",
       { "onsails/lspkind-nvim", config = function ()
-        require("moritasoshi.config.lspkind")
+        require("plugins.config.lspkind")
       end },
       "saadparwaiz1/cmp_luasnip",
       { "L3MON4D3/LuaSnip", version = "1.*", run = "make install_jsregexp" },
       { "tzachar/cmp-tabnine", build = "./install.sh", dependencies = "hrsh7th/nvim-cmp" },
     },
     config = function()
-      require("moritasoshi.config.luasnip")
-      require("moritasoshi.config.compe")
+      require("plugins.config.luasnip")
+      require("plugins.config.compe")
     end,
   },
 
@@ -272,7 +272,7 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     config = function()
-      require("moritasoshi.config.telescope")
+      require("plugins.config.telescope")
     end,
     event = "VeryLazy",
     dependencies = {
@@ -288,7 +288,7 @@ return {
   {
     "NTBBloodbath/rest.nvim",
     config = function()
-      require("moritasoshi.config.rest-nvim")
+      require("plugins.config.rest-nvim")
     end,
     ft = "http",
   },

@@ -11,4 +11,4 @@ require("core.commands")
 require("core.keymaps")
 
 require("core.lazy").bootstrap()
-require("core.lazy").run(require("moritasoshi.plugins_lazy"))
+require("core.lazy").run(require("plugins.plugins_lazy"))

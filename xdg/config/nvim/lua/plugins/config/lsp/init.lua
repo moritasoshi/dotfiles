@@ -1,4 +1,4 @@
-require("moritasoshi.lsp.handlers").setup()
+require("plugins.lsp.handlers").setup()
 
 local present, mason = pcall(require, "mason")
 if not present then
@@ -24,8 +24,8 @@ require("mason-lspconfig").setup_handlers {
   -- a dedicated handler.
   function(server_name) -- default handler (optional)
     local opts = {
-      on_attach = require("moritasoshi.lsp.handlers").on_attach,
-      capabilities = require("moritasoshi.lsp.handlers").capabilities,
+      on_attach = require("plugins.lsp.handlers").on_attach,
+      capabilities = require("plugins.lsp.handlers").capabilities,
     }
 
     if server_name == "lua_ls" then
@@ -33,7 +33,7 @@ require("mason-lspconfig").setup_handlers {
       opts = {}
     end
     if server_name == "jsonls" then -- json-lsp
-      local jsonls_opts = require("moritasoshi.lsp.settings.jsonls")
+      local jsonls_opts = require("plugins.lsp.settings.jsonls")
       opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
     end
 

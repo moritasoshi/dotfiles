@@ -212,7 +212,7 @@ local buttons = {
     { type = "text", val = "Quick links", opts = { hl = "Keyword", position = "center" } },
     { type = "padding", val = 1 },
     dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
-    dashboard.button("f", "  Find file", ":lua require('moritasoshi.config.telescope').project_files()<CR>"),
+    dashboard.button("f", "  Find file", ":lua require('plugins.config.telescope').project_files()<CR>"),
     dashboard.button("g", "  Grep text", ":Telescope live_grep <CR>"),
     dashboard.button("n", "  Narrow Find file", ":Telescope find_files<CR>"),
     { type = "padding", val = 1 },

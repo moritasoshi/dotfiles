@@ -30,8 +30,8 @@ map("x", "p", "pgvy")
 -- Tabular
 map({ "n", "x" }, "<leader>t", ":Tabularize /")
 
-map("n", "<leader>rr", [[<cmd>lua require('moritasoshi.config.rest-nvim').do_rest()<cr>]])
-map("n", "<leader>rp", [[<cmd>lua require('moritasoshi.config.rest-nvim').view_rest()<cr>]])
+map("n", "<leader>rr", [[<cmd>lua require('plugins.config.rest-nvim').do_rest()<cr>]])
+map("n", "<leader>rp", [[<cmd>lua require('plugins.config.rest-nvim').view_rest()<cr>]])
 
 -- -- 「かな」のままでいたい
 -- map ("n", "あ", "a" )
