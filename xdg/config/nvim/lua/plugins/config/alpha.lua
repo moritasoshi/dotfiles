@@ -211,17 +211,9 @@ local buttons = {
   val = {
     { type = "text", val = "Quick links", opts = { hl = "Keyword", position = "center" } },
     { type = "padding", val = 1 },
-    dashboard.button("r", "  Recently used files", ":Telescope oldfiles <CR>"),
-    dashboard.button("f", "  Find file", ":lua require('plugins.config.telescope').project_files()<CR>"),
-    dashboard.button("g", "  Grep text", ":Telescope live_grep <CR>"),
-    dashboard.button("n", "  Narrow Find file", ":Telescope find_files<CR>"),
-    { type = "padding", val = 1 },
     dashboard.button("c", "  Create file", ":ene <BAR> startinsert <CR>"),
-    dashboard.button("t", "  Tree file", ":NvimTreeToggle<CR>"),
     dashboard.button("l", "  Manage plugins", ":Lazy<CR>"),
-    dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
-    -- dashboard.button("p", "  Find project", ":Telescope projects <CR>"),
-    -- dashboard.button("c", "  Configuration", ":e ~/.config/nvim/init.vim<CR>"),
+    dashboard.button("q", "  Quit Neovim", ":qa<CR>"),
   },
   position = "center",
 }
