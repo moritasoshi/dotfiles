@@ -264,7 +264,7 @@ return {
     },
     config = function()
       require("plugins.config.luasnip")
-      require("plugins.config.compe")
+      require("plugins.config.cmp")
     end,
   },
 
