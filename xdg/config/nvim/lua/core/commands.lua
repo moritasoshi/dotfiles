@@ -15,9 +15,6 @@ command! -nargs=0 Q         :wqa
 command! -nargs=0 QQ        :qa!
 ]])
 
-
-command([[set guifont=JetBrainsMono\ Nerd\ Font:h12]])
-
 -- overwrite Highlight
 command([[
 " vimdiff highlight

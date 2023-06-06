@@ -7,8 +7,8 @@ end
 require("core")
 require("core.utils")
 require("core.options")
-require("moritasoshi.commands")
-require("moritasoshi.keymaps")
+require("core.commands")
+require("core.keymaps")
 
 require("core.lazy").bootstrap()
 require("core.lazy").run(require("moritasoshi.plugins_lazy"))
