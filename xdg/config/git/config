@@ -21,6 +21,7 @@
   com = commit -m
   coo = !"git commit --amend --no-edit --date=$(date +%Y-%m-%dT%H:%M:%S)"
   cp = cherry-pick
+  create = !"git branch -r | grep -v /HEAD | grep /release/ | xargs git checkout --track $remote 2&>/dev/null"
   d = diff
   df = diff --name-only # diff summary
   ds = diff --staged
@@ -42,7 +43,7 @@
   stash-pick = cherry-pick -n -m1fa = fetch --all
   up = restore -S --patch # unstage from index
   upw = restore -W --patch # delete from worktree
-  v = !"git branch --merged | grep -vE '\\*|develop|main|master'"
+  v = !"git create; git branch --merged | grep -vE '\\*|develop|main|master'"
   vac = !"git v | xargs git branch -d"
   vacuum = !"git vac; git fetch --prune"
 [diff]

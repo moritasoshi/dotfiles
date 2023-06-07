@@ -10,4 +10,4 @@ replacement=$2
 
 # echo replace $regexp to $replacement
 
-rg "$regexp" -l | xargs gsed -i s/"$regexp"/"$replacement"/g
+rg "$regexp" -l | xargs gsed -i s%"$regexp"%"$replacement"%g
