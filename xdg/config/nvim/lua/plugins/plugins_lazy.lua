@@ -255,9 +255,12 @@ return {
       "hrsh7th/cmp-nvim-lua",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-emoji",
-      { "onsails/lspkind-nvim", config = function ()
-        require("plugins.config.lspkind")
-      end },
+      {
+        "onsails/lspkind-nvim",
+        config = function()
+          require("plugins.config.lspkind")
+        end,
+      },
       "saadparwaiz1/cmp_luasnip",
       { "L3MON4D3/LuaSnip", version = "1.*", run = "make install_jsregexp" },
       { "tzachar/cmp-tabnine", build = "./install.sh", dependencies = "hrsh7th/nvim-cmp" },
