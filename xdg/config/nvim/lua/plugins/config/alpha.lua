@@ -211,6 +211,7 @@ local buttons = {
   val = {
     { type = "text", val = "Quick links", opts = { hl = "Keyword", position = "center" } },
     { type = "padding", val = 1 },
+    dashboard.button("t", "  Manage files", ":NvimTreeToggle<CR>"),
     dashboard.button("c", "  Create file", ":ene <BAR> startinsert <CR>"),
     dashboard.button("l", "  Manage plugins", ":Lazy<CR>"),
     dashboard.button("q", "  Quit Neovim", ":qa<CR>"),

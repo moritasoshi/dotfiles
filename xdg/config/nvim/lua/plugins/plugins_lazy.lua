@@ -109,7 +109,7 @@ return {
       require("plugins.config.nvim-tree")
     end,
     cmd = { "NvimTreeToggle", "NvimTreeFindFileToggle" },
-    -- event = "VeryLazy"
+    event = "VeryLazy"
   },
 
   -- Notification
