@@ -143,10 +143,11 @@ return {
   -- Git
   -- ["f-person/git-blame.nvim"] ,
   {
-    "TimUntersberger/neogit",
+    "NeogitOrg/neogit",
     config = function()
       require("plugins.config.neogit")
     end,
+    dependencies = "nvim-lua/plenary.nvim",
     cmd = { "Neogit" },
   },
   {
