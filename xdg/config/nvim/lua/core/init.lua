@@ -2,7 +2,7 @@ local autocmd = vim.api.nvim_create_autocmd
 
 -- Disable auto-trim in Java
 autocmd("FileType", {
-  pattern = "java",
+  pattern = "*.java",
   callback = function()
     vim.cmd("DisableStripWhitespaceOnSave")
   end,
@@ -47,6 +47,6 @@ autocmd("BufRead", {
 -- Highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
-    vim.highlight.on_yank { higroup = "Substitute", timeout = 150, on_macro = true }
+    vim.highlight.on_yank({ higroup = "Substitute", timeout = 150, on_macro = true })
   end,
 })
