@@ -109,7 +109,7 @@ return {
       require("plugins.config.nvim-tree")
     end,
     cmd = { "NvimTreeToggle", "NvimTreeFindFileToggle" },
-    event = "VeryLazy"
+    event = "VeryLazy",
   },
 
   -- Notification
@@ -144,11 +144,13 @@ return {
   -- ["f-person/git-blame.nvim"] ,
   {
     "NeogitOrg/neogit",
-    config = function()
-      require("plugins.config.neogit")
-    end,
-    dependencies = "nvim-lua/plenary.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- required
+      "nvim-telescope/telescope.nvim", -- optional
+      "sindrets/diffview.nvim", -- optional
+    },
     cmd = { "Neogit" },
+    config = true,
   },
   {
     "akinsho/git-conflict.nvim",
