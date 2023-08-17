@@ -45,7 +45,7 @@ autocmd("BufRead", {
 -- })
 
 -- Highlight yanked text
-vim.api.nvim_create_autocmd("TextYankPost", {
+autocmd("TextYankPost", {
   callback = function()
     vim.highlight.on_yank({ higroup = "Substitute", timeout = 150, on_macro = true })
   end,
