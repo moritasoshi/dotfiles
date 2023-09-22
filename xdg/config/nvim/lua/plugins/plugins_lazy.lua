@@ -94,7 +94,7 @@ return {
     end,
   },
 
-  { "kyazdani42/nvim-web-devicons", config = true },
+  { "nvim-tree/nvim-web-devicons", config = true },
   {
     "nvim-lualine/lualine.nvim",
     config = function()
@@ -104,7 +104,7 @@ return {
   "ryanoasis/vim-devicons",
   "simeji/winresizer",
   {
-    "kyazdani42/nvim-tree.lua",
+    "nvim-tree/nvim-tree.lua",
     config = function()
       require("plugins.config.nvim-tree")
     end,
