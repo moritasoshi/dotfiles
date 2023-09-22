@@ -23,6 +23,9 @@ end
 M.run = function(plugins)
   local config = {
     lockfile = vim.env.DOTPATH .. "/xdg/config/nvim" .. "/lazy-lock.json",
+    git = {
+      timeout = 15, --タイムアウト時間を15秒に設定
+    }
   }
   require("lazy").setup(plugins, config)
 end
