@@ -15,7 +15,7 @@ doInstall() {
   # fzf
 
   info "Creating XDG_CONFIG_HOME"
-  mkdir -p $XDG_CONFIG_HOME
+  mkdir -p "$XDG_CONFIG_HOME"
 }
 
 doSync() {
