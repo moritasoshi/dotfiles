@@ -23,6 +23,7 @@ configs.setup {
     "json5",
     "jsonc",
     "kdl",
+    "kotlin",
     "lua",
     "make",
     "markdown",
