@@ -8,21 +8,6 @@ local actions = require("telescope.actions")
 local builtin = require("telescope.builtin")
 telescope.setup {
   defaults = {
-    vimgrep_arguments = {
-      "rg",
-      "--color=never",
-      "--no-heading",
-      "--with-filename",
-      "--line-number",
-      "--column",
-      "--smart-case",
-      "--ignore",
-      "--hidden",
-    },
-    file_ignore_patterns = {
-      ".git/",
-      "node_modules/",
-    },
     prompt_prefix = " 🔭 ",
     mappings = {
       i = {
@@ -33,23 +18,10 @@ telescope.setup {
     },
     color_devicons = true,
   },
-
-  pickers = {
-    lsp_code_actions = {
-      theme = "cursor",
-    },
-    lsp_workspace_diagnostics = {
-      theme = "dropdown",
-    },
-    find_files = {
-      find_command = { "fd", "--type", "f", "--strip-cwd-prefix" },
-    },
-  },
 }
 
 local map = moriso.map
 
-map("n", "<C-p>", "<cmd>lua require('plugins.config.telescope').project_files()<cr>")
 map("n", "<leader>fb", "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>")
 map("n", "<leader>ff", "<cmd>lua require('plugins.config.telescope').project_files()<cr>")
 map("n", "<leader>fg", "<cmd>lua require('telescope.builtin').live_grep()<cr>")
