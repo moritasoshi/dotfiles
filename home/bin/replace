@@ -1,0 +1,77 @@
+#!/bin/bash
+#
+# Replace all files under the current directory.
+#
+# Command usage:
+#   $ $DOTPATH/sandbox/replace.sh bbb   # replace "bbb" to ""
+
+regexp=$2
+replacement=$3
+
+info() {
+  printf "\033[00;34m$@\033[0m\n"
+}
+
+validate() {
+  if [ "$regexp" = "" ]; then
+    echo "invalid arguments"
+    exit 1
+  fi
+}
+
+dryrun() {
+  validate
+  info "Dry-Run: replace '$regexp' to '$replacement'"
+  rg "$regexp"
+  rg "$regexp" -l | xargs gsed s%"$regexp"%"$replacement"%g > /dev/null
+}
+
+doReplace() {
+  validate
+  info "Replace"
+  rg "$regexp" -l | xargs gsed -i s%"$regexp"%"$replacement"%g
+}
+
+removeRecord() {
+  validate
+  info "Remove Records"
+  rg "$regexp" -l | xargs gsed -i /"$regexp"/d
+}
+
+help() {
+  echo "Usage: $(basename "$0") [options]" >&2
+  echo
+  echo "   -a, --all          replace All files under the current dir"
+  echo "   -d, --dryrun       replace All files under the current dir(dry-run)"
+  echo "   -r, --record       remove"
+  echo "   -h, --help         help"
+  echo
+  exit 1
+}
+
+if [ $# -eq 0 ]; then
+  help
+else
+  for i in "$@"; do
+    case $i in
+      -a | --all)
+        doReplace
+        break
+        ;;
+      -d | --dryrun)
+        dryrun
+        break
+        ;;
+      -r | --record)
+        removeRecord
+        break
+        ;;
+      -h | --help)
+        help
+        ;;
+      *)
+        help
+        ;;
+    esac
+  done
+fi
