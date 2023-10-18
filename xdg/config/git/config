@@ -15,7 +15,6 @@
   al = alias
   ap = add --patch # stage to index
   br = branch
-  c = checkout
   co = commit
   coa = commit --amend
   com = commit -m
@@ -36,11 +35,11 @@
   pushs = push --set-upstream origin HEAD
   rel = flow release start
   relf = flow release finish
-  s = status
+  s = switch
   save = stash save -u
-  st = stash
   stash-find = !"git fsck --unreachable | awk '/commit/ {print $3}' | xargs git log --merges --no-walk --grep=WIP --all-match"
   stash-pick = cherry-pick -n -m1fa = fetch --all
+  sts = status
   up = restore -S --patch # unstage from index
   upw = restore -W --patch # delete from worktree
   v = !"git create; git branch --merged | grep -vE '\\*|develop|main|master'"
