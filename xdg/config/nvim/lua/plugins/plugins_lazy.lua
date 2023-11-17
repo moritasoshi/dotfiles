@@ -1,3 +1,7 @@
+if true then
+  return {}
+end
+
 local m = {
   dap_enabled = false,
 }
