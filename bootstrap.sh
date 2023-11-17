@@ -33,6 +33,9 @@ doSync() {
     -avh \
     "$DOTFILES"/xdg/config/ \
     "$XDG_CONFIG_HOME"
+
+  info "Symbolic link"
+  ln -s "$DOTFILES"/xdg/config/nvim "$XDG_CONFIG_HOME"/nvim
 }
 
 doFonts() {
