@@ -64,14 +64,6 @@ return {
   "ryanoasis/vim-devicons",
   "simeji/winresizer",
 
-  -- Notification
-  {
-    "rcarriga/nvim-notify",
-    config = function()
-      require("plugins.config.notify")
-    end,
-  },
-
   -- Git
   -- ["f-person/git-blame.nvim"] ,
   {
@@ -178,22 +170,6 @@ return {
       { "neovim/nvim-lspconfig" },
     },
     ft = "go",
-  },
-
-  -- Telescope
-  {
-    "nvim-telescope/telescope.nvim",
-    config = function()
-      require("plugins.config.telescope")
-    end,
-    event = "VeryLazy",
-    dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-      config = function()
-        require("telescope").load_extension("fzf")
-      end,
-    },
   },
 
   -- HTTP Client
