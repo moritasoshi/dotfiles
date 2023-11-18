@@ -251,9 +251,6 @@ return {
   -- Markdown
   { "previm/previm", ft = "markdown", dependencies = "tyru/open-browser.vim" },
 
-  -- Tmux
-  "christoomey/vim-tmux-navigator",
-
   -- Optional (Trial)
   {
     "tyru/open-browser.vim",
