@@ -28,26 +28,8 @@ return {
       require("plugins.config.lualine")
     end,
   },
+
   "simeji/winresizer",
-
-  -- LSP
-  {
-    "williamboman/mason.nvim",
-    config = function()
-      require("plugins.config.lsp")
-    end,
-  },
-  "williamboman/mason-lspconfig.nvim",
-
-  "neovim/nvim-lspconfig",
-  "b0o/schemastore.nvim",
-  {
-    "j-hui/fidget.nvim",
-    tag = "legacy",
-    config = function()
-      require("plugins.config.fidget")
-    end,
-  },
 
   -- HTTP Client
   {
