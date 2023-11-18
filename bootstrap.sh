@@ -19,23 +19,30 @@ doInstall() {
 }
 
 doSync() {
-  info "Syncing"
-  info "HOME"
+  info "Sync"
+  # sync home dir
   rsync \
     --no-perms \
     -avh \
     "$DOTFILES"/home/ \
-    "$HOME"
+    "$HOME" &>/dev/null
 
-  info "XDG_CONFIG_HOME"
-  rsync \
-    --no-perms \
-    -avh \
-    "$DOTFILES"/xdg/config/ \
-    "$XDG_CONFIG_HOME"
+  # sync xdg config dir
+  ensure_ignored=("nvim")
+  config_list=$(ls $DOTFILES/xdg/config)
+  for app in ${config_list[@]}; do
+    if echo $ensure_ignored | grep -qw $app; then
+      continue
+    fi
+    rsync \
+      --no-perms \
+      -avh \
+      "$DOTFILES"/xdg/config/$app \
+      "$XDG_CONFIG_HOME"/ &>/dev/null
+  done
 
-  info "Symbolic link"
-  ln -s "$DOTFILES"/xdg/config/nvim "$XDG_CONFIG_HOME"/nvim
+  info "Symbolic links"
+  ln -s "$DOTFILES"/xdg/config/nvim "$XDG_CONFIG_HOME"/nvim &>/dev/null
 }
 
 doFonts() {
@@ -76,30 +83,30 @@ if [ $# -eq 0 ]; then
 else
   for i in "$@"; do
     case $i in
-      -s | --sync)
-        doSync
-        shift
-        ;;
-      -i | --install)
-        doInstall
-        doFonts
-        shift
-        ;;
-      -f | --fonts)
-        doFonts
-        shift
-        ;;
-      -c | --config)
-        doConfig
-        shift
-        ;;
-      -a | --all)
-        doAll
-        shift
-        ;;
-      *)
-        doHelp
-        ;;
+    -s | --sync)
+      doSync
+      shift
+      ;;
+    -i | --install)
+      doInstall
+      doFonts
+      shift
+      ;;
+    -f | --fonts)
+      doFonts
+      shift
+      ;;
+    -c | --config)
+      doConfig
+      shift
+      ;;
+    -a | --all)
+      doAll
+      shift
+      ;;
+    *)
+      doHelp
+      ;;
     esac
   done
 fi
