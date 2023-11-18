@@ -26,13 +26,6 @@ return {
   },
   -- indent guidelines
   {
-    "lukas-reineke/indent-blankline.nvim",
-    enabled = false,
-    config = function()
-      require("plugins.config.indentline")
-    end,
-  },
-  {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
     config = true,
