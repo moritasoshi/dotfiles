@@ -47,13 +47,6 @@ return {
   "nvim-lua/plenary.nvim",
 
   -- UI & Interface
-  {
-    "akinsho/bufferline.nvim",
-    config = function()
-      require("plugins.config.bufferline")
-    end,
-  },
-
   { "nvim-tree/nvim-web-devicons", config = true },
   {
     "nvim-lualine/lualine.nvim",
