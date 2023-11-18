@@ -45,15 +45,6 @@ return {
     config = true,
   },
 
-  -- Util
-  {
-    "Pocco81/AutoSave.nvim",
-    config = function()
-      require("plugins.config.autosave")
-    end,
-    event = { "InsertLeave", "TextChanged" },
-  },
-
   -- colorizer
   {
     "NvChad/nvim-colorizer.lua",

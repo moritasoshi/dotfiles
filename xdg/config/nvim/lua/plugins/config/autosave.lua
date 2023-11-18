@@ -3,7 +3,7 @@ if not present then
   return
 end
 
-autosave.setup {
+autosave.setup({
   enabled = true,
   execution_message = "",
   events = { "InsertLeave", "TextChanged" },
@@ -17,4 +17,4 @@ autosave.setup {
   on_off_commands = true,
   clean_command_line_interval = 500,
   debounce_delay = 215,
-}
+})
