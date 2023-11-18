@@ -10,4 +10,12 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- Original vim command
+vim.cmd([[
+" quit all
+command! -nargs=0 Q         :wqa
+command! -nargs=0 QQ        :qa!
 
+" git blame
+command! -nargs=0 Gblame    :Gitsigns toggle_current_line_blame
+]])
