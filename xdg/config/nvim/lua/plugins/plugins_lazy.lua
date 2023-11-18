@@ -24,13 +24,6 @@ return {
       require("plugins.config.tabout")
     end,
   },
-  {
-    "kevinhwang91/nvim-hlslens",
-    event = "BufReadPre",
-    config = function()
-      require("plugins.config.hlslens")
-    end,
-  },
   -- indent guidelines
   {
     "lukas-reineke/indent-blankline.nvim",
