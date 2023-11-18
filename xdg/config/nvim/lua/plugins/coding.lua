@@ -1,6 +1,6 @@
 -- Snippets and auto completions
 return {
-  -- overrides completions
+  -- Overrides completions
   {
     "L3MON4D3/LuaSnip",
     keys = function()
@@ -47,4 +47,12 @@ return {
       })
     end,
   },
+
+  -- Use vim-surround
+  { "echasnovski/mini.surround", enabled = false },
+  "tpope/vim-surround",
+  "tpope/vim-repeat",
+
+  -- <C-A>/<C-X> Enhancement (1999-12-31 -> 2000-01-01)
+  "tpope/vim-speeddating",
 }

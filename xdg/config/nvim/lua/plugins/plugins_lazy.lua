@@ -12,8 +12,6 @@ return {
     cmd = "Tabularize",
   },
   { "ntpeters/vim-better-whitespace", event = { "InsertLeave", "TextChanged" } },
-  "tpope/vim-repeat",
-  "tpope/vim-speeddating",
   {
     "abecodes/tabout.nvim",
     config = function()
