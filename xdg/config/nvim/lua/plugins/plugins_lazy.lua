@@ -53,8 +53,6 @@ return {
     end,
     event = { "InsertLeave", "TextChanged" },
   },
-  -- "editorconfig/editorconfig-vim",
-  { "ethanholz/nvim-lastplace", config = true },
 
   -- colorizer
   {
@@ -64,21 +62,11 @@ return {
   },
   "nvim-lua/plenary.nvim",
 
-  -- Speedup
-  "lewis6991/impatient.nvim",
-
   -- UI & Interface
   {
     "akinsho/bufferline.nvim",
     config = function()
       require("plugins.config.bufferline")
-    end,
-  },
-  -- dashboard
-  {
-    "goolord/alpha-nvim",
-    config = function()
-      require("plugins.config.alpha")
     end,
   },
 
@@ -91,14 +79,6 @@ return {
   },
   "ryanoasis/vim-devicons",
   "simeji/winresizer",
-  {
-    "nvim-tree/nvim-tree.lua",
-    config = function()
-      require("plugins.config.nvim-tree")
-    end,
-    cmd = { "NvimTreeToggle", "NvimTreeFindFileToggle" },
-    event = "VeryLazy",
-  },
 
   -- Notification
   {
@@ -106,25 +86,6 @@ return {
     config = function()
       require("plugins.config.notify")
     end,
-  },
-
-  -- Treesitter
-  {
-    "nvim-treesitter/nvim-treesitter-context",
-    event = "BufReadPre",
-    config = true,
-  },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    config = function()
-      require("plugins.config.treesitter")
-    end,
-    dependencies = {
-      "windwp/nvim-ts-autotag",
-      -- "JoosepAlviste/nvim-ts-context-commentstring",
-      -- "p00f/nvim-ts-rainbow", -- no longer maintained
-    },
   },
 
   -- Git
