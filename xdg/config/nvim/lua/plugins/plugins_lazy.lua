@@ -7,16 +7,6 @@ local m = {
 }
 
 return {
-  -- Theme
-  {
-    "sainnhe/gruvbox-material",
-    config = function()
-      require("plugins.config.gruvbox-material")
-    end,
-    lazy = false,
-    priority = 1000,
-  },
-
   -- Text manipulation
   {
     "godlygeek/tabular",
@@ -28,7 +18,6 @@ return {
   { "ntpeters/vim-better-whitespace", event = { "InsertLeave", "TextChanged" } },
   "tpope/vim-repeat",
   "tpope/vim-speeddating",
-  "tpope/vim-surround",
   {
     "abecodes/tabout.nvim",
     config = function()
@@ -48,12 +37,6 @@ return {
     enabled = false,
     config = function()
       require("plugins.config.indentline")
-    end,
-  },
-  {
-    "numToStr/Comment.nvim",
-    config = function()
-      require("plugins.config.comment")
     end,
   },
   {
@@ -138,7 +121,6 @@ return {
       require("plugins.config.treesitter")
     end,
     dependencies = {
-      "nvim-treesitter/nvim-treesitter-textobjects",
       "windwp/nvim-ts-autotag",
       -- "JoosepAlviste/nvim-ts-context-commentstring",
       -- "p00f/nvim-ts-rainbow", -- no longer maintained
