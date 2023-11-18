@@ -1,7 +1,3 @@
-if true then
-  return {}
-end
-
 return {
   -- Text manipulation
   {
@@ -20,13 +16,6 @@ return {
   },
 
   -- UI & Interface
-  {
-    "nvim-lualine/lualine.nvim",
-    config = function()
-      require("plugins.config.lualine")
-    end,
-  },
-
   "simeji/winresizer",
 
   -- HTTP Client
@@ -45,7 +34,7 @@ return {
   {
     "tyru/open-browser.vim",
     config = function()
-      moriso.map("n", "<Leader>rj", "<Plug>(openbrowser-smart-search)")
+      vim.keymap.set("n", "<Leader>rj", "<Plug>(openbrowser-smart-search)", { noremap = true, silent = true })
     end,
     event = "VeryLazy",
   },
