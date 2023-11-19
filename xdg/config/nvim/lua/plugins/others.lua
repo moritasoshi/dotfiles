@@ -34,9 +34,19 @@ return {
   -- HTTP Client
   {
     "NTBBloodbath/rest.nvim",
-    config = function()
-      require("plugins.config.rest-nvim")
-    end,
+    opts = {
+      -- Open request results in a horizontal split
+      result_split_horizontal = false,
+      -- Skip SSL verification, useful for unknown certificates
+      skip_ssl_verification = false,
+      -- Highlight request on run
+      highlight = {
+        enabled = true,
+        timeout = 150,
+      },
+      -- Jump to request line on run
+      jump_to_request = false,
+    },
     keys = {
       { "<leader>rr", "<Plug>RestNvim", "Run request under cursor" },
       { "<leader>rp", "<Plug>RestNvimPreview", "Preview request cURL command" },
