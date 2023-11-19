@@ -8,12 +8,6 @@ return {
     cmd = "Tabularize",
   },
   { "ntpeters/vim-better-whitespace", event = { "InsertLeave", "TextChanged" } },
-  {
-    "abecodes/tabout.nvim",
-    config = function()
-      require("plugins.config.tabout")
-    end,
-  },
 
   -- UI & Interface
   {
