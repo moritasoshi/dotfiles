@@ -22,9 +22,6 @@ map("", "go", "<C-O>")
 -- Tabular
 -- map({ "n", "x" }, "<leader>t", ":Tabularize /")
 
--- map("n", "<leader>rr", [[<cmd>lua require('plugins.config.rest-nvim').do_rest()<cr>]])
--- map("n", "<leader>rp", [[<cmd>lua require('plugins.config.rest-nvim').view_rest()<cr>]])
-
 -- simeji/winresizer
 -- map("", "<LEFT>", ":WinResizerStartResize<CR>h<CR>")
 -- map("", "<DOWN>", ":WinResizerStartResize<CR>j<CR>")

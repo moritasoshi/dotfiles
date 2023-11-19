@@ -24,6 +24,10 @@ return {
     config = function()
       require("plugins.config.rest-nvim")
     end,
+    keys = {
+      { "<leader>rr", "<Plug>RestNvim", "Run request under cursor" },
+      { "<leader>rp", "<Plug>RestNvimPreview", "Preview request cURL command" },
+    },
     ft = "http",
   },
 
@@ -33,9 +37,9 @@ return {
   -- Optional (Trial)
   {
     "tyru/open-browser.vim",
-    config = function()
-      vim.keymap.set("n", "<Leader>rj", "<Plug>(openbrowser-smart-search)", { noremap = true, silent = true })
-    end,
+    keys = {
+      { "<leader>rj", "<Plug>(openbrowser-smart-search)", desc = "Open URI with browser" },
+    },
     event = "VeryLazy",
   },
 }
