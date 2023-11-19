@@ -24,10 +24,10 @@ return {
   {
     "simeji/winresizer",
     keys = {
-      { "<LEFT>", ":WinResizerStartResize<CR>h<CR>" },
-      { "<DOWN>", ":WinResizerStartResize<CR>j<CR>" },
-      { "<UP>", ":WinResizerStartResize<CR>k<CR>" },
-      { "<RIGHT>", ":WinResizerStartResize<CR>l<CR>" },
+      { "<LEFT>", "<cmd>WinResizerStartResize<CR>h<CR>" },
+      { "<DOWN>", "<cmd>WinResizerStartResize<CR>j<CR>" },
+      { "<UP>", "<cmd>WinResizerStartResize<CR>k<CR>" },
+      { "<RIGHT>", "<cmd>WinResizerStartResize<CR>l<CR>" },
     },
   },
 
@@ -55,7 +55,14 @@ return {
   },
 
   -- Markdown
-  { "previm/previm", ft = "markdown", dependencies = "tyru/open-browser.vim" },
+  {
+    "previm/previm",
+    keys = {
+      { "<Leader>mm", "<cmd>PrevimOpen<CR>", { desc = "Markdown preview" } },
+    },
+    ft = "markdown",
+    dependencies = "tyru/open-browser.vim",
+  },
 
   -- Optional (Trial)
   {

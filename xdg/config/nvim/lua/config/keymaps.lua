@@ -11,19 +11,19 @@ local map = function(mode, keys, command, opt)
 end
 
 map("n", "<leader>cp", ":%s/", { desc = "Replace text" })
-map("n", "<S-CR>", ":<C-u>call append(expand('.'), '')<CR>j")
+map("n", "<S-CR>", "<cmd><C-u>call append(expand('.'), '')<CR>j")
 map("", "go", "<C-O>")
 map("x", "p", "pgvy")
 map(
   "n",
   "ygf",
-  ":let @* = expand('%:t') | lua print('Copied ' .. vim.fn.expand('%:t') .. ' to system clipboard!')<CR>",
+  "<cmd>let @* = expand('%:t') | lua print('Copied ' .. vim.fn.expand('%:t') .. ' to system clipboard!')<CR>",
   { desc = "Copy filename" }
 )
 map(
   "n",
   "ygp",
-  ":let @* = expand('%') | lua print('Copied ' .. vim.fn.expand('%') .. ' to system clipboard!')<CR>",
+  "<cmd>let @* = expand('%') | lua print('Copied ' .. vim.fn.expand('%') .. ' to system clipboard!')<CR>",
   { desc = "Copy filename with path" }
 )
 
