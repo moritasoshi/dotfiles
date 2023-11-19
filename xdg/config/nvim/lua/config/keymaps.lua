@@ -16,17 +16,10 @@ map("", "go", "<C-O>")
 
 -- map("n", "gy", ":let @* = expand('%:t') | lua print('Copied ' .. vim.fn.expand('%:t') .. ' to system clipboard!')<CR>")
 -- map("n", "gyy", ":let @* = expand('%') | lua print('Copied ' .. vim.fn.expand('%') .. ' to system clipboard!')<CR>")
-
 -- map("x", "p", "pgvy")
 
 -- Tabular
 -- map({ "n", "x" }, "<leader>t", ":Tabularize /")
-
--- simeji/winresizer
--- map("", "<LEFT>", ":WinResizerStartResize<CR>h<CR>")
--- map("", "<DOWN>", ":WinResizerStartResize<CR>j<CR>")
--- map("", "<UP>", ":WinResizerStartResize<CR>k<CR>")
--- map("", "<RIGHT>", ":WinResizerStartResize<CR>l<CR>")
 
 -- terminal mode
 vim.cmd([[

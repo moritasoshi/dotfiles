@@ -16,7 +16,15 @@ return {
   },
 
   -- UI & Interface
-  "simeji/winresizer",
+  {
+    "simeji/winresizer",
+    keys = {
+      { "<LEFT>", ":WinResizerStartResize<CR>h<CR>" },
+      { "<DOWN>", ":WinResizerStartResize<CR>j<CR>" },
+      { "<UP>", ":WinResizerStartResize<CR>k<CR>" },
+      { "<RIGHT>", ":WinResizerStartResize<CR>l<CR>" },
+    },
+  },
 
   -- HTTP Client
   {
