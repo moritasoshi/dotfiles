@@ -49,8 +49,8 @@ return {
   },
 
   -- Use vim-surround
-  { "echasnovski/mini.surround", enabled = false },
-  "tpope/vim-surround",
+  -- { "echasnovski/mini.surround", enabled = false },
+  -- "tpope/vim-surround",
   "tpope/vim-repeat",
 
   -- <C-A>/<C-X> Enhancement (1999-12-31 -> 2000-01-01)
