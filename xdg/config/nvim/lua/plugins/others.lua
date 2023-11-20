@@ -58,7 +58,7 @@ return {
   {
     "previm/previm",
     keys = {
-      { "<Leader>mm", "<cmd>PrevimOpen<CR>", { desc = "Markdown preview" } },
+      { "<Leader>mm", "<cmd>PrevimOpen<CR>", desc = "Markdown preview" },
     },
     ft = "markdown",
     dependencies = "tyru/open-browser.vim",
