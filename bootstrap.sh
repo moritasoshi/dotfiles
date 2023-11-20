@@ -25,24 +25,24 @@ doSync() {
     --no-perms \
     -avh \
     "$DOTFILES"/home/ \
-    "$HOME" &>/dev/null
+    "$HOME"
 
   # sync xdg config dir
   ensure_ignored=("nvim")
-  config_list=$(ls $DOTFILES/xdg/config)
+  config_list=$(ls "$DOTFILES"/xdg/config)
   for app in ${config_list[@]}; do
-    if echo $ensure_ignored | grep -qw $app; then
+    if echo $ensure_ignored | grep -qw "$app"; then
       continue
     fi
     rsync \
       --no-perms \
       -avh \
-      "$DOTFILES"/xdg/config/$app \
-      "$XDG_CONFIG_HOME"/ &>/dev/null
+      "$DOTFILES"/xdg/config/"$app" \
+      "$XDG_CONFIG_HOME"/
   done
 
   info "Symbolic links"
-  ln -s "$DOTFILES"/xdg/config/nvim "$XDG_CONFIG_HOME"/nvim &>/dev/null
+  ln -sv "$DOTPATH"/xdg/config/nvim "$XDG_CONFIG_HOME"/
 }
 
 doFonts() {
