@@ -51,8 +51,10 @@ return {
   -- Use vim-surround
   -- { "echasnovski/mini.surround", enabled = false },
   -- "tpope/vim-surround",
-  "tpope/vim-repeat",
+
+  -- makes some plugins dot-repeatable
+  { "tpope/vim-repeat", event = "VeryLazy" },
 
   -- <C-A>/<C-X> Enhancement (1999-12-31 -> 2000-01-01)
-  "tpope/vim-speeddating",
+  { "tpope/vim-speeddating", event = "VeryLazy" },
 }
