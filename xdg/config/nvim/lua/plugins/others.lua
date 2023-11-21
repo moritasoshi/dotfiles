@@ -18,7 +18,6 @@ return {
       { "<leader>t", ":Tabularize /", desc = "Tabularize" },
     },
   },
-  { "ntpeters/vim-better-whitespace", event = { "InsertLeave", "TextChanged" } },
 
   -- UI & Interface
   {
