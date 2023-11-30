@@ -11,18 +11,27 @@ return {
   --   end,
   -- },
   {
-    "AlexvZyl/nordic.nvim",
+    "sainnhe/gruvbox-material",
     lazy = false,
     priority = 1000,
     config = function()
-      require("nordic").load()
+      vim.opt.termguicolors = true
+      vim.opt.background = "dark" -- dark/light
+      vim.g.gruvbox_material_foreground = "mix" -- material/mix/original
+      vim.g.gruvbox_material_background = "hard" -- soft/medium/hard
+      vim.g.gruvbox_material_enable_italic = 1
+      vim.g.gruvbox_material_better_performance = 1 -- reducing loading time
+      vim.cmd.colorscheme("gruvbox-material")
     end,
   },
-  -- Configure LazyVim to load nordic
+  -- Configure LazyVim to load gruvbox-material
   {
     "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "nordic",
-    },
+    opts = { colorscheme = "gruvbox-material" },
+  },
+  -- Configure lualine to load gruvbox-material
+  {
+    "nvim-lualine/lualine.nvim",
+    opts = { options = { theme = "gruvbox-material" } },
   },
 }
