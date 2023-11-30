@@ -27,20 +27,10 @@ return {
       jump_to_request = false,
     },
     keys = {
-      { "<leader>rr", "<Plug>RestNvim", "Run request under cursor" },
-      { "<leader>rp", "<Plug>RestNvimPreview", "Preview request cURL command" },
+      { "<leader>rr", "<Plug>RestNvim", desc = "Run request under cursor" },
+      { "<leader>rp", "<Plug>RestNvimPreview", desc = "Preview request cURL command" },
     },
     ft = "http",
-  },
-
-  -- Markdown
-  {
-    "previm/previm",
-    keys = {
-      { "<Leader>mm", "<cmd>PrevimOpen<CR>", desc = "Markdown preview" },
-    },
-    ft = "markdown",
-    dependencies = "tyru/open-browser.vim",
   },
 
   -- Optional (Trial)
