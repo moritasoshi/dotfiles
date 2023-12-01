@@ -10,7 +10,6 @@ local map = function(mode, keys, command, opt)
   vim.keymap.set(mode, keys, command, opt)
 end
 
-map("n", "<leader>cp", ":%s/", { desc = "Replace text" })
 map("n", "<S-CR>", "<cmd><C-u>call append(expand('.'), '')<CR>j")
 map("", "go", "<C-O>")
 map("x", "p", "pgvy")
