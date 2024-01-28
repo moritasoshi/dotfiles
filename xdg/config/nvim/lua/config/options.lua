@@ -1,6 +1,9 @@
+-- Options are automatically loaded before lazy.nvim startup
+-- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
+-- Add any additional options here
+
 local opt = vim.opt
 local g = vim.g
-_G.moriso.opt = {}
 
 opt.termguicolors = true
 
@@ -45,7 +48,6 @@ opt.softtabstop = 2
 opt.expandtab = true
 
 opt.breakindent = true
-opt.showbreak = string.rep(" ", 3) -- Make it so that long lines wrap smartly
 opt.linebreak = true
 
 opt.foldmethod = "marker"
@@ -90,14 +92,6 @@ opt.joinspaces = false -- Two spaces and grade school, we're done
 g.mapleader = " "
 
 local globals = {
-  strip_whitespace_on_save = 1, --strip whitespace on save
-  strip_whitespace_confirm = 0,
-
-  bullets_outline_levels = { "std-" },
-  bullets_checkbox_markers = " x",
-  bullets_nested_checkboxes = 1,
-  bullets_checkbox_partials_toggle = 1,
-
   gitblame_enabled = 0,
 
   -- simeji/winresizer
@@ -139,5 +133,3 @@ local default_plugins = {
 for _, plugin in pairs(default_plugins) do
   g["loaded_" .. plugin] = 1
 end
-
-moriso.opt.listchars = vim.opt.listchars
