@@ -104,3 +104,7 @@ zoxide init fish --cmd z | source
 status --is-interactive; and rbenv init - fish | source
 # remove unused aws env
 set -e AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
+# activate gcloud cli
+source "$(brew --prefix)/share/google-cloud-sdk/path.fish.inc"
+# pyenv
+pyenv init - | source

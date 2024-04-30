@@ -50,3 +50,7 @@ set -x PATH /opt/homebrew/bin /opt/homebrew/sbin $PATH
 set -x PATH $HOME/Library/Python/3.9/bin $PATH
 set -x PATH $HOME/Documents/github.com/hsbt/hsbt/toolbox/exe $PATH
 set -x PATH $JAVA_HOME/bin $PATH
+
+# python
+set -Ux PYENV_ROOT $HOME/.pyenv
+fish_add_path $PYENV_ROOT/bin
