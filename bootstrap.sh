@@ -29,9 +29,14 @@ doSync() {
 
   # sync xdg config dir
   ensure_ignored=("nvim")
+  linux_ignore=("karabiner")
   config_list=$(ls "$DOTFILES"/xdg/config)
   for app in ${config_list[@]}; do
     if echo $ensure_ignored | grep -qw "$app"; then
+      continue
+    fi
+    if [ "$(uname)" == "Linux" ] && echo $linux_ignore | grep -qw "$app"; then
+      info "Skip $app for Linux"
       continue
     fi
     rsync \
