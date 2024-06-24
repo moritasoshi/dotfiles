@@ -8,7 +8,7 @@
 import = []
 
 # Shell program and its arguments
-shell = {program = "/usr/local/bin/fish", args = ["--login"]}
+shell = {program = "/usr/bin/fish", args = ["--login"]}
 
 # Working directory
 working_directory = "None"  # Default: "None"

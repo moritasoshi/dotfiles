@@ -10,14 +10,14 @@ alias g git
 alias v nvim
 
 ## replacements
-alias awk gawk
+# alias awk gawk
 # alias calc "BC_ENV_ARGS=<(echo 'scale=8') bc"
-alias date gdate
+#alias date gdate
 alias dircolors gdircolors
 alias grep 'grep --color=auto'
 alias zgrep 'zgrep --color=auto'
 alias rg "rg --no-ignore --colors path:fg:yellow"
-alias sed gsed
+#alias sed gsed
 alias ssh 'TERM=xterm-256color /usr/bin/ssh'
 alias vim nvim
 alias vimdiff 'nvim -d'
@@ -101,10 +101,6 @@ function history-merge --on-event fish_preexec
 end
 
 zoxide init fish --cmd z | source
-status --is-interactive; and rbenv init - fish | source
 # remove unused aws env
 set -e AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
-# activate gcloud cli
-source "$(brew --prefix)/share/google-cloud-sdk/path.fish.inc"
-# pyenv
-pyenv init - | source
+source "$XDG_DATA_HOME/cargo/env.fish"
