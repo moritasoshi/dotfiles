@@ -103,4 +103,4 @@ end
 zoxide init fish --cmd z | source
 # remove unused aws env
 set -e AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
-source "$XDG_DATA_HOME/cargo/env.fish"
+#source "$XDG_DATA_HOME/cargo/env.fish"
