@@ -24,12 +24,23 @@ doInstall() {
 
 doSync() {
   info "Symbolic links for bin"
-  ln -sv "$dotfiles"/home/bin "$HOME"/bin
+  rsync --no-perms -avh \
+    "$dotfiles"/home/bin \
+    "$HOME/bin"
 
-  info "Symbolic links for xdg configs"
+  info "Rsync for xdg configs"
   config_list=$(ls "$dotfiles"/xdg/config)
   for app in ${config_list[@]}; do
-    ln -sv "$dotfiles"/xdg/config/"$app" "$HOME/.config"/
+    rsync --no-perms -avh \
+      "$dotfiles"/xdg/config/"$app" \
+      "$HOME/.config"/
+  done
+
+  info "Symbolic links for xdg configs"
+  links=("nvim" "git" "alacritty" "lsd" "neofetch")
+  for app in ${links[@]}; do
+    ln --symbolic --force --verbose \
+      "$dotfiles"/xdg/config/"$app" "$HOME/.config"/
   done
 }
 
