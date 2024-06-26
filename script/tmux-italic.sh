@@ -11,15 +11,9 @@ info() {
   printf "\033[00;34m$@\033[0m\n"
 }
 
-doDownload() {
-  info "Download"
-  curl -L https://gist.githubusercontent.com/sos4nt/3187620/raw/bca247b4f86da6be4f60a69b9b380a11de804d1e/xterm-256color-italic.terminfo -o /tmp/xterm-256color-italic.terminfo
-  echo "Downloaded file to /tmp/xterm-256color-italic.terminfo"
-}
-
 doApply() {
   info "Apply"
-  tic /tmp/xterm-256color-italic.terminfo
+  tic $DOTPATH/xterm-256color-italic.terminfo
 }
 
 doCheck() {
@@ -45,19 +39,18 @@ if [ $# -eq 0 ]; then
 else
   for i in "$@"; do
     case $i in
-      -i | --install)
-        doDownload
-        doApply
-        shift
-        ;;
-      -c | --check)
-        doCheck
-        shift
-        ;;
-      *)
-        doHelp
-        shift
-        ;;
+    -i | --install)
+      doApply
+      shift
+      ;;
+    -c | --check)
+      doCheck
+      shift
+      ;;
+    *)
+      doHelp
+      shift
+      ;;
     esac
   done
 fi
