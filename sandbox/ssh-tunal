@@ -1,3 +1,0 @@
-# DB:5432 -> 踏み台 -> Local:9999 にポート転送
-ssh -NL 9999:example.com:5432 bastion
-pgcli -p 9999

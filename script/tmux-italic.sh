@@ -12,8 +12,7 @@ info() {
 }
 
 doApply() {
-  info "Apply"
-  tic $DOTPATH/xterm-256color-italic.terminfo
+  tic ~/src/dotfiles/resource/xterm-256color-italic.terminfo
 }
 
 doCheck() {

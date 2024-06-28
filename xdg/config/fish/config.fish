@@ -1,39 +1,4 @@
-## ls
-alias l 'lsd -l'
-alias la 'lsd -a'
-alias ll 'lsd -la'
-alias tree 'lsd -a --tree'
-
-## 1 letter aliases
-alias e "code-insiders -a ."
-alias g git
-alias v nvim
-
-## replacements
-# alias awk gawk
-# alias calc "BC_ENV_ARGS=<(echo 'scale=8') bc"
-#alias date gdate
-alias dircolors gdircolors
-alias grep 'grep --color=auto'
-alias zgrep 'zgrep --color=auto'
-alias rg "rg --no-ignore --colors path:fg:yellow"
-#alias sed gsed
-alias ssh 'TERM=xterm-256color /usr/bin/ssh'
-alias vim nvim
-alias vimdiff 'nvim -d'
-alias tf terraform
-
-## tmux
-alias tm tmux
-alias tma 'tmux a'
-alias tmn 'tmux new -s'
-
-alias sf 'exec fish'
-alias dot 'cd ~/src/dotfiles/'
-alias memo 'cd ~/memo'
-alias path 'echo $PATH'
-alias code 'open -na "Visual Studio Code.app" --args'
-alias idea 'open -na "IntelliJ IDEA.app" --args'
+source ~/.config/fish/alias.fish
 
 # prompt
 set -g __fish_git_prompt_showdirtystate yes
@@ -101,6 +66,7 @@ function history-merge --on-event fish_preexec
 end
 
 zoxide init fish --cmd z | source
+~/.local/bin/mise activate fish | source
 # remove unused aws env
 set -e AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
 #source "$XDG_DATA_HOME/cargo/env.fish"
