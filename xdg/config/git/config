@@ -9,7 +9,6 @@
   editor = nvim -c \"set fenc=utf-8\"
   quotepath = false
 [commit]
-  template = ~/.stCommitMsg
 [alias]
   a = add
   al = alias

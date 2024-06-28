@@ -9,12 +9,18 @@
 
 ## Setup
 
+for Linux
+```bash
+cd ~/src
+git clone git@github.com:moritasoshi/dotfiles.git
+./linux-install.sh
+```
+
+for mac
 ```bash
 cd ~/src
 git clone git@github.com:moritasoshi/dotfiles.git
 ./bootstrap.sh -a
-
-# for mac only
 ./script/brew.sh -i
 ```
 
@@ -22,20 +28,16 @@ git clone git@github.com:moritasoshi/dotfiles.git
 
 ### fish
 
-To change your login shell to fish
+Change your login shell to fish.
 
-#### for x86 arch
-
+If you are in the `bash/zsh` session, then
 ```
-echo /usr/local/bin/fish | sudo tee -a /etc/shells
-chsh -s /usr/local/bin/fish
+chsh -s $(which fish)
 ```
 
-#### for ARM arch
-
+If you are in the `fish` session, then
 ```
-echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
-chsh -s /opt/homebrew/bin/fish
+chsh -s (command -s fish)
 ```
 
 ### tmux
