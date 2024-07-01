@@ -13,17 +13,18 @@ doInstall() {
     ./script/brew.sh -i
   elif [ "$(uname)" == "Linux" ]; then
     ./script/install/locale_ja.sh
-    ./script/install/applications.sh
   fi
 
   if command -v pacman &>/dev/null; then
     ./script/install/alacritty.sh
+    ./script/install/applications.sh
     ./script/install/font.sh
     ./script/install/mise.sh
     ./script/install/nvim.sh
     ./script/install/xclip.sh
     ./script/install/zellij.sh
   fi
+  ./script/install/sdkman.sh
   ./script/install/tmux.sh
   ./script/tmux-italic.sh -i
 
