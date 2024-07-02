@@ -1,3 +1,3 @@
 if ! command -v alacritty &>/dev/null; then
-  sudo pacman -S --noconfirm alacritty
+  sudo apt install alacritty
 fi

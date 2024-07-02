@@ -66,7 +66,7 @@ function history-merge --on-event fish_preexec
 end
 
 zoxide init fish --cmd z | source
-~/.local/bin/mise activate fish | source
+mise activate fish | source
 # remove unused aws env
 set -e AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN
 #source "$XDG_DATA_HOME/cargo/env.fish"
