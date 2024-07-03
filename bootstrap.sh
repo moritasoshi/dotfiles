@@ -12,12 +12,15 @@ doInstall() {
   if [ "$(uname)" == "Darwin" ]; then
     ./script/brew.sh -i
   elif [ "$(uname)" == "Linux" ]; then
-    ./script/install/locale_ja.sh
+    ./script/install/tools.sh
+
     ./script/install/alacritty.sh
     ./script/install/applications.sh
     ./script/install/brave.sh
     ./script/install/fish.sh
     ./script/install/font.sh
+    ./script/install/im.sh
+    ./script/install/locale_ja.sh
     ./script/install/mise.sh
     ./script/install/nvim.sh
     ./script/install/sdkman.sh

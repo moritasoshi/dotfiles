@@ -7,10 +7,10 @@ import = [
 shell = { program = "/usr/bin/tmux", args = ["new-session"] }
 
 [window]
-padding = { x = 5, y = 5 } # Default: x = 0, y = 0
-dynamic_padding = true     # Default: false
-decorations = "buttonless" # Default: "Full"
-opacity = 1.0              # Default: 1.0
+padding = { x = 16, y = 14 } # Default: x = 0, y = 0
+decorations = "None"         # Default: "Full"
+dimensions.columns = 90
+dimensions.lines = 25
 
 [scrolling]
 history = 100_000 # Default: 10000

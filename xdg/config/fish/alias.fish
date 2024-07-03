@@ -38,3 +38,8 @@ if test Darwin = (uname)
     alias date gdate
     alias dircolors gdircolors
 end
+
+# for ubuntu
+if cat /etc/*-release | grep Ubuntu &>/dev/null
+    alias fd fdfind
+end
