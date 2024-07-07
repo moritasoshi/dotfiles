@@ -54,3 +54,6 @@ set -x PATH $JAVA_HOME/bin $PATH
 # python
 set -Ux PYENV_ROOT $HOME/.pyenv
 fish_add_path $PYENV_ROOT/bin
+
+# flutter
+fish_add_path -g -p /usr/bin/flutter/bin

@@ -42,4 +42,5 @@ end
 # for ubuntu
 if cat /etc/*-release | grep Ubuntu &>/dev/null
     alias fd fdfind
+    alias bat batcat
 end
