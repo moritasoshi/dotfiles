@@ -9,7 +9,6 @@ if [[ ! -d ~/Dropbox ]]; then
 fi
 
 # Obsidian
-
 if ! flatpak list | grep Obsidian &>/dev/null; then
   flatpak install flathub md.obsidian.Obsidian
   flatpak run md.obsidian.Obsidian
