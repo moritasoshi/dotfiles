@@ -1,3 +1,2 @@
-set -x PATH $GEM_HOME/bin $PATH
-set -x PATH $XDG_DATA_HOME/npm/bin $PATH
-set -x PATH $HOME/.rd/bin $PATH
+# remove unused aws env
+set -e AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_SESSION_TOKEN

@@ -1,4 +1,3 @@
-#!/usr/bin/fish
 # 
 # https://github.com/sdkman/sdkman-cli/issues/294#issuecomment-318252058
 #
