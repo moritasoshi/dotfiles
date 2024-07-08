@@ -50,8 +50,8 @@ else
       shift
       ;;
     -i | --install)
-      doInstall
       doSync
+      doInstall
       shift
       ;;
     *)
