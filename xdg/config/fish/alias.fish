@@ -37,10 +37,8 @@ if test Darwin = (uname)
     alias sed gsed
     alias date gdate
     alias dircolors gdircolors
-end
-
-# for ubuntu
-if cat /etc/*-release | grep Ubuntu &>/dev/null
+else if cat /etc/*-release | grep Ubuntu &>/dev/null
+    # for ubuntu
     alias fd fdfind
     alias bat batcat
 end
