@@ -19,8 +19,5 @@ function history-merge --on-event fish_preexec
     history --merge
 end
 
-zoxide init fish --cmd z | source
-
-if command -v mise &>/dev/null
-    mise activate fish | source
-end
+command -v zoxide &>/dev/null && zoxide init fish --cmd z | source
+command -v mise &>/dev/null && mise activate fish | source
