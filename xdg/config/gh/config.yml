@@ -2,5 +2,4 @@
 version: 1
 git_protocol: ssh
 aliases:
-  co: pr checkout
-  cpr: pr create -w
+  prr: pr create -w
