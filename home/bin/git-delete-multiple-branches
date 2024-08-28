@@ -1,0 +1,9 @@
+#!/bin/bash
+#
+# Delete multiple Git branches with a UI
+#
+# Press `tab` to mark a branch, `shift-tab` to unmark. Press `enter` and all marked branches will be deleted.
+# see https://gist.github.com/dteoh/575c3a5a6025ac2591d2062243a4e2a3 for details.
+#
+
+git branch --no-color | fzf -m | xargs -I {} git branch -D '{}'
