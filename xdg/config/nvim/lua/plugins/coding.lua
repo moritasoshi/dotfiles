@@ -65,16 +65,17 @@ return {
       vim.cmd([[
       AddTabularPattern! nvar /nvarchar(\w*)/l1r0
       AddTabularPattern! f_comma /^[^,]*\zs,/l0l1
-      AddTabularPattern! comma /,\zs,/l0l1
       AddTabularPattern! f_colon /^[^:]*\zs:\zs/l0r1
       AddTabularPattern! f_equal /^[^=]*\zs=/
       AddTabularPattern! f_quote /^[^"]*\zs"/l1r0
       AddTabularPattern! f_space /^[^ ]*\zs /l0
+      AddTabularPattern! commas /,\zs/l0l1
+      AddTabularPattern! colons /:\zs/l0l1
       ]])
     end,
-    cmd = "Tabularize",
+    cmd = "Tab",
     keys = {
-      { "<leader>t", ":Tabularize /", desc = "Tabularize" },
+      { "<leader>t", ":Tab ", desc = "Tabularize" },
     },
   },
 }

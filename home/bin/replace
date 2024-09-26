@@ -23,7 +23,7 @@ dryrun() {
   validate
   info "Dry-Run: replace '$regexp' to '$replacement'"
   rg "$regexp"
-  rg "$regexp" -l | xargs gsed s%"$regexp"%"$replacement"%g > /dev/null
+  rg "$regexp" -l | xargs gsed s%"$regexp"%"$replacement"%g >/dev/null
 }
 
 doReplace() {
@@ -39,7 +39,7 @@ removeRecord() {
 }
 
 help() {
-  echo "Usage: $(basename "$0") [options]" >&2
+  echo "Usage: $(basename "$0") [OPTION] {regexp} {replacement}" >&2
   echo
   echo "   -a, --all          replace All files under the current dir"
   echo "   -d, --dryrun       replace All files under the current dir(dry-run)"
@@ -54,24 +54,24 @@ if [ $# -eq 0 ]; then
 else
   for i in "$@"; do
     case $i in
-      -a | --all)
-        doReplace
-        break
-        ;;
-      -d | --dryrun)
-        dryrun
-        break
-        ;;
-      -r | --record)
-        removeRecord
-        break
-        ;;
-      -h | --help)
-        help
-        ;;
-      *)
-        help
-        ;;
+    -a | --all)
+      doReplace
+      break
+      ;;
+    -d | --dryrun)
+      dryrun
+      break
+      ;;
+    -r | --record)
+      removeRecord
+      break
+      ;;
+    -h | --help)
+      help
+      ;;
+    *)
+      help
+      ;;
     esac
   done
 fi
