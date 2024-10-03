@@ -12,7 +12,7 @@
 ## Setup
 
 ```bash
-eval "$(wget -qO- https://raw.githubusercontent.com/moritasoshi/dotfiles/refs/heads/main/boot.sh)" | bash
+eval "$(wget -qO- https://raw.githubusercontent.com/moritasoshi/dotfiles/refs/heads/main/boot.sh)"
 ```
 
 ## Application Configurations
