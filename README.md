@@ -12,9 +12,7 @@
 ## Setup
 
 ```bash
-mkdir ~/src
-git clone git@github.com:moritasoshi/dotfiles.git ~/src
-cd ~/src/dotfiles && ./bootstrap.sh -i
+eval "$(wget -qO- https://raw.githubusercontent.com/moritasoshi/dotfiles/refs/heads/main/boot.sh)" | bash
 ```
 
 ## Application Configurations
