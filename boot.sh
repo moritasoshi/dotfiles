@@ -6,8 +6,9 @@ sudo apt-get update >/dev/null
 sudo apt-get install -y git >/dev/null
 
 echo "Cloning Dotfiles..."
-# rm -rf ~/src/dotfiles
-# git clone https://github.com/moritasoshi/dotfiles.git ~/src/dotfiles >/dev/null
+rm -rf ~/src/dotfiles
+git clone https://github.com/moritasoshi/dotfiles.git ~/src/dotfiles >/dev/null
+git remote set-url origin git@github.com:moritasoshi/dotfiles.git
 
 echo "Installation starting..."
 ~/src/dotfiles/bootstrap.sh -i
