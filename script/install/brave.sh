@@ -1,5 +1,5 @@
 if ! command -v brave-browser &>/dev/null; then
-  sudo apt install curl
+  sudo apt install -y curl
 
   sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 
@@ -7,5 +7,5 @@ if ! command -v brave-browser &>/dev/null; then
 
   sudo apt update
 
-  sudo apt install brave-browser
+  sudo apt install -y brave-browser
 fi

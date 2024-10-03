@@ -1,3 +1,3 @@
 if ! command -v fcitx5 &>/dev/null; then
-  sudo apt install fcitx5-mozc
+  sudo apt install -y fcitx5-mozc
 fi

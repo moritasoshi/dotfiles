@@ -1,3 +1,3 @@
 if ! command -v alacritty &>/dev/null; then
-  sudo apt install alacritty
+  sudo apt install -y alacritty
 fi
