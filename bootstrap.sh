@@ -11,6 +11,7 @@ doSync() {
 doInstall() {
   if [ "$(uname)" == "Darwin" ]; then
     ./script/brew.sh -i
+    ./script/install/font-mac.sh
   elif [ "$(uname)" == "Linux" ]; then
     ./script/install/tools.sh
 
