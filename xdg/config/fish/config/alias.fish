@@ -41,4 +41,5 @@ else if cat /etc/*-release | grep Ubuntu &>/dev/null
     # for ubuntu
     alias fd fdfind
     alias bat batcat
+    alias pbcopy 'xsel --clipboard --input'
 end
