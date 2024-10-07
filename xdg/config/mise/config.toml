@@ -1,4 +1,3 @@
 [tools]
-java = 'lts'
 node = 'lts'
 usage = 'latest'
