@@ -3,6 +3,7 @@ set -x XDG_CACHE_HOME $HOME/.cache
 set -x XDG_DATA_HOME $HOME/.local/share
 set -x XDG_STATE_HOME $HOME/.local/state
 
+set -x ANDROID_HOME $XDG_DATA_HOME/Android/Sdk
 set -x AWS_CONFIG_FILE $XDG_CONFIG_HOME/aws/config
 set -x AWS_SHARED_CREDENTIALS_FILE $XDG_CONFIG_HOME/aws/credentials
 set -x CARGO_HOME $XDG_DATA_HOME/cargo
