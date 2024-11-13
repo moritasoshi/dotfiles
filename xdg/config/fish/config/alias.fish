@@ -8,6 +8,7 @@ alias tree 'lsd -a --tree'
 alias e "code-insiders -a ."
 alias g git
 alias v nvim
+alias f flutter
 
 ## replacements
 # alias calc "BC_ENV_ARGS=<(echo 'scale=8') bc"
