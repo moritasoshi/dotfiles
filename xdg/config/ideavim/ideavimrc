@@ -15,7 +15,7 @@ let g:argtextobj_pairs="[:],(:),<:>"
 
 """ Common settings -------------------------
 set clipboard=unnamed
-set clipboard+=ideaput
+set clipboard+=unnamedplus
 set showmode
 set so=5
 set incsearch
