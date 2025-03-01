@@ -4,7 +4,7 @@ import = [
   "~/.config/alacritty/fonts/CaskaydiaMono.toml",
 ]
 
-shell = { program = "/usr/bin/tmux", args = ["new-session"] }
+shell = { program = "tmux", args = ["new-session"] }
 
 [window]
 padding = { x = 16, y = 14 } # Default: x = 0, y = 0
