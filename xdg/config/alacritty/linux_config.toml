@@ -1,0 +1,8 @@
+# Linux用設定 (~/.config/alacritty/os_config.toml)
+
+[shell]
+program = "/usr/bin/tmux"
+args = ["new-session"]
+
+[window]
+decorations = "None"

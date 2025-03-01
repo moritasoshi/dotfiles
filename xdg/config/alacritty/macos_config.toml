@@ -1,0 +1,9 @@
+# macOS用設定 (~/.config/alacritty/os_config.toml)
+
+[shell]
+# program = "/opt/homebrew/bin/tmux" # Apple Silicon Macの場合
+program = "/usr/local/bin/tmux" # Intel Macの場合、必要に応じてコメントを入れ替えてください
+args = ["new-session"]
+
+[window]
+decorations = "Buttonless"
