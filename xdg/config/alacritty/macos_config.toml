@@ -6,4 +6,7 @@ program = "/usr/local/bin/tmux" # Intel Macの場合、必要に応じてコメ�
 args = ["new-session"]
 
 [window]
-decorations = "Buttonless"
+startup_mode = "SimpleFullscreen"
+
+[font]
+size = 12 # Default: 11.25
