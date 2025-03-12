@@ -3,6 +3,7 @@
 doSync() {
   ./script/apply/bin.sh
   ./script/apply/xdg_config.sh
+  ./script/apply/xdg_data.sh
   ./script/apply/alacritty.sh
   if [ "$(uname)" == "Darwin" ]; then
     ./script/apply/hammerspoon.sh

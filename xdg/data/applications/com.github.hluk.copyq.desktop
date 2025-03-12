@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=CopyQ
+Icon=copyq
+# workaround: https://copyq.readthedocs.io/en/latest/known-issues.html#on-linux-global-shortcuts-pasting-or-clipboard-monitoring-does-not-work
+Exec=env QT_QPA_PLATFORM=xcb /usr/bin/copyq
+Terminal=false
+Type=Application
+Comment=Advanced clipboard manager
