@@ -32,6 +32,8 @@ alias path 'echo $PATH'
 alias code 'open -na "Visual Studio Code.app" --args'
 alias idea 'open -na "IntelliJ IDEA.app" --args'
 
+alias mux tmuxinator
+
 # alias only for mac
 if test Darwin = (uname)
     alias awk gawk

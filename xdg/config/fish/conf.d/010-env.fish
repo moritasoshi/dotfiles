@@ -11,5 +11,3 @@ set -x PATH $GOBIN $CARGO_HOME/bin $KREW_ROOT/bin $PATH
 set -x PATH /opt/homebrew/bin /opt/homebrew/sbin $PATH
 set -x PATH $HOME/Library/Python/3.9/bin $PATH
 set -x PATH $JAVA_HOME/bin $PATH
-
-fish_add_path -g -p /usr/bin/flutter/bin
