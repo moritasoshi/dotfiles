@@ -8,6 +8,14 @@ if ! fc-list : family | grep "CaskaydiaMono Nerd Font" &>/dev/null; then
   rm -rf CascadiaMono.zip CascadiaFont
 fi
 
+if ! fc-list : family | grep "JetBrainsMono Nerd Font" &>/dev/null; then
+  cd /tmp
+  wget https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
+  unzip JetBrainsMono.zip -d JetBrainsMonoFont
+  cp JetBrainsMonoFont/*.ttf ~/.local/share/fonts
+  rm -rf JetBrainsMono.zip JetBrainsMonoFont
+fi
+
 if ! fc-list : family | grep "Noto Sans CJK JP" &>/dev/null; then
   cd /tmp
   wget -O NotoSerifCJKjp.zip https://github.com/notofonts/noto-cjk/releases/download/Serif2.002/07_NotoSerifCJKjp.zip
