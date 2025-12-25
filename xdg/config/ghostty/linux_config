@@ -1,0 +1,11 @@
+# Linux-specific settings
+
+# Shell configuration
+shell-integration = detect
+command = /usr/bin/tmux
+
+# Font size
+font-size = 9.5
+
+# Window behavior
+gtk-single-instance = false

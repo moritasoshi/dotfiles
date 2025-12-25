@@ -5,6 +5,7 @@ doSync() {
   ./script/apply/xdg_config.sh
   ./script/apply/xdg_data.sh
   ./script/apply/alacritty.sh
+  ./script/apply/ghostty.sh
   if [ "$(uname)" == "Darwin" ]; then
     ./script/apply/hammerspoon.sh
   fi
@@ -18,6 +19,7 @@ doInstall() {
     ./script/install/tools.sh
 
     ./script/install/alacritty.sh
+    ./script/install/ghostty.sh
     ./script/install/applications.sh
     ./script/install/brave.sh
     ./script/install/fish.sh
