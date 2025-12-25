@@ -30,6 +30,7 @@ doInstall() {
     ./script/install/nvim.sh
     ./script/install/sdkman.sh
     ./script/install/tmux.sh
+    ./script/install/duckdb.sh
   fi
 
   ./script/tmux-italic.sh -i
