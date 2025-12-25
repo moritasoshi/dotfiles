@@ -6,16 +6,16 @@ doSync() {
   ./script/apply/xdg_data.sh
   ./script/apply/alacritty.sh
   ./script/apply/ghostty.sh
-  if [ "$(uname)" == "Darwin" ]; then
+  if [ "$(uname)" = "Darwin" ]; then
     ./script/apply/hammerspoon.sh
   fi
 }
 
 doInstall() {
-  if [ "$(uname)" == "Darwin" ]; then
+  if [ "$(uname)" = "Darwin" ]; then
     ./script/brew.sh -i
     ./script/install/font-mac.sh
-  elif [ "$(uname)" == "Linux" ]; then
+  elif [ "$(uname)" = "Linux" ]; then
     ./script/install/tools.sh
 
     ./script/install/alacritty.sh
